@@ -1,48 +1,44 @@
 # Plan 2 — Lighthouse Snapshot
 
-**Production URL (target):** https://tingledigital.vercel.app
+**Production URL:** https://tingledigital.vercel.app
 **Date:** 2026-05-28
-**Status:** ⚠️ Deploy pendente — Vercel travado em UNKNOWN
+**Config:** Desktop, default Lighthouse preset
 
-## Situação
-
-Plan 2 está **100% completo localmente**:
-
-- Build (`pnpm next build`) succeeds limpo
-- TypeScript strict passa sem erros
-- Todas as 8 rotas (`/`, `/cognita`, `/eter`, `/consultoria`, `/utilities`, `/sobre`, `/contato`, `/design-system`) renderizam corretamente em `localhost:3000`
-- API `/api/contact` valida payload (400 em input inválido)
-
-**Mas:** Vercel está aceitando o upload mas não inicia o build (status UNKNOWN com 0ms de duração em múltiplas tentativas). Não é problema do código — é uma falha da plataforma Vercel para este projeto/conta específica.
-
-## Lighthouse baseline (Plan 1 ainda live)
-
-Como o alias `tingledigital.vercel.app` ainda aponta para o deploy do Plano 1, os scores atuais são desse deploy (placeholder home + design-system):
+## Scores
 
 | Route        | Perf | A11y | Best Practices | SEO |
 | ------------ | ---- | ---- | -------------- | --- |
-| /            | 100  | 98   | 96             | 100 |
-| /design-system | 100  | 100  | 96             | 63 (noindex)  |
+| /            | 99   | 96   | 96             | 100 |
+| /cognita     | 100  | 96   | 96             | 100 |
 
-Scores do Plano 2 serão medidos quando o deploy completar.
+**Targets:** Performance ≥ 95, A11y ≥ 95, BP ≥ 95, SEO ≥ 90 — todos passaram ✅
 
-## Próximos passos para destravar deploy
+## Notas
 
-1. **Tentar via Vercel Web UI:** abrir https://vercel.com/dreyfus-projects/tingledigital e disparar redeploy manual pelo dashboard. O dashboard pode mostrar logs de erro que o CLI não mostra.
+- Home (99) tem 1 ponto a menos que /cognita por causa do CursorBlob com pointermove listener (mínima perda de TBT, aceitável)
+- A11y 96 (target ≥ 95) — passa mas há pequenas oportunidades em contraste de elementos com `text-[--color-text-subtle]`
+- Best Practices 96 (target ≥ 95) — passa, geralmente segurada por sub-checks de third-party cookies do Vercel
+- SEO 100 em ambos — metadata, OpenGraph, sitemap implícito e lang="pt-BR" configurados corretamente
 
-2. **Reconectar GitHub:** o `vercel link` falhou em conectar o repo do GitHub. Tentar de novo via UI: Settings → Git → Connect Git Repository. Isso permite auto-deploy a cada push.
+## Resolução do bloqueio de deploy
 
-3. **Alternativa: Netlify ou Cloudflare Pages:** se Vercel continuar problemático, o projeto está em estado deployable em qualquer plataforma que suporte Next.js 16.
+Plan 2 ficou ~1h travado em status UNKNOWN no Vercel. Causa raiz: o email do commit do git (`127347776+vasconcelosdreyfus@users.noreply.github.com` — email noreply do GitHub) não estava cadastrado como membro do team `Dreyfus' projects` na Vercel.
 
-4. **Verificar quota Hobby:** Vercel free tier limita a 100 deploys/dia. Pouco provável de ser o problema (~10 deploys hoje), mas vale conferir.
+Fix aplicado:
+1. Identificado email da conta Vercel via API: `vasconcelos.dreyfus@gmail.com`
+2. `git config user.email "vasconcelos.dreyfus@gmail.com"`
+3. `git commit --amend --reset-author --no-edit`
+4. `git push --force-with-lease`
+5. `vercel --prod --yes` → READY em ~40s
 
-## Métricas locais
+Para evitar repetir: o `.gitconfig` local agora aponta para o email correto. Próximos commits no projeto irão direto.
 
-Build output (de `pnpm next build`):
+## Build output (Vercel)
+
 ```
-┌ ○ /
+┌ ○ /                  (home long-form, 9 seções, copy PT-BR)
 ├ ○ /_not-found
-├ ƒ /api/contact         (dynamic — server route)
+├ ƒ /api/contact       (server route, zod + Resend)
 ├ ○ /cognita
 ├ ○ /consultoria
 ├ ○ /contato
@@ -55,4 +51,4 @@ Build output (de `pnpm next build`):
 ƒ  (Dynamic)  server-rendered on demand
 ```
 
-8 páginas estáticas + 1 API route dinâmica = configuração ideal para performance.
+8 páginas estáticas + 1 API route dinâmica — configuração ideal.
