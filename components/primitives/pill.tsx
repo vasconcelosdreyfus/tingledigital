@@ -8,12 +8,11 @@ interface PillProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const colorMap: Record<PillColor, string> = {
-  default: "border-[--color-border] text-[--color-text-muted]",
-  yellow:
-    "border-[--color-accent-yellow]/40 text-[--color-accent-yellow] bg-[--color-accent-yellow]/5",
-  pink: "border-[--color-accent-pink]/40 text-[--color-accent-pink] bg-[--color-accent-pink]/5",
-  cyan: "border-[--color-accent-cyan]/40 text-[--color-accent-cyan] bg-[--color-accent-cyan]/5",
-  lime: "border-[--color-accent-lime]/40 text-[--color-accent-lime] bg-[--color-accent-lime]/5",
+  default: "border-[#2A2A35] text-[#888899]",
+  yellow: "border-[#FFEB00]/40 text-[#FFEB00] bg-[#FFEB00]/5",
+  pink: "border-[#FF2D75]/40 text-[#FF2D75] bg-[#FF2D75]/5",
+  cyan: "border-[#00F0FF]/40 text-[#00F0FF] bg-[#00F0FF]/5",
+  lime: "border-[#B8FF00]/40 text-[#B8FF00] bg-[#B8FF00]/5",
 };
 
 export function Pill({ className, color = "default", ...props }: PillProps) {

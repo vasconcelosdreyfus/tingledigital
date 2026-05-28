@@ -8,18 +8,18 @@ interface EyebrowProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const colorMap: Record<EyebrowColor, string> = {
-  default: "text-[--color-text-muted]",
-  yellow: "text-[--color-accent-yellow]",
-  pink: "text-[--color-accent-pink]",
-  cyan: "text-[--color-accent-cyan]",
-  lime: "text-[--color-accent-lime]",
+  default: "text-[#888899]",
+  yellow: "text-[#FFEB00]",
+  pink: "text-[#FF2D75]",
+  cyan: "text-[#00F0FF]",
+  lime: "text-[#B8FF00]",
 };
 
 export function Eyebrow({ className, color = "default", ...props }: EyebrowProps) {
   return (
     <span
       className={cn(
-        "text-eyebrow inline-flex items-center gap-2",
+        "inline-flex items-center gap-2 text-eyebrow",
         colorMap[color],
         className
       )}
