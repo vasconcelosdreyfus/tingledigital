@@ -441,7 +441,7 @@ tingledigital/
 | Objetivo principal | Autoridade/credibilidade | Público C-level pesquisa fornecedores |
 | Público primário | C-level / diretores | Decisores de parcerias estratégicas |
 | Hero de serviços | Produtos próprios (Cognita, Eter) | Provam capacidade técnica |
-| Estrutura | Hub + páginas dedicadas (8 rotas) | Melhor SEO, profundidade onde importa |
+| Estrutura | Hub + 7 páginas dedicadas + dynamic case detail | Melhor SEO, profundidade onde importa |
 | Visual | Bold Kinetic + dark | Impactante, com movimento (pedido explícito) |
 | Paleta | Electric Multi-Accent | Cores ownadas por pilar viram código visual |
 | Tipografia | Inter mono-família | Coesão máxima, padrão tech moderno |
@@ -457,6 +457,26 @@ tingledigital/
 
 ---
 
-## 15. Próximo Passo
+## 15. Conteúdo & Assets a Coletar do Cliente
+
+Estes itens não bloqueiam o início da implementação (podemos usar placeholders), mas serão necessários antes do go-live:
+
+- **Logo da Tingle** (SVG vector, preferencialmente versão branca e versão colorida)
+- **Detalhes do produto Cognita:** o que é, features principais, screenshots, link
+- **Detalhes do produto Eter:** o que é, features principais, screenshots, link
+- **Fotos do time** (para `/sobre`)
+- **Casos a destacar:** Casa Brasil + Hubz + 1 outro — com texto de contexto/desafio/solução/resultado
+- **Endereço da sede** (para `/sobre` e `/contato`)
+- **Email destino do formulário** de contato
+- **WhatsApp business + LinkedIn URL**
+- **Logos de clientes parceiros** (SVG preferencialmente, versão branca)
+- **Depoimentos completos** (Fábio Oliveira/Casa Brasil, Zé Lavaquial/Hubz, e outros)
+- **Conta Resend** (ou eu crio em nome do projeto)
+- **Conta Sanity** (ou eu crio em nome do projeto)
+- **Acesso ao painel Hostinger** para configurar DNS quando for hora de apontar
+
+---
+
+## 16. Próximo Passo
 
 Invocar `superpowers:writing-plans` para transformar este design em plano de implementação detalhado e executável.
