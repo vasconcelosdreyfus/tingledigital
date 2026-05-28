@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Marquee } from "@/components/motion/marquee";
-import { Star } from "lucide-react";
+import { Star, Sparkles, Zap, TrendingUp } from "lucide-react";
 
 interface NumberItem {
   label: string;
@@ -12,35 +12,39 @@ interface HomeNumbersProps {
 }
 
 const accentMap = {
-  yellow: "text-[--color-accent-yellow]",
-  pink: "text-[--color-accent-pink]",
-  cyan: "text-[--color-accent-cyan]",
-  lime: "text-[--color-accent-lime]",
+  yellow: "text-[#FFEB00]",
+  pink: "text-[#FF2D75]",
+  cyan: "text-[#00F0FF]",
+  lime: "text-[#B8FF00]",
 } as const;
+
+const separators = [Star, Sparkles, Zap, TrendingUp];
 
 export function HomeNumbers({ items }: HomeNumbersProps) {
   return (
-    <Marquee
-      speed="normal"
-      pauseOnHover
-      className="border-y border-[--color-border] py-8 bg-[--color-bg]"
-    >
-      {items.flatMap((item, i) => [
-        <span
-          key={`${item.label}-${i}`}
-          className={`text-display-3 font-black whitespace-nowrap ${
-            item.accent ? accentMap[item.accent] : "text-[--color-text]"
-          }`}
-        >
-          {item.label}
-        </span>,
-        <Star
-          key={`star-${i}`}
-          className="h-6 w-6 flex-shrink-0 text-[--color-accent-yellow]"
-          aria-hidden="true"
-          fill="currentColor"
-        />,
-      ])}
-    </Marquee>
+    <div className="relative border-y border-[#2A2A35] bg-gradient-to-b from-[#0a0a0f] via-[#0c0c14] to-[#0a0a0f] py-10">
+      <Marquee speed="normal" pauseOnHover>
+        {items.flatMap((item, i) => {
+          const SeparatorIcon = separators[i % separators.length]!;
+          return [
+            <div key={`${item.label}-${i}`} className="flex items-center gap-12 whitespace-nowrap">
+              <span
+                className={`text-display-3 font-black tracking-tight ${
+                  item.accent ? accentMap[item.accent] : "text-[#F5F5FA]"
+                }`}
+              >
+                {item.label}
+              </span>
+            </div>,
+            <SeparatorIcon
+              key={`sep-${i}`}
+              className="h-7 w-7 flex-shrink-0 text-[#FFEB00]"
+              fill="currentColor"
+              aria-hidden="true"
+            />,
+          ];
+        })}
+      </Marquee>
+    </div>
   );
 }

@@ -9,6 +9,22 @@ import { HomeLogos } from "@/components/sections/home/home-logos";
 import { CtaSection } from "@/components/shared/cta-section";
 import { homeData } from "@/content/data/home";
 
+function FloatingStickers() {
+  return (
+    <>
+      {/* Sticker 1 — between Hero and Numbers */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[8%] top-[85vh] z-20 hidden lg:block"
+      >
+        <div className="rounded-full border border-[#FF2D75]/40 bg-[#0a0a0f]/80 backdrop-blur px-4 py-2 text-xs font-bold uppercase tracking-wider text-[#FF2D75] rotate-[8deg] shadow-[0_0_24px_-8px_rgba(255,45,117,0.5)]">
+          ★ Bold + Kinetic
+        </div>
+      </div>
+    </>
+  );
+}
+
 export const metadata: Metadata = {
   description: homeData.hero.subtitle,
   openGraph: {
@@ -20,7 +36,8 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="relative">
+      <FloatingStickers />
       <HomeHero {...homeData.hero} />
       <HomeNumbers items={homeData.numbers.items} />
       <span id="produtos" className="sr-only">
@@ -50,6 +67,6 @@ export default function Home() {
         secondaryCta={homeData.finalCta.secondaryCta}
         tone="accent-yellow"
       />
-    </>
+    </div>
   );
 }
