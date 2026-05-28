@@ -16,12 +16,12 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 }
 
 const toneMap: Record<SectionTone, string> = {
-  default: "bg-[--color-bg] text-[--color-text]",
-  elevated: "bg-[--color-surface] text-[--color-text]",
-  "accent-yellow": "bg-[--color-accent-yellow] text-[--color-bg]",
-  "accent-pink": "bg-[--color-accent-pink] text-[--color-bg]",
-  "accent-cyan": "bg-[--color-accent-cyan] text-[--color-bg]",
-  "accent-lime": "bg-[--color-accent-lime] text-[--color-bg]",
+  default: "bg-[#0a0a0f] text-[#F5F5FA]",
+  elevated: "bg-[#15151f] text-[#F5F5FA]",
+  "accent-yellow": "bg-[#FFEB00] text-[#0a0a0f]",
+  "accent-pink": "bg-[#FF2D75] text-[#0a0a0f]",
+  "accent-cyan": "bg-[#00F0FF] text-[#0a0a0f]",
+  "accent-lime": "bg-[#B8FF00] text-[#0a0a0f]",
 };
 
 const spacingMap: Record<SectionSpacing, string> = {
