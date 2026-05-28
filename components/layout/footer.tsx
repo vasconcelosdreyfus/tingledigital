@@ -43,15 +43,15 @@ export function Footer() {
               height={32}
             />
             <p className="max-w-sm text-sm text-[--color-text-muted]">
-              Tecnologia com alma criativa. Construímos produtos, consultamos com
-              impacto e modernizamos utilities.
+              Tecnologia com alma criativa. Construímos produtos, consultamos com impacto
+              e modernizamos utilities.
             </p>
             <LocaleToggle />
           </div>
           <div className="grid gap-8 sm:grid-cols-3">
             {columns.map((col) => (
               <div key={col.title}>
-                <h3 className="text-eyebrow text-[--color-text-muted] mb-4">
+                <h3 className="text-eyebrow mb-4 text-[--color-text-muted]">
                   {col.title}
                 </h3>
                 <ul className="space-y-2">
@@ -59,7 +59,7 @@ export function Footer() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="text-sm text-[--color-text] hover:text-[--color-accent-yellow] transition-colors"
+                        className="text-sm text-[--color-text] transition-colors hover:text-[--color-accent-yellow]"
                       >
                         {item.label}
                       </Link>
@@ -70,7 +70,7 @@ export function Footer() {
             ))}
           </div>
         </div>
-        <div className="mt-12 flex flex-col sm:flex-row justify-between gap-4 border-t border-[--color-border] pt-8 text-xs text-[--color-text-subtle]">
+        <div className="mt-12 flex flex-col justify-between gap-4 border-t border-[--color-border] pt-8 text-xs text-[--color-text-subtle] sm:flex-row">
           <p>© {year} Tingle Digital. Todos os direitos reservados.</p>
           <p>CNPJ · contato@tingledigital.com</p>
         </div>

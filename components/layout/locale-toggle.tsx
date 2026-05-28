@@ -19,7 +19,7 @@ export function LocaleToggle({ className }: { className?: string }) {
           type="button"
           onClick={() => setActive(locale)}
           className={cn(
-            "rounded-full px-3 py-1 font-semibold uppercase tracking-wider transition-colors",
+            "rounded-full px-3 py-1 font-semibold tracking-wider uppercase transition-colors",
             active === locale
               ? "bg-[--color-text] text-[--color-bg]"
               : "text-[--color-text-muted] hover:text-[--color-text]"

@@ -71,24 +71,29 @@ tingledigital/
 ## Task 1: Scaffold Next.js project
 
 **Files:**
+
 - Create: entire project skeleton at `/Users/dreyfusvasconcelos/apps/tingledigital/`
 
 - [ ] **Step 1: Verify working directory is empty (or only has docs/)**
 
 Run:
+
 ```bash
 ls -la /Users/dreyfusvasconcelos/apps/tingledigital/
 ```
+
 Expected: only `docs/` directory (and `.git/` if initialized).
 
 - [ ] **Step 2: Scaffold Next.js**
 
 Run from `/Users/dreyfusvasconcelos/apps/`:
+
 ```bash
 cd /Users/dreyfusvasconcelos/apps && pnpm create next-app@latest tingledigital-tmp --typescript --tailwind --eslint --app --src-dir false --import-alias "@/*" --turbopack --use-pnpm
 ```
 
 When prompted, choose:
+
 - TypeScript: Yes
 - ESLint: Yes
 - Tailwind CSS: Yes
@@ -112,6 +117,7 @@ rm -rf tingledigital-tmp
 cd /Users/dreyfusvasconcelos/apps/tingledigital
 ls -la
 ```
+
 Expected files: `package.json`, `tsconfig.json`, `next.config.ts`, `app/`, `public/`, `node_modules/`, etc.
 
 - [ ] **Step 5: Smoke test dev server**
@@ -119,6 +125,7 @@ Expected files: `package.json`, `tsconfig.json`, `next.config.ts`, `app/`, `publ
 ```bash
 cd /Users/dreyfusvasconcelos/apps/tingledigital && pnpm dev
 ```
+
 Expected: server starts on `http://localhost:3000`, default Next.js welcome page renders.
 Then Ctrl+C to stop.
 
@@ -135,6 +142,7 @@ git commit -m "feat: scaffold Next.js 15 project with TS, Tailwind, App Router"
 ## Task 2: Configure TypeScript strict mode
 
 **Files:**
+
 - Modify: `tsconfig.json`
 
 - [ ] **Step 1: Open `tsconfig.json` and ensure strict settings**
@@ -173,6 +181,7 @@ Replace `tsconfig.json` with:
 ```bash
 cd /Users/dreyfusvasconcelos/apps/tingledigital && pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -187,6 +196,7 @@ git commit -m "chore: enable strict TypeScript settings"
 ## Task 3: Install core dependencies
 
 **Files:**
+
 - Modify: `package.json`
 
 - [ ] **Step 1: Install runtime deps**
@@ -205,9 +215,11 @@ pnpm add -D @types/node prettier prettier-plugin-tailwindcss
 - [ ] **Step 3: Verify package.json has all deps**
 
 Run:
+
 ```bash
 cat package.json | grep -E "(framer-motion|lucide-react|clsx|tailwind-merge|class-variance-authority|prettier)"
 ```
+
 Expected: all six packages present.
 
 - [ ] **Step 4: Commit**
@@ -222,6 +234,7 @@ git commit -m "chore: install core deps (framer-motion, lucide-react, cva, prett
 ## Task 4: Create `lib/utils.ts` with `cn` helper
 
 **Files:**
+
 - Create: `lib/utils.ts`
 
 - [ ] **Step 1: Create the utility file**
@@ -242,6 +255,7 @@ export function cn(...inputs: ClassValue[]): string {
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -256,6 +270,7 @@ git commit -m "feat: add cn utility for className merging"
 ## Task 5: Configure design tokens in CSS
 
 **Files:**
+
 - Modify: `app/globals.css`
 
 - [ ] **Step 1: Replace `app/globals.css` with token-based theme**
@@ -383,6 +398,7 @@ Replace entire contents of `app/globals.css`:
 ```bash
 pnpm tsc --noEmit && pnpm next build --no-lint
 ```
+
 Expected: build succeeds (warnings OK, errors not).
 
 - [ ] **Step 3: Commit**
@@ -397,6 +413,7 @@ git commit -m "feat: add Electric Multi-Accent design tokens and base styles"
 ## Task 6: Setup Inter font via `next/font`
 
 **Files:**
+
 - Create: `lib/fonts.ts`
 - Modify: `app/layout.tsx`
 
@@ -454,6 +471,7 @@ export default function RootLayout({
 ```bash
 pnpm dev
 ```
+
 Open `http://localhost:3000` — text should be rendered in Inter. Ctrl+C to stop.
 
 - [ ] **Step 4: Commit**
@@ -468,6 +486,7 @@ git commit -m "feat: configure Inter font via next/font with all weights"
 ## Task 7: Initialize shadcn/ui and add Button primitive
 
 **Files:**
+
 - Create: `components.json`
 - Create: `components/ui/button.tsx`
 
@@ -479,6 +498,7 @@ pnpm dlx shadcn@latest init -y -d
 ```
 
 When prompted:
+
 - Style: Default
 - Base color: Neutral
 - Use CSS variables: Yes
@@ -558,6 +578,7 @@ export { Button, buttonVariants };
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 5: Commit**
@@ -572,6 +593,7 @@ git commit -m "feat: add shadcn/ui setup and custom Button with brand variants"
 ## Task 8: Create `Container` primitive
 
 **Files:**
+
 - Create: `components/primitives/container.tsx`
 
 - [ ] **Step 1: Create Container**
@@ -604,11 +626,7 @@ export function Container({
   ...props
 }: ContainerProps) {
   return React.createElement(Component, {
-    className: cn(
-      "mx-auto w-full px-6 sm:px-8 lg:px-12",
-      sizeMap[size],
-      className
-    ),
+    className: cn("mx-auto w-full px-6 sm:px-8 lg:px-12", sizeMap[size], className),
     ...props,
   });
 }
@@ -619,6 +637,7 @@ export function Container({
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -633,6 +652,7 @@ git commit -m "feat: add Container primitive with size variants"
 ## Task 9: Create `Section` primitive
 
 **Files:**
+
 - Create: `components/primitives/section.tsx`
 
 - [ ] **Step 1: Create Section**
@@ -687,6 +707,7 @@ export function Section({
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -701,6 +722,7 @@ git commit -m "feat: add Section primitive with tone and spacing variants"
 ## Task 10: Create `Eyebrow` and `Pill` primitives
 
 **Files:**
+
 - Create: `components/primitives/eyebrow.tsx`
 - Create: `components/primitives/pill.tsx`
 
@@ -781,6 +803,7 @@ export function Pill({ className, color = "default", ...props }: PillProps) {
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 4: Commit**
@@ -795,6 +818,7 @@ git commit -m "feat: add Eyebrow and Pill primitives with pillar color variants"
 ## Task 11: Create `Marquee` motion component
 
 **Files:**
+
 - Create: `components/motion/marquee.tsx`
 
 - [ ] **Step 1: Create Marquee**
@@ -869,8 +893,12 @@ Append to `app/globals.css`:
 ```css
 @layer utilities {
   @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 
   .animate-marquee {
@@ -884,6 +912,7 @@ Append to `app/globals.css`:
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 4: Commit**
@@ -898,6 +927,7 @@ git commit -m "feat: add Marquee component with configurable speed/direction"
 ## Task 12: Create `AnimatedCounter` motion component
 
 **Files:**
+
 - Create: `components/motion/animated-counter.tsx`
 
 - [ ] **Step 1: Create AnimatedCounter**
@@ -964,6 +994,7 @@ export function AnimatedCounter({
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -978,6 +1009,7 @@ git commit -m "feat: add AnimatedCounter triggered by viewport"
 ## Task 13: Create `TextReveal` motion component
 
 **Files:**
+
 - Create: `components/motion/text-reveal.tsx`
 
 - [ ] **Step 1: Create TextReveal**
@@ -1044,6 +1076,7 @@ export function TextReveal({
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -1058,6 +1091,7 @@ git commit -m "feat: add TextReveal with word-staggered viewport animation"
 ## Task 14: Create placeholder logo SVG
 
 **Files:**
+
 - Create: `public/brand/logo-placeholder.svg`
 
 - [ ] **Step 1: Create placeholder logo**
@@ -1083,6 +1117,7 @@ git commit -m "feat: add placeholder logo SVG (to be replaced with brand asset)"
 ## Task 15: Create `LocaleToggle` placeholder
 
 **Files:**
+
 - Create: `components/layout/locale-toggle.tsx`
 
 > Note: In Plan 4 (i18n) this will be wired to next-intl. For now it's a UI-only placeholder.
@@ -1133,6 +1168,7 @@ export function LocaleToggle({ className }: { className?: string }) {
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -1147,6 +1183,7 @@ git commit -m "feat: add LocaleToggle UI placeholder (wiring in Plan 4)"
 ## Task 16: Create `Header` layout component
 
 **Files:**
+
 - Create: `components/layout/header.tsx`
 
 - [ ] **Step 1: Create Header**
@@ -1236,6 +1273,7 @@ export function Header() {
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -1250,6 +1288,7 @@ git commit -m "feat: add Header with scroll-elevated background and nav"
 ## Task 17: Create `Footer` layout component
 
 **Files:**
+
 - Create: `components/layout/footer.tsx`
 
 - [ ] **Step 1: Create Footer**
@@ -1344,6 +1383,7 @@ export function Footer() {
 ```bash
 pnpm tsc --noEmit
 ```
+
 Expected: no errors.
 
 - [ ] **Step 3: Commit**
@@ -1358,6 +1398,7 @@ git commit -m "feat: add Footer with columns and brand block"
 ## Task 18: Update root layout to include Header + Footer
 
 **Files:**
+
 - Modify: `app/layout.tsx`
 
 - [ ] **Step 1: Update root layout**
@@ -1411,6 +1452,7 @@ export default function RootLayout({
 ```bash
 pnpm tsc --noEmit && pnpm next build --no-lint
 ```
+
 Expected: success.
 
 - [ ] **Step 3: Commit**
@@ -1425,6 +1467,7 @@ git commit -m "feat: wire Header + Footer + skip-link into root layout"
 ## Task 19: Create `/design-system` preview page
 
 **Files:**
+
 - Create: `app/design-system/page.tsx`
 
 - [ ] **Step 1: Create the preview page**
@@ -1679,11 +1722,14 @@ export default function Home() {
 ```bash
 pnpm dev
 ```
+
 Open:
+
 - `http://localhost:3000/` — placeholder home renders, link to design system works
 - `http://localhost:3000/design-system` — all 7 component sections render correctly
 
 Verify:
+
 - Inter font loaded
 - Header is fixed at top, becomes blurred on scroll
 - Footer renders at bottom with columns
@@ -1699,6 +1745,7 @@ Ctrl+C to stop.
 ```bash
 pnpm next build
 ```
+
 Expected: build succeeds with no errors.
 
 - [ ] **Step 5: Commit**
@@ -1713,6 +1760,7 @@ git commit -m "feat: add /design-system preview page and placeholder home"
 ## Task 20: Setup Prettier and `.gitignore` polish
 
 **Files:**
+
 - Create: `.prettierrc.json`
 - Modify: `.gitignore`
 
@@ -1756,6 +1804,7 @@ pnpm dlx prettier --write "**/*.{ts,tsx,json,css,md}" --ignore-path .gitignore
 ```bash
 pnpm tsc --noEmit && pnpm next build --no-lint
 ```
+
 Expected: success.
 
 - [ ] **Step 5: Commit**
@@ -1772,6 +1821,7 @@ git commit -m "chore: format codebase with Prettier"
 ## Task 21: Create `README.md`
 
 **Files:**
+
 - Create: `README.md`
 
 - [ ] **Step 1: Write README**
@@ -1808,25 +1858,25 @@ Abra `http://localhost:3000`.
 ## Estrutura
 
 \`\`\`
-app/                  rotas Next.js (App Router)
+app/ rotas Next.js (App Router)
 components/
-  ui/                 shadcn primitives
-  primitives/         Container, Section, Eyebrow, Pill
-  motion/             Marquee, AnimatedCounter, TextReveal
-  layout/             Header, Footer, LocaleToggle
-lib/                  utils, fonts
+ui/ shadcn primitives
+primitives/ Container, Section, Eyebrow, Pill
+motion/ Marquee, AnimatedCounter, TextReveal
+layout/ Header, Footer, LocaleToggle
+lib/ utils, fonts
 docs/superpowers/
-  specs/              design specs
-  plans/              implementation plans
+specs/ design specs
+plans/ implementation plans
 \`\`\`
 
 ## Comandos
 
 \`\`\`bash
-pnpm dev              # dev server (Turbopack)
-pnpm build            # production build
-pnpm tsc --noEmit     # typecheck
-pnpm lint             # ESLint
+pnpm dev # dev server (Turbopack)
+pnpm build # production build
+pnpm tsc --noEmit # typecheck
+pnpm lint # ESLint
 \`\`\`
 
 ## Deploy
@@ -1864,6 +1914,7 @@ git commit -m "docs: add README with stack, structure, and plan roadmap"
 ```bash
 gh auth status
 ```
+
 Expected: logged in as user. If not, run `gh auth login` first.
 
 - [ ] **Step 2: Create remote repo**
@@ -1885,6 +1936,7 @@ git push -u origin main
 ```bash
 gh repo view --web
 ```
+
 Browser opens the new repo. Verify all files pushed.
 
 ---
@@ -1900,6 +1952,7 @@ Browser opens the new repo. Verify all files pushed.
 ```bash
 pnpm dlx vercel --version
 ```
+
 If not installed, this auto-installs. Otherwise verify version.
 
 - [ ] **Step 2: Link project to Vercel**
@@ -1910,6 +1963,7 @@ pnpm dlx vercel link
 ```
 
 Follow prompts:
+
 - Set up and deploy: Yes
 - Which scope: select user's personal account or team
 - Link to existing project: No
@@ -1930,6 +1984,7 @@ This creates a preview deploy. Note the preview URL printed in output.
 Open the printed `https://tingledigital-xxx.vercel.app` URL.
 
 Verify:
+
 - `/` renders correctly
 - `/design-system` renders all 7 sections
 - No console errors
@@ -1951,9 +2006,11 @@ The `.vercel/` directory should already be in `.gitignore` (added in Task 20). V
 ```bash
 cat .gitignore | grep vercel
 ```
+
 Expected: `.vercel` listed.
 
 If not, add it:
+
 ```bash
 echo "\n.vercel" >> .gitignore
 git add .gitignore && git commit -m "chore: ignore .vercel/"
@@ -1982,12 +2039,14 @@ pnpm dlx -p @lhci/cli@latest lhci collect \
 Open the resulting HTML reports in `.lighthouseci/`.
 
 Expected (for both URLs, mobile config):
+
 - Performance: ≥ 95
 - Accessibility: ≥ 95
 - Best Practices: ≥ 95
 - SEO: ≥ 90 (acceptable — content is sparse on placeholder)
 
 If any score fails, debug:
+
 - Performance: check image sizes, font loading, JS bundle (`pnpm next build` → check `.next/analyze` if needed)
 - Accessibility: missing alt, low contrast, missing focus
 - Best Practices: HTTPS, console errors
@@ -2010,6 +2069,7 @@ Config: mobile, slow 4G
 - SEO: <score>
 
 Notes:
+
 - <any flagged issues and mitigation>
 ```
 
@@ -2052,20 +2112,21 @@ Plan 1 is complete when all of these are true:
 
 After all tasks complete, verify against the spec:
 
-| Spec Section | Plan Coverage |
-|--------------|---------------|
-| 4.1 Bold Kinetic | Motion components (Marquee, TextReveal) — ✅ |
-| 4.2 Palette | Tokens in `globals.css` — ✅ |
-| 4.3 Typography | Inter via `next/font` + utility classes — ✅ |
-| 4.4 Spacing | Section spacing variants — ✅ |
-| 4.5 Motion principles | Marquee + reveals + counters + reduced-motion media query — ✅ |
-| 4.6 Animation libs | Framer Motion installed — ✅ |
-| 6 Stack | All deps installed except next-intl/Sanity (deferred to Plan 3/4) — ✅ |
-| 8 Folder structure | Matches plan — ✅ |
-| 9 Performance budget | Lighthouse target enforced — ✅ |
-| 10 Accessibility | Skip-link, prefers-reduced-motion, focus rings — ✅ |
+| Spec Section          | Plan Coverage                                                          |
+| --------------------- | ---------------------------------------------------------------------- |
+| 4.1 Bold Kinetic      | Motion components (Marquee, TextReveal) — ✅                           |
+| 4.2 Palette           | Tokens in `globals.css` — ✅                                           |
+| 4.3 Typography        | Inter via `next/font` + utility classes — ✅                           |
+| 4.4 Spacing           | Section spacing variants — ✅                                          |
+| 4.5 Motion principles | Marquee + reveals + counters + reduced-motion media query — ✅         |
+| 4.6 Animation libs    | Framer Motion installed — ✅                                           |
+| 6 Stack               | All deps installed except next-intl/Sanity (deferred to Plan 3/4) — ✅ |
+| 8 Folder structure    | Matches plan — ✅                                                      |
+| 9 Performance budget  | Lighthouse target enforced — ✅                                        |
+| 10 Accessibility      | Skip-link, prefers-reduced-motion, focus rings — ✅                    |
 
 Items deliberately deferred to later plans:
+
 - next-intl wiring → Plan 4
 - Sanity setup → Plan 3
 - MDX content → Plan 2

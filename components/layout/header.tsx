@@ -51,12 +51,12 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-8" aria-label="Principal">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Principal">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm font-medium text-[--color-text-muted] hover:text-[--color-text] transition-colors"
+              className="text-sm font-medium text-[--color-text-muted] transition-colors hover:text-[--color-text]"
             >
               {item.label}
             </Link>

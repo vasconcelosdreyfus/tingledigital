@@ -19,12 +19,10 @@ export default function DesignSystemPage() {
       <Section spacing="lg">
         <Container>
           <Eyebrow color="yellow">Design System v1</Eyebrow>
-          <h1 className="text-display-1 mt-4 text-balance">
-            Bold Kinetic foundations
-          </h1>
+          <h1 className="text-display-1 mt-4 text-balance">Bold Kinetic foundations</h1>
           <p className="mt-6 max-w-2xl text-lg text-[--color-text-muted]">
-            Tokens, primitives, layout and motion components used across the site.
-            This page is internal and not indexed.
+            Tokens, primitives, layout and motion components used across the site. This
+            page is internal and not indexed.
           </p>
         </Container>
       </Section>
@@ -40,16 +38,13 @@ export default function DesignSystemPage() {
               { name: "cyan", label: "Cognita" },
               { name: "lime", label: "Utilities" },
             ].map((c) => (
-              <div
-                key={c.name}
-                className="rounded-xl border border-[--color-border] p-4"
-              >
+              <div key={c.name} className="rounded-xl border border-[--color-border] p-4">
                 <div
-                  className="aspect-square w-full rounded-lg mb-3"
+                  className="mb-3 aspect-square w-full rounded-lg"
                   style={{ backgroundColor: `var(--color-accent-${c.name})` }}
                 />
                 <p className="text-eyebrow">{c.name}</p>
-                <p className="text-sm text-[--color-text-muted] mt-1">{c.label}</p>
+                <p className="mt-1 text-sm text-[--color-text-muted]">{c.label}</p>
               </div>
             ))}
           </div>
@@ -62,30 +57,30 @@ export default function DesignSystemPage() {
           <h2 className="text-display-3 mt-2 mb-8">Inter family</h2>
           <div className="space-y-8">
             <div>
-              <p className="text-eyebrow text-[--color-text-subtle] mb-2">
+              <p className="text-eyebrow mb-2 text-[--color-text-subtle]">
                 display-1 / Inter 900
               </p>
               <p className="text-display-1">Tecnologia com alma.</p>
             </div>
             <div>
-              <p className="text-eyebrow text-[--color-text-subtle] mb-2">
+              <p className="text-eyebrow mb-2 text-[--color-text-subtle]">
                 display-2 / Inter 800
               </p>
               <p className="text-display-2">Construímos futuros.</p>
             </div>
             <div>
-              <p className="text-eyebrow text-[--color-text-subtle] mb-2">
+              <p className="text-eyebrow mb-2 text-[--color-text-subtle]">
                 display-3 / Inter 700
               </p>
               <p className="text-display-3">Para C-level que escolhe parceiros.</p>
             </div>
             <div>
-              <p className="text-eyebrow text-[--color-text-subtle] mb-2">
+              <p className="text-eyebrow mb-2 text-[--color-text-subtle]">
                 body / Inter 400
               </p>
               <p className="max-w-2xl text-base text-[--color-text]">
-                Construímos produtos, consultamos com impacto e modernizamos
-                utilities com AI + IoT. Tecnologia com alma criativa.
+                Construímos produtos, consultamos com impacto e modernizamos utilities com
+                AI + IoT. Tecnologia com alma criativa.
               </p>
             </div>
           </div>
@@ -132,16 +127,14 @@ export default function DesignSystemPage() {
           <h2 className="text-display-3 mt-2 mb-8">Texto rolando lateral</h2>
         </Container>
         <Marquee className="border-y border-[--color-border] py-6">
-          {["50+ PROJETOS", "4 PRODUTOS", "10.000+ PESSOAS", "6 ANOS", "★"].map(
-            (t) => (
-              <span
-                key={t}
-                className="text-display-3 text-[--color-text-muted] flex items-center gap-12"
-              >
-                {t}
-              </span>
-            )
-          )}
+          {["50+ PROJETOS", "4 PRODUTOS", "10.000+ PESSOAS", "6 ANOS", "★"].map((t) => (
+            <span
+              key={t}
+              className="text-display-3 flex items-center gap-12 text-[--color-text-muted]"
+            >
+              {t}
+            </span>
+          ))}
         </Marquee>
       </Section>
 
@@ -154,31 +147,25 @@ export default function DesignSystemPage() {
               <p className="text-display-1">
                 <AnimatedCounter value={50} suffix="+" />
               </p>
-              <p className="text-eyebrow text-[--color-text-muted] mt-2">
-                Projetos
-              </p>
+              <p className="text-eyebrow mt-2 text-[--color-text-muted]">Projetos</p>
             </div>
             <div>
               <p className="text-display-1">
                 <AnimatedCounter value={4} />
               </p>
-              <p className="text-eyebrow text-[--color-text-muted] mt-2">
-                Produtos
-              </p>
+              <p className="text-eyebrow mt-2 text-[--color-text-muted]">Produtos</p>
             </div>
             <div>
               <p className="text-display-1">
                 <AnimatedCounter value={10000} suffix="+" />
               </p>
-              <p className="text-eyebrow text-[--color-text-muted] mt-2">
-                Pessoas
-              </p>
+              <p className="text-eyebrow mt-2 text-[--color-text-muted]">Pessoas</p>
             </div>
             <div>
               <p className="text-display-1">
                 <AnimatedCounter value={6} suffix="+" />
               </p>
-              <p className="text-eyebrow text-[--color-text-muted] mt-2">Anos</p>
+              <p className="text-eyebrow mt-2 text-[--color-text-muted]">Anos</p>
             </div>
           </div>
         </Container>

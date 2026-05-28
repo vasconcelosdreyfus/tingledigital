@@ -23,11 +23,7 @@ export function Container({
   ...props
 }: ContainerProps) {
   return React.createElement(Component as string, {
-    className: cn(
-      "mx-auto w-full px-6 sm:px-8 lg:px-12",
-      sizeMap[size],
-      className
-    ),
+    className: cn("mx-auto w-full px-6 sm:px-8 lg:px-12", sizeMap[size], className),
     ...props,
   });
 }

@@ -11,15 +11,18 @@
 Redesign completo do site institucional `tingledigital.com`. O site atual é WordPress, com conteúdo razoável mas visual que não comunica a sofisticação técnica da Tingle Digital. O novo site deve projetar **autoridade** para executivos C-level avaliando a Tingle como parceiro estratégico de tecnologia.
 
 ### Posicionamento central
+
 > **Tingle Digital — Tecnologia com alma criativa.**
 > Construímos produtos (Cognita, Eter), consultamos com impacto (Casa Brasil) e modernizamos utilities com AI + IoT.
 
 ### Objetivos
+
 - **Primário:** Projetar autoridade técnica e credibilidade para C-level decisores
 - **Secundário:** Apresentar Cognita e Eter como vitrines de capacidade
 - **Terciário:** Comunicar diferencial dual: criativo + técnico ("alma criativa")
 
 ### Não-objetivos (v1)
+
 - Blog próprio (cases ocupam esse papel)
 - Área logada / dashboard
 - E-commerce
@@ -117,28 +120,28 @@ Container:  max-w-7xl, px-6 lg:px-8
 
 ### 5.1 `/` Home (long-form hub)
 
-| # | Seção | Descrição |
-|---|-------|-----------|
-| 1 | Hero | Logo + nav, headline gigante "Tecnologia com alma", CTA, cursor-reactive blob |
-| 2 | Numbers Marquee | "50+ PROJETOS · 4 PRODUTOS · 10K+ PESSOAS · 6 ANOS" lateral infinito |
-| 3 | Pilares (bento) | 4 cards: Cognita, Eter, Consultoria, Utilities (cores ownadas) |
-| 4 | Produtos destaque | Split Cognita + Eter, mockup + CTA |
-| 5 | Cases preview | 3 cases destacados (Casa Brasil, Hubz, +1) |
-| 6 | Manifesto | Texto editorial grande: por que existimos |
-| 7 | Logos clientes | Marquee com logos parceiros |
-| 8 | CTA final | "Vamos construir algo?" → `/contato` |
-| 9 | Footer | Colunas, social, idioma, ano |
+| #   | Seção             | Descrição                                                                     |
+| --- | ----------------- | ----------------------------------------------------------------------------- |
+| 1   | Hero              | Logo + nav, headline gigante "Tecnologia com alma", CTA, cursor-reactive blob |
+| 2   | Numbers Marquee   | "50+ PROJETOS · 4 PRODUTOS · 10K+ PESSOAS · 6 ANOS" lateral infinito          |
+| 3   | Pilares (bento)   | 4 cards: Cognita, Eter, Consultoria, Utilities (cores ownadas)                |
+| 4   | Produtos destaque | Split Cognita + Eter, mockup + CTA                                            |
+| 5   | Cases preview     | 3 cases destacados (Casa Brasil, Hubz, +1)                                    |
+| 6   | Manifesto         | Texto editorial grande: por que existimos                                     |
+| 7   | Logos clientes    | Marquee com logos parceiros                                                   |
+| 8   | CTA final         | "Vamos construir algo?" → `/contato`                                          |
+| 9   | Footer            | Colunas, social, idioma, ano                                                  |
 
 ### 5.2 `/cognita`
 
-| # | Seção |
-|---|-------|
-| 1 | Hero do produto (headline + tagline + mockup + CTA demo) |
-| 2 | O problema (texto + número) |
-| 3 | A solução (grid de 4-6 features) |
-| 4 | Demo visual (sequência scroll-driven) |
-| 5 | Cases que usam Cognita (2-3 cards) |
-| 6 | CTA final |
+| #   | Seção                                                    |
+| --- | -------------------------------------------------------- |
+| 1   | Hero do produto (headline + tagline + mockup + CTA demo) |
+| 2   | O problema (texto + número)                              |
+| 3   | A solução (grid de 4-6 features)                         |
+| 4   | Demo visual (sequência scroll-driven)                    |
+| 5   | Cases que usam Cognita (2-3 cards)                       |
+| 6   | CTA final                                                |
 
 ### 5.3 `/eter`
 
@@ -146,25 +149,25 @@ Mesma estrutura de `/cognita`, cor ownada pink, narrativa própria.
 
 ### 5.4 `/consultoria`
 
-| # | Seção |
-|---|-------|
-| 1 | Hero: "Consultoria com impacto social e estratégico" |
-| 2 | Método em 4 etapas (timeline horizontal) |
-| 3 | Casa Brasil em destaque (case-story expandido) |
-| 4 | Outros tipos de projeto (grid: negócios, social, marketing, eventos) |
-| 5 | Depoimentos (2-3 quotes grandes) |
-| 6 | CTA |
+| #   | Seção                                                                |
+| --- | -------------------------------------------------------------------- |
+| 1   | Hero: "Consultoria com impacto social e estratégico"                 |
+| 2   | Método em 4 etapas (timeline horizontal)                             |
+| 3   | Casa Brasil em destaque (case-story expandido)                       |
+| 4   | Outros tipos de projeto (grid: negócios, social, marketing, eventos) |
+| 5   | Depoimentos (2-3 quotes grandes)                                     |
+| 6   | CTA                                                                  |
 
 ### 5.5 `/utilities`
 
-| # | Seção |
-|---|-------|
-| 1 | Hero: "Modernizando energia com AI + IoT" |
-| 2 | 3 pilares (P&D, Hyperautomation, Improvements) |
-| 3 | Tecnologias (AI · IoT · Blockchain · ML — grade animada) |
-| 4 | Cases utilities (Hubz e outros) |
-| 5 | Depoimento Zé Lavaquial em destaque |
-| 6 | CTA |
+| #   | Seção                                                    |
+| --- | -------------------------------------------------------- |
+| 1   | Hero: "Modernizando energia com AI + IoT"                |
+| 2   | 3 pilares (P&D, Hyperautomation, Improvements)           |
+| 3   | Tecnologias (AI · IoT · Blockchain · ML — grade animada) |
+| 4   | Cases utilities (Hubz e outros)                          |
+| 5   | Depoimento Zé Lavaquial em destaque                      |
+| 6   | CTA                                                      |
 
 ### 5.6 `/cases`
 
@@ -178,23 +181,23 @@ Mesma estrutura de `/cognita`, cor ownada pink, narrativa própria.
 
 ### 5.8 `/sobre`
 
-| # | Seção |
-|---|-------|
-| 1 | Hero (quem somos + foto do time) |
-| 2 | Manifesto / valores (3-4 princípios) |
-| 3 | Time (grid com fotos e roles) |
-| 4 | Linha do tempo (6+ anos em milestones) |
-| 5 | Onde estamos (mapa/endereço) |
-| 6 | CTA |
+| #   | Seção                                  |
+| --- | -------------------------------------- |
+| 1   | Hero (quem somos + foto do time)       |
+| 2   | Manifesto / valores (3-4 princípios)   |
+| 3   | Time (grid com fotos e roles)          |
+| 4   | Linha do tempo (6+ anos em milestones) |
+| 5   | Onde estamos (mapa/endereço)           |
+| 6   | CTA                                    |
 
 ### 5.9 `/contato`
 
-| # | Seção |
-|---|-------|
-| 1 | Hero "Vamos conversar" |
-| 2 | Formulário (nome, email, empresa, mensagem, tipo de projeto) |
-| 3 | Canais diretos (email, WhatsApp, LinkedIn) |
-| 4 | Endereço + mapa |
+| #   | Seção                                                        |
+| --- | ------------------------------------------------------------ |
+| 1   | Hero "Vamos conversar"                                       |
+| 2   | Formulário (nome, email, empresa, mensagem, tipo de projeto) |
+| 3   | Canais diretos (email, WhatsApp, LinkedIn)                   |
+| 4   | Endereço + mapa                                              |
 
 ---
 
@@ -370,34 +373,40 @@ tingledigital/
 ## 11. Roadmap de Implementação
 
 ### Fase 1 — Foundation
+
 - Scaffold Next.js + TypeScript + Tailwind
 - Configurar shadcn/ui, Framer Motion, next-intl
 - Git + GitHub + Vercel (preview deploys)
 
 ### Fase 2 — Design System
+
 - Tokens CSS + Tailwind config
 - Inter via `next/font`
 - Componentes base: Button, Container, Section, Eyebrow, Marquee, AnimatedCounter, TextReveal
 - Layout: Header (toggle PT/EN), Footer
 
 ### Fase 3 — Home
+
 - 9 seções
 - MDX content em PT (copy gerada)
 - Animações Framer Motion
 - 21st.dev MCP: hero blob, bento, marquee logos
 
 ### Fase 4 — Páginas de Produto e Institucionais
+
 - `/cognita` e `/eter`
 - `/consultoria` e `/utilities`
 - `/sobre` e `/contato` (forms com Resend)
 
 ### Fase 5 — Cases via Sanity
+
 - Setup Sanity Studio
 - Schemas
 - `/cases` listagem + `/cases/[slug]` detalhe
 - Seed: 3 cases (Casa Brasil, Hubz, +1)
 
 ### Fase 6 — i18n + Polish + Deploy
+
 - Tradução EN completa
 - SEO (metadata, OG, sitemap, robots)
 - Analytics (Vercel + Plausible)
@@ -424,36 +433,36 @@ tingledigital/
 
 ## 13. Riscos & Mitigações
 
-| Risco | Probabilidade | Mitigação |
-|-------|---------------|-----------|
-| 21st.dev gerar componentes que não casam com paleta | Média | Passar tokens de cor no prompt; refinar via `component_refiner` |
-| Animações pesadas matarem performance mobile | Média | Lazy-load Framer; desabilitar em low-end |
-| Sanity grátis bater limite | Baixa | Projeto pequeno, free tier suficiente por anos |
-| DNS Hostinger demorar pra propagar | Média | Usar `staging.tingledigital.com` antes do switch final |
-| Cases com pouco conteúdo na launch | Alta | Seed 3 cases sólidos antes de divulgar |
+| Risco                                               | Probabilidade | Mitigação                                                       |
+| --------------------------------------------------- | ------------- | --------------------------------------------------------------- |
+| 21st.dev gerar componentes que não casam com paleta | Média         | Passar tokens de cor no prompt; refinar via `component_refiner` |
+| Animações pesadas matarem performance mobile        | Média         | Lazy-load Framer; desabilitar em low-end                        |
+| Sanity grátis bater limite                          | Baixa         | Projeto pequeno, free tier suficiente por anos                  |
+| DNS Hostinger demorar pra propagar                  | Média         | Usar `staging.tingledigital.com` antes do switch final          |
+| Cases com pouco conteúdo na launch                  | Alta          | Seed 3 cases sólidos antes de divulgar                          |
 
 ---
 
 ## 14. Decisões Tomadas
 
-| Decisão | Escolha | Por quê |
-|---------|---------|---------|
-| Objetivo principal | Autoridade/credibilidade | Público C-level pesquisa fornecedores |
-| Público primário | C-level / diretores | Decisores de parcerias estratégicas |
-| Hero de serviços | Produtos próprios (Cognita, Eter) | Provam capacidade técnica |
-| Estrutura | Hub + 7 páginas dedicadas + dynamic case detail | Melhor SEO, profundidade onde importa |
-| Visual | Bold Kinetic + dark | Impactante, com movimento (pedido explícito) |
-| Paleta | Electric Multi-Accent | Cores ownadas por pilar viram código visual |
-| Tipografia | Inter mono-família | Coesão máxima, padrão tech moderno |
-| Idiomas | PT-BR + EN | Expansão internacional preparada |
-| Copy | Eu escrevo | Cliente não tem material pronto |
-| Brand | Mantém logo, redesigna resto | Logo já reconhecido, resto é livre |
-| Deploy | Vercel | Melhor stack pra Next.js, grátis no início |
-| DNS | Hostinger (mantém) | Dono já tem, basta apontar |
-| Stack | Next.js 15 + TS + Tailwind v4 | State of the art para marketing sites |
-| Content | MDX + Sanity híbrido | Estático onde muda pouco, CMS pra cases/blog |
-| i18n | next-intl | RSC-compatible, idiomático |
-| Email | Resend | Simples, generoso free tier |
+| Decisão            | Escolha                                         | Por quê                                      |
+| ------------------ | ----------------------------------------------- | -------------------------------------------- |
+| Objetivo principal | Autoridade/credibilidade                        | Público C-level pesquisa fornecedores        |
+| Público primário   | C-level / diretores                             | Decisores de parcerias estratégicas          |
+| Hero de serviços   | Produtos próprios (Cognita, Eter)               | Provam capacidade técnica                    |
+| Estrutura          | Hub + 7 páginas dedicadas + dynamic case detail | Melhor SEO, profundidade onde importa        |
+| Visual             | Bold Kinetic + dark                             | Impactante, com movimento (pedido explícito) |
+| Paleta             | Electric Multi-Accent                           | Cores ownadas por pilar viram código visual  |
+| Tipografia         | Inter mono-família                              | Coesão máxima, padrão tech moderno           |
+| Idiomas            | PT-BR + EN                                      | Expansão internacional preparada             |
+| Copy               | Eu escrevo                                      | Cliente não tem material pronto              |
+| Brand              | Mantém logo, redesigna resto                    | Logo já reconhecido, resto é livre           |
+| Deploy             | Vercel                                          | Melhor stack pra Next.js, grátis no início   |
+| DNS                | Hostinger (mantém)                              | Dono já tem, basta apontar                   |
+| Stack              | Next.js 15 + TS + Tailwind v4                   | State of the art para marketing sites        |
+| Content            | MDX + Sanity híbrido                            | Estático onde muda pouco, CMS pra cases/blog |
+| i18n               | next-intl                                       | RSC-compatible, idiomático                   |
+| Email              | Resend                                          | Simples, generoso free tier                  |
 
 ---
 

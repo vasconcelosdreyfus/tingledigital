@@ -15,15 +15,11 @@ const colorMap: Record<EyebrowColor, string> = {
   lime: "text-[--color-accent-lime]",
 };
 
-export function Eyebrow({
-  className,
-  color = "default",
-  ...props
-}: EyebrowProps) {
+export function Eyebrow({ className, color = "default", ...props }: EyebrowProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-2 text-eyebrow",
+        "text-eyebrow inline-flex items-center gap-2",
         colorMap[color],
         className
       )}

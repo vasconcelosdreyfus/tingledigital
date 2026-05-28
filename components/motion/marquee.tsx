@@ -31,7 +31,7 @@ export function Marquee({
     >
       <div
         className={cn(
-          "flex shrink-0 items-center justify-around gap-12 motion-safe:animate-marquee",
+          "motion-safe:animate-marquee flex shrink-0 items-center justify-around gap-12",
           direction === "right" && "motion-safe:[animation-direction:reverse]",
           pauseOnHover && "group-hover:[animation-play-state:paused]"
         )}
@@ -42,7 +42,7 @@ export function Marquee({
       <div
         aria-hidden="true"
         className={cn(
-          "flex shrink-0 items-center justify-around gap-12 motion-safe:animate-marquee",
+          "motion-safe:animate-marquee flex shrink-0 items-center justify-around gap-12",
           direction === "right" && "motion-safe:[animation-direction:reverse]",
           pauseOnHover && "group-hover:[animation-play-state:paused]"
         )}
