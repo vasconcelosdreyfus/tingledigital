@@ -1,26 +1,113 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* === COLORS === */
+  --color-bg: #0a0a0f;
+  --color-surface: #15151f;
+  --color-surface-elevated: #1a1a26;
+  --color-border: #2a2a35;
+  --color-border-strong: #3a3a48;
+
+  --color-text: #f5f5fa;
+  --color-text-muted: #888899;
+  --color-text-subtle: #5a5a6a;
+
+  --color-accent-yellow: #ffeb00;
+  --color-accent-pink: #ff2d75;
+  --color-accent-cyan: #00f0ff;
+  --color-accent-lime: #b8ff00;
+
+  /* Pillar mappings (semantic) */
+  --color-pillar-consultoria: var(--color-accent-yellow);
+  --color-pillar-eter: var(--color-accent-pink);
+  --color-pillar-cognita: var(--color-accent-cyan);
+  --color-pillar-utilities: var(--color-accent-lime);
+
+  /* === TYPOGRAPHY === */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* === SPACING / RADII === */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: var(--color-accent-yellow);
+    color: var(--color-bg);
+  }
+
+  /* Reduced motion baseline */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Display headlines — Bold Kinetic */
+  .text-display-1 {
+    font-size: clamp(3rem, 8vw, 7rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+  }
+
+  .text-display-2 {
+    font-size: clamp(2.25rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  .text-display-3 {
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .text-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
 }
