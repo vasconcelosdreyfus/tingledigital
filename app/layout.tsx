@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
-      <body className="min-h-screen bg-[--color-bg] text-[--color-text] antialiased">
+      <body className="noise-overlay min-h-screen bg-[#0a0a0f] text-[#F5F5FA] antialiased">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-md focus:bg-[--color-accent-yellow] focus:px-4 focus:py-2 focus:text-[--color-bg]"
