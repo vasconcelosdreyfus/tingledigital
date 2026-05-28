@@ -72,7 +72,7 @@ export function Footer() {
         </div>
         <div className="mt-12 flex flex-col justify-between gap-4 border-t border-[--color-border] pt-8 text-xs text-[--color-text-subtle] sm:flex-row">
           <p>© {year} Tingle Digital. Todos os direitos reservados.</p>
-          <p>CNPJ · contato@tingledigital.com</p>
+          <p>CNPJ 33.486.049/0001-55 · dreyfus@tingledigital.com</p>
         </div>
       </Container>
     </footer>

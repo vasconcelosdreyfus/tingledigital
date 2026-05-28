@@ -3,50 +3,59 @@ import { testimonials } from "@/content/data/testimonials";
 
 export const cognita: ProductPageData = {
   pillar: "cognita",
-  heroEyebrow: "Cognita · Plataforma de gestão escolar",
-  heroTitle: "Gestão pedagógica que respeita o tempo do educador.",
+  heroEyebrow: "Cognita · Educação + Gestão",
+  heroTitle: "Plataforma de gestão pensada para projetos sociais de verdade.",
   heroSubtitle:
-    "Diário, frequência, boletim e comunicação com famílias numa interface que parece feita para gente que ensina — porque foi.",
+    "Educacional + ERP em uma só solução. Integra gestão de alunos, acompanhamento pedagógico, prestação de contas e relatórios. Construída com Casa Brasil para a realidade de educação social no Brasil.",
   heroCtaLabel: "Solicitar demonstração",
   heroCtaHref: "/contato?produto=cognita",
   mockupImageUrl: "/brand/mockup-cognita.png",
   problemEyebrow: "O problema",
-  problemTitle: "Diretor não devia ser refém de planilha.",
+  problemTitle: "Projeto social não devia se afogar em planilha.",
   problemBody:
-    "Boa parte do tempo de gestão escolar evapora em conciliação de dados entre sistemas legados, planilhas paralelas e WhatsApp. O resultado é menos tempo para o que importa: pedagogia, formação e relacionamento com a família.",
-  problemStat: { value: "67%", label: "do tempo da coordenação consumido por tarefas operacionais (estimativa setor)" },
+    "Coordenação de projeto educacional social no Brasil normalmente se divide entre N sistemas: planilhas pra controle de aluno, WhatsApp pra família, PDF pra relatório, e-mail pra prestação de contas. Resultado: gestores que deviam estar fazendo gestão pedagógica ficam fazendo CTRL+C / CTRL+V.",
+  problemStat: {
+    value: "EPES",
+    label: "case de uso real — Escola de Programação e Empreendedorismo de Saquarema",
+  },
   solutionEyebrow: "Como ajudamos",
-  solutionTitle: "Centraliza o operacional. Devolve o tempo para o pedagógico.",
+  solutionTitle: "Centraliza tudo. Libera o coordenador pro pedagógico.",
   features: [
     {
-      title: "Diário e frequência em segundos",
-      description: "Lançamento de presença em modo turma ou nominal, com atalhos para situações de exceção. Sem CSV, sem download.",
-      iconName: "zap",
+      title: "Gestão completa de projetos sociais",
+      description:
+        "Cadastro de alunos, turmas, frequência, acompanhamento individual. Tudo num só lugar, com permissões por perfil.",
+      iconName: "users",
     },
     {
-      title: "Boletim automático",
-      description: "Calcula médias, ponderações e situação final conforme regras da rede. Imprime, envia, exporta — sem retrabalho.",
+      title: "Acompanhamento pedagógico integrado",
+      description:
+        "Avaliações, progressão, indicadores de aprendizado. Coordenação enxerga o status real sem precisar pedir.",
       iconName: "lineChart",
     },
     {
-      title: "Famílias informadas",
-      description: "Comunicados, recados e boletins entregues por canal escolhido (app, e-mail ou impresso) com confirmação de leitura.",
-      iconName: "messageSquare",
+      title: "Relatórios e prestação de contas automatizados",
+      description:
+        "Relatórios obrigatórios pra patrocinadores e órgãos públicos gerados com um clique. Auditoria amigável.",
+      iconName: "shield",
     },
     {
-      title: "Multi-escola, multi-perfil",
-      description: "Rede com várias unidades? Hierarquia de permissões cobre direção geral, direção local, coordenação, professor e família.",
+      title: "Multi-projeto, multi-perfil",
+      description:
+        "Rede com várias frentes? Hierarquia cobre direção, coordenação, professor, monitor e família.",
       iconName: "layers",
     },
     {
-      title: "Integra com o que você já tem",
-      description: "API para ERPs escolares, plataformas de avaliação externa e sistemas de matrícula. Não pedimos para você abandonar nada.",
-      iconName: "network",
+      title: "Construída com a Casa Brasil",
+      description:
+        "Não nasceu em laboratório. Nasceu em projeto rodando — EPES, em Saquarema. Cada feature foi pedida pelo terreno.",
+      iconName: "lightbulb",
     },
     {
-      title: "Privacidade em primeiro lugar",
-      description: "Dados de menores tratados conforme LGPD e ECA Digital. Logs auditáveis, retenção configurável, exportação garantida.",
-      iconName: "shield",
+      title: "Acessível a quem mais precisa",
+      description:
+        "Pensada pra realidade de redes com infraestrutura variável. Funciona em hardware modesto, conexão limitada.",
+      iconName: "network",
     },
   ],
   demoEyebrow: "Como funciona na prática",
@@ -54,34 +63,38 @@ export const cognita: ProductPageData = {
   demoSteps: [
     {
       title: "Setup",
-      description: "Importamos turmas, professores e estrutura curricular existente em um workshop guiado. Você não precisa começar do zero.",
+      description:
+        "Importamos projeto, turmas, professores e estrutura curricular existentes em um workshop guiado. Você não precisa começar do zero.",
       imageUrl: "/brand/cognita-setup.png",
     },
     {
       title: "Dia-a-dia",
-      description: "Professores lançam diário e notas no fluxo natural da aula. Coordenação acompanha em dashboard sem precisar pedir relatórios.",
+      description:
+        "Coordenação, professores e monitores lançam atividade no fluxo natural. Tudo registrado, sem fricção.",
       imageUrl: "/brand/cognita-daily.png",
     },
     {
       title: "Fechamento",
-      description: "Boletim, frequência e relatórios obrigatórios saem com um clique. Família recebe pelo canal preferido.",
+      description:
+        "Relatório de mês ou ano sai automático. Prestação de contas pra patrocinador, registro pra órgão público, comunicação pra família — um clique cada.",
       imageUrl: "/brand/cognita-close.png",
     },
   ],
   cases: [
     {
-      slug: "casa-brasil",
-      client: "Casa Brasil",
-      title: "Tecnologia a serviço de comunidades.",
-      excerpt: "Cognita ajustado para a realidade de redes com baixa conectividade e necessidades específicas.",
+      slug: "epes-casa-brasil",
+      client: "EPES + Casa Brasil",
+      title: "Escola de Programação e Empreendedorismo de Saquarema.",
+      excerpt:
+        "Cognita rodando na ponta — coordenação, alunos, prestação de contas, 3 programas paralelos.",
       pillar: "social",
       heroImageUrl: "",
-      resultLabel: "Escolas atendidas",
-      resultValue: "12",
+      resultLabel: "Programas integrados",
+      resultValue: "3",
     },
   ],
   testimonial: testimonials.fabioCasaBrasil,
-  finalCtaTitle: "Vamos colocar sua rede no fluxo certo?",
+  finalCtaTitle: "Vamos colocar seu projeto no fluxo certo?",
   finalCtaBody:
-    "Marcamos uma conversa de 30 minutos para entender sua realidade e mostrar a Cognita ao vivo. Sem compromisso.",
+    "Marcamos uma conversa de 30 minutos para entender sua realidade e mostrar Cognita ao vivo. Sem compromisso.",
 };

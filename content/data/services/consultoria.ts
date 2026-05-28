@@ -6,7 +6,7 @@ export const consultoria: ServicePageData = {
   heroEyebrow: "Consultoria · Tecnologia com impacto",
   heroTitle: "Estratégia que entrega. Execução que mantém o impacto vivo.",
   heroSubtitle:
-    "Para projetos onde tecnologia precisa ter cara de propósito — social, educacional ou estratégico. Levamos o método e a mão na massa de quem já construiu junto da Casa Brasil e dezenas de outras frentes.",
+    "Consultoria em gestão e tecnologia para empresas que querem otimizar processos. E projetos sociais com Casa Brasil que transformam comunidades reais. Aqui não tem soluções de prateleira.",
   heroCtaLabel: "Iniciar projeto",
   heroCtaHref: "/contato?servico=consultoria",
   methodEyebrow: "Como trabalhamos",
@@ -15,54 +15,68 @@ export const consultoria: ServicePageData = {
     {
       number: 1,
       title: "Diagnóstico",
-      description: "Mergulhamos no contexto: entrevistas, observação de campo, leitura de dados existentes. Saímos com um mapa real do problema.",
+      description:
+        "Mergulhamos no contexto: entrevistas, observação de campo, leitura de dados existentes. Saímos com um mapa real do problema.",
     },
     {
       number: 2,
       title: "Estratégia",
-      description: "Co-criamos a tese de solução com sua equipe. Definimos hipóteses, KPIs e risco — antes de qualquer linha de código.",
+      description:
+        "Co-criamos a tese de solução com sua equipe. Definimos hipóteses, KPIs e risco — antes de qualquer linha de código.",
     },
     {
       number: 3,
       title: "Execução",
-      description: "Time multidisciplinar (produto, eng, design) constrói em ciclos curtos com entregas validadas. Você acompanha em vez de torcer.",
+      description:
+        "Time multidisciplinar constrói em ciclos curtos com entregas validadas. Você acompanha em vez de torcer.",
     },
     {
       number: 4,
       title: "Sustentação",
-      description: "Não largamos no go-live. Período de operação assistida e transferência de conhecimento para o time interno continuar.",
+      description:
+        "Não largamos no go-live. Operação assistida e transferência de conhecimento pra equipe interna continuar.",
     },
   ],
   spotlightEyebrow: "Parceria flagship",
-  spotlightTitle: "Casa Brasil — tecnologia para inclusão digital em escala nacional.",
+  spotlightTitle: "Casa Brasil — tecnologia para inclusão social em escala nacional.",
   spotlightBody:
-    "Há anos parceiros da Casa Brasil em projetos que transformam tecnologia em pertencimento. Da articulação de programas sociais até a operação digital de hubs comunitários, somos braço técnico que entende a complexidade do terreno.",
+    "Casa Brasil é nosso principal parceiro desde 2022. Juntos construímos EPES (Escola de Programação e Empreendedorismo de Saquarema), Transforma Nova Iguaçu (esporte como ferramenta de transformação), e a plataforma Cognita. Mais que tecnologia — somos braço técnico de quem entende o terreno.",
   spotlightImageUrl: "/brand/spotlight-casa-brasil.png",
   spotlightStats: [
-    { value: "10K+", label: "Pessoas alcançadas em programas conjuntos" },
-    { value: "12", label: "Hubs comunitários ativos com nossa estrutura" },
+    { value: "EPES", label: "Escola de Programação ativa em Saquarema" },
+    { value: "Cognita", label: "plataforma desenvolvida junto" },
   ],
   topicsEyebrow: "Onde atuamos",
-  topicsTitle: "Quatro frentes onde consultoria + execução fazem diferença.",
+  topicsTitle: "Cinco áreas com peso real de execução.",
   topics: [
     {
-      title: "Negócios e gestão",
-      description: "Diagnóstico estratégico, redesenho de processo e tecnologia para PMs e diretores que querem decisão baseada em dado.",
+      title: "Consultoria e Gestão Empresarial",
+      description:
+        "Otimização de processos, eficiência operacional, estratégia de tecnologia para empresas que querem crescer com método.",
       iconName: "lineChart",
     },
     {
-      title: "Social e comunitário",
-      description: "Projetos com fundações, ONGs e governo onde tech precisa servir gente real, em contexto real.",
+      title: "Projetos Sociais e Comunitários",
+      description:
+        "Educação, cultura e esporte como ferramentas de transformação. Com Casa Brasil, Transforma Nova Iguaçu, EPES.",
       iconName: "users",
     },
     {
-      title: "Marketing e comunicação",
-      description: "Plataformas, automações e analytics para times de marketing que querem escalar sem perder qualidade de relação.",
+      title: "Eficiência e Inovação Energética",
+      description:
+        "Expertise em engenharia para soluções inovadoras. Empresas e comunidades usando energia de forma mais sustentável.",
+      iconName: "zap",
+    },
+    {
+      title: "Marketing e Comunicação",
+      description:
+        "Publicidade, posicionamento, campanha. Ajudar projetos a ganharem o alcance que merecem.",
       iconName: "sparkles",
     },
     {
-      title: "Produção de eventos",
-      description: "Tech stack completa para shows, festivais e summits — do credenciamento ao analytics em tempo real.",
+      title: "Produção de Shows e Eventos",
+      description:
+        "Festivais, summits, workshops. Direção criativa, tecnologia e logística. Como no Circuito Musical das Águas (7 cidades, Gov RJ).",
       iconName: "rocket",
     },
   ],

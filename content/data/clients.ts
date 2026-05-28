@@ -1,15 +1,17 @@
 export interface Client {
   name: string;
   url?: string;
+  category?: string;
 }
 
 export const clients: Client[] = [
-  { name: "Casa Brasil", url: "https://casabrasil.org" },
-  { name: "Hubz", url: "https://hubz.com.br" },
-  { name: "QBanho" },
-  { name: "Setor Energético" },
-  { name: "Cognita" },
-  { name: "Eter" },
-  { name: "The Town" },
-  { name: "Tingle Studios" },
+  { name: "Casa Brasil", category: "Principal Parceiro" },
+  { name: "Equatorial Energia", category: "P&D" },
+  { name: "QBANHO", category: "Energia & Tech" },
+  { name: "5EC", category: "Energia & Tech" },
+  { name: "Hubz", category: "Inovação & P&D" },
+  { name: "FIXER", category: "Telecom" },
+  { name: "Agência Nel", category: "Marketing" },
+  { name: "BurgerNight", category: "Consultoria" },
+  { name: "Governo do Estado do RJ", category: "Cultura" },
 ];

@@ -3,12 +3,12 @@ import type { CasePillar } from "@/types/case";
 
 export const homeData = {
   hero: {
-    eyebrow: "Tingle Digital · Agência de tecnologia criativa",
-    titleLine1: "Tecnologia",
-    titleLine2: "com",
-    titleAccent: "alma.",
+    eyebrow: "Tingle Digital · Tecnologia com alma criativa",
+    titleLine1: "Transformamos",
+    titleLine2: "ideias em",
+    titleAccent: "experiências.",
     subtitle:
-      "Construímos produtos próprios, consultamos com impacto social e modernizamos utilities. Para líderes que tratam tecnologia como diferencial estratégico — não commodity.",
+      "Inovação em energia, educação e soluções que transformam mercados. Do interior do Rio aos centros de decisão do setor elétrico — da concepção à entrega.",
     primaryCta: { label: "Conheça nossos produtos", href: "#produtos" },
     secondaryCta: { label: "Fale com a gente", href: "/contato" },
   },
@@ -16,39 +16,39 @@ export const homeData = {
     items: [
       { label: "50+ PROJETOS", accent: "yellow" as const },
       { label: "4 PRODUTOS ATIVOS", accent: "cyan" as const },
-      { label: "10.000+ PESSOAS IMPACTADAS", accent: "pink" as const },
+      { label: "10K+ PESSOAS IMPACTADAS", accent: "pink" as const },
       { label: "6 ANOS NO MERCADO", accent: "lime" as const },
     ],
   },
   pillars: {
     eyebrow: "O que fazemos",
-    title: "Quatro frentes. Uma só obsessão: construir bem.",
+    title: "Quatro frentes. Uma só obsessão: gerar impacto real.",
     items: [
       {
         pillar: "cognita" as const,
         eyebrow: "Produto · Educação",
         title: "Cognita",
         description:
-          "Plataforma que organiza a gestão pedagógica de redes de ensino — do diário de classe ao boletim. Já em uso por dezenas de escolas.",
+          "Plataforma educacional + ERP desenvolvida para projetos sociais. Integra gestão de alunos, acompanhamento pedagógico, prestação de contas e relatórios numa solução só.",
         href: "/cognita",
         ctaLabel: "Conhecer Cognita",
         size: "wide" as const,
       },
       {
         pillar: "eter" as const,
-        eyebrow: "Produto · Privacidade",
+        eyebrow: "Produto · Conexão",
         title: "Eter",
         description:
-          'Messenger com criptografia ponta-a-ponta e privacidade radical. Onde "proteção máxima" é o padrão, não premium.',
+          "Rede social criada para conectar pessoas com pessoas e com seus sonhos. Acolhimento, inspiração e crescimento pessoal em uma só comunidade.",
         href: "/eter",
         ctaLabel: "Conhecer Eter",
       },
       {
         pillar: "consultoria" as const,
         eyebrow: "Consultoria",
-        title: "Estratégia + impacto social",
+        title: "Estratégia + Impacto Social",
         description:
-          "Diagnóstico, estratégia e execução para projetos onde tecnologia precisa ter cara de impacto. Parceiros da Casa Brasil e outros.",
+          "Consultoria em gestão e tecnologia para empresas que querem otimizar processos. Projetos sociais com Casa Brasil e parceiros que transformam comunidades.",
         href: "/consultoria",
         ctaLabel: "Ver consultoria",
       },
@@ -57,7 +57,7 @@ export const homeData = {
         eyebrow: "Utilities",
         title: "Energia + AI + IoT",
         description:
-          "P&D, hyperautomation e melhorias operacionais para concessionárias. AI, IoT e blockchain aplicados onde geram resultado.",
+          "P&D pioneiro com IA, IoT e Blockchain. Hiperautomação e melhorias operacionais para o setor de utilities. 1º P&D aprovado com Equatorial em 2024.",
         href: "/utilities",
         ctaLabel: "Ver utilities",
         size: "wide" as const,
@@ -66,33 +66,33 @@ export const homeData = {
   },
   productSpotlight: {
     eyebrow: "Em destaque",
-    title: "Dois produtos. Duas teses. Uma engenharia de respeito.",
+    title: "Dois produtos lançados em 2025. Engenharia que entrega.",
     products: [
       {
         pillar: "cognita" as const,
-        eyebrow: "Cognita · Gestão escolar",
-        title: "Tira a fricção da rotina de quem ensina.",
+        eyebrow: "Cognita · Educação + Gestão",
+        title: "Plataforma de gestão para projetos sociais que entrega.",
         description:
-          "Pensado com diretores e coordenadores de escolas reais. Centraliza diário, frequência, planejamento e comunicação com famílias numa interface que respeita o tempo do educador.",
+          "Construída com Casa Brasil para projetos como a EPES (Escola de Programação e Empreendedorismo de Saquarema). Centraliza gestão de alunos, acompanhamento pedagógico, prestação de contas e relatórios — tudo em uma só solução.",
         bullets: [
-          "Multi-escola e multi-perfil (rede, gestor, professor, família)",
-          "Lançamento de notas e frequência em segundos",
-          "Boletim e relatórios automáticos",
-          "Integração com sistemas existentes da rede",
+          "Gestão completa de projetos sociais",
+          "Acompanhamento pedagógico integrado",
+          "Relatórios e prestação de contas automatizados",
+          "Pensada para o terreno real de educação no Brasil",
         ],
         cta: { label: "Conhecer Cognita", href: "/cognita" },
       },
       {
         pillar: "eter" as const,
-        eyebrow: "Eter · Mensageiro seguro",
-        title: "Suas palavras. Só suas.",
+        eyebrow: "Eter · Conexão Humana",
+        title: "Uma rede para conectar pessoas com pessoas — e com seus sonhos.",
         description:
-          "Criptografia ponta-a-ponta auditável, zero metadados retidos, código aberto. Construído para quem leva privacidade a sério — jornalistas, advogados, ativistas e quem só quer paz.",
+          "Criada como espaço de acolhimento, inspiração e crescimento pessoal. Conexões autênticas e significativas, longe da economia da atenção. Para quem busca comunidade real.",
         bullets: [
-          "E2E criptografia forte por padrão",
-          "Backups locais ou nuvem própria (você decide)",
-          "Sem coleta de metadados ou logs de conversa",
-          "Aberto à auditoria de segurança independente",
+          "Conexões autênticas e significativas",
+          "Espaço de crescimento pessoal",
+          "Comunidade de apoio e inspiração",
+          "Sem algoritmo manipulador, sem feed infinito tóxico",
         ],
         cta: { label: "Conhecer Eter", href: "/eter" },
       },
@@ -103,33 +103,33 @@ export const homeData = {
     title: "Trabalho que fala por si.",
     items: [
       {
-        slug: "casa-brasil",
-        client: "Casa Brasil",
-        title: "Tecnologia a serviço de comunidades em todo o país.",
+        slug: "qbanho-equatorial",
+        client: "QBANHO + Equatorial",
+        title: "Milhões em receita com trocadores de calor.",
         excerpt:
-          "Programa social que usa cultura, educação e tecnologia para incluir digitalmente populações vulneráveis.",
-        pillar: "social" as CasePillar,
-        resultLabel: "Pessoas alcançadas",
-        resultValue: "10K+",
-      },
-      {
-        slug: "hubz",
-        client: "Hubz",
-        title: "P&D em energia que conversa com o operacional.",
-        excerpt:
-          "Estratégia e execução de hyperautomation para um dos players do setor elétrico.",
+          "Ponte estratégica entre QBANHO e Equatorial Energia. Trocadores de calor entrando no portfólio de eficiência da maior do setor.",
         pillar: "utilities" as CasePillar,
-        resultLabel: "Processos automatizados",
-        resultValue: "12+",
+        resultLabel: "Receita gerada",
+        resultValue: "Milhões",
       },
       {
-        slug: "the-town",
-        client: "The Town",
-        title: "Analytics em tempo real para festival de música.",
+        slug: "hubz-equatorial",
+        client: "Hubz + Equatorial",
+        title: "1º P&D aprovado: automação do tratamento de água.",
         excerpt:
-          "Plataforma de dados que entregou insights de público e operação para um dos maiores eventos do país.",
-        pillar: "marketing" as CasePillar,
-        resultLabel: "Eventos cobertos",
+          "Em 2024, marco histórico — primeiro projeto de P&D aprovado. Automatizar tratamento de água da Companhia de Águas do Amapá.",
+        pillar: "utilities" as CasePillar,
+        resultLabel: "P&D aprovado",
+        resultValue: "1º",
+      },
+      {
+        slug: "epes-casa-brasil",
+        client: "EPES + Casa Brasil",
+        title: "Escola de Programação e Empreendedorismo de Saquarema.",
+        excerpt:
+          "Programa educacional com 3 frentes: Inova Talks, Break Code (escape room digital), Startup Challenge.",
+        pillar: "social" as CasePillar,
+        resultLabel: "Programas",
         resultValue: "3",
       },
     ],
@@ -137,9 +137,9 @@ export const homeData = {
   manifesto: {
     eyebrow: "Manifesto",
     paragraphs: [
-      "Tecnologia sem alma é commodity.",
-      "A gente não constrói pra impressionar — constrói pra resolver. Cada linha de código, cada decisão de produto, cada conversa com cliente vem do mesmo lugar: respeito pelo problema e curiosidade pela melhor forma de atacar.",
-      "Por isso somos pequenos, escolhidos e prontos pra dizer não quando não fizer sentido.",
+      "Não criamos tecnologia por criar.",
+      "Cada solução nasce de um problema real e visa gerar impacto positivo nas pessoas e organizações. Parceria de verdade. Compromisso. Transparência. Esses não são pôsteres na parede — são como a gente fecha proposta.",
+      "Do setor elétrico à educação, trazemos energia — literal e figurada — para transformar realidades.",
     ],
   },
   logos: {
@@ -147,9 +147,9 @@ export const homeData = {
     clients,
   },
   finalCta: {
-    title: "Vamos construir algo que importe?",
-    body: "Conte o problema. A gente devolve uma proposta direta, sem rodeios — em até 5 dias úteis.",
-    primaryCta: { label: "Começar conversa", href: "/contato" },
-    secondaryCta: { label: "Ver portfólio completo", href: "/cases" },
+    title: "Pronto para inovar com a gente?",
+    body: "De projetos de P&D em energia a plataformas educacionais — vamos construir o futuro juntos.",
+    primaryCta: { label: "Fale conosco", href: "/contato" },
+    secondaryCta: { label: "Ver portfólio", href: "/cases" },
   },
 };

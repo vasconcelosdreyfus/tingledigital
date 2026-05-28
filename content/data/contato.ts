@@ -3,7 +3,7 @@ export const contato = {
     eyebrow: "Contato",
     title: "Vamos conversar?",
     subtitle:
-      "Conte o problema. A gente devolve uma proposta direta em até 5 dias úteis — com escopo, prazo e preço.",
+      "Conte o problema. A gente devolve uma proposta direta — com escopo, prazo e preço. Resposta em até 5 dias úteis.",
   },
   channels: {
     eyebrow: "Canais diretos",
@@ -11,24 +11,24 @@ export const contato = {
     items: [
       {
         label: "Email",
-        value: "contato@tingledigital.com",
-        href: "mailto:contato@tingledigital.com",
+        value: "dreyfus@tingledigital.com",
+        href: "mailto:dreyfus@tingledigital.com",
       },
       {
-        label: "WhatsApp",
-        value: "Conversar agora",
-        href: "https://wa.me/5511999999999",
+        label: "Telefone / WhatsApp",
+        value: "+55 21 99695-3940",
+        href: "https://wa.me/5521996953940",
       },
       {
-        label: "LinkedIn",
-        value: "Tingle Digital",
-        href: "https://linkedin.com/company/tingle-digital",
+        label: "Endereço",
+        value: "R. Visconde de Pirajá 414 · Sl 718 · Rio de Janeiro",
+        href: "https://maps.google.com/?q=R.+Visconde+de+Pirajá+414,+Rio+de+Janeiro",
       },
     ],
   },
   location: {
     eyebrow: "Onde estamos",
-    title: "Time distribuído. Reuniões presenciais quando faz sentido.",
-    body: "Atendemos clientes em todo o Brasil. Sede registrada em São Paulo. Para reuniões in-person, articulamos no momento certo do projeto.",
+    title: "Sede em Ipanema, projetos em todo o Brasil.",
+    body: "R. Visconde de Pirajá 414 – Sl 718, Ipanema, Rio de Janeiro. Para reuniões presenciais, articulamos no momento certo do projeto. Para projetos fora do Rio, equipe vai à campo quando faz sentido.",
   },
 };
