@@ -118,7 +118,7 @@ export function HomeHero({
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="inline-flex"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-[--color-accent-yellow] px-4 py-2 text-sm font-bold text-[--color-bg] shadow-[0_0_24px_rgba(255,235,0,0.4)]">
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#FFEB00] px-4 py-2 text-sm font-bold text-[#0a0a0f] shadow-[0_0_24px_rgba(255,235,0,0.4)]">
             <Star className="h-4 w-4" fill="currentColor" aria-hidden="true" />
             <span>6 ANOS</span>
             <span className="opacity-50">·</span>
@@ -136,8 +136,8 @@ export function HomeHero({
           className="mt-10 flex items-center gap-3"
         >
           <span className="relative flex h-2 w-2">
-            <span className="absolute inset-0 rounded-full bg-[--color-accent-lime] opacity-75 animate-ping" />
-            <span className="relative rounded-full h-2 w-2 bg-[--color-accent-lime]" />
+            <span className="absolute inset-0 rounded-full bg-[#B8FF00] opacity-75 animate-ping" />
+            <span className="relative rounded-full h-2 w-2 bg-[#B8FF00]" />
           </span>
           <p className="text-eyebrow text-[--color-text-muted]">{eyebrow}</p>
         </motion.div>
@@ -153,7 +153,7 @@ export function HomeHero({
           <span className="block">
             {titleLine2}{" "}
             <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-[--color-accent-yellow] via-[--color-accent-pink] to-[--color-accent-cyan] bg-clip-text text-transparent">
+              <span className="relative z-10 bg-gradient-to-r from-[#FFEB00] via-[#FF2D75] to-[#00F0FF] bg-clip-text text-transparent">
                 {titleAccent}
               </span>
               <svg
