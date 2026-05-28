@@ -3,6 +3,8 @@ import { Container } from "@/components/primitives/container";
 import { Section } from "@/components/primitives/section";
 import { Eyebrow } from "@/components/primitives/eyebrow";
 import { ProductSplit } from "@/components/shared/product-split";
+import { CognitaMockup } from "./cognita-mockup";
+import { EterMockup } from "./eter-mockup";
 
 interface ProductHighlight {
   pillar: "cognita" | "eter";
@@ -38,7 +40,9 @@ export function HomeProductSpotlight({ eyebrow, title, products }: HomeProductSp
           bullets={p.bullets}
           cta={p.cta}
           imageRight={i % 2 === 0}
-        />
+        >
+          {p.pillar === "cognita" ? <CognitaMockup /> : <EterMockup />}
+        </ProductSplit>
       ))}
     </>
   );
