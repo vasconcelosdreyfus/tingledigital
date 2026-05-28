@@ -82,6 +82,19 @@
     text-wrap: pretty;
   }
 
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee linear infinite;
+  }
+
   /* Display headlines — Bold Kinetic */
   .text-display-1 {
     font-size: clamp(3rem, 8vw, 7rem);
