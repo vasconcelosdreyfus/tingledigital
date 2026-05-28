@@ -1,31 +1,55 @@
-import Link from "next/link";
-import { Container } from "@/components/primitives/container";
-import { Section } from "@/components/primitives/section";
-import { Eyebrow } from "@/components/primitives/eyebrow";
-import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+import { HomeHero } from "@/components/sections/home/home-hero";
+import { HomeNumbers } from "@/components/sections/home/home-numbers";
+import { HomePillars } from "@/components/sections/home/home-pillars";
+import { HomeProductSpotlight } from "@/components/sections/home/home-product-spotlight";
+import { HomeCasesPreview } from "@/components/sections/home/home-cases-preview";
+import { HomeManifesto } from "@/components/sections/home/home-manifesto";
+import { HomeLogos } from "@/components/sections/home/home-logos";
+import { CtaSection } from "@/components/shared/cta-section";
+import { homeData } from "@/content/data/home";
+
+export const metadata: Metadata = {
+  description: homeData.hero.subtitle,
+  openGraph: {
+    title: "Tingle Digital — Tecnologia com alma criativa",
+    description: homeData.hero.subtitle,
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
-    <Section spacing="xl">
-      <Container>
-        <Eyebrow color="yellow">Em construção · Plan 2</Eyebrow>
-        <h1 className="text-display-1 mt-4 text-balance">Tingle Digital.</h1>
-        <p className="mt-6 max-w-2xl text-lg text-[--color-text-muted]">
-          A home definitiva é construída no Plano 2. Por enquanto, confira o{" "}
-          <Link
-            href="/design-system"
-            className="text-[--color-accent-yellow] underline underline-offset-4"
-          >
-            design system
-          </Link>
-          .
-        </p>
-        <div className="mt-8">
-          <Button asChild size="lg">
-            <Link href="/design-system">Ver design system</Link>
-          </Button>
-        </div>
-      </Container>
-    </Section>
+    <>
+      <HomeHero {...homeData.hero} />
+      <HomeNumbers items={homeData.numbers.items} />
+      <span id="produtos" className="sr-only">
+        Produtos
+      </span>
+      <HomePillars
+        eyebrow={homeData.pillars.eyebrow}
+        title={homeData.pillars.title}
+        pillars={homeData.pillars.items}
+      />
+      <HomeProductSpotlight
+        eyebrow={homeData.productSpotlight.eyebrow}
+        title={homeData.productSpotlight.title}
+        products={homeData.productSpotlight.products}
+      />
+      <HomeCasesPreview
+        eyebrow={homeData.cases.eyebrow}
+        title={homeData.cases.title}
+        cases={homeData.cases.items}
+      />
+      <HomeManifesto {...homeData.manifesto} />
+      <HomeLogos eyebrow={homeData.logos.eyebrow} clients={homeData.logos.clients} />
+      <CtaSection
+        title={homeData.finalCta.title}
+        body={homeData.finalCta.body}
+        primaryCta={homeData.finalCta.primaryCta}
+        secondaryCta={homeData.finalCta.secondaryCta}
+        tone="accent-yellow"
+      />
+    </>
   );
 }
