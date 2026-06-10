@@ -1,45 +1,42 @@
 import * as React from "react";
 import { Container } from "@/components/primitives/container";
-import { Section } from "@/components/primitives/section";
-import { Eyebrow } from "@/components/primitives/eyebrow";
 import type { Testimonial } from "@/types/testimonial";
 
 interface TestimonialBlockProps {
   testimonial: Testimonial;
   eyebrow?: string;
-  tone?: "default" | "elevated";
 }
 
-export function TestimonialBlock({
-  testimonial,
-  eyebrow,
-  tone = "default",
-}: TestimonialBlockProps) {
+export function TestimonialBlock({ testimonial, eyebrow }: TestimonialBlockProps) {
   return (
-    <Section spacing="lg" tone={tone}>
+    <section
+      className="py-24 lg:py-32"
+      style={{ borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}
+    >
       <Container size="md">
-        {eyebrow && <Eyebrow className="mb-8">{eyebrow}</Eyebrow>}
-        <blockquote className="text-display-3 text-balance">
-          <span className="text-[--color-accent-yellow]">"</span>
-          {testimonial.quote}
-          <span className="text-[--color-accent-yellow]">"</span>
+        {eyebrow && (
+          <p className="text-eyebrow text-center mb-8" style={{ color: "var(--text-secondary)" }}>{eyebrow}</p>
+        )}
+        <blockquote className="text-center">
+          <p className="text-display-3 text-balance leading-tight" style={{ color: "var(--text)" }}>
+            "{testimonial.quote}"
+          </p>
+          <footer className="mt-10 flex items-center justify-center gap-4">
+            <div
+              className="h-12 w-12 rounded-full flex items-center justify-center text-sm font-semibold"
+              style={{ backgroundColor: "var(--text)", color: "var(--bg)" }}
+            >
+              {testimonial.author.split(" ").map((n) => n[0]).slice(0, 2).join("")}
+            </div>
+            <div className="text-left">
+              <p className="font-semibold" style={{ color: "var(--text)" }}>{testimonial.author}</p>
+              <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+                {testimonial.role} · {testimonial.company}
+              </p>
+            </div>
+          </footer>
         </blockquote>
-        <footer className="mt-10 flex items-center gap-4">
-          <div className="h-12 w-12 rounded-full bg-[--color-surface-elevated] border border-[--color-border] flex items-center justify-center text-[--color-text-muted] text-sm font-semibold">
-            {testimonial.author
-              .split(" ")
-              .map((n) => n[0])
-              .slice(0, 2)
-              .join("")}
-          </div>
-          <div>
-            <p className="font-semibold">{testimonial.author}</p>
-            <p className="text-sm text-[--color-text-muted]">
-              {testimonial.role} · {testimonial.company}
-            </p>
-          </div>
-        </footer>
       </Container>
-    </Section>
+    </section>
   );
 }

@@ -1,74 +1,57 @@
 import * as React from "react";
 import Link from "next/link";
 import { Container } from "@/components/primitives/container";
-import { Section } from "@/components/primitives/section";
-import { Eyebrow } from "@/components/primitives/eyebrow";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
-type PillarColor = "yellow" | "pink" | "cyan" | "lime" | "default";
 
 interface PageHeroProps {
   eyebrow: string;
   title: string;
   subtitle?: string;
-  pillarColor?: PillarColor;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   children?: React.ReactNode;
 }
 
-const eyebrowColorMap: Record<PillarColor, "yellow" | "pink" | "cyan" | "lime" | "default"> = {
-  yellow: "yellow",
-  pink: "pink",
-  cyan: "cyan",
-  lime: "lime",
-  default: "default",
-};
-
 export function PageHero({
   eyebrow,
   title,
   subtitle,
-  pillarColor = "default",
   primaryCta,
   secondaryCta,
   children,
 }: PageHeroProps) {
   return (
-    <Section spacing="xl" className="overflow-hidden">
+    <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
       <Container>
-        <div className="max-w-4xl">
-          <Eyebrow color={eyebrowColorMap[pillarColor]}>{eyebrow}</Eyebrow>
-          <h1
-            className={cn(
-              "text-display-1 mt-6 text-balance"
-            )}
-          >
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-eyebrow mb-6" style={{ color: "var(--text-secondary)" }}>
+            {eyebrow}
+          </p>
+          <h1 className="text-display-1 text-balance" style={{ color: "var(--text)" }}>
             {title}
           </h1>
           {subtitle && (
-            <p className="mt-8 max-w-2xl text-lg text-[--color-text-muted] sm:text-xl text-pretty">
+            <p className="mt-8 mx-auto max-w-2xl text-lg sm:text-xl text-pretty leading-relaxed" style={{ color: "var(--text-secondary)" }}>
               {subtitle}
             </p>
           )}
           {(primaryCta || secondaryCta) && (
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
               {primaryCta && (
-                <Button asChild size="lg">
+                <Button size="lg" asChild>
                   <Link href={primaryCta.href}>{primaryCta.label}</Link>
                 </Button>
               )}
               {secondaryCta && (
-                <Button asChild size="lg" variant="ghost">
+                <Button size="lg" variant="secondary" asChild>
                   <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
                 </Button>
               )}
             </div>
           )}
+          {children}
         </div>
-        {children}
       </Container>
-    </Section>
+    </section>
   );
 }

@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { Container } from "@/components/primitives/container";
-import { Section } from "@/components/primitives/section";
-import { Eyebrow } from "@/components/primitives/eyebrow";
 import { ContactForm } from "@/components/forms/contact-form";
 import { contato } from "@/content/data/contato";
 
@@ -20,31 +18,31 @@ export default function ContatoPage() {
         eyebrow={contato.hero.eyebrow}
         title={contato.hero.title}
         subtitle={contato.hero.subtitle}
-        pillarColor="yellow"
       />
 
-      <Section spacing="lg">
+      <section className="py-16 lg:py-20" style={{ backgroundColor: "var(--bg)" }}>
         <Container size="md">
           <ContactForm />
         </Container>
-      </Section>
+      </section>
 
-      <Section spacing="lg" tone="elevated">
+      <section className="py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
             <div>
-              <Eyebrow>{contato.channels.eyebrow}</Eyebrow>
-              <h2 className="text-display-3 mt-4">{contato.channels.title}</h2>
+              <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{contato.channels.eyebrow}</p>
+              <h2 className="text-display-3" style={{ color: "var(--text)" }}>{contato.channels.title}</h2>
             </div>
             <ul className="space-y-6">
               {contato.channels.items.map((ch) => (
                 <li key={ch.label}>
                   <Link
                     href={ch.href}
-                    className="group flex items-baseline justify-between gap-6 border-b border-[--color-border] pb-4 hover:border-[--color-accent-yellow]"
+                    className="group flex items-baseline justify-between gap-6 pb-4 transition-colors"
+                    style={{ borderBottom: "1px solid var(--border)" }}
                   >
-                    <span className="text-eyebrow text-[--color-text-muted]">{ch.label}</span>
-                    <span className="text-lg font-bold group-hover:text-[--color-accent-yellow] transition-colors">
+                    <span className="text-eyebrow" style={{ color: "var(--text-secondary)" }}>{ch.label}</span>
+                    <span className="text-lg font-semibold transition-colors" style={{ color: "var(--text)" }}>
                       {ch.value}
                     </span>
                   </Link>
@@ -53,17 +51,15 @@ export default function ContatoPage() {
             </ul>
           </div>
         </Container>
-      </Section>
+      </section>
 
-      <Section spacing="md">
+      <section className="py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--bg)" }}>
         <Container size="md">
-          <Eyebrow>{contato.location.eyebrow}</Eyebrow>
-          <h2 className="text-display-3 mt-4 text-balance">{contato.location.title}</h2>
-          <p className="mt-6 text-lg text-[--color-text-muted] leading-relaxed">
-            {contato.location.body}
-          </p>
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{contato.location.eyebrow}</p>
+          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>{contato.location.title}</h2>
+          <p className="mt-6 text-lg leading-relaxed" style={{ color: "var(--text-secondary)" }}>{contato.location.body}</p>
         </Container>
-      </Section>
+      </section>
     </>
   );
 }
