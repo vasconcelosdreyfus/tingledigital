@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
+import { MagneticButton } from "@/components/motion/magnetic-button";
 import { ArrowRight, Star } from "lucide-react";
 
 interface HomeHeroProps {
@@ -200,12 +201,14 @@ export function HomeHero({
           transition={{ duration: 0.6, delay: 0.9 }}
           className="mt-12 flex flex-wrap items-center gap-4"
         >
-          <Button asChild size="xl">
-            <Link href={primaryCta.href}>
-              {primaryCta.label}
-              <ArrowRight className="h-5 w-5" aria-hidden="true" />
-            </Link>
-          </Button>
+          <MagneticButton strength={0.25}>
+            <Button asChild size="xl">
+              <Link href={primaryCta.href}>
+                {primaryCta.label}
+                <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              </Link>
+            </Button>
+          </MagneticButton>
           <Button asChild size="xl" variant="ghost">
             <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
           </Button>
