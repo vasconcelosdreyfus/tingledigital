@@ -2,85 +2,82 @@ import type { ProductPageData } from "@/types/product";
 
 export const eter: ProductPageData = {
   pillar: "eter",
-  heroEyebrow: "Eter · Conexão Humana",
-  heroTitle: "Uma rede para conectar pessoas com pessoas — e com seus sonhos.",
+  heroEyebrow: "Eter · Mensageiro privado",
+  heroTitle: "Conversas que ninguém mais ouve.",
   heroSubtitle:
-    "Espaço de acolhimento, inspiração e crescimento pessoal. Conexões autênticas, longe da economia da atenção. Para quem busca comunidade real.",
-  heroCtaLabel: "Conhecer Eter",
+    "Mensageiro com privacidade radical. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados, executivos e qualquer um que entende o valor de comunicação verdadeiramente privada.",
+  heroCtaLabel: "Saber mais",
   heroCtaHref: "/contato?produto=eter",
   mockupImageUrl: "/brand/mockup-eter.png",
   problemEyebrow: "O problema",
-  problemTitle: "Rede social virou hostil. Quem ganha não é você.",
+  problemTitle: "Mensageiros gratuitos vendem você.",
   problemBody:
-    "As grandes redes foram desenhadas pra reter atenção a qualquer custo. Feeds infinitos, drama amplificado, conexão substituída por engajamento. O Eter nasceu pra ser outra coisa — espaço pra crescimento, não pra exaustão.",
-  problemStat: {
-    value: "0",
-    label: "feeds infinitos, scrolls hipnóticos ou outros padrões de dark UX",
-  },
+    "WhatsApp coleta metadados, Telegram não é E2E por padrão, e \"gratuito\" sempre tem um custo invisível. O Eter foi construído para quem não está disposto a pagar com a própria privacidade.",
+  problemStat: { value: "0", label: "metadados retidos · zero logs de conversa" },
   solutionEyebrow: "O que muda",
-  solutionTitle: "Conexão de verdade. Algoritmo a serviço do usuário.",
+  solutionTitle: "Privacidade absoluta. Sem comprometer a experiência.",
   features: [
     {
-      title: "Conexões autênticas",
+      title: "Criptografia ponta-a-ponta",
       description:
-        "Encontre pessoas alinhadas com seus interesses, valores e momento de vida. Sem disputa por atenção.",
-      iconName: "users",
+        "Signal Protocol auditado. Chaves geradas no dispositivo, armazenadas em enclave de hardware quando disponível.",
+      iconName: "lock",
     },
     {
-      title: "Espaço de crescimento pessoal",
+      title: "Sem metadados retidos",
       description:
-        "Conteúdos, comunidades e práticas que te ajudam a ir além — sem promessas mágicas, com substância.",
-      iconName: "sparkles",
+        "Quem fala com quem, quando e por quanto tempo — nada disso vira histórico no servidor.",
+      iconName: "shield",
     },
     {
-      title: "Comunidade de apoio",
+      title: "Familiar como WhatsApp",
       description:
-        "Onde você pode contar sua história e ouvir as dos outros. Acolhimento como design principle, não feature opcional.",
+        "Navegação, bolhas, contatos — superfície que você já conhece. Curva de aprendizado zero.",
       iconName: "messageSquare",
     },
     {
-      title: "Inspiração que vira ação",
+      title: "Detalhes de luxo silencioso",
       description:
-        "Não basta sentir bonito. Caminhos práticos pra transformar reflexão em movimento concreto.",
-      iconName: "rocket",
+        "Micro-interações polidas, espaçamento generoso. A diferença entre \"funciona\" e \"encanta\" está nos detalhes.",
+      iconName: "sparkles",
     },
     {
-      title: "Algoritmo a serviço da pessoa",
+      title: "Efemeridade por design",
       description:
-        "Você define o que quer ver. Modos de uso ('só pra inspirar', 'pra trocar') que respeitam seu tempo.",
-      iconName: "lightbulb",
+        "Mensagens expiram automaticamente. Servidor descarta cópia em segundos após entrega.",
+      iconName: "circuit",
     },
     {
-      title: "Privacidade desde o design",
+      title: "Resistente por construção",
       description:
-        "Seus dados não viram produto. Sem rastreio cross-app, sem perfil pra vender a anunciante.",
+        "Quando entregamos dados sob ordem judicial, entregamos o que tecnicamente temos: muito pouco. Por design.",
       iconName: "shield",
     },
   ],
-  demoEyebrow: "Como funciona",
-  demoTitle: "Três entradas. Cada uma com seu propósito.",
+  demoEyebrow: "Como protege",
+  demoTitle: "Três camadas de defesa, do dispositivo ao destino.",
   demoSteps: [
     {
-      title: "Conhecer",
+      title: "No dispositivo",
       description:
-        "Crie seu perfil em minutos. Não precisa preencher tudo — vai construindo conforme se descobre na plataforma.",
+        "Chaves geradas localmente, armazenadas em enclave de hardware. Bloqueio biométrico opcional.",
       imageUrl: "/brand/eter-device.png",
     },
     {
-      title: "Conectar",
+      title: "No transporte",
       description:
-        "Encontre pessoas e comunidades. Conversas autênticas, espaços de troca, ciclos de inspiração coletiva.",
+        "Mensagens criptografadas antes de saírem do aparelho. Servidor é mero relay — não consegue ler conteúdo.",
       imageUrl: "/brand/eter-transport.png",
     },
     {
-      title: "Crescer",
+      title: "No destino",
       description:
-        "Práticas, conteúdos e desafios. Você não consome — você participa, e isso transforma.",
+        "Decifradas apenas no aparelho do destinatário, validadas por par de chaves. Cópia no servidor é descartada em segundos.",
       imageUrl: "/brand/eter-destination.png",
     },
   ],
   cases: [],
-  finalCtaTitle: "Pronto pra conhecer uma outra forma de rede?",
+  finalCtaTitle: "Pronto para conversar em paz?",
   finalCtaBody:
-    "Eter está em construção, com lançamento previsto pra 2026. Cadastre-se pra acompanhar e participar do beta privado.",
+    "Em construção, com lançamento previsto para 2026. Cadastre-se para acompanhar e participar do beta privado.",
 };

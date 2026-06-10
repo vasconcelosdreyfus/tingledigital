@@ -36,10 +36,10 @@ export const homeData = {
       },
       {
         pillar: "eter" as const,
-        eyebrow: "Produto · Conexão",
+        eyebrow: "Produto · Privacidade",
         title: "Eter",
         description:
-          "Rede social criada para conectar pessoas com pessoas e com seus sonhos. Acolhimento, inspiração e crescimento pessoal em uma só comunidade.",
+          "Mensageiro com privacidade radical. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados e quem leva privacidade a sério.",
         href: "/eter",
         ctaLabel: "Conhecer Eter",
       },
@@ -84,15 +84,15 @@ export const homeData = {
       },
       {
         pillar: "eter" as const,
-        eyebrow: "Eter · Conexão Humana",
-        title: "Uma rede para conectar pessoas com pessoas — e com seus sonhos.",
+        eyebrow: "Eter · Mensageiro privado",
+        title: "Conversas que ninguém mais ouve.",
         description:
-          "Criada como espaço de acolhimento, inspiração e crescimento pessoal. Conexões autênticas e significativas, longe da economia da atenção. Para quem busca comunidade real.",
+          "Mensageiro com privacidade radical. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados, executivos e qualquer um que entende o valor de comunicação verdadeiramente privada.",
         bullets: [
-          "Conexões autênticas e significativas",
-          "Espaço de crescimento pessoal",
-          "Comunidade de apoio e inspiração",
-          "Sem algoritmo manipulador, sem feed infinito tóxico",
+          "Criptografia ponta-a-ponta com Signal Protocol auditado",
+          "Zero metadados retidos no servidor",
+          "Familiar como WhatsApp, profundo como Signal",
+          "Luxo silencioso: micro-interações polidas, detalhes que importam",
         ],
         cta: { label: "Conhecer Eter", href: "/eter" },
       },
