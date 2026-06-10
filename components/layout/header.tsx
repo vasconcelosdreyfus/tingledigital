@@ -4,6 +4,8 @@ import * as React from "react";
 import Link from "next/link";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
+import { LocaleToggle } from "@/components/layout/locale-toggle";
 
 const navItems = [
   { href: "/cognita", label: "Cognita" },
@@ -16,9 +18,15 @@ const navItems = [
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#E5E5E3] bg-white/80 backdrop-blur-xl">
-      <Container size="xl" className="flex h-16 items-center justify-between gap-8">
-        <Link href="/" aria-label="Tingle Digital — home" className="text-lg font-bold tracking-tight">
+    <header
+      className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl"
+      style={{
+        borderBottom: "1px solid var(--border)",
+        backgroundColor: "color-mix(in srgb, var(--bg) 80%, transparent)",
+      }}
+    >
+      <Container size="xl" className="flex h-16 items-center justify-between gap-6">
+        <Link href="/" aria-label="Tingle Digital — home" className="text-lg font-bold tracking-tight" style={{ color: "var(--text)" }}>
           tingle.
         </Link>
 
@@ -27,7 +35,8 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm text-[#6B6B6B] hover:text-[#0A0A0A] transition-colors"
+              className="text-sm transition-colors"
+              style={{ color: "var(--text-secondary)" }}
             >
               {item.label}
             </Link>
@@ -35,9 +44,8 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button size="sm" variant="ghost" asChild className="hidden sm:inline-flex">
-            <Link href="/contato">Entrar em contato</Link>
-          </Button>
+          <LocaleToggle />
+          <ThemeToggle />
           <Button size="sm" asChild>
             <Link href="/contato">Começar projeto</Link>
           </Button>

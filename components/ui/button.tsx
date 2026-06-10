@@ -4,20 +4,15 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0A0A0A] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary:
-          "bg-[#0A0A0A] text-white hover:bg-[#1F1F1F]",
-        secondary:
-          "bg-white text-[#0A0A0A] border border-[#E5E5E3] hover:bg-[#F8F8F7] hover:border-[#D4D4D2]",
-        ghost:
-          "text-[#0A0A0A] hover:bg-[#F8F8F7]",
-        link:
-          "text-[#0A0A0A] underline-offset-4 hover:underline",
-        outline:
-          "border border-[#0A0A0A] text-[#0A0A0A] hover:bg-[#0A0A0A] hover:text-white",
+        primary: "[background-color:var(--accent)] [color:var(--bg)] hover:[background-color:var(--accent-hover)]",
+        secondary: "[background-color:var(--bg)] [color:var(--text)] [border:1px_solid_var(--border)] hover:[background-color:var(--surface)] hover:[border-color:var(--border-strong)]",
+        ghost: "[color:var(--text)] hover:[background-color:var(--surface)]",
+        link: "[color:var(--text)] underline-offset-4 hover:underline",
+        outline: "[border:1px_solid_var(--text)] [color:var(--text)] hover:[background-color:var(--text)] hover:[color:var(--bg)]",
       },
       size: {
         sm: "h-8 px-3 text-sm rounded-md",
