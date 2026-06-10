@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { BackgroundPaths } from "@/components/motion/background-paths";
 
 interface HomeHeroProps {
   eyebrow: string;
@@ -17,20 +18,31 @@ interface HomeHeroProps {
   secondaryCta: { label: string; href: string };
 }
 
+const ROTATING_WORDS = ["experiências.", "produtos.", "futuros.", "impacto."];
+
 export function HomeHero({
   eyebrow,
   titleLine1,
   titleLine2,
-  titleAccent,
   subtitle,
   primaryCta,
   secondaryCta,
 }: HomeHeroProps) {
+  const [wordIdx, setWordIdx] = React.useState(0);
+
+  React.useEffect(() => {
+    const t = setInterval(() => {
+      setWordIdx((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 2400);
+    return () => clearInterval(t);
+  }, []);
+
   return (
-    <section className="relative bg-white pt-32 pb-24 lg:pt-40">
-      <Container>
+    <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40">
+      <BackgroundPaths />
+
+      <Container className="relative z-10">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Pill announcement */}
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,35 +51,53 @@ export function HomeHero({
           >
             <Link
               href="/cognita"
-              className="group inline-flex items-center gap-2 rounded-full border border-[#E5E5E3] bg-white px-4 py-1.5 text-sm text-[#6B6B6B] hover:border-[#D4D4D2] hover:text-[#0A0A0A] transition-colors shadow-sm"
+              className="group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm shadow-sm transition-colors"
+              style={{
+                border: "1px solid var(--border)",
+                backgroundColor: "var(--bg)",
+                color: "var(--text-secondary)",
+              }}
             >
-              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#0A0A0A]" />
+              <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--text)" }} />
               <span>Lançamento Cognita 2025 — saiba mais</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </motion.div>
 
-          {/* Massive headline */}
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display-1 text-balance text-[#0A0A0A]"
+            className="text-display-1 text-balance"
+            style={{ color: "var(--text)" }}
           >
-            {titleLine1} {titleLine2} {titleAccent}
+            <span>{titleLine1} {titleLine2}</span>{" "}
+            <span className="relative inline-block min-w-[5ch] align-baseline">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={wordIdx}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -40 }}
+                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+                  className="inline-block"
+                >
+                  {ROTATING_WORDS[wordIdx]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
           </motion.h1>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-6 mx-auto max-w-2xl text-lg text-[#6B6B6B] text-pretty leading-relaxed sm:text-xl"
+            className="mt-6 mx-auto max-w-2xl text-lg text-pretty leading-relaxed sm:text-xl"
+            style={{ color: "var(--text-secondary)" }}
           >
             {subtitle}
           </motion.p>
 
-          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -82,94 +112,6 @@ export function HomeHero({
             </Button>
           </motion.div>
         </div>
-
-        {/* Product mockup */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-20 lg:mt-24"
-        >
-          <div className="mx-auto max-w-5xl rounded-xl border border-[#E5E5E3] bg-[#FAFAF9] shadow-2xl shadow-black/5 overflow-hidden">
-            {/* Top bar */}
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#E5E5E3] bg-white">
-              <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
-              <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
-              <span className="h-3 w-3 rounded-full bg-[#28C840]" />
-              <div className="ml-4 flex-1 max-w-xs">
-                <div className="inline-flex items-center gap-2 rounded-md bg-[#F8F8F7] px-3 py-1 text-xs text-[#6B6B6B]">
-                  <span>🔒</span>
-                  <span>cognita.app</span>
-                </div>
-              </div>
-            </div>
-
-            {/* App content */}
-            <div className="grid grid-cols-[180px_1fr] h-[400px]">
-              <aside className="border-r border-[#E5E5E3] bg-white p-4 space-y-1">
-                <div className="text-xs font-bold text-[#0A0A0A] mb-4">COGNITA</div>
-                {["Dashboard", "Turmas", "Diário", "Boletim", "Famílias", "Relatórios"].map((item, i) => (
-                  <div
-                    key={item}
-                    className={`text-sm rounded px-3 py-2 ${
-                      i === 1
-                        ? "bg-[#F8F8F7] text-[#0A0A0A] font-medium"
-                        : "text-[#6B6B6B] hover:bg-[#FAFAF9]"
-                    }`}
-                  >
-                    {item}
-                  </div>
-                ))}
-              </aside>
-
-              <main className="p-6 overflow-hidden bg-white">
-                <div className="text-xs text-[#A0A0A0] mb-1">Turma · 5º Ano A</div>
-                <h3 className="text-xl font-bold text-[#0A0A0A] mb-5">Diário de Classe</h3>
-
-                <div className="grid grid-cols-4 gap-3 mb-5">
-                  {[
-                    { label: "Alunos", value: "28" },
-                    { label: "Presença", value: "96%" },
-                    { label: "Aulas", value: "142" },
-                    { label: "Média", value: "8.4" },
-                  ].map((s) => (
-                    <div key={s.label} className="rounded-lg border border-[#E5E5E3] bg-[#FAFAF9] p-3">
-                      <div className="text-[10px] uppercase tracking-wider text-[#A0A0A0]">
-                        {s.label}
-                      </div>
-                      <div className="text-lg font-bold text-[#0A0A0A] mt-1">
-                        {s.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="space-y-2">
-                  {[
-                    ["Ana Beatriz", "Presente"],
-                    ["Bernardo S.", "Presente"],
-                    ["Caio Mendes", "Falta"],
-                    ["Daniela L.", "Presente"],
-                  ].map(([name, status]) => (
-                    <div
-                      key={name}
-                      className="flex items-center justify-between rounded-md border border-[#E5E5E3] bg-white px-3 py-2"
-                    >
-                      <span className="text-sm text-[#0A0A0A]">{name}</span>
-                      <span
-                        className={`text-xs font-medium ${
-                          status === "Falta" ? "text-[#DC2626]" : "text-[#16A34A]"
-                        }`}
-                      >
-                        {status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </main>
-            </div>
-          </div>
-        </motion.div>
       </Container>
     </section>
   );

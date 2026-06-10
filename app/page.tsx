@@ -3,9 +3,12 @@ import Link from "next/link";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { HomeHero } from "@/components/sections/home/home-hero";
+import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
+import { DisplayCards } from "@/components/sections/home/display-cards";
+import { AnimatedNumber } from "@/components/motion/animated-number";
+import { ShinyButton } from "@/components/ui/shiny-button";
 import { homeData } from "@/content/data/home";
-import { testimonials } from "@/content/data/testimonials";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Lightbulb, Zap, Network } from "lucide-react";
 
 export const metadata: Metadata = {
   description: homeData.hero.subtitle,
@@ -24,13 +27,19 @@ export default function Home() {
       {/* Section 2: What we build — Cognita + Eter as flagships */}
       <ProductsSection />
 
-      {/* Section 3: Proof — 3 strongest cases */}
+      {/* Section 3: Capabilities stacked cards */}
+      <CapabilitiesSection />
+
+      {/* Section 4: Proof — 3 strongest cases */}
       <ProofSection />
 
-      {/* Section 4: Numbers + Voice */}
-      <NumbersVoiceSection />
+      {/* Section 5: Numbers */}
+      <NumbersSection />
 
-      {/* Section 5: CTA */}
+      {/* Section 6: Testimonial marquee */}
+      <TestimonialMarquee />
+
+      {/* Section 7: CTA */}
       <FinalCtaSection />
     </>
   );
@@ -38,54 +47,93 @@ export default function Home() {
 
 function ProductsSection() {
   return (
-    <section className="bg-[#FAFAF9] py-24 lg:py-32 border-y border-[#E5E5E3]">
+    <section
+      className="py-24 lg:py-32"
+      style={{
+        backgroundColor: "var(--surface-elevated)",
+        borderTop: "1px solid var(--border)",
+        borderBottom: "1px solid var(--border)",
+      }}
+    >
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-eyebrow text-[#6B6B6B] mb-4">O que construímos</p>
-          <h2 className="text-display-2 text-balance text-[#0A0A0A]">
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>O que construímos</p>
+          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
             Dois produtos. Duas teses. Engenharia que entrega.
           </h2>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Cognita */}
-          <div className="rounded-2xl border border-[#E5E5E3] bg-white p-8 flex flex-col">
+          <div
+            className="rounded-2xl p-8 flex flex-col"
+            style={{
+              border: "1px solid var(--border)",
+              backgroundColor: "var(--bg)",
+            }}
+          >
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-medium text-[#6B6B6B] uppercase tracking-wider">
+              <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
                 Educação · Gestão Social
               </span>
               <span className="text-xs font-medium text-[#16A34A]">Em produção</span>
             </div>
-            <h3 className="text-3xl font-semibold text-[#0A0A0A] text-balance">Cognita</h3>
-            <p className="mt-4 text-base text-[#6B6B6B] leading-relaxed">
+            <h3 className="text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>Cognita</h3>
+            <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
               Plataforma educacional + ERP multi-tenant para projetos sociais. Construída com
               Casa Brasil para a EPES — Escola de Programação e Empreendedorismo de Saquarema.
             </p>
 
             {/* Mini mockup */}
-            <div className="mt-6 rounded-xl border border-[#E5E5E3] bg-[#FAFAF9] overflow-hidden">
-              <div className="flex items-center gap-1.5 px-3 py-2 border-b border-[#E5E5E3] bg-white">
+            <div
+              className="mt-6 rounded-xl overflow-hidden"
+              style={{
+                border: "1px solid var(--border)",
+                backgroundColor: "var(--surface-elevated)",
+              }}
+            >
+              <div
+                className="flex items-center gap-1.5 px-3 py-2"
+                style={{
+                  borderBottom: "1px solid var(--border)",
+                  backgroundColor: "var(--bg)",
+                }}
+              >
                 <span className="h-2 w-2 rounded-full bg-[#FF5F57]" />
                 <span className="h-2 w-2 rounded-full bg-[#FEBC2E]" />
                 <span className="h-2 w-2 rounded-full bg-[#28C840]" />
-                <span className="ml-2 text-[10px] text-[#6B6B6B]">cognita.app</span>
+                <span className="ml-2 text-[10px]" style={{ color: "var(--text-secondary)" }}>cognita.app</span>
               </div>
               <div className="p-4">
-                <div className="text-[10px] text-[#A0A0A0] mb-1">Turma · 5º Ano A</div>
-                <div className="text-sm font-bold text-[#0A0A0A] mb-3">Diário de Classe</div>
+                <div className="text-[10px] mb-1" style={{ color: "var(--text-muted)" }}>Turma · 5º Ano A</div>
+                <div className="text-sm font-bold mb-3" style={{ color: "var(--text)" }}>Diário de Classe</div>
                 <div className="grid grid-cols-4 gap-1.5 mb-3">
                   {[["Alunos", "28"], ["Presença", "96%"], ["Aulas", "142"], ["Média", "8.4"]].map(([l, v]) => (
-                    <div key={l} className="rounded border border-[#E5E5E3] bg-white p-1.5">
-                      <div className="text-[8px] uppercase tracking-wider text-[#A0A0A0]">{l}</div>
-                      <div className="text-xs font-bold text-[#0A0A0A]">{v}</div>
+                    <div
+                      key={l}
+                      className="rounded p-1.5"
+                      style={{
+                        border: "1px solid var(--border)",
+                        backgroundColor: "var(--bg)",
+                      }}
+                    >
+                      <div className="text-[8px] uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>{l}</div>
+                      <div className="text-xs font-bold" style={{ color: "var(--text)" }}>{v}</div>
                     </div>
                   ))}
                 </div>
                 <div className="space-y-1">
                   {[["Ana B.", "P"], ["Bernardo S.", "P"], ["Caio M.", "F"]].map(([n, s]) => (
-                    <div key={n} className="flex justify-between rounded bg-white border border-[#E5E5E3] px-2 py-1 text-[10px]">
-                      <span className="text-[#0A0A0A]">{n}</span>
-                      <span className={s === "F" ? "text-[#DC2626]" : "text-[#16A34A]"}>
+                    <div
+                      key={n}
+                      className="flex justify-between rounded px-2 py-1 text-[10px]"
+                      style={{
+                        border: "1px solid var(--border)",
+                        backgroundColor: "var(--bg)",
+                      }}
+                    >
+                      <span style={{ color: "var(--text)" }}>{n}</span>
+                      <span style={{ color: s === "F" ? "#DC2626" : "#16A34A" }}>
                         {s === "F" ? "Falta" : "Presente"}
                       </span>
                     </div>
@@ -96,14 +144,15 @@ function ProductsSection() {
 
             <Link
               href="/cognita"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#0A0A0A] hover:underline self-start"
+              className="mt-6 inline-flex items-center gap-2 text-sm font-medium hover:underline self-start"
+              style={{ color: "var(--text)" }}
             >
               Conhecer Cognita
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
 
-          {/* Eter */}
+          {/* Eter — intentionally dark brand card */}
           <div className="rounded-2xl border border-[#0F0E0D] bg-[#0F0E0D] p-8 flex flex-col text-[#F2EDE6]">
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-medium text-[#C9A96E] uppercase tracking-wider">
@@ -177,23 +226,76 @@ function ProductsSection() {
           </div>
         </div>
 
-        <p className="text-center text-sm text-[#6B6B6B] mt-12">
+        <p
+          className="text-center text-sm mt-12"
+          style={{ color: "var(--text-secondary)" }}
+        >
           Além dos produtos, prestamos{" "}
           <Link
             href="/consultoria"
-            className="text-[#0A0A0A] underline underline-offset-2 hover:no-underline"
+            className="underline underline-offset-2 hover:no-underline"
+            style={{ color: "var(--text)" }}
           >
             consultoria estratégica
           </Link>{" "}
           e atuamos em{" "}
           <Link
             href="/utilities"
-            className="text-[#0A0A0A] underline underline-offset-2 hover:no-underline"
+            className="underline underline-offset-2 hover:no-underline"
+            style={{ color: "var(--text)" }}
           >
             utilities + energia + P&D
           </Link>
           .
         </p>
+      </Container>
+    </section>
+  );
+}
+
+function CapabilitiesSection() {
+  const cards = [
+    {
+      icon: <Lightbulb className="size-4" />,
+      title: "Consultoria",
+      description: "Estratégia + execução com método",
+      date: "Casa Brasil · EPES",
+      iconColor: "var(--text)",
+    },
+    {
+      icon: <Zap className="size-4" />,
+      title: "Utilities",
+      description: "P&D + Hyperautomation em energia",
+      date: "Hubz · Equatorial",
+      iconColor: "var(--text)",
+    },
+    {
+      icon: <Network className="size-4" />,
+      title: "AI + IoT",
+      description: "Tecnologia aplicada a problemas reais",
+      date: "1º P&D · 2024",
+      iconColor: "var(--text)",
+    },
+  ];
+
+  return (
+    <section
+      className="py-24 lg:py-32 relative"
+      style={{
+        backgroundColor: "var(--bg)",
+        borderTop: "1px solid var(--border)",
+      }}
+    >
+      <Container>
+        <div className="max-w-2xl mx-auto text-center mb-20">
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>Além dos produtos</p>
+          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
+            Consultoria, energia, AI. Onde sua ideia precisar de braço técnico.
+          </h2>
+        </div>
+        <div className="flex justify-center min-h-[300px]">
+          <DisplayCards cards={cards} />
+        </div>
       </Container>
     </section>
   );
@@ -231,11 +333,18 @@ function ProofSection() {
   ];
 
   return (
-    <section className="bg-white py-24 lg:py-32 border-b border-[#E5E5E3]">
+    <section
+      className="py-24 lg:py-32"
+      style={{
+        backgroundColor: "var(--surface-elevated)",
+        borderTop: "1px solid var(--border)",
+        borderBottom: "1px solid var(--border)",
+      }}
+    >
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-eyebrow text-[#6B6B6B] mb-4">Prova de capacidade</p>
-          <h2 className="text-display-2 text-balance text-[#0A0A0A]">
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>Prova de capacidade</p>
+          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
             Cases recentes. Resultados que falam por si.
           </h2>
         </div>
@@ -244,20 +353,27 @@ function ProofSection() {
             <Link
               key={c.slug}
               href="/cases"
-              className="group flex flex-col rounded-2xl border border-[#E5E5E3] bg-white p-7 hover:border-[#D4D4D2] hover:shadow-lg hover:shadow-black/5 transition-all"
+              className="group flex flex-col rounded-2xl p-7 transition-all hover:shadow-lg hover:shadow-black/5"
+              style={{
+                border: "1px solid var(--border)",
+                backgroundColor: "var(--bg)",
+              }}
             >
               <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-medium text-[#6B6B6B] uppercase tracking-wider">
+                <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
                   {c.client}
                 </span>
-                <ArrowUpRight className="h-4 w-4 text-[#A0A0A0] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#0A0A0A]" />
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  style={{ color: "var(--text-muted)" }}
+                />
               </div>
-              <h3 className="text-lg font-semibold text-[#0A0A0A] text-balance">{c.title}</h3>
-              <p className="mt-3 text-sm text-[#6B6B6B] leading-relaxed flex-1">{c.excerpt}</p>
-              <div className="mt-8 pt-6 border-t border-[#E5E5E3]">
+              <h3 className="text-lg font-semibold text-balance" style={{ color: "var(--text)" }}>{c.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>{c.excerpt}</p>
+              <div className="mt-8 pt-6" style={{ borderTop: "1px solid var(--border)" }}>
                 <div className="flex items-baseline gap-2">
-                  <div className="text-3xl font-bold text-[#0A0A0A]">{c.result}</div>
-                  <div className="text-xs text-[#6B6B6B]">{c.resultLabel}</div>
+                  <div className="text-3xl font-bold" style={{ color: "var(--text)" }}>{c.result}</div>
+                  <div className="text-xs" style={{ color: "var(--text-secondary)" }}>{c.resultLabel}</div>
                 </div>
               </div>
             </Link>
@@ -268,51 +384,31 @@ function ProofSection() {
   );
 }
 
-function NumbersVoiceSection() {
-  const t = testimonials.fabioCasaBrasil!;
+function NumbersSection() {
   return (
-    <section className="bg-[#FAFAF9] py-24 lg:py-32 border-b border-[#E5E5E3]">
+    <section
+      className="py-24 lg:py-32"
+      style={{
+        backgroundColor: "var(--bg)",
+        borderBottom: "1px solid var(--border)",
+      }}
+    >
       <Container>
-        {/* Numbers */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {[
-            { value: "50+", label: "Projetos entregues" },
-            { value: "4", label: "Produtos ativos" },
-            { value: "10K+", label: "Pessoas impactadas" },
-            { value: "6", label: "Anos de mercado" },
+            { value: 50, suffix: "+", label: "Projetos entregues" },
+            { value: 4, suffix: "", label: "Produtos ativos" },
+            { value: 10000, suffix: "+", label: "Pessoas impactadas" },
+            { value: 6, suffix: "", label: "Anos de mercado" },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-5xl lg:text-6xl font-semibold tracking-tight text-[#0A0A0A]">
-                {s.value}
+              <div className="text-5xl lg:text-6xl font-semibold tracking-tight" style={{ color: "var(--text)" }}>
+                <AnimatedNumber value={s.value} suffix={s.suffix} />
               </div>
-              <div className="mt-2 text-sm text-[#6B6B6B]">{s.label}</div>
+              <div className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>{s.label}</div>
             </div>
           ))}
         </div>
-
-        {/* Testimonial */}
-        <Container size="md">
-          <blockquote className="text-center">
-            <p className="text-display-3 font-medium text-[#0A0A0A] text-balance leading-tight">
-              &ldquo;{t.quote}&rdquo;
-            </p>
-            <footer className="mt-10 flex items-center justify-center gap-4">
-              <div className="h-12 w-12 rounded-full bg-[#0A0A0A] flex items-center justify-center text-white text-sm font-semibold">
-                {t.author
-                  .split(" ")
-                  .map((n) => n[0])
-                  .slice(0, 2)
-                  .join("")}
-              </div>
-              <div className="text-left">
-                <p className="font-semibold text-[#0A0A0A]">{t.author}</p>
-                <p className="text-sm text-[#6B6B6B]">
-                  {t.role} · {t.company}
-                </p>
-              </div>
-            </footer>
-          </blockquote>
-        </Container>
       </Container>
     </section>
   );
@@ -320,8 +416,9 @@ function NumbersVoiceSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="bg-white py-24 lg:py-32">
+    <section className="py-24 lg:py-32" style={{ backgroundColor: "var(--bg)" }}>
       <Container>
+        {/* intentionally dark block — visual punctuation */}
         <div className="rounded-3xl bg-[#0A0A0A] px-8 py-20 lg:px-16 lg:py-28 text-center">
           <h2 className="text-display-2 text-balance text-white">
             Pronto para construir algo que importe?
@@ -331,9 +428,9 @@ function FinalCtaSection() {
             sua ideia em algo que ninguém esquece.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/contato">Começar conversa</Link>
-            </Button>
+            <Link href="/contato">
+              <ShinyButton>Começar conversa</ShinyButton>
+            </Link>
             <Link
               href="mailto:dreyfus@tingledigital.com"
               className="inline-flex items-center gap-2 text-sm font-medium text-white hover:underline"
