@@ -87,7 +87,7 @@ async function ProductsSection() {
               </span>
               <span className="text-xs font-medium text-[#16A34A]">{t("cognita.status")}</span>
             </div>
-            <h3 className="text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>
+            <h3 className="text-2xl sm:text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>
               {t("cognita.name")}
             </h3>
             <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
@@ -123,7 +123,7 @@ async function ProductsSection() {
                 <div className="text-sm font-bold mb-3" style={{ color: "var(--text)" }}>
                   Diário de Classe
                 </div>
-                <div className="grid grid-cols-4 gap-1.5 mb-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-3">
                   {[
                     ["Alunos", "28"],
                     ["Presença", "96%"],
@@ -193,7 +193,7 @@ async function ProductsSection() {
               <span className="text-xs font-medium text-[#C9A96E]">{t("eter.status")}</span>
             </div>
             <h3
-              className="text-3xl font-semibold text-[#F2EDE6] text-balance"
+              className="text-2xl sm:text-3xl font-semibold text-[#F2EDE6] text-balance"
               style={{ fontFamily: "Sora, Inter, sans-serif" }}
             >
               {t("eter.name")}
@@ -483,7 +483,7 @@ async function NumbersSection() {
           ].map((s) => (
             <div key={s.label} className="text-center">
               <div
-                className="text-5xl lg:text-6xl font-semibold tracking-tight"
+                className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight"
                 style={{ color: "var(--text)" }}
               >
                 <AnimatedNumber value={s.value} suffix={s.suffix} />
@@ -506,7 +506,7 @@ async function FinalCtaSection() {
     <section className="py-24 lg:py-32" style={{ backgroundColor: "var(--bg)" }}>
       <Container>
         {/* intentionally dark block — visual punctuation */}
-        <div className="rounded-3xl bg-[#0A0A0A] px-8 py-20 lg:px-16 lg:py-28 text-center">
+        <div className="rounded-3xl bg-[#0A0A0A] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-28 text-center">
           <h2 className="text-display-2 text-balance text-white">{t("title")}</h2>
           <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70 text-pretty">{t("body")}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

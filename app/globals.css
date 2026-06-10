@@ -97,3 +97,9 @@
     color: var(--text-secondary);
   }
 }
+
+@keyframes shine {
+  0% { transform: translateX(0) skewX(-12deg); }
+  50% { transform: translateX(380%) skewX(-12deg); }
+  100% { transform: translateX(380%) skewX(-12deg); }
+}

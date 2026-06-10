@@ -12,9 +12,10 @@ function FloatingPaths({ position }: { position: number }) {
   return (
     <div className="absolute inset-0 pointer-events-none">
       <svg
-        className="w-full h-full"
+        className="w-full h-full block"
         viewBox="0 0 696 316"
         fill="none"
+        preserveAspectRatio="xMidYMid slice"
         style={{ color: "var(--text)" }}
       >
         {paths.map((path) => (

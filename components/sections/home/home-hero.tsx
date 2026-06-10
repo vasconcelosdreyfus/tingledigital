@@ -22,7 +22,7 @@ export function HomeHero() {
   }, [words.length]);
 
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40">
+    <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40">
       <BackgroundPaths />
 
       <Container className="relative z-10">
@@ -35,19 +35,17 @@ export function HomeHero() {
           >
             <Link
               href="/cognita"
-              className="group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm shadow-sm transition-colors"
+              className="group relative inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm shadow-sm transition-colors overflow-hidden"
               style={{
                 border: "1px solid var(--border)",
                 backgroundColor: "var(--bg)",
                 color: "var(--text-secondary)",
               }}
             >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full"
-                style={{ backgroundColor: "var(--text)" }}
-              />
-              <span>{t("pill")}</span>
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              <span aria-hidden className="absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 pointer-events-none animate-[shine_3.5s_ease-in-out_infinite]" style={{ background: "linear-gradient(90deg, transparent, color-mix(in srgb, var(--text) 8%, transparent), transparent)" }} />
+              <span className="relative inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--text)" }} />
+              <span className="relative">{t("pill")}</span>
+              <ArrowRight className="relative h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </motion.div>
 
@@ -59,7 +57,7 @@ export function HomeHero() {
             style={{ color: "var(--text)" }}
           >
             <span>{t("title")}</span>{" "}
-            <span className="relative inline-block min-w-[5ch] align-baseline">
+            <span className="relative inline-block min-w-[4ch] sm:min-w-[5ch] align-baseline">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={wordIdx}
