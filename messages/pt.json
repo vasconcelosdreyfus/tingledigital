@@ -1,0 +1,117 @@
+{
+  "header": {
+    "nav": {
+      "cognita": "Cognita",
+      "eter": "Eter",
+      "consultoria": "Consultoria",
+      "utilities": "Utilities",
+      "cases": "Cases",
+      "sobre": "Sobre"
+    },
+    "cta": "Começar projeto"
+  },
+  "hero": {
+    "pill": "Lançamento Cognita 2025 — saiba mais",
+    "title": "Transformamos ideias em",
+    "rotatingWords": ["experiências.", "produtos.", "futuros.", "impacto."],
+    "subtitle": "Inovação em energia, educação e soluções que transformam mercados. Do interior do Rio aos centros de decisão do setor elétrico — da concepção à entrega.",
+    "primaryCta": "Conheça nossos produtos",
+    "secondaryCta": "Fale com a gente"
+  },
+  "products": {
+    "eyebrow": "O que construímos",
+    "title": "Dois produtos. Duas teses. Engenharia que entrega.",
+    "cognita": {
+      "category": "Educação · Gestão Social",
+      "status": "Em produção",
+      "name": "Cognita",
+      "description": "Plataforma educacional + ERP multi-tenant para projetos sociais. Construída com Casa Brasil para a EPES — Escola de Programação e Empreendedorismo de Saquarema.",
+      "cta": "Conhecer Cognita"
+    },
+    "eter": {
+      "category": "Comunicação · Privacidade",
+      "status": "Em construção",
+      "name": "Eter",
+      "description": "Mensageiro privado para quem precisa conversar sem rastros. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados, executivos.",
+      "cta": "Conhecer Eter",
+      "footerText": "CRIPTOGRAFIA PONTA-A-PONTA"
+    },
+    "alsoOffer": "Além dos produtos, prestamos <consultoriaLink>consultoria estratégica</consultoriaLink> e atuamos em <utilitiesLink>utilities + energia + P&D</utilitiesLink>."
+  },
+  "capabilities": {
+    "eyebrow": "Além dos produtos",
+    "title": "Consultoria, energia, AI. Onde sua ideia precisar de braço técnico.",
+    "consultoria": {
+      "title": "Consultoria",
+      "description": "Estratégia + execução com método",
+      "date": "Casa Brasil · EPES"
+    },
+    "utilities": {
+      "title": "Utilities",
+      "description": "P&D + Hyperautomation em energia",
+      "date": "Hubz · Equatorial"
+    },
+    "ai": {
+      "title": "AI + IoT",
+      "description": "Tecnologia aplicada a problemas reais",
+      "date": "1º P&D · 2024"
+    }
+  },
+  "proof": {
+    "eyebrow": "Prova de capacidade",
+    "title": "Cases recentes. Resultados que falam por si.",
+    "cases": {
+      "qbanho": {
+        "client": "QBANHO + Equatorial Energia",
+        "title": "Milhões em receita com trocadores de calor.",
+        "excerpt": "Ponte estratégica entre QBANHO e Equatorial. Trocadores de calor no portfólio de eficiência energética da maior do setor.",
+        "resultLabel": "em receita gerada"
+      },
+      "hubz": {
+        "client": "Hubz + Equatorial Energia",
+        "title": "1º P&D aprovado: automação do tratamento de água.",
+        "excerpt": "Em 2024, marco histórico. Automatizar tratamento de água da Companhia de Águas do Amapá com tecnologia + sustentabilidade.",
+        "resultLabel": "P&D aprovado"
+      },
+      "epes": {
+        "client": "EPES + Casa Brasil",
+        "title": "Escola de Programação e Empreendedorismo de Saquarema.",
+        "excerpt": "Programa educacional com 3 frentes: Inova Talks (palestras), Break Code (escape room), Startup Challenge (simulador).",
+        "resultLabel": "programas ativos"
+      }
+    }
+  },
+  "stats": {
+    "projects": "Projetos entregues",
+    "products": "Produtos ativos",
+    "people": "Pessoas impactadas",
+    "years": "Anos de mercado"
+  },
+  "testimonials": {
+    "eyebrow": "Quem confia",
+    "title": "Parceiros que crescem com a gente."
+  },
+  "finalCta": {
+    "title": "Pronto para construir algo que importe?",
+    "body": "De projetos de P&D em energia a plataformas educacionais — vamos transformar sua ideia em algo que ninguém esquece.",
+    "primaryCta": "Começar conversa"
+  },
+  "footer": {
+    "tagline": "Tecnologia com alma criativa. Construímos produtos, consultamos com impacto e modernizamos utilities.",
+    "columns": {
+      "products": "Produtos",
+      "services": "Serviços",
+      "company": "Empresa"
+    },
+    "links": {
+      "cognita": "Cognita",
+      "eter": "Eter",
+      "consultoria": "Consultoria",
+      "utilities": "Utilities",
+      "cases": "Cases",
+      "sobre": "Sobre",
+      "contato": "Contato"
+    },
+    "copyright": "Tingle Digital. Todos os direitos reservados."
+  }
+}

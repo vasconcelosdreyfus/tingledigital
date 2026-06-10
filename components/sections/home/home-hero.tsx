@@ -2,40 +2,24 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { BackgroundPaths } from "@/components/motion/background-paths";
 
-interface HomeHeroProps {
-  eyebrow: string;
-  titleLine1: string;
-  titleLine2: string;
-  titleAccent: string;
-  subtitle: string;
-  primaryCta: { label: string; href: string };
-  secondaryCta: { label: string; href: string };
-}
-
-const ROTATING_WORDS = ["experiências.", "produtos.", "futuros.", "impacto."];
-
-export function HomeHero({
-  eyebrow,
-  titleLine1,
-  titleLine2,
-  subtitle,
-  primaryCta,
-  secondaryCta,
-}: HomeHeroProps) {
+export function HomeHero() {
+  const t = useTranslations("hero");
+  const words = t.raw("rotatingWords") as string[];
   const [wordIdx, setWordIdx] = React.useState(0);
 
   React.useEffect(() => {
-    const t = setInterval(() => {
-      setWordIdx((i) => (i + 1) % ROTATING_WORDS.length);
+    const id = setInterval(() => {
+      setWordIdx((i) => (i + 1) % words.length);
     }, 2400);
-    return () => clearInterval(t);
-  }, []);
+    return () => clearInterval(id);
+  }, [words.length]);
 
   return (
     <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40">
@@ -58,8 +42,11 @@ export function HomeHero({
                 color: "var(--text-secondary)",
               }}
             >
-              <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--text)" }} />
-              <span>Lançamento Cognita 2025 — saiba mais</span>
+              <span
+                className="inline-block h-1.5 w-1.5 rounded-full"
+                style={{ backgroundColor: "var(--text)" }}
+              />
+              <span>{t("pill")}</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </motion.div>
@@ -71,7 +58,7 @@ export function HomeHero({
             className="text-display-1 text-balance"
             style={{ color: "var(--text)" }}
           >
-            <span>{titleLine1} {titleLine2}</span>{" "}
+            <span>{t("title")}</span>{" "}
             <span className="relative inline-block min-w-[5ch] align-baseline">
               <AnimatePresence mode="wait">
                 <motion.span
@@ -82,7 +69,7 @@ export function HomeHero({
                   transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                   className="inline-block"
                 >
-                  {ROTATING_WORDS[wordIdx]}
+                  {words[wordIdx]}
                 </motion.span>
               </AnimatePresence>
             </span>
@@ -95,7 +82,7 @@ export function HomeHero({
             className="mt-6 mx-auto max-w-2xl text-lg text-pretty leading-relaxed sm:text-xl"
             style={{ color: "var(--text-secondary)" }}
           >
-            {subtitle}
+            {t("subtitle")}
           </motion.p>
 
           <motion.div
@@ -105,10 +92,10 @@ export function HomeHero({
             className="mt-10 flex flex-wrap items-center justify-center gap-3"
           >
             <Button size="lg" asChild>
-              <Link href={primaryCta.href}>{primaryCta.label}</Link>
+              <Link href="#produtos">{t("primaryCta")}</Link>
             </Button>
             <Button size="lg" variant="secondary" asChild>
-              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+              <Link href="/contato">{t("secondaryCta")}</Link>
             </Button>
           </motion.div>
         </div>

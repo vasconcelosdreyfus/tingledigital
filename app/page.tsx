@@ -1,28 +1,30 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/primitives/container";
-import { Button } from "@/components/ui/button";
 import { HomeHero } from "@/components/sections/home/home-hero";
 import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
 import { DisplayCards } from "@/components/sections/home/display-cards";
 import { AnimatedNumber } from "@/components/motion/animated-number";
 import { ShinyButton } from "@/components/ui/shiny-button";
-import { homeData } from "@/content/data/home";
 import { ArrowRight, ArrowUpRight, Lightbulb, Zap, Network } from "lucide-react";
 
-export const metadata: Metadata = {
-  description: homeData.hero.subtitle,
-  openGraph: {
-    title: "Tingle Digital — Tecnologia com alma criativa",
-    description: homeData.hero.subtitle,
-    type: "website",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("hero");
+  return {
+    description: t("subtitle"),
+    openGraph: {
+      title: "Tingle Digital — Tecnologia com alma criativa",
+      description: t("subtitle"),
+      type: "website",
+    },
+  };
+}
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
-      <HomeHero {...homeData.hero} />
+      <HomeHero />
 
       {/* Section 2: What we build — Cognita + Eter as flagships */}
       <ProductsSection />
@@ -45,7 +47,9 @@ export default function Home() {
   );
 }
 
-function ProductsSection() {
+async function ProductsSection() {
+  const t = await getTranslations("products");
+
   return (
     <section
       className="py-24 lg:py-32"
@@ -57,9 +61,11 @@ function ProductsSection() {
     >
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>O que construímos</p>
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
+            {t("eyebrow")}
+          </p>
           <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
-            Dois produtos. Duas teses. Engenharia que entrega.
+            {t("title")}
           </h2>
         </div>
 
@@ -73,15 +79,19 @@ function ProductsSection() {
             }}
           >
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
-                Educação · Gestão Social
+              <span
+                className="text-xs font-medium uppercase tracking-wider"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {t("cognita.category")}
               </span>
-              <span className="text-xs font-medium text-[#16A34A]">Em produção</span>
+              <span className="text-xs font-medium text-[#16A34A]">{t("cognita.status")}</span>
             </div>
-            <h3 className="text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>Cognita</h3>
+            <h3 className="text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>
+              {t("cognita.name")}
+            </h3>
             <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-              Plataforma educacional + ERP multi-tenant para projetos sociais. Construída com
-              Casa Brasil para a EPES — Escola de Programação e Empreendedorismo de Saquarema.
+              {t("cognita.description")}
             </p>
 
             {/* Mini mockup */}
@@ -102,13 +112,24 @@ function ProductsSection() {
                 <span className="h-2 w-2 rounded-full bg-[#FF5F57]" />
                 <span className="h-2 w-2 rounded-full bg-[#FEBC2E]" />
                 <span className="h-2 w-2 rounded-full bg-[#28C840]" />
-                <span className="ml-2 text-[10px]" style={{ color: "var(--text-secondary)" }}>cognita.app</span>
+                <span className="ml-2 text-[10px]" style={{ color: "var(--text-secondary)" }}>
+                  cognita.app
+                </span>
               </div>
               <div className="p-4">
-                <div className="text-[10px] mb-1" style={{ color: "var(--text-muted)" }}>Turma · 5º Ano A</div>
-                <div className="text-sm font-bold mb-3" style={{ color: "var(--text)" }}>Diário de Classe</div>
+                <div className="text-[10px] mb-1" style={{ color: "var(--text-muted)" }}>
+                  Turma · 5º Ano A
+                </div>
+                <div className="text-sm font-bold mb-3" style={{ color: "var(--text)" }}>
+                  Diário de Classe
+                </div>
                 <div className="grid grid-cols-4 gap-1.5 mb-3">
-                  {[["Alunos", "28"], ["Presença", "96%"], ["Aulas", "142"], ["Média", "8.4"]].map(([l, v]) => (
+                  {[
+                    ["Alunos", "28"],
+                    ["Presença", "96%"],
+                    ["Aulas", "142"],
+                    ["Média", "8.4"],
+                  ].map(([l, v]) => (
                     <div
                       key={l}
                       className="rounded p-1.5"
@@ -117,13 +138,24 @@ function ProductsSection() {
                         backgroundColor: "var(--bg)",
                       }}
                     >
-                      <div className="text-[8px] uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>{l}</div>
-                      <div className="text-xs font-bold" style={{ color: "var(--text)" }}>{v}</div>
+                      <div
+                        className="text-[8px] uppercase tracking-wider"
+                        style={{ color: "var(--text-muted)" }}
+                      >
+                        {l}
+                      </div>
+                      <div className="text-xs font-bold" style={{ color: "var(--text)" }}>
+                        {v}
+                      </div>
                     </div>
                   ))}
                 </div>
                 <div className="space-y-1">
-                  {[["Ana B.", "P"], ["Bernardo S.", "P"], ["Caio M.", "F"]].map(([n, s]) => (
+                  {[
+                    ["Ana B.", "P"],
+                    ["Bernardo S.", "P"],
+                    ["Caio M.", "F"],
+                  ].map(([n, s]) => (
                     <div
                       key={n}
                       className="flex justify-between rounded px-2 py-1 text-[10px]"
@@ -147,7 +179,7 @@ function ProductsSection() {
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium hover:underline self-start"
               style={{ color: "var(--text)" }}
             >
-              Conhecer Cognita
+              {t("cognita.cta")}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
@@ -156,30 +188,39 @@ function ProductsSection() {
           <div className="rounded-2xl border border-[#0F0E0D] bg-[#0F0E0D] p-8 flex flex-col text-[#F2EDE6]">
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-medium text-[#C9A96E] uppercase tracking-wider">
-                Comunicação · Privacidade
+                {t("eter.category")}
               </span>
-              <span className="text-xs font-medium text-[#C9A96E]">Em construção</span>
+              <span className="text-xs font-medium text-[#C9A96E]">{t("eter.status")}</span>
             </div>
             <h3
               className="text-3xl font-semibold text-[#F2EDE6] text-balance"
               style={{ fontFamily: "Sora, Inter, sans-serif" }}
             >
-              Eter
+              {t("eter.name")}
             </h3>
             <p className="mt-4 text-base text-[#F2EDE6]/70 leading-relaxed">
-              Mensageiro privado para quem precisa conversar sem rastros. WhatsApp na facilidade,
-              Signal Protocol na profundidade. Para jornalistas, advogados, executivos.
+              {t("eter.description")}
             </p>
 
             {/* Mini phone mockup — quiet luxury */}
             <div className="mt-6 rounded-xl bg-[#1A1817] border border-[#2A2725] overflow-hidden p-4">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A96E" strokeWidth="2">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#C9A96E"
+                    strokeWidth="2"
+                  >
                     <rect x="3" y="11" width="18" height="11" rx="2" />
                     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                   </svg>
-                  <span className="text-sm font-medium" style={{ fontFamily: "Sora, Inter, sans-serif" }}>
+                  <span
+                    className="text-sm font-medium"
+                    style={{ fontFamily: "Sora, Inter, sans-serif" }}
+                  >
                     Eter
                   </span>
                 </div>
@@ -187,9 +228,27 @@ function ProductsSection() {
               </div>
               <div className="space-y-2">
                 {[
-                  { initial: "J", name: "Júlia", preview: "Arquivos enviados.", time: "14:32", color: "#C9A96E" },
-                  { initial: "M", name: "Marcos", preview: "Reunião amanhã 9h", time: "12:08", color: "#8B7355" },
-                  { initial: "A", name: "Equipe legal", preview: "Documento revisado.", time: "10:44", color: "#6B5B45" },
+                  {
+                    initial: "J",
+                    name: "Júlia",
+                    preview: "Arquivos enviados.",
+                    time: "14:32",
+                    color: "#C9A96E",
+                  },
+                  {
+                    initial: "M",
+                    name: "Marcos",
+                    preview: "Reunião amanhã 9h",
+                    time: "12:08",
+                    color: "#8B7355",
+                  },
+                  {
+                    initial: "A",
+                    name: "Equipe legal",
+                    preview: "Documento revisado.",
+                    time: "10:44",
+                    color: "#6B5B45",
+                  },
                 ].map((c) => (
                   <div
                     key={c.name}
@@ -212,7 +271,7 @@ function ProductsSection() {
                 ))}
               </div>
               <p className="text-[9px] text-[#C9A96E]/60 text-center mt-3 tracking-wider">
-                CRIPTOGRAFIA PONTA-A-PONTA
+                {t("eter.footerText")}
               </p>
             </div>
 
@@ -220,60 +279,62 @@ function ProductsSection() {
               href="/eter"
               className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#C9A96E] hover:underline self-start"
             >
-              Conhecer Eter
+              {t("eter.cta")}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
 
-        <p
-          className="text-center text-sm mt-12"
-          style={{ color: "var(--text-secondary)" }}
-        >
-          Além dos produtos, prestamos{" "}
-          <Link
-            href="/consultoria"
-            className="underline underline-offset-2 hover:no-underline"
-            style={{ color: "var(--text)" }}
-          >
-            consultoria estratégica
-          </Link>{" "}
-          e atuamos em{" "}
-          <Link
-            href="/utilities"
-            className="underline underline-offset-2 hover:no-underline"
-            style={{ color: "var(--text)" }}
-          >
-            utilities + energia + P&D
-          </Link>
-          .
+        <p className="text-center text-sm mt-12" style={{ color: "var(--text-secondary)" }}>
+          {t.rich("alsoOffer", {
+            consultoriaLink: (chunks) => (
+              <Link
+                href="/consultoria"
+                className="underline underline-offset-2 hover:no-underline"
+                style={{ color: "var(--text)" }}
+              >
+                {chunks}
+              </Link>
+            ),
+            utilitiesLink: (chunks) => (
+              <Link
+                href="/utilities"
+                className="underline underline-offset-2 hover:no-underline"
+                style={{ color: "var(--text)" }}
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
         </p>
       </Container>
     </section>
   );
 }
 
-function CapabilitiesSection() {
+async function CapabilitiesSection() {
+  const t = await getTranslations("capabilities");
+
   const cards = [
     {
       icon: <Lightbulb className="size-4" />,
-      title: "Consultoria",
-      description: "Estratégia + execução com método",
-      date: "Casa Brasil · EPES",
+      title: t("consultoria.title"),
+      description: t("consultoria.description"),
+      date: t("consultoria.date"),
       iconColor: "var(--text)",
     },
     {
       icon: <Zap className="size-4" />,
-      title: "Utilities",
-      description: "P&D + Hyperautomation em energia",
-      date: "Hubz · Equatorial",
+      title: t("utilities.title"),
+      description: t("utilities.description"),
+      date: t("utilities.date"),
       iconColor: "var(--text)",
     },
     {
       icon: <Network className="size-4" />,
-      title: "AI + IoT",
-      description: "Tecnologia aplicada a problemas reais",
-      date: "1º P&D · 2024",
+      title: t("ai.title"),
+      description: t("ai.description"),
+      date: t("ai.date"),
       iconColor: "var(--text)",
     },
   ];
@@ -288,9 +349,11 @@ function CapabilitiesSection() {
     >
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-20">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>Além dos produtos</p>
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
+            {t("eyebrow")}
+          </p>
           <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
-            Consultoria, energia, AI. Onde sua ideia precisar de braço técnico.
+            {t("title")}
           </h2>
         </div>
         <div className="flex justify-center min-h-[300px]">
@@ -301,34 +364,33 @@ function CapabilitiesSection() {
   );
 }
 
-function ProofSection() {
+async function ProofSection() {
+  const t = await getTranslations("proof");
+
   const cases = [
     {
       slug: "qbanho-equatorial",
-      client: "QBANHO + Equatorial Energia",
-      title: "Milhões em receita com trocadores de calor.",
-      excerpt:
-        "Ponte estratégica entre QBANHO e Equatorial. Trocadores de calor no portfólio de eficiência energética da maior do setor.",
+      client: t("cases.qbanho.client"),
+      title: t("cases.qbanho.title"),
+      excerpt: t("cases.qbanho.excerpt"),
       result: "Milhões",
-      resultLabel: "em receita gerada",
+      resultLabel: t("cases.qbanho.resultLabel"),
     },
     {
       slug: "hubz-equatorial",
-      client: "Hubz + Equatorial Energia",
-      title: "1º P&D aprovado: automação do tratamento de água.",
-      excerpt:
-        "Em 2024, marco histórico. Automatizar tratamento de água da Companhia de Águas do Amapá com tecnologia + sustentabilidade.",
+      client: t("cases.hubz.client"),
+      title: t("cases.hubz.title"),
+      excerpt: t("cases.hubz.excerpt"),
       result: "1º",
-      resultLabel: "P&D aprovado",
+      resultLabel: t("cases.hubz.resultLabel"),
     },
     {
       slug: "epes-casa-brasil",
-      client: "EPES + Casa Brasil",
-      title: "Escola de Programação e Empreendedorismo de Saquarema.",
-      excerpt:
-        "Programa educacional com 3 frentes: Inova Talks (palestras), Break Code (escape room), Startup Challenge (simulador).",
+      client: t("cases.epes.client"),
+      title: t("cases.epes.title"),
+      excerpt: t("cases.epes.excerpt"),
       result: "3",
-      resultLabel: "programas ativos",
+      resultLabel: t("cases.epes.resultLabel"),
     },
   ];
 
@@ -343,9 +405,11 @@ function ProofSection() {
     >
       <Container>
         <div className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>Prova de capacidade</p>
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
+            {t("eyebrow")}
+          </p>
           <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
-            Cases recentes. Resultados que falam por si.
+            {t("title")}
           </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -360,7 +424,10 @@ function ProofSection() {
               }}
             >
               <div className="flex items-center justify-between mb-6">
-                <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
+                <span
+                  className="text-xs font-medium uppercase tracking-wider"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   {c.client}
                 </span>
                 <ArrowUpRight
@@ -368,12 +435,23 @@ function ProofSection() {
                   style={{ color: "var(--text-muted)" }}
                 />
               </div>
-              <h3 className="text-lg font-semibold text-balance" style={{ color: "var(--text)" }}>{c.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>{c.excerpt}</p>
+              <h3 className="text-lg font-semibold text-balance" style={{ color: "var(--text)" }}>
+                {c.title}
+              </h3>
+              <p
+                className="mt-3 text-sm leading-relaxed flex-1"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {c.excerpt}
+              </p>
               <div className="mt-8 pt-6" style={{ borderTop: "1px solid var(--border)" }}>
                 <div className="flex items-baseline gap-2">
-                  <div className="text-3xl font-bold" style={{ color: "var(--text)" }}>{c.result}</div>
-                  <div className="text-xs" style={{ color: "var(--text-secondary)" }}>{c.resultLabel}</div>
+                  <div className="text-3xl font-bold" style={{ color: "var(--text)" }}>
+                    {c.result}
+                  </div>
+                  <div className="text-xs" style={{ color: "var(--text-secondary)" }}>
+                    {c.resultLabel}
+                  </div>
                 </div>
               </div>
             </Link>
@@ -384,7 +462,9 @@ function ProofSection() {
   );
 }
 
-function NumbersSection() {
+async function NumbersSection() {
+  const t = await getTranslations("stats");
+
   return (
     <section
       className="py-24 lg:py-32"
@@ -396,16 +476,21 @@ function NumbersSection() {
       <Container>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {[
-            { value: 50, suffix: "+", label: "Projetos entregues" },
-            { value: 4, suffix: "", label: "Produtos ativos" },
-            { value: 10000, suffix: "+", label: "Pessoas impactadas" },
-            { value: 6, suffix: "", label: "Anos de mercado" },
+            { value: 50, suffix: "+", label: t("projects") },
+            { value: 4, suffix: "", label: t("products") },
+            { value: 10000, suffix: "+", label: t("people") },
+            { value: 6, suffix: "", label: t("years") },
           ].map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-5xl lg:text-6xl font-semibold tracking-tight" style={{ color: "var(--text)" }}>
+              <div
+                className="text-5xl lg:text-6xl font-semibold tracking-tight"
+                style={{ color: "var(--text)" }}
+              >
                 <AnimatedNumber value={s.value} suffix={s.suffix} />
               </div>
-              <div className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>{s.label}</div>
+              <div className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
+                {s.label}
+              </div>
             </div>
           ))}
         </div>
@@ -414,22 +499,19 @@ function NumbersSection() {
   );
 }
 
-function FinalCtaSection() {
+async function FinalCtaSection() {
+  const t = await getTranslations("finalCta");
+
   return (
     <section className="py-24 lg:py-32" style={{ backgroundColor: "var(--bg)" }}>
       <Container>
         {/* intentionally dark block — visual punctuation */}
         <div className="rounded-3xl bg-[#0A0A0A] px-8 py-20 lg:px-16 lg:py-28 text-center">
-          <h2 className="text-display-2 text-balance text-white">
-            Pronto para construir algo que importe?
-          </h2>
-          <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70 text-pretty">
-            De projetos de P&D em energia a plataformas educacionais — vamos transformar
-            sua ideia em algo que ninguém esquece.
-          </p>
+          <h2 className="text-display-2 text-balance text-white">{t("title")}</h2>
+          <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70 text-pretty">{t("body")}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
             <Link href="/contato">
-              <ShinyButton>Começar conversa</ShinyButton>
+              <ShinyButton>{t("primaryCta")}</ShinyButton>
             </Link>
             <Link
               href="mailto:dreyfus@tingledigital.com"

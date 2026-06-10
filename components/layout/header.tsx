@@ -2,21 +2,24 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleToggle } from "@/components/layout/locale-toggle";
 
-const navItems = [
-  { href: "/cognita", label: "Cognita" },
-  { href: "/eter", label: "Eter" },
-  { href: "/consultoria", label: "Consultoria" },
-  { href: "/utilities", label: "Utilities" },
-  { href: "/cases", label: "Cases" },
-  { href: "/sobre", label: "Sobre" },
-];
-
 export function Header() {
+  const t = useTranslations("header");
+
+  const navItems = [
+    { href: "/cognita", label: t("nav.cognita") },
+    { href: "/eter", label: t("nav.eter") },
+    { href: "/consultoria", label: t("nav.consultoria") },
+    { href: "/utilities", label: t("nav.utilities") },
+    { href: "/cases", label: t("nav.cases") },
+    { href: "/sobre", label: t("nav.sobre") },
+  ];
+
   return (
     <header
       className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl"
@@ -26,7 +29,12 @@ export function Header() {
       }}
     >
       <Container size="xl" className="flex h-16 items-center justify-between gap-6">
-        <Link href="/" aria-label="Tingle Digital — home" className="text-lg font-bold tracking-tight" style={{ color: "var(--text)" }}>
+        <Link
+          href="/"
+          aria-label="Tingle Digital — home"
+          className="text-lg font-bold tracking-tight"
+          style={{ color: "var(--text)" }}
+        >
           tingle.
         </Link>
 
@@ -47,7 +55,7 @@ export function Header() {
           <LocaleToggle />
           <ThemeToggle />
           <Button size="sm" asChild>
-            <Link href="/contato">Começar projeto</Link>
+            <Link href="/contato">{t("cta")}</Link>
           </Button>
         </div>
       </Container>

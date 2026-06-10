@@ -1,0 +1,117 @@
+{
+  "header": {
+    "nav": {
+      "cognita": "Cognita",
+      "eter": "Eter",
+      "consultoria": "Consulting",
+      "utilities": "Utilities",
+      "cases": "Cases",
+      "sobre": "About"
+    },
+    "cta": "Start project"
+  },
+  "hero": {
+    "pill": "Cognita 2025 launch — learn more",
+    "title": "We turn ideas into",
+    "rotatingWords": ["experiences.", "products.", "futures.", "impact."],
+    "subtitle": "Innovation in energy, education and solutions that transform markets. From the interior of Rio to the decision centers of the electrical sector — from conception to delivery.",
+    "primaryCta": "See our products",
+    "secondaryCta": "Talk to us"
+  },
+  "products": {
+    "eyebrow": "What we build",
+    "title": "Two products. Two theses. Engineering that delivers.",
+    "cognita": {
+      "category": "Education · Social Management",
+      "status": "In production",
+      "name": "Cognita",
+      "description": "Multi-tenant educational + ERP platform for social projects. Built with Casa Brasil for EPES — Saquarema Programming and Entrepreneurship School.",
+      "cta": "Discover Cognita"
+    },
+    "eter": {
+      "category": "Communication · Privacy",
+      "status": "In progress",
+      "name": "Eter",
+      "description": "Private messenger for those who need to talk without traces. WhatsApp's ease, Signal Protocol's depth. For journalists, lawyers, executives.",
+      "cta": "Discover Eter",
+      "footerText": "END-TO-END ENCRYPTION"
+    },
+    "alsoOffer": "Beyond products, we offer <consultoriaLink>strategic consulting</consultoriaLink> and act in <utilitiesLink>utilities + energy + R&D</utilitiesLink>."
+  },
+  "capabilities": {
+    "eyebrow": "Beyond products",
+    "title": "Consulting, energy, AI. Wherever your idea needs technical hands.",
+    "consultoria": {
+      "title": "Consulting",
+      "description": "Strategy + execution with method",
+      "date": "Casa Brasil · EPES"
+    },
+    "utilities": {
+      "title": "Utilities",
+      "description": "R&D + Hyperautomation in energy",
+      "date": "Hubz · Equatorial"
+    },
+    "ai": {
+      "title": "AI + IoT",
+      "description": "Technology applied to real problems",
+      "date": "1st R&D · 2024"
+    }
+  },
+  "proof": {
+    "eyebrow": "Proof of capability",
+    "title": "Recent cases. Results that speak for themselves.",
+    "cases": {
+      "qbanho": {
+        "client": "QBANHO + Equatorial Energia",
+        "title": "Millions in revenue with heat exchangers.",
+        "excerpt": "Strategic bridge between QBANHO and Equatorial. Heat exchangers in the energy efficiency portfolio of the sector leader.",
+        "resultLabel": "in revenue generated"
+      },
+      "hubz": {
+        "client": "Hubz + Equatorial Energia",
+        "title": "1st R&D approved: water treatment automation.",
+        "excerpt": "In 2024, historic milestone. Automate water treatment of the Amapá Water Company with technology + sustainability.",
+        "resultLabel": "R&D approved"
+      },
+      "epes": {
+        "client": "EPES + Casa Brasil",
+        "title": "Saquarema Programming and Entrepreneurship School.",
+        "excerpt": "Educational program with 3 fronts: Inova Talks (lectures), Break Code (escape room), Startup Challenge (simulator).",
+        "resultLabel": "active programs"
+      }
+    }
+  },
+  "stats": {
+    "projects": "Projects delivered",
+    "products": "Active products",
+    "people": "People impacted",
+    "years": "Years in market"
+  },
+  "testimonials": {
+    "eyebrow": "Who trusts us",
+    "title": "Partners who grow with us."
+  },
+  "finalCta": {
+    "title": "Ready to build something that matters?",
+    "body": "From R&D energy projects to educational platforms — let's turn your idea into something nobody forgets.",
+    "primaryCta": "Start conversation"
+  },
+  "footer": {
+    "tagline": "Technology with creative soul. We build products, consult with impact and modernize utilities.",
+    "columns": {
+      "products": "Products",
+      "services": "Services",
+      "company": "Company"
+    },
+    "links": {
+      "cognita": "Cognita",
+      "eter": "Eter",
+      "consultoria": "Consulting",
+      "utilities": "Utilities",
+      "cases": "Cases",
+      "sobre": "About",
+      "contato": "Contact"
+    },
+    "copyright": "Tingle Digital. All rights reserved."
+  }
+}
