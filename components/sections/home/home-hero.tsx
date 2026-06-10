@@ -2,12 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
-import { MagneticButton } from "@/components/motion/magnetic-button";
-import { MeshGradient } from "@/components/motion/mesh-gradient";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface HomeHeroProps {
   eyebrow: string;
@@ -19,21 +17,6 @@ interface HomeHeroProps {
   secondaryCta: { label: string; href: string };
 }
 
-const PARTICLE_POSITIONS = [
-  { top: "12%", left: "8%" },
-  { top: "22%", left: "78%" },
-  { top: "35%", left: "15%" },
-  { top: "48%", left: "92%" },
-  { top: "60%", left: "5%" },
-  { top: "72%", left: "65%" },
-  { top: "85%", left: "30%" },
-  { top: "18%", left: "55%" },
-  { top: "42%", left: "42%" },
-  { top: "68%", left: "85%" },
-  { top: "28%", left: "25%" },
-  { top: "55%", left: "70%" },
-];
-
 export function HomeHero({
   eyebrow,
   titleLine1,
@@ -43,213 +26,151 @@ export function HomeHero({
   primaryCta,
   secondaryCta,
 }: HomeHeroProps) {
-  const heroRef = React.useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"],
-  });
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -60]);
-
   return (
-    <div ref={heroRef} className="relative">
-      <motion.section
-        style={{ scale, opacity, y }}
-        className="sticky top-0 relative min-h-screen overflow-hidden flex items-center pt-32 pb-24"
-      >
-        {/* MeshGradient background */}
-        <MeshGradient className="absolute inset-0 w-full h-full opacity-50" speed={0.8} />
-
-        {/* Background orbs */}
-        <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 0.5, scale: 1 }}
-        transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute top-[-15%] left-[-10%] w-[55vw] aspect-square rounded-full blur-[120px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,235,0,0.35) 0%, rgba(255,45,117,0.18) 45%, transparent 75%)",
-        }}
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.6 }}
-        animate={{ opacity: 0.45, scale: 1 }}
-        transition={{ duration: 2.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-        className="absolute bottom-[-20%] right-[-12%] w-[60vw] aspect-square rounded-full blur-[140px]"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(0,240,255,0.32) 0%, rgba(184,255,0,0.18) 45%, transparent 75%)",
-        }}
-      />
-
-      {/* Particle dots */}
-      <div className="absolute inset-0 pointer-events-none">
-        {PARTICLE_POSITIONS.map((pos, i) => (
+    <section className="relative bg-white pt-32 pb-24 lg:pt-40">
+      <Container>
+        <div className="mx-auto max-w-4xl text-center">
+          {/* Pill announcement */}
           <motion.div
-            key={i}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: [0, 0.4, 0.2, 0.4, 0],
-              y: [0, -16, 0],
-            }}
-            transition={{
-              duration: 6 + (i % 4),
-              repeat: Infinity,
-              delay: i * 0.3,
-              ease: "easeInOut",
-            }}
-            className="absolute w-1 h-1 rounded-full bg-[--color-text]"
-            style={pos}
-          />
-        ))}
-      </div>
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 inline-flex"
+          >
+            <Link
+              href="/cognita"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#E5E5E3] bg-white px-4 py-1.5 text-sm text-[#6B6B6B] hover:border-[#D4D4D2] hover:text-[#0A0A0A] transition-colors shadow-sm"
+            >
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-[#0A0A0A]" />
+              <span>Lançamento Cognita 2025 — saiba mais</span>
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </Link>
+          </motion.div>
 
-      {/* Diagonal slash decoration */}
-      <div
-        className="absolute top-1/4 left-0 right-0 h-px opacity-10 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(90deg, transparent, var(--color-text), transparent)",
-          transform: "rotate(-2deg)",
-        }}
-      />
+          {/* Massive headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="text-display-1 text-balance text-[#0A0A0A]"
+          >
+            {titleLine1} {titleLine2} {titleAccent}
+          </motion.h1>
 
-      {/* Side sticker — DESDE 2019 */}
-      <motion.div
-        initial={{ opacity: 0, x: 80, rotate: 0 }}
-        animate={{ opacity: 1, x: 0, rotate: 5 }}
-        transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-        className="hidden lg:block absolute right-12 top-1/3 z-10"
-      >
-        <div className="rounded-2xl border border-[--color-accent-cyan]/40 bg-[--color-bg]/80 backdrop-blur px-5 py-3 shadow-[0_0_32px_-12px_rgba(0,240,255,0.5)]">
-          <p className="text-eyebrow text-[--color-accent-cyan]">DESDE</p>
-          <p className="text-3xl font-black text-[--color-text]">2019</p>
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.15 }}
+            className="mt-6 mx-auto max-w-2xl text-lg text-[#6B6B6B] text-pretty leading-relaxed sm:text-xl"
+          >
+            {subtitle}
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-3"
+          >
+            <Button size="lg" asChild>
+              <Link href={primaryCta.href}>{primaryCta.label}</Link>
+            </Button>
+            <Button size="lg" variant="secondary" asChild>
+              <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
+            </Button>
+          </motion.div>
         </div>
-      </motion.div>
 
-      <Container className="relative z-10">
-        {/* Top sticker badge */}
+        {/* Product mockup */}
         <motion.div
-          initial={{ opacity: 0, y: -20, rotate: 0 }}
-          animate={{ opacity: 1, y: 0, rotate: -3 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20 lg:mt-24"
         >
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#FFEB00] px-4 py-2 text-sm font-bold text-[#0a0a0f] shadow-[0_0_24px_rgba(255,235,0,0.4)]">
-            <Star className="h-4 w-4" fill="currentColor" aria-hidden="true" />
-            <span>6 ANOS</span>
-            <span className="opacity-50">·</span>
-            <span>50+ PROJETOS</span>
-            <span className="opacity-50">·</span>
-            <span>10K+ PESSOAS</span>
+          <div className="mx-auto max-w-5xl rounded-xl border border-[#E5E5E3] bg-[#FAFAF9] shadow-2xl shadow-black/5 overflow-hidden">
+            {/* Top bar */}
+            <div className="flex items-center gap-2 px-4 py-3 border-b border-[#E5E5E3] bg-white">
+              <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
+              <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
+              <span className="h-3 w-3 rounded-full bg-[#28C840]" />
+              <div className="ml-4 flex-1 max-w-xs">
+                <div className="inline-flex items-center gap-2 rounded-md bg-[#F8F8F7] px-3 py-1 text-xs text-[#6B6B6B]">
+                  <span>🔒</span>
+                  <span>cognita.app</span>
+                </div>
+              </div>
+            </div>
+
+            {/* App content */}
+            <div className="grid grid-cols-[180px_1fr] h-[400px]">
+              <aside className="border-r border-[#E5E5E3] bg-white p-4 space-y-1">
+                <div className="text-xs font-bold text-[#0A0A0A] mb-4">COGNITA</div>
+                {["Dashboard", "Turmas", "Diário", "Boletim", "Famílias", "Relatórios"].map((item, i) => (
+                  <div
+                    key={item}
+                    className={`text-sm rounded px-3 py-2 ${
+                      i === 1
+                        ? "bg-[#F8F8F7] text-[#0A0A0A] font-medium"
+                        : "text-[#6B6B6B] hover:bg-[#FAFAF9]"
+                    }`}
+                  >
+                    {item}
+                  </div>
+                ))}
+              </aside>
+
+              <main className="p-6 overflow-hidden bg-white">
+                <div className="text-xs text-[#A0A0A0] mb-1">Turma · 5º Ano A</div>
+                <h3 className="text-xl font-bold text-[#0A0A0A] mb-5">Diário de Classe</h3>
+
+                <div className="grid grid-cols-4 gap-3 mb-5">
+                  {[
+                    { label: "Alunos", value: "28" },
+                    { label: "Presença", value: "96%" },
+                    { label: "Aulas", value: "142" },
+                    { label: "Média", value: "8.4" },
+                  ].map((s) => (
+                    <div key={s.label} className="rounded-lg border border-[#E5E5E3] bg-[#FAFAF9] p-3">
+                      <div className="text-[10px] uppercase tracking-wider text-[#A0A0A0]">
+                        {s.label}
+                      </div>
+                      <div className="text-lg font-bold text-[#0A0A0A] mt-1">
+                        {s.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-2">
+                  {[
+                    ["Ana Beatriz", "Presente"],
+                    ["Bernardo S.", "Presente"],
+                    ["Caio Mendes", "Falta"],
+                    ["Daniela L.", "Presente"],
+                  ].map(([name, status]) => (
+                    <div
+                      key={name}
+                      className="flex items-center justify-between rounded-md border border-[#E5E5E3] bg-white px-3 py-2"
+                    >
+                      <span className="text-sm text-[#0A0A0A]">{name}</span>
+                      <span
+                        className={`text-xs font-medium ${
+                          status === "Falta" ? "text-[#DC2626]" : "text-[#16A34A]"
+                        }`}
+                      >
+                        {status}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </main>
+            </div>
           </div>
         </motion.div>
-
-        {/* Eyebrow */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-10 flex items-center gap-3"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inset-0 rounded-full bg-[#B8FF00] opacity-75 animate-ping" />
-            <span className="relative rounded-full h-2 w-2 bg-[#B8FF00]" />
-          </span>
-          <p className="text-eyebrow text-[--color-text-muted]">{eyebrow}</p>
-        </motion.div>
-
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="mt-6 text-display-1 text-balance"
-        >
-          <span className="block">{titleLine1}</span>
-          <span className="block">
-            {titleLine2}{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 bg-gradient-to-r from-[#FFEB00] via-[#FF2D75] to-[#00F0FF] bg-clip-text text-transparent">
-                {titleAccent}
-              </span>
-              <svg
-                className="absolute -bottom-3 left-0 w-full"
-                viewBox="0 0 300 12"
-                fill="none"
-                preserveAspectRatio="none"
-              >
-                <motion.path
-                  d="M 5 6 Q 75 2, 150 6 T 295 6"
-                  stroke="url(#underline)"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  initial={{ pathLength: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 1.2, delay: 1.1 }}
-                />
-                <defs>
-                  <linearGradient id="underline" x1="0" y1="0" x2="1" y2="0">
-                    <stop offset="0%" stopColor="#FFEB00" />
-                    <stop offset="50%" stopColor="#FF2D75" />
-                    <stop offset="100%" stopColor="#00F0FF" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span>
-          </span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          className="mt-10 max-w-2xl text-xl text-[--color-text-muted] text-pretty leading-relaxed"
-        >
-          {subtitle}
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-12 flex flex-wrap items-center gap-4"
-        >
-          <MagneticButton strength={0.25}>
-            <Button asChild size="xl">
-              <Link href={primaryCta.href}>
-                {primaryCta.label}
-                <ArrowRight className="h-5 w-5" aria-hidden="true" />
-              </Link>
-            </Button>
-          </MagneticButton>
-          <Button asChild size="xl" variant="ghost">
-            <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
-          </Button>
-        </motion.div>
-
-        {/* Trust strip */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 1.4 }}
-          className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[--color-text-subtle]"
-        >
-          <span className="text-eyebrow">PARCEIROS</span>
-          <span className="font-semibold text-[--color-text-muted]">Casa Brasil</span>
-          <span className="opacity-50">·</span>
-          <span className="font-semibold text-[--color-text-muted]">Hubz</span>
-          <span className="opacity-50">·</span>
-          <span className="font-semibold text-[--color-text-muted]">The Town</span>
-          <span className="opacity-50">·</span>
-          <span className="font-semibold text-[--color-text-muted]">QBanho</span>
-        </motion.div>
       </Container>
-      </motion.section>
-    </div>
+    </section>
   );
 }
-
