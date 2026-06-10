@@ -4,6 +4,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { LenisProvider } from "@/components/providers/lenis-provider";
 import { ScrollProgress } from "@/components/motion/scroll-progress";
+import { CustomCursor } from "@/components/motion/custom-cursor";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={inter.variable} suppressHydrationWarning>
       <body className="noise-overlay min-h-screen bg-[#0a0a0f] text-[#F5F5FA] antialiased">
+        <CustomCursor />
         <ScrollProgress />
         <LenisProvider>
           <a

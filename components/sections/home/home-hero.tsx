@@ -2,10 +2,11 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/motion/magnetic-button";
+import { MeshGradient } from "@/components/motion/mesh-gradient";
 import { ArrowRight, Star } from "lucide-react";
 
 interface HomeHeroProps {
@@ -42,10 +43,26 @@ export function HomeHero({
   primaryCta,
   secondaryCta,
 }: HomeHeroProps) {
+  const heroRef = React.useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.85]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.3]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
   return (
-    <section className="relative min-h-screen overflow-hidden flex items-center pt-32 pb-24">
-      {/* Background orbs */}
-      <motion.div
+    <div ref={heroRef} className="relative">
+      <motion.section
+        style={{ scale, opacity, y }}
+        className="sticky top-0 relative min-h-screen overflow-hidden flex items-center pt-32 pb-24"
+      >
+        {/* MeshGradient background */}
+        <MeshGradient className="absolute inset-0 w-full h-full opacity-50" speed={0.8} />
+
+        {/* Background orbs */}
+        <motion.div
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 0.5, scale: 1 }}
         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
@@ -231,6 +248,8 @@ export function HomeHero({
           <span className="font-semibold text-[--color-text-muted]">QBanho</span>
         </motion.div>
       </Container>
-    </section>
+      </motion.section>
+    </div>
   );
 }
+
