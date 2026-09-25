@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import { ArrowRight } from "lucide-react";
@@ -6,35 +5,10 @@ import { Container } from "@/components/primitives/container";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { StatusBadge } from "@/components/apps/status-badge";
 import { apps } from "@/content/data/apps";
-import type { AppEntry, AppImage } from "@/types/app";
-
-function Cover({ image }: { image: AppImage }) {
-  // Tela de celular aparece inteira (contain); captura larga preenche o quadro (cover, ancorada no topo).
-  // Nos dois casos a proporção original é mantida.
-  const portrait = image.height > image.width;
-  return (
-    <div
-      className="relative aspect-[16/10] overflow-hidden"
-      style={{ backgroundColor: "var(--surface)", borderBottom: "1px solid var(--border)" }}
-    >
-      <Image
-        src={image.src}
-        width={image.width}
-        height={image.height}
-        alt={image.alt}
-        sizes="(min-width: 1024px) 380px, (min-width: 768px) 50vw, 100vw"
-        className={
-          portrait
-            ? "absolute inset-0 h-full w-full object-contain p-4"
-            : "absolute inset-0 h-full w-full object-cover object-top"
-        }
-      />
-    </div>
-  );
-}
+import type { AppEntry } from "@/types/app";
+import { AppCover } from "@/components/apps/app-cover";
 
 function AppLiveCard({ app }: { app: AppEntry }) {
-  const cover = app.images[0];
   const metric = app.metrics?.[0];
   return (
     <Link
@@ -42,7 +16,9 @@ function AppLiveCard({ app }: { app: AppEntry }) {
       className="group flex h-full flex-col overflow-hidden rounded-2xl transition-shadow hover:shadow-lg hover:shadow-black/5"
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
-      {cover && <Cover image={cover} />}
+      <div style={{ borderBottom: "1px solid var(--border)" }}>
+        <AppCover app={app} />
+      </div>
       <div className="flex flex-1 flex-col p-6">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
@@ -73,7 +49,10 @@ function AppLiveCard({ app }: { app: AppEntry }) {
 
 export async function HomeAppsLive() {
   const t = await getTranslations("appsLive");
-  const featured = apps.filter((a) => a.featured);
+  // Seis aplicações com tela real que estão no ar ou já rodaram: preenche a grade de 3 colunas.
+  const featured = apps
+    .filter((a) => a.images.length > 0 && (a.status.kind === "publicado" || a.status.kind === "realizado"))
+    .slice(0, 6);
 
   return (
     <section

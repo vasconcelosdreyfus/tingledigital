@@ -6,11 +6,12 @@ import { HomeHero } from "@/components/sections/home/home-hero";
 import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
 import { DisplayCards } from "@/components/sections/home/display-cards";
 import { AnimatedNumber } from "@/components/motion/animated-number";
-import { Reveal, RevealGroup, RevealItem, PulseOnce } from "@/components/motion/reveal";
+import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { ValidationLogos } from "@/components/shared/validation-logos";
 import { HomeAppsLive } from "@/components/sections/home/home-apps-live";
 import { StatusBadge } from "@/components/apps/status-badge";
+import { AppCover } from "@/components/apps/app-cover";
 import { apps } from "@/content/data/apps";
 import { TINGLE_FOUNDED } from "@/content/data/home";
 import { ArrowRight, ArrowUpRight, Lightbulb, Zap, Network } from "lucide-react";
@@ -121,87 +122,12 @@ async function ProductsSection() {
               {t("cognita.description")}
             </p>
 
-            {/* Mini mockup */}
-            <div
-              className="mt-6 rounded-xl overflow-hidden"
-              style={{
-                border: "1px solid var(--border)",
-                backgroundColor: "var(--surface-elevated)",
-              }}
-            >
-              <div
-                className="flex items-center gap-1.5 px-3 py-2"
-                style={{
-                  borderBottom: "1px solid var(--border)",
-                  backgroundColor: "var(--bg)",
-                }}
-              >
-                <span className="h-2 w-2 rounded-full bg-[#FF5F57]" />
-                <span className="h-2 w-2 rounded-full bg-[#FEBC2E]" />
-                <span className="h-2 w-2 rounded-full bg-[#28C840]" />
-                <span className="ml-2 text-[10px]" style={{ color: "var(--text-secondary)" }}>
-                  cognita.app
-                </span>
+            {/* Tela real do Cognita, mesma moldura da vitrine de aplicações */}
+            {cognitaApp && (
+              <div className="mt-6 overflow-hidden rounded-xl" style={{ border: "1px solid var(--border)" }}>
+                <AppCover app={cognitaApp} />
               </div>
-              <div className="p-4">
-                <div className="text-[10px] mb-1" style={{ color: "var(--text-muted)" }}>
-                  Turma · 5º Ano A
-                </div>
-                <div className="text-sm font-bold mb-3" style={{ color: "var(--text)" }}>
-                  Diário de Classe
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-3">
-                  {(
-                    [
-                      ["Alunos", 28, "", 0],
-                      ["Presença", 96, "%", 0],
-                      ["Aulas", 142, "", 0],
-                      ["Média", 8.4, "", 1],
-                    ] as const
-                  ).map(([l, v, suf, dec]) => (
-                    <div
-                      key={l}
-                      className="rounded p-1.5"
-                      style={{
-                        border: "1px solid var(--border)",
-                        backgroundColor: "var(--bg)",
-                      }}
-                    >
-                      <div
-                        className="text-[8px] uppercase tracking-wider"
-                        style={{ color: "var(--text-muted)" }}
-                      >
-                        {l}
-                      </div>
-                      <div className="text-xs font-bold tabular-nums" style={{ color: "var(--text)" }}>
-                        <AnimatedNumber value={v} suffix={suf} decimals={dec} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <RevealGroup stagger={0.08} delay={0.3} className="space-y-1">
-                  {[
-                    ["Ana B.", "P"],
-                    ["Bernardo S.", "P"],
-                    ["Caio M.", "F"],
-                  ].map(([n, s]) => (
-                    <RevealItem
-                      key={n}
-                      className="flex justify-between rounded px-2 py-1 text-[10px]"
-                      style={{
-                        border: "1px solid var(--border)",
-                        backgroundColor: "var(--bg)",
-                      }}
-                    >
-                      <span style={{ color: "var(--text)" }}>{n}</span>
-                      <span style={{ color: s === "F" ? "#DC2626" : "#2563EB" }}>
-                        {s === "F" ? "Falta" : "Presente"}
-                      </span>
-                    </RevealItem>
-                  ))}
-                </RevealGroup>
-              </div>
-            </div>
+            )}
 
             <Link
               href="/cognita"
@@ -234,80 +160,12 @@ async function ProductsSection() {
               {t("eter.description")}
             </p>
 
-            {/* Mini phone mockup — quiet luxury */}
-            <div className="mt-6 rounded-xl bg-[#1A1817] border border-[#2A2725] overflow-hidden p-4">
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-2">
-                  <PulseOnce delay={0.75}>
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#C9A96E"
-                    strokeWidth="2"
-                  >
-                    <rect x="3" y="11" width="18" height="11" rx="2" />
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-                  </svg>
-                  </PulseOnce>
-                  <span
-                    className="text-sm font-medium"
-                    style={{ fontFamily: "Sora, Inter, sans-serif" }}
-                  >
-                    Eter
-                  </span>
-                </div>
-                <span className="text-[10px] text-[#C9A96E]">e2e</span>
+            {/* Telas reais do Eter (App Store), mesma moldura da vitrine de aplicações */}
+            {eterApp && (
+              <div className="mt-6 overflow-hidden rounded-xl border border-[#2A2725]">
+                <AppCover app={eterApp} className="bg-[#1A1817]!" />
               </div>
-              <RevealGroup stagger={0.12} delay={0.3} className="space-y-2">
-                {[
-                  {
-                    initial: "J",
-                    name: "Júlia",
-                    preview: "Arquivos enviados.",
-                    time: "14:32",
-                    color: "#C9A96E",
-                  },
-                  {
-                    initial: "M",
-                    name: "Marcos",
-                    preview: "Reunião amanhã 9h",
-                    time: "12:08",
-                    color: "#8B7355",
-                  },
-                  {
-                    initial: "A",
-                    name: "Equipe legal",
-                    preview: "Documento revisado.",
-                    time: "10:44",
-                    color: "#6B5B45",
-                  },
-                ].map((c) => (
-                  <RevealItem
-                    key={c.name}
-                    className="flex items-center gap-2 rounded-lg bg-[#0F0E0D] border border-[#2A2725] p-2"
-                  >
-                    <div
-                      className="h-7 w-7 rounded-full flex items-center justify-center text-[10px] font-medium text-[#0F0E0D]"
-                      style={{ backgroundColor: c.color }}
-                    >
-                      {c.initial}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="flex justify-between text-[11px]">
-                        <span className="text-[#F2EDE6] font-medium">{c.name}</span>
-                        <span className="text-[#F2EDE6]/40">{c.time}</span>
-                      </div>
-                      <div className="text-[10px] text-[#F2EDE6]/50 truncate">{c.preview}</div>
-                    </div>
-                  </RevealItem>
-                ))}
-              </RevealGroup>
-              <p className="text-[9px] text-[#C9A96E]/60 text-center mt-3 tracking-wider">
-                {t("eter.footerText")}
-              </p>
-            </div>
+            )}
 
             <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
               <Link

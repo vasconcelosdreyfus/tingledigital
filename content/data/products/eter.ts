@@ -72,13 +72,13 @@ export const eter: ProductPageData = {
       title: "No transporte",
       description:
         "Mensagens e chamadas cifradas antes de saírem do aparelho. O servidor só repassa e não consegue ler o conteúdo.",
-      imageUrl: "/apps/eter/chamada.webp",
+      imageUrl: "/apps/eter/grupo.webp",
     },
     {
       title: "No destino",
       description:
         "Decifradas apenas no aparelho de quem você escolheu, validadas por par de chaves. Você decide quem entra no seu círculo.",
-      imageUrl: "/apps/eter/circulo.webp",
+      imageUrl: "/apps/eter/contato.webp",
     },
   ],
   cases: [],

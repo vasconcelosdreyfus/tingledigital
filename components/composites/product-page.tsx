@@ -1,5 +1,4 @@
 import * as React from "react";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
@@ -11,6 +10,7 @@ import { CtaSection } from "@/components/shared/cta-section";
 import { StatusBadge } from "@/components/apps/status-badge";
 import { apps } from "@/content/data/apps";
 import type { AppImage } from "@/types/app";
+import { FramedShot, frameOf } from "@/components/apps/device-frame";
 import type { ProductPageData } from "@/types/product";
 
 // Largura e altura vêm de content/data/apps.ts (fonte única). Caminho sem registro lá não é renderizado.
@@ -22,43 +22,11 @@ function resolveImage(src: string): AppImage | undefined {
   return IMAGES_BY_SRC.get(src);
 }
 
-const isPortrait = (img: AppImage) => img.height > img.width;
-
 function HeroMockup({ image }: { image: AppImage }) {
-  if (isPortrait(image)) {
-    // Tela de celular: altura fixa, largura pela proporção.
-    return (
-      <Image
-        src={image.src}
-        width={image.width}
-        height={image.height}
-        alt={image.alt}
-        priority
-        sizes="280px"
-        className="mx-auto h-[420px] w-auto rounded-[2rem] sm:h-[520px]"
-        style={{ border: "1px solid var(--border)" }}
-      />
-    );
-  }
+  // Mesma moldura da vitrine; no hero a caixa é mais alta para o celular respirar.
   return (
-    <div
-      className="mx-auto max-w-4xl overflow-hidden rounded-xl text-left"
-      style={{ border: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}
-    >
-      <div className="flex items-center gap-1.5 px-3 py-2" style={{ borderBottom: "1px solid var(--border)", backgroundColor: "var(--bg)" }} aria-hidden>
-        <span className="h-2 w-2 rounded-full" style={{ backgroundColor: "var(--border-strong)" }} />
-        <span className="h-2 w-2 rounded-full" style={{ backgroundColor: "var(--border-strong)" }} />
-        <span className="h-2 w-2 rounded-full" style={{ backgroundColor: "var(--border-strong)" }} />
-      </div>
-      <Image
-        src={image.src}
-        width={image.width}
-        height={image.height}
-        alt={image.alt}
-        priority
-        sizes="(min-width: 1024px) 896px, 100vw"
-        className="block h-auto w-full"
-      />
+    <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl" style={{ border: "1px solid var(--border)" }}>
+      <FramedShot image={image} sizes="(min-width: 1024px) 896px, 100vw" className={frameOf(image) === "phone" ? "aspect-[16/12] sm:aspect-[16/10]" : undefined} />
     </div>
   );
 }
@@ -67,28 +35,16 @@ function StepImage({ image, index }: { image: AppImage | undefined; index: numbe
   if (!image) {
     return (
       <div
-        className="aspect-video flex items-center justify-center text-3xl font-semibold"
+        className="aspect-[16/10] flex items-center justify-center text-3xl font-semibold"
         style={{ backgroundColor: "var(--bg)", color: "var(--text-muted)" }}
       >
         {String(index + 1).padStart(2, "0")}
       </div>
     );
   }
-  // Mesmo quadro para todos os passos; a imagem mantém a proporção (contain para celular, cover ancorado no topo para tela larga).
   return (
-    <div className="relative aspect-video overflow-hidden" style={{ backgroundColor: "var(--bg)", borderBottom: "1px solid var(--border)" }}>
-      <Image
-        src={image.src}
-        width={image.width}
-        height={image.height}
-        alt={image.alt}
-        sizes="(min-width: 768px) 33vw, 100vw"
-        className={
-          isPortrait(image)
-            ? "absolute inset-0 h-full w-full object-contain p-3"
-            : "absolute inset-0 h-full w-full object-cover object-top"
-        }
-      />
+    <div style={{ borderBottom: "1px solid var(--border)" }}>
+      <FramedShot image={image} sizes="(min-width: 768px) 360px, 100vw" background="var(--bg)" />
     </div>
   );
 }

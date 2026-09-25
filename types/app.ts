@@ -5,6 +5,8 @@ export interface AppImage {
   width: number;
   height: number;
   alt: string;
+  /** Moldura: celular (retrato), navegador (paisagem, padrão) ou telão. Deduzida pela proporção se ausente. */
+  frame?: "phone" | "browser" | "screen";
 }
 
 export interface AppMetric {

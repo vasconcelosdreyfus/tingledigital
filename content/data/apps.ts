@@ -24,10 +24,10 @@ export const apps: AppEntry[] = [
     ],
     logo: { src: "/apps/eter/icone.webp", width: 512, height: 512, alt: "Ícone do Eter" },
     images: [
-      { src: "/apps/eter/chat.webp", width: 660, height: 1428, alt: "Tela de conversa do Eter com mensagens que se dissipam" },
-      { src: "/apps/eter/seguranca.webp", width: 660, height: 1428, alt: "Tela de segurança do Eter" },
-      { src: "/apps/eter/chamada.webp", width: 660, height: 1428, alt: "Chamada cifrada no Eter" },
-      { src: "/apps/eter/circulo.webp", width: 660, height: 1428, alt: "Círculo interno do Eter" },
+      { src: "/apps/eter/chat.webp", width: 660, height: 1412, alt: "Conversa no Eter com mensagens que se dissipam em 24 horas" },
+      { src: "/apps/eter/seguranca.webp", width: 660, height: 1286, alt: "Tela de segurança do Eter" },
+      { src: "/apps/eter/grupo.webp", width: 660, height: 1307, alt: "Conversa em grupo no Eter" },
+      { src: "/apps/eter/contato.webp", width: 660, height: 1261, alt: "Contato no Eter com chave verificada por Key Transparency" },
     ],
     featured: true,
   },
@@ -94,7 +94,7 @@ export const apps: AppEntry[] = [
     platforms: ["iOS (beta)", "Android (beta)"],
     links: [],
     logo: { src: "/apps/cognita-pesquisa/icone.webp", width: 512, height: 512, alt: "Ícone do Cognita Pesquisa" },
-    images: [{ src: "/apps/leitura-delas/telao.webp", width: 1600, height: 900, alt: "Telão do Espaço Plural com as 11.632 respostas da pesquisa no Rock in Rio 2026" }],
+    images: [],
     // runAggregationQuery em projetos/kMkuKf3QYPx5He4gL0hA/respostasPesquisas, 25/09/2026
     metrics: [
       { value: "11.632", label: "respostas no Rock in Rio 2026" },
@@ -115,7 +115,7 @@ export const apps: AppEntry[] = [
     links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=br.org.sentinelas.sentinelas" }],
     logo: { src: "/apps/sentinelas/icone.webp", width: 512, height: 512, alt: "Ícone do Sentinelas da Guanabara" },
     images: [
-      { src: "/apps/sentinelas/baia.webp", width: 660, height: 1434, alt: "Boto Tito na baía, tela principal do Sentinelas" },
+      { src: "/apps/sentinelas/baia.webp", width: 660, height: 1434, alt: "O boto Tito na baía, tela principal do Sentinelas" },
       { src: "/apps/sentinelas/praias.webp", width: 660, height: 1434, alt: "Balneabilidade das praias no Sentinelas" },
       { src: "/apps/sentinelas/aprender.webp", width: 660, height: 1434, alt: "Trilhas de aprendizado no Sentinelas" },
       { src: "/apps/sentinelas/bestiario.webp", width: 660, height: 1434, alt: "Bestiário de espécies da Guanabara" },
@@ -134,7 +134,7 @@ export const apps: AppEntry[] = [
     status: { kind: "publicado", label: "No ar · atualizado diariamente" },
     platforms: ["Web"],
     links: [{ label: "votia.live", href: "https://votia.live" }],
-    images: [{ src: "/apps/votia/og.webp", width: 1200, height: 630, alt: "VotIA: projeções eleitorais 2026 com IA" }],
+    images: [{ src: "/apps/votia/sobre.webp", width: 1600, height: 1000, alt: "Como funciona o VotIA, aba Sobre do site" }],
     notice: "Projeção estatística, não é pesquisa eleitoral (Lei nº 9.504/97, art. 33). VotIA · votia.live",
   },
   {
@@ -150,10 +150,7 @@ export const apps: AppEntry[] = [
     platforms: ["Totem", "Celular", "Telão"],
     links: [],
     images: [
-      { src: "/apps/leitura-delas/telao.webp", width: 1600, height: 900, alt: "Telão ao vivo do Leitura Delas no Espaço Plural" },
-      { src: "/apps/leitura-delas/arquetipo.webp", width: 660, height: 1430, alt: "Leitura pessoal no celular: A Cultivadora" },
-      { src: "/apps/leitura-delas/totem.webp", width: 660, height: 1173, alt: "Totem do Leitura Delas: descubra quem você é no palco da vida" },
-      { src: "/apps/leitura-delas/papo.webp", width: 660, height: 1173, alt: "Totem do Papo que Protege" },
+      { src: "/apps/leitura-delas/telao.webp", width: 1600, height: 900, alt: "Telão ao vivo do Leitura Delas no Espaço Plural", frame: "screen" },
     ],
     // ~/dev/RWD/docs/rockworld/relatorio-2026/RELATORIO.md (dias de show)
     metrics: [
@@ -178,7 +175,6 @@ export const apps: AppEntry[] = [
     images: [
       { src: "/apps/studio-tycoon/mesa.webp", width: 1200, height: 820, alt: "Mesa de produção do Studio Tycoon" },
       { src: "/apps/studio-tycoon/corrida.webp", width: 1200, height: 844, alt: "Corrida dos estúdios no telão" },
-      { src: "/apps/studio-tycoon/lobby.webp", width: 1200, height: 703, alt: "Pré-temporada do Studio Tycoon" },
     ],
     metrics: [
       { value: "39", label: "turmas" },
@@ -200,7 +196,6 @@ export const apps: AppEntry[] = [
     links: [],
     images: [
       { src: "/apps/breaking-codes/desktop.webp", width: 1600, height: 1000, alt: "Briefing do Breaking Codes 26" },
-      { src: "/apps/breaking-codes/mobile.webp", width: 660, height: 1428, alt: "Breaking Codes 26 no celular" },
     ],
     metrics: [
       { value: "39", label: "equipes" },
@@ -220,9 +215,7 @@ export const apps: AppEntry[] = [
     platforms: ["Web"],
     links: [{ label: "Ver protótipo", href: "https://lineupbattle.vercel.app" }],
     images: [
-      { src: "/apps/lineup-battle/elenco.webp", width: 1536, height: 1024, alt: "Elenco de personagens do Lineup Battle" },
       { src: "/apps/lineup-battle/home.webp", width: 660, height: 1428, alt: "Entrada do Lineup Battle" },
-      { src: "/apps/lineup-battle/album.webp", width: 660, height: 1428, alt: "Álbum do Lineup Battle" },
     ],
   },
   {

@@ -16,10 +16,14 @@ export function AppCard({ app }: { app: AppEntry }) {
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
       <div
-        className={cn("border-b", wide && "lg:border-b-0 lg:border-r")}
+        className={cn("border-b", wide && "lg:h-full lg:border-b-0 lg:border-r")}
         style={{ borderColor: "var(--border)", backgroundColor: "var(--surface-elevated)" }}
       >
-        <AppCover app={app} wide={wide} />
+        <AppCover
+          app={app}
+          maxPhones={wide ? 3 : 2}
+          className={cn(wide && "lg:aspect-auto lg:h-full lg:min-h-[440px]")}
+        />
       </div>
 
       <div className="flex flex-1 flex-col p-6 sm:p-8">

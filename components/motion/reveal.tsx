@@ -68,21 +68,3 @@ export function RevealItem({ as = "div", children, ...rest }: RevealProps) {
     </M>
   );
 }
-
-/** Um único pulso de escala ao entrar na tela (ex.: cadeado do Eter). */
-export function PulseOnce({ delay = 0, children, className }: { delay?: number; children: React.ReactNode; className?: string }) {
-  const reduce = useReducedMotion();
-  if (reduce) return <span className={className} style={{ display: "inline-flex" }}>{children}</span>;
-  return (
-    <motion.span
-      className={className}
-      style={{ display: "inline-flex" }}
-      initial={{ transform: "scale(1)" }}
-      whileInView={{ transform: ["scale(1)", "scale(1.25)", "scale(1)"] }}
-      viewport={VIEWPORT}
-      transition={{ duration: 0.4, ease: EASE_IN_OUT, delay }}
-    >
-      {children}
-    </motion.span>
-  );
-}
