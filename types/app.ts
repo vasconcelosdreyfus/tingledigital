@@ -5,8 +5,6 @@ export interface AppImage {
   width: number;
   height: number;
   alt: string;
-  /** Moldura: celular (retrato), navegador (paisagem, padrão) ou telão. Deduzida pela proporção se ausente. */
-  frame?: "phone" | "browser" | "screen";
 }
 
 export interface AppMetric {
@@ -25,12 +23,11 @@ export interface AppEntry {
   status: { kind: AppStatusKind; label: string };
   platforms: string[];
   links: { label: string; href: string }[];
-  /** Ícone ou logo quadrado/horizontal da aplicação. */
-  logo?: AppImage;
-  /** Telas reais: a primeira é a capa. */
-  images: AppImage[];
+  /** Ícone oficial, quadrado 512×512. É a única imagem da aplicação no site. */
+  icon: AppImage;
+  /** Página interna da aplicação, quando existe (ex.: /cognita). */
+  page?: string;
   metrics?: AppMetric[];
   /** Aviso obrigatório a exibir junto (ex.: legislação eleitoral). */
   notice?: string;
-  featured?: boolean;
 }

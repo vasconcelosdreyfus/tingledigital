@@ -15,27 +15,10 @@ const FILTERS: { id: FilterId; label: string; kinds: AppStatusKind[] | null }[] 
   { id: "teste", label: "Em teste e desenvolvimento", kinds: ["teste", "desenvolvimento"] },
 ];
 
-/**
- * Ordem de exibição para a grade de 2 colunas: destaques ocupam a linha inteira,
- * e um card simples que ficaria sozinho antes de um destaque puxa o próximo simples para o seu lado.
- */
-function packForGrid(items: AppEntry[]): AppEntry[] {
-  const rest = [...items];
-  const out: AppEntry[] = [];
-  while (rest.length > 0) {
-    const current = rest.shift() as AppEntry;
-    out.push(current);
-    if (current.featured) continue;
-    const partnerIndex = rest.findIndex((a) => !a.featured);
-    if (partnerIndex >= 0) out.push(...rest.splice(partnerIndex, 1));
-  }
-  return out;
-}
-
 export function AppsShowcase({ apps }: { apps: AppEntry[] }) {
   const [active, setActive] = React.useState<FilterId>("todos");
   const kinds = FILTERS.find((f) => f.id === active)?.kinds ?? null;
-  const visible = packForGrid(kinds ? apps.filter((a) => kinds.includes(a.status.kind)) : apps);
+  const visible = kinds ? apps.filter((a) => kinds.includes(a.status.kind)) : apps;
 
   return (
     <div>
@@ -70,9 +53,9 @@ export function AppsShowcase({ apps }: { apps: AppEntry[] }) {
         {visible.length === 1 ? "1 aplicação exibida" : `${visible.length} aplicações exibidas`}
       </p>
 
-      <RevealGroup key={active} stagger={0.06} className="mt-12 grid gap-6 lg:grid-cols-2">
+      <RevealGroup key={active} stagger={0.06} className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {visible.map((app) => (
-          <RevealItem key={app.slug} className={cn("min-w-0", app.featured && "lg:col-span-2")} data-app={app.slug}>
+          <RevealItem key={app.slug} className="min-w-0" data-app={app.slug}>
             <AppCard app={app} />
           </RevealItem>
         ))}

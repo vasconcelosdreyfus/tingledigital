@@ -3,7 +3,7 @@ import type { AppEntry, AppImage } from "@/types/app";
 /**
  * Fonte única das aplicações exibidas no site.
  * Status e números conferidos em 25/09/2026; a origem de cada número está no comentário ao lado.
- * Imagens: telas reais (lojas, capturas de produção ou materiais do próprio projeto), sem rostos de pessoas.
+ * Imagem: só o ícone oficial de cada aplicação (512×512), para a vitrine ficar uniforme e sem telas de teste.
  */
 export const apps: AppEntry[] = [
   {
@@ -16,20 +16,14 @@ export const apps: AppEntry[] = [
     category: "Comunicação e privacidade",
     // App Store id6759132602 (iTunes lookup) e Google Play com.eter.eter (HTTP 200), 25/09/2026
     status: { kind: "publicado", label: "Publicado na App Store e no Google Play" },
+    icon: { src: "/apps/icons/eter.webp", width: 512, height: 512, alt: "Ícone do Eter" },
     platforms: ["iOS", "Android", "macOS (beta)"],
     links: [
       { label: "App Store", href: "https://apps.apple.com/br/app/eter/id6759132602" },
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.eter.eter" },
       { label: "eter.social", href: "https://eter.social" },
     ],
-    logo: { src: "/apps/eter/icone.webp", width: 512, height: 512, alt: "Ícone do Eter" },
-    images: [
-      { src: "/apps/eter/chat.webp", width: 660, height: 1412, alt: "Conversa no Eter com mensagens que se dissipam em 24 horas" },
-      { src: "/apps/eter/seguranca.webp", width: 660, height: 1286, alt: "Tela de segurança do Eter" },
-      { src: "/apps/eter/grupo.webp", width: 660, height: 1307, alt: "Conversa em grupo no Eter" },
-      { src: "/apps/eter/contato.webp", width: 660, height: 1261, alt: "Contato no Eter com chave verificada por Key Transparency" },
-    ],
-    featured: true,
+    page: "/eter",
   },
   {
     slug: "the-candidate",
@@ -41,17 +35,11 @@ export const apps: AppEntry[] = [
     category: "Jogos",
     // Google Play com.bevoted.thecandidate (HTTP 200, atualizado 18/09/2026); iOS 1.2.2 WAITING_FOR_REVIEW (ASC API)
     status: { kind: "publicado", label: "No Google Play · iOS em análise da Apple" },
+    icon: { src: "/apps/icons/the-candidate.webp", width: 512, height: 512, alt: "Ícone do The Candidate" },
     platforms: ["Android", "iOS (em análise)"],
     links: [
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.bevoted.thecandidate" },
       { label: "thecandidate.app", href: "https://thecandidate.app" },
-    ],
-    logo: { src: "/apps/the-candidate/icone.webp", width: 512, height: 512, alt: "Ícone do The Candidate" },
-    images: [
-      { src: "/apps/the-candidate/qg.webp", width: 660, height: 1434, alt: "QG de campanha do The Candidate com o mapa do Brasil" },
-      { src: "/apps/the-candidate/comicio.webp", width: 660, height: 1434, alt: "Minigame de comício do The Candidate" },
-      { src: "/apps/the-candidate/jornal.webp", width: 660, height: 1434, alt: "Jornal O Palanque dentro do jogo" },
-      { src: "/apps/the-candidate/abertura.webp", width: 660, height: 1434, alt: "Tela de abertura: Quer ser presidente?" },
     ],
     // meta description do site e descrição da loja
     metrics: [
@@ -59,46 +47,25 @@ export const apps: AppEntry[] = [
       { value: "30", label: "partidos" },
       { value: "9", label: "adversários" },
     ],
-    featured: true,
   },
   {
     slug: "cognita",
     name: "Cognita",
     tagline: "Gestão educacional e de projetos sociais.",
     description:
-      "Plataforma multi-cliente para alunos, turmas, frequência, aulas, gamificação, eventos, pesquisas e prestação de contas. Construída com a Casa Brasil para a EPES.",
+      "Plataforma multi-cliente para alunos, turmas, frequência, aulas, gamificação, eventos e prestação de contas, com um app de campo para pesquisas presenciais em grandes festivais. Construída com a Casa Brasil para a EPES.",
     owner: "Produto Tingle",
     category: "Educação e gestão social",
     // cognita.tingledigital.com HTTP 200; coleção projetos em produção: EPES, Tropa do Esporte, Educa Brasis, Rede Vida Animal Brasil, Casa Tech
-    status: { kind: "publicado", label: "No ar · web" },
-    platforms: ["Web"],
+    status: { kind: "publicado", label: "No ar · web · app de campo em beta" },
+    icon: { src: "/apps/icons/cognita.webp", width: 512, height: 512, alt: "Ícone do Cognita" },
+    platforms: ["Web", "iOS (beta)", "Android (beta)"],
     links: [{ label: "cognita.tingledigital.com", href: "https://cognita.tingledigital.com" }],
-    logo: { src: "/apps/cognita/logo.webp", width: 512, height: 512, alt: "Logo do Cognita" },
-    images: [
-      { src: "/apps/cognita/epes-publico.webp", width: 1600, height: 1342, alt: "Página pública da EPES no Cognita com inscrições abertas" },
-      { src: "/apps/cognita/login.webp", width: 1600, height: 1000, alt: "Entrada do Cognita com os projetos que usam a plataforma" },
-    ],
-    metrics: [{ value: "5", label: "organizações usando" }],
-    featured: true,
-  },
-  {
-    slug: "cognita-pesquisa",
-    name: "Cognita Pesquisa",
-    tagline: "Pesquisa de campo em grandes festivais.",
-    description:
-      "App das equipes de pesquisadores que aplicam questionários presencialmente, com metas por equipe, mapa, QR e ranking. Operado para a Educa Brasis nas pesquisas de diversidade dos festivais.",
-    owner: "Para Educa Brasis",
-    category: "Pesquisa e dados",
-    // TestFlight aTP8smZc aberto; ASC build 2026090601 VALID; Firebase App Distribution 1.0.3 (06/09/2026)
-    status: { kind: "teste", label: "Em uso em beta (TestFlight e Android)" },
-    platforms: ["iOS (beta)", "Android (beta)"],
-    links: [],
-    logo: { src: "/apps/cognita-pesquisa/icone.webp", width: 512, height: 512, alt: "Ícone do Cognita Pesquisa" },
-    images: [],
-    // runAggregationQuery em projetos/kMkuKf3QYPx5He4gL0hA/respostasPesquisas, 25/09/2026
+    page: "/cognita",
+    // 5 organizações: coleção projetos em produção. Respostas: runAggregationQuery em projetos/kMkuKf3QYPx5He4gL0hA/respostasPesquisas (25/09/2026)
     metrics: [
-      { value: "11.632", label: "respostas no Rock in Rio 2026" },
-      { value: "6.683", label: "respostas no Lollapalooza 2026" },
+      { value: "5", label: "organizações usando" },
+      { value: "11.632", label: "respostas de pesquisa no Rock in Rio 2026" },
     ],
   },
   {
@@ -111,16 +78,9 @@ export const apps: AppEntry[] = [
     category: "Educação ambiental",
     // Google Play br.org.sentinelas.sentinelas (HTTP 200, atualizado 03/09/2026); iOS 1.0.0 WAITING_FOR_REVIEW (ASC API)
     status: { kind: "publicado", label: "No Google Play · iOS em análise da Apple" },
+    icon: { src: "/apps/icons/sentinelas.webp", width: 512, height: 512, alt: "Ícone do Sentinelas da Guanabara" },
     platforms: ["Android", "iOS (em análise)"],
     links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=br.org.sentinelas.sentinelas" }],
-    logo: { src: "/apps/sentinelas/icone.webp", width: 512, height: 512, alt: "Ícone do Sentinelas da Guanabara" },
-    images: [
-      { src: "/apps/sentinelas/baia.webp", width: 660, height: 1434, alt: "O boto Tito na baía, tela principal do Sentinelas" },
-      { src: "/apps/sentinelas/praias.webp", width: 660, height: 1434, alt: "Balneabilidade das praias no Sentinelas" },
-      { src: "/apps/sentinelas/aprender.webp", width: 660, height: 1434, alt: "Trilhas de aprendizado no Sentinelas" },
-      { src: "/apps/sentinelas/bestiario.webp", width: 660, height: 1434, alt: "Bestiário de espécies da Guanabara" },
-    ],
-    featured: true,
   },
   {
     slug: "votia",
@@ -132,9 +92,9 @@ export const apps: AppEntry[] = [
     category: "Dados e IA",
     // votia.live HTTP 200, corte de 24/09/2026
     status: { kind: "publicado", label: "No ar · atualizado diariamente" },
+    icon: { src: "/apps/icons/votia.webp", width: 512, height: 512, alt: "Ícone do VotIA" },
     platforms: ["Web"],
     links: [{ label: "votia.live", href: "https://votia.live" }],
-    images: [{ src: "/apps/votia/sobre.webp", width: 1600, height: 1000, alt: "Como funciona o VotIA, aba Sobre do site" }],
     notice: "Projeção estatística, não é pesquisa eleitoral (Lei nº 9.504/97, art. 33). VotIA · votia.live",
   },
   {
@@ -147,18 +107,15 @@ export const apps: AppEntry[] = [
     category: "Experiências em eventos",
     // relatório RELATORIO.md (Rock World 2026): festival de 4 a 13/09/2026
     status: { kind: "realizado", label: "Realizado · Rock in Rio, set/2026" },
+    icon: { src: "/apps/icons/leitura-delas.svg", width: 512, height: 512, alt: "Ícone do Leitura Delas e Papo que Protege" },
     platforms: ["Totem", "Celular", "Telão"],
     links: [],
-    images: [
-      { src: "/apps/leitura-delas/telao.webp", width: 1600, height: 900, alt: "Telão ao vivo do Leitura Delas no Espaço Plural", frame: "screen" },
-    ],
     // ~/dev/RWD/docs/rockworld/relatorio-2026/RELATORIO.md (dias de show)
     metrics: [
       { value: "2.687", label: "leituras nos dias de show" },
       { value: "578", label: "conversas no Papo que Protege" },
       { value: "78,3%", label: "das leituras abertas no celular" },
     ],
-    featured: true,
   },
   {
     slug: "studio-tycoon",
@@ -170,12 +127,9 @@ export const apps: AppEntry[] = [
     category: "Jogos educacionais",
     // docs/relatorio/dados_final.json (31/08/2026) e abertura_cerimonia.md
     status: { kind: "realizado", label: "Realizado · 22 a 31/ago/2026" },
+    icon: { src: "/apps/icons/studio-tycoon.webp", width: 512, height: 512, alt: "Ícone do Studio Tycoon" },
     platforms: ["Web", "Telão"],
     links: [],
-    images: [
-      { src: "/apps/studio-tycoon/mesa.webp", width: 1200, height: 820, alt: "Mesa de produção do Studio Tycoon" },
-      { src: "/apps/studio-tycoon/corrida.webp", width: 1200, height: 844, alt: "Corrida dos estúdios no telão" },
-    ],
     metrics: [
       { value: "39", label: "turmas" },
       { value: "3", label: "ligas" },
@@ -192,11 +146,9 @@ export const apps: AppEntry[] = [
     category: "Jogos educacionais",
     // evento RtG14LzuO7plbOYKWvKU encerrado (25 a 27/06/2026); respostas no projeto breakingcodes-6a973
     status: { kind: "realizado", label: "Realizado · jun/2026" },
+    icon: { src: "/apps/icons/breaking-codes.webp", width: 512, height: 512, alt: "Ícone do Breaking Codes 26" },
     platforms: ["Web"],
     links: [],
-    images: [
-      { src: "/apps/breaking-codes/desktop.webp", width: 1600, height: 1000, alt: "Briefing do Breaking Codes 26" },
-    ],
     metrics: [
       { value: "39", label: "equipes" },
       { value: "15", label: "fases concluídas por todas" },
@@ -212,11 +164,9 @@ export const apps: AppEntry[] = [
     category: "Jogos",
     // lineupbattle.vercel.app HTTP 200 (vertical slice)
     status: { kind: "desenvolvimento", label: "Protótipo jogável no ar" },
+    icon: { src: "/apps/icons/lineup-battle.webp", width: 512, height: 512, alt: "Ícone do Lineup Battle" },
     platforms: ["Web"],
     links: [{ label: "Ver protótipo", href: "https://lineupbattle.vercel.app" }],
-    images: [
-      { src: "/apps/lineup-battle/home.webp", width: 660, height: 1428, alt: "Entrada do Lineup Battle" },
-    ],
   },
   {
     slug: "coronel",
@@ -228,9 +178,9 @@ export const apps: AppEntry[] = [
     category: "Sites",
     // coronelchrisostomo.com.br servido pela Vercel, HTTP 200
     status: { kind: "publicado", label: "No ar" },
+    icon: { src: "/apps/icons/coronel.webp", width: 512, height: 512, alt: "Ícone do Site Coronel Chrisóstomo" },
     platforms: ["Web"],
     links: [{ label: "coronelchrisostomo.com.br", href: "https://coronelchrisostomo.com.br" }],
-    images: [{ src: "/apps/coronel/site.webp", width: 1600, height: 1000, alt: "Página inicial do site do Coronel Chrisóstomo" }],
   },
   {
     slug: "vesti",
@@ -242,10 +192,9 @@ export const apps: AppEntry[] = [
     category: "Moda e IA",
     // ASC: build 12 VALID, só grupo interno; versão 1.0 PREPARE_FOR_SUBMISSION
     status: { kind: "teste", label: "Em teste fechado" },
+    icon: { src: "/apps/icons/vesti.webp", width: 512, height: 512, alt: "Ícone do Vesti" },
     platforms: ["iOS", "Android"],
     links: [],
-    logo: { src: "/apps/vesti/icone.webp", width: 512, height: 512, alt: "Ícone do Vesti" },
-    images: [],
   },
   {
     slug: "prime",
@@ -257,10 +206,9 @@ export const apps: AppEntry[] = [
     category: "Saúde",
     // ASC: build 2 VALID (TestFlight); ambiente de produção ainda não publicado
     status: { kind: "teste", label: "Em teste fechado" },
+    icon: { src: "/apps/icons/prime.webp", width: 512, height: 512, alt: "Ícone do Prime Healthcare" },
     platforms: ["iOS", "Web"],
     links: [],
-    logo: { src: "/apps/prime/simbolo.webp", width: 512, height: 512, alt: "Símbolo da Prime Healthcare" },
-    images: [{ src: "/apps/prime/portal.webp", width: 1600, height: 1000, alt: "Portal do paciente da Prime Healthcare" }],
   },
   {
     slug: "dreamphi",
@@ -272,10 +220,9 @@ export const apps: AppEntry[] = [
     category: "Bem-estar",
     // ASC: builds 35 a 37 VALID (TestFlight); não publicado
     status: { kind: "teste", label: "Em teste fechado" },
+    icon: { src: "/apps/icons/dreamphi.webp", width: 512, height: 512, alt: "Ícone do DreamPhi" },
     platforms: ["iOS"],
     links: [],
-    logo: { src: "/apps/dreamphi/icone.webp", width: 512, height: 512, alt: "Ícone do DreamPhi" },
-    images: [],
   },
 ];
 

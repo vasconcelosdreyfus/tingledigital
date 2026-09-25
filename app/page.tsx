@@ -10,11 +10,9 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { ValidationLogos } from "@/components/shared/validation-logos";
 import { HomeAppsLive } from "@/components/sections/home/home-apps-live";
-import { StatusBadge } from "@/components/apps/status-badge";
-import { AppCover } from "@/components/apps/app-cover";
 import { apps } from "@/content/data/apps";
 import { TINGLE_FOUNDED } from "@/content/data/home";
-import { ArrowRight, ArrowUpRight, Lightbulb, Zap, Network } from "lucide-react";
+import { ArrowRight, Lightbulb, Zap, Network } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("hero");
@@ -36,14 +34,11 @@ export default async function Home() {
       {/* Section 1b: quem já confiou (logos reais) */}
       <ValidationStrip />
 
-      {/* Section 2: What we build — Cognita + Eter as flagships */}
-      <ProductsSection />
+      {/* Section 2: aplicações no ar, cada uma uma vez (apps.ts) */}
+      <HomeAppsLive />
 
       {/* Section 3: Capabilities stacked cards */}
       <CapabilitiesSection />
-
-      {/* Section 4: aplicações no ar (apps.ts, featured) */}
-      <HomeAppsLive />
 
       {/* Section 5: Numbers */}
       <NumbersSection />
@@ -64,158 +59,6 @@ async function ValidationStrip() {
 
 function findApp(slug: string) {
   return apps.find((a) => a.slug === slug);
-}
-
-async function ProductsSection() {
-  const t = await getTranslations("products");
-  const cognitaApp = findApp("cognita");
-  const eterApp = findApp("eter");
-  const cognitaOrgs = cognitaApp?.metrics?.[0]?.value;
-  const storeLinks = eterApp?.links.filter((l) => l.label === "App Store" || l.label === "Google Play") ?? [];
-
-  return (
-    <section
-      className="py-24 lg:py-32"
-      style={{
-        backgroundColor: "var(--surface-elevated)",
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
-      }}
-    >
-      <Container>
-        <Reveal className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
-            {t("title")}
-          </h2>
-        </Reveal>
-
-        <RevealGroup stagger={0.1} className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
-          {/* Cognita */}
-          <RevealItem
-            className="rounded-2xl p-8 flex flex-col"
-            style={{
-              border: "1px solid var(--border)",
-              backgroundColor: "var(--bg)",
-            }}
-          >
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span
-                className="text-xs font-medium uppercase tracking-wider"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {t("cognita.category")}
-              </span>
-              {cognitaApp && (
-                <StatusBadge
-                  kind={cognitaApp.status.kind}
-                  label={cognitaOrgs ? t("cognita.status", { count: cognitaOrgs }) : cognitaApp.status.label}
-                />
-              )}
-            </div>
-            <h3 className="text-2xl sm:text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>
-              {t("cognita.name")}
-            </h3>
-            <p className="mt-4 text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>
-              {t("cognita.description")}
-            </p>
-
-            {/* Tela real do Cognita, mesma moldura da vitrine de aplicações */}
-            {cognitaApp && (
-              <div className="mt-6 overflow-hidden rounded-xl" style={{ border: "1px solid var(--border)" }}>
-                <AppCover app={cognitaApp} />
-              </div>
-            )}
-
-            <Link
-              href="/cognita"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium hover:underline self-start"
-              style={{ color: "var(--text)" }}
-            >
-              {t("cognita.cta")}
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
-          </RevealItem>
-
-          {/* Eter — intentionally dark brand card */}
-          <RevealItem className="rounded-2xl border border-[#0F0E0D] bg-[#0F0E0D] p-8 flex flex-col text-[#F2EDE6]">
-            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-              <span className="text-xs font-medium text-[#C9A96E] uppercase tracking-wider">
-                {t("eter.category")}
-              </span>
-              {eterApp && (
-                // Azul claro no card escuro: mesmo sinal de "publicado", contraste legível sobre #0F0E0D.
-                <StatusBadge kind={eterApp.status.kind} label={t("eter.status")} className="text-[#7CB0FF]!" />
-              )}
-            </div>
-            <h3
-              className="text-2xl sm:text-3xl font-semibold text-[#F2EDE6] text-balance"
-              style={{ fontFamily: "Sora, Inter, sans-serif" }}
-            >
-              {t("eter.name")}
-            </h3>
-            <p className="mt-4 text-base text-[#F2EDE6]/70 leading-relaxed">
-              {t("eter.description")}
-            </p>
-
-            {/* Telas reais do Eter (App Store), mesma moldura da vitrine de aplicações */}
-            {eterApp && (
-              <div className="mt-6 overflow-hidden rounded-xl border border-[#2A2725]">
-                <AppCover app={eterApp} className="bg-[#1A1817]!" />
-              </div>
-            )}
-
-            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <Link
-                href="/eter"
-                className="inline-flex items-center gap-2 text-sm font-medium text-[#C9A96E] hover:underline"
-              >
-                {t("eter.cta")}
-                <ArrowUpRight className="h-4 w-4" />
-              </Link>
-              {storeLinks.map((l) => (
-                <a
-                  key={l.href}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-sm text-[#F2EDE6]/70 hover:text-[#F2EDE6] hover:underline"
-                >
-                  {l.label}
-                  <ArrowUpRight className="h-3.5 w-3.5" />
-                </a>
-              ))}
-            </div>
-          </RevealItem>
-        </RevealGroup>
-
-        <p className="text-center text-sm mt-12" style={{ color: "var(--text-secondary)" }}>
-          {t.rich("alsoOffer", {
-            consultoriaLink: (chunks) => (
-              <Link
-                href="/consultoria"
-                className="underline underline-offset-2 hover:no-underline"
-                style={{ color: "var(--text)" }}
-              >
-                {chunks}
-              </Link>
-            ),
-            utilitiesLink: (chunks) => (
-              <Link
-                href="/utilities"
-                className="underline underline-offset-2 hover:no-underline"
-                style={{ color: "var(--text)" }}
-              >
-                {chunks}
-              </Link>
-            ),
-          })}
-        </p>
-      </Container>
-    </section>
-  );
 }
 
 async function CapabilitiesSection() {
@@ -298,7 +141,7 @@ async function NumbersSection() {
     { value: yearsSince(TINGLE_FOUNDED), label: t("years") },
     { value: storeApps || undefined, label: t("storeApps") },
     { value: parseMetric(findApp("cognita")?.metrics?.[0]?.value), label: t("cognitaOrgs") },
-    { value: parseMetric(findApp("cognita-pesquisa")?.metrics?.[0]?.value), label: t("surveyResponses") },
+    { value: parseMetric(findApp("cognita")?.metrics?.[1]?.value), label: t("surveyResponses") },
   ];
   const stats = items.filter((s): s is { value: number; label: string } => s.value !== undefined);
 

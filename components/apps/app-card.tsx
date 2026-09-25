@@ -1,46 +1,21 @@
-import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { AppEntry } from "@/types/app";
 import { StatusBadge } from "@/components/apps/status-badge";
-import { AppCover } from "@/components/apps/app-cover";
-import { cn } from "@/lib/utils";
+import { AppIcon } from "@/components/apps/app-icon";
 
 export function AppCard({ app }: { app: AppEntry }) {
-  const wide = Boolean(app.featured);
   return (
     <article
-      className={cn(
-        "flex h-full flex-col overflow-hidden rounded-2xl",
-        wide && "lg:grid lg:grid-cols-[1.1fr_1fr]",
-      )}
+      id={app.slug}
+      className="flex h-full scroll-mt-28 flex-col rounded-2xl p-6 sm:p-8"
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
-      <div
-        className={cn("border-b", wide && "lg:h-full lg:border-b-0 lg:border-r")}
-        style={{ borderColor: "var(--border)", backgroundColor: "var(--surface-elevated)" }}
-      >
-        <AppCover
-          app={app}
-          maxPhones={wide ? 3 : 2}
-          className={cn(wide && "lg:aspect-auto lg:h-full lg:min-h-[440px]")}
-        />
-      </div>
-
-      <div className="flex flex-1 flex-col p-6 sm:p-8">
-        <div className="flex items-center gap-3">
-          {app.logo && app.images.length > 0 && (
-            <Image
-              src={app.logo.src}
-              width={app.logo.width}
-              height={app.logo.height}
-              alt=""
-              sizes="40px"
-              className="h-10 w-10 shrink-0 rounded-xl object-contain"
-              style={{ border: "1px solid var(--border)" }}
-            />
-          )}
+      <div className="flex flex-1 flex-col">
+        <div className="flex items-center gap-4">
+          <AppIcon app={app} className="w-16 sm:w-[72px]" />
           <div className="min-w-0">
-            <h3 className="text-xl font-semibold text-balance sm:text-2xl" style={{ color: "var(--text)" }}>
+            <h3 className="text-xl font-semibold text-balance" style={{ color: "var(--text)" }}>
               {app.name}
             </h3>
             <p className="text-sm" style={{ color: "var(--text-muted)" }}>
@@ -85,8 +60,20 @@ export function AppCard({ app }: { app: AppEntry }) {
           ))}
         </ul>
 
-        {app.links.length > 0 && (
+        {(app.page || app.links.length > 0) && (
           <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+            {app.page && (
+              <li>
+                <Link
+                  href={app.page}
+                  className="inline-flex items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
+                  style={{ color: "var(--text)" }}
+                >
+                  Conhecer o {app.name}
+                  <ArrowRight className="h-4 w-4" aria-hidden />
+                </Link>
+              </li>
+            )}
             {app.links.map((link) => (
               <li key={link.href}>
                 <a

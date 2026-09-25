@@ -4,58 +4,49 @@ import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/primitives/container";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { StatusBadge } from "@/components/apps/status-badge";
+import { AppIcon } from "@/components/apps/app-icon";
 import { apps } from "@/content/data/apps";
 import type { AppEntry } from "@/types/app";
-import { AppCover } from "@/components/apps/app-cover";
 
-function AppLiveCard({ app }: { app: AppEntry }) {
+function AppTile({ app }: { app: AppEntry }) {
   const metric = app.metrics?.[0];
   return (
     <Link
-      href="/cases"
-      className="group flex h-full flex-col overflow-hidden rounded-2xl transition-shadow hover:shadow-lg hover:shadow-black/5"
+      href={app.page ?? `/cases#${app.slug}`}
+      className="group flex h-full flex-col rounded-2xl p-6 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB] hover:bg-[var(--surface-elevated)]"
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
-      <div style={{ borderBottom: "1px solid var(--border)" }}>
-        <AppCover app={app} />
-      </div>
-      <div className="flex flex-1 flex-col p-6">
-        <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-          <span className="text-xs font-medium uppercase tracking-wider" style={{ color: "var(--text-secondary)" }}>
-            {app.category}
+      <AppIcon app={app} className="w-14" />
+      <h3 className="mt-5 text-lg font-semibold" style={{ color: "var(--text)" }}>
+        {app.name}
+      </h3>
+      <p className="mt-1 text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+        {app.tagline}
+      </p>
+      <StatusBadge kind={app.status.kind} label={app.status.label} className="mt-4" />
+      {metric && (
+        <p className="mt-auto flex items-baseline gap-2 pt-5">
+          <span className="text-2xl font-semibold tabular-nums" style={{ color: "var(--text)" }}>
+            {metric.value}
           </span>
-          <StatusBadge kind={app.status.kind} label={app.status.label} />
-        </div>
-        <h3 className="text-lg font-semibold text-balance" style={{ color: "var(--text)" }}>
-          {app.name}
-        </h3>
-        <p className="mt-2 text-sm leading-relaxed flex-1" style={{ color: "var(--text-secondary)" }}>
-          {app.tagline}
+          <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
+            {metric.label}
+          </span>
         </p>
-        {metric && (
-          <div className="mt-6 flex items-baseline gap-2 pt-5" style={{ borderTop: "1px solid var(--border)" }}>
-            <span className="text-2xl font-bold tabular-nums" style={{ color: "var(--text)" }}>
-              {metric.value}
-            </span>
-            <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
-              {metric.label}
-            </span>
-          </div>
-        )}
-      </div>
+      )}
     </Link>
   );
 }
 
+/** Uma única seção de aplicações na home: cada app aparece uma vez, representado pelo ícone oficial. */
 export async function HomeAppsLive() {
   const t = await getTranslations("appsLive");
-  // Seis aplicações com tela real que estão no ar ou já rodaram: preenche a grade de 3 colunas.
-  const featured = apps
-    .filter((a) => a.images.length > 0 && (a.status.kind === "publicado" || a.status.kind === "realizado"))
-    .slice(0, 6);
+  // 8 = grade 4×2 completa; a vitrine em /cases mostra todas.
+  const live = apps.filter((a) => a.status.kind === "publicado" || a.status.kind === "realizado").slice(0, 8);
 
   return (
     <section
+      id="produtos"
       className="py-24 lg:py-32"
       style={{
         backgroundColor: "var(--surface-elevated)",
@@ -72,10 +63,10 @@ export async function HomeAppsLive() {
             {t("title")}
           </h2>
         </Reveal>
-        <RevealGroup stagger={0.08} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-          {featured.map((app) => (
+        <RevealGroup stagger={0.05} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+          {live.map((app) => (
             <RevealItem key={app.slug} className="h-full">
-              <AppLiveCard app={app} />
+              <AppTile app={app} />
             </RevealItem>
           ))}
         </RevealGroup>

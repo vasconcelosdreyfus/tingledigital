@@ -9,42 +9,16 @@ import { TestimonialBlock } from "@/components/shared/testimonial-block";
 import { CtaSection } from "@/components/shared/cta-section";
 import { StatusBadge } from "@/components/apps/status-badge";
 import { apps } from "@/content/data/apps";
-import type { AppImage } from "@/types/app";
-import { FramedShot, frameOf } from "@/components/apps/device-frame";
+import { AppIcon } from "@/components/apps/app-icon";
 import type { ProductPageData } from "@/types/product";
 
-// Largura e altura vêm de content/data/apps.ts (fonte única). Caminho sem registro lá não é renderizado.
-const IMAGES_BY_SRC = new Map<string, AppImage>(
-  apps.flatMap((a) => [...a.images, ...(a.logo ? [a.logo] : [])]).map((img) => [img.src, img]),
-);
-
-function resolveImage(src: string): AppImage | undefined {
-  return IMAGES_BY_SRC.get(src);
-}
-
-function HeroMockup({ image }: { image: AppImage }) {
-  // Mesma moldura da vitrine; no hero a caixa é mais alta para o celular respirar.
+function StepNumber({ index }: { index: number }) {
   return (
-    <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl" style={{ border: "1px solid var(--border)" }}>
-      <FramedShot image={image} sizes="(min-width: 1024px) 896px, 100vw" className={frameOf(image) === "phone" ? "aspect-[16/12] sm:aspect-[16/10]" : undefined} />
-    </div>
-  );
-}
-
-function StepImage({ image, index }: { image: AppImage | undefined; index: number }) {
-  if (!image) {
-    return (
-      <div
-        className="aspect-[16/10] flex items-center justify-center text-3xl font-semibold"
-        style={{ backgroundColor: "var(--bg)", color: "var(--text-muted)" }}
-      >
-        {String(index + 1).padStart(2, "0")}
-      </div>
-    );
-  }
-  return (
-    <div style={{ borderBottom: "1px solid var(--border)" }}>
-      <FramedShot image={image} sizes="(min-width: 768px) 360px, 100vw" background="var(--bg)" />
+    <div
+      className="aspect-[16/10] flex items-center justify-center text-4xl font-semibold tabular-nums"
+      style={{ backgroundColor: "var(--bg)", color: "var(--text-muted)", borderBottom: "1px solid var(--border)" }}
+    >
+      {String(index + 1).padStart(2, "0")}
     </div>
   );
 }
@@ -55,7 +29,6 @@ interface ProductPageProps {
 
 export function ProductPage({ data }: ProductPageProps) {
   const app = apps.find((a) => a.slug === data.pillar);
-  const mockup = resolveImage(data.mockupImageUrl);
   const appLinks = app?.links ?? [];
 
   return (
@@ -69,6 +42,7 @@ export function ProductPage({ data }: ProductPageProps) {
       >
         {app && (
           <Reveal delay={0.3} className="mt-8 flex flex-col items-center gap-3">
+            <AppIcon app={app} className="mb-2 w-20" />
             <StatusBadge kind={app.status.kind} label={app.status.label} className="text-sm" />
             {appLinks.length > 0 && (
               <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
@@ -88,11 +62,6 @@ export function ProductPage({ data }: ProductPageProps) {
                 ))}
               </ul>
             )}
-          </Reveal>
-        )}
-        {mockup && (
-          <Reveal delay={0.35} className="mt-14">
-            <HeroMockup image={mockup} />
           </Reveal>
         )}
       </PageHero>
@@ -136,7 +105,7 @@ export function ProductPage({ data }: ProductPageProps) {
                 className="rounded-2xl overflow-hidden"
                 style={{ border: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}
               >
-                <StepImage image={resolveImage(step.imageUrl)} index={i} />
+                <StepNumber index={i} />
                 <div className="p-6">
                   <h3 className="text-base font-semibold" style={{ color: "var(--text)" }}>{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{step.description}</p>

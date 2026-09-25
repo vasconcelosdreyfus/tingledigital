@@ -16,7 +16,6 @@ export interface ProductPageData {
   heroSubtitle: string;
   heroCtaLabel: string;
   heroCtaHref: string;
-  mockupImageUrl: string;
   problemEyebrow: string;
   problemTitle: string;
   problemBody: string;
@@ -26,7 +25,7 @@ export interface ProductPageData {
   features: ProductFeature[];
   demoEyebrow: string;
   demoTitle: string;
-  demoSteps: { title: string; description: string; imageUrl: string }[];
+  demoSteps: { title: string; description: string }[];
   cases: CasePreview[];
   testimonial?: Testimonial;
   finalCtaTitle: string;

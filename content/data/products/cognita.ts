@@ -10,7 +10,6 @@ export const cognita: ProductPageData = {
   heroCtaLabel: "Solicitar demonstração",
   heroCtaHref: "/contato?produto=cognita",
   // Telas reais registradas em content/data/apps.ts (largura e altura vêm de lá).
-  mockupImageUrl: "/apps/cognita/login.webp",
   problemEyebrow: "O problema",
   problemTitle: "Projeto social não devia se afogar em planilha.",
   problemBody:
@@ -67,19 +66,16 @@ export const cognita: ProductPageData = {
       title: "Setup",
       description:
         "Cada organização ganha o seu espaço, com página pública e inscrições abertas. Turmas, professores e estrutura existente entram em um workshop guiado.",
-      imageUrl: "/apps/cognita/epes-publico.webp",
     },
     {
       title: "Dia-a-dia",
       description:
         "Frequência, aulas e gamificação no fluxo natural. Na EPES, o XP dos desafios do Breaking Codes 26 entra direto no Cognita.",
-      imageUrl: "/apps/breaking-codes/desktop.webp",
     },
     {
       title: "Dados e prestação de contas",
       description:
         "Relatórios para patrocinador e órgão público saem da própria base. Com o Cognita Pesquisa, a Educa Brasis reuniu 11.632 respostas no Rock in Rio 2026.",
-      imageUrl: "/apps/leitura-delas/telao.webp",
     },
   ],
   cases: [
@@ -90,7 +86,7 @@ export const cognita: ProductPageData = {
       excerpt:
         "Cognita na gestão da escola, com o Breaking Codes 26 e o Studio Tycoon, simulador do EPES Challenge 2026.",
       pillar: "social",
-      heroImageUrl: "/apps/cognita/epes-publico.webp",
+      heroImageUrl: "/apps/icons/cognita.webp",
       resultLabel: "turmas no Studio Tycoon",
       resultValue: "39",
     },

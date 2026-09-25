@@ -13,7 +13,6 @@ export const eter: ProductPageData = {
   heroCtaLabel: appStore ? "Baixar na App Store" : "Saber mais",
   heroCtaHref: appStore?.href ?? "/contato?produto=eter",
   // Telas reais registradas em content/data/apps.ts (largura e altura vêm de lá).
-  mockupImageUrl: "/apps/eter/chat.webp",
   problemEyebrow: "O problema",
   problemTitle: "Mensageiros gratuitos vendem você.",
   problemBody:
@@ -66,19 +65,16 @@ export const eter: ProductPageData = {
       title: "No dispositivo",
       description:
         "Chaves geradas localmente, armazenadas em enclave de hardware. Bloqueio biométrico opcional.",
-      imageUrl: "/apps/eter/seguranca.webp",
     },
     {
       title: "No transporte",
       description:
         "Mensagens e chamadas cifradas antes de saírem do aparelho. O servidor só repassa e não consegue ler o conteúdo.",
-      imageUrl: "/apps/eter/grupo.webp",
     },
     {
       title: "No destino",
       description:
         "Decifradas apenas no aparelho de quem você escolheu, validadas por par de chaves. Você decide quem entra no seu círculo.",
-      imageUrl: "/apps/eter/contato.webp",
     },
   ],
   cases: [],
