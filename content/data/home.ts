@@ -1,6 +1,9 @@
 import { clients } from "./clients";
 import type { CasePillar } from "@/types/case";
 
+/** Abertura da Tingle Digital: CNPJ 33.486.049/0001-55, data de início de atividade (BrasilAPI, consultado em 25/09/2026). */
+export const TINGLE_FOUNDED = "2019-04-29";
+
 export const homeData = {
   hero: {
     eyebrow: "Tingle Digital · Tecnologia com alma criativa",
@@ -14,10 +17,11 @@ export const homeData = {
   },
   numbers: {
     items: [
-      { label: "50+ PROJETOS", accent: "yellow" as const },
-      { label: "4 PRODUTOS ATIVOS", accent: "cyan" as const },
-      { label: "10K+ PESSOAS IMPACTADAS", accent: "pink" as const },
-      { label: "6 ANOS NO MERCADO", accent: "lime" as const },
+      // Números com fonte: data de abertura (CNPJ) e content/data/apps.ts.
+      { label: "7 ANOS NO MERCADO", accent: "yellow" as const },
+      { label: "3 APPS PUBLICADOS NAS LOJAS", accent: "cyan" as const },
+      { label: "5 ORGANIZAÇÕES USANDO O COGNITA", accent: "pink" as const },
+      { label: "11.632 RESPOSTAS NO ROCK IN RIO 2026", accent: "lime" as const },
     ],
   },
   pillars: {
@@ -66,7 +70,7 @@ export const homeData = {
   },
   productSpotlight: {
     eyebrow: "Em destaque",
-    title: "Dois produtos lançados em 2025. Engenharia que entrega.",
+    title: "Produtos próprios, no ar e em uso.",
     products: [
       {
         pillar: "cognita" as const,
@@ -87,7 +91,7 @@ export const homeData = {
         eyebrow: "Eter · Mensageiro privado",
         title: "Conversas que ninguém mais ouve.",
         description:
-          "Mensageiro com privacidade radical. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados, executivos e qualquer um que entende o valor de comunicação verdadeiramente privada.",
+          "Mensageiro privado publicado na App Store e no Google Play. Signal Protocol, cadastro só por username (sem telefone, sem e-mail), mensagens que se dissipam e chamadas cifradas.",
         bullets: [
           "Criptografia ponta-a-ponta com Signal Protocol auditado",
           "Zero metadados retidos no servidor",
@@ -99,38 +103,19 @@ export const homeData = {
     ],
   },
   cases: {
-    eyebrow: "Cases recentes",
-    title: "Trabalho que fala por si.",
+    eyebrow: "Aplicações no ar",
+    title: "Aplicações e experiências que já saíram do papel.",
+    // A seção da home lê direto de content/data/apps.ts (featured); aqui só ficam os textos.
     items: [
-      {
-        slug: "qbanho-equatorial",
-        client: "QBANHO + Equatorial",
-        title: "Milhões em receita com trocadores de calor.",
-        excerpt:
-          "Ponte estratégica entre QBANHO e Equatorial Energia. Trocadores de calor entrando no portfólio de eficiência da maior do setor.",
-        pillar: "utilities" as CasePillar,
-        resultLabel: "Receita gerada",
-        resultValue: "Milhões",
-      },
-      {
-        slug: "hubz-equatorial",
-        client: "Hubz + Equatorial",
-        title: "1º P&D aprovado: automação do tratamento de água.",
-        excerpt:
-          "Em 2024, marco histórico — primeiro projeto de P&D aprovado. Automatizar tratamento de água da Companhia de Águas do Amapá.",
-        pillar: "utilities" as CasePillar,
-        resultLabel: "P&D aprovado",
-        resultValue: "1º",
-      },
       {
         slug: "epes-casa-brasil",
         client: "EPES + Casa Brasil",
         title: "Escola de Programação e Empreendedorismo de Saquarema.",
         excerpt:
-          "Programa educacional com 3 frentes: Inova Talks, Break Code (escape room digital), Startup Challenge.",
+          "Cognita na gestão da escola, Breaking Codes 26 em junho e Studio Tycoon, o simulador do EPES Challenge 2026, em agosto.",
         pillar: "social" as CasePillar,
-        resultLabel: "Programas",
-        resultValue: "3",
+        resultLabel: "turmas no Studio Tycoon",
+        resultValue: "39",
       },
     ],
   },

@@ -8,6 +8,11 @@ import { DisplayCards } from "@/components/sections/home/display-cards";
 import { AnimatedNumber } from "@/components/motion/animated-number";
 import { Reveal, RevealGroup, RevealItem, PulseOnce } from "@/components/motion/reveal";
 import { ShinyButton } from "@/components/ui/shiny-button";
+import { ValidationLogos } from "@/components/shared/validation-logos";
+import { HomeAppsLive } from "@/components/sections/home/home-apps-live";
+import { StatusBadge } from "@/components/apps/status-badge";
+import { apps } from "@/content/data/apps";
+import { TINGLE_FOUNDED } from "@/content/data/home";
 import { ArrowRight, ArrowUpRight, Lightbulb, Zap, Network } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -27,14 +32,17 @@ export default async function Home() {
     <>
       <HomeHero />
 
+      {/* Section 1b: quem já confiou (logos reais) */}
+      <ValidationStrip />
+
       {/* Section 2: What we build — Cognita + Eter as flagships */}
       <ProductsSection />
 
       {/* Section 3: Capabilities stacked cards */}
       <CapabilitiesSection />
 
-      {/* Section 4: Proof — 3 strongest cases */}
-      <ProofSection />
+      {/* Section 4: aplicações no ar (apps.ts, featured) */}
+      <HomeAppsLive />
 
       {/* Section 5: Numbers */}
       <NumbersSection />
@@ -48,8 +56,21 @@ export default async function Home() {
   );
 }
 
+async function ValidationStrip() {
+  const t = await getTranslations("validation");
+  return <ValidationLogos eyebrow={t("eyebrow")} />;
+}
+
+function findApp(slug: string) {
+  return apps.find((a) => a.slug === slug);
+}
+
 async function ProductsSection() {
   const t = await getTranslations("products");
+  const cognitaApp = findApp("cognita");
+  const eterApp = findApp("eter");
+  const cognitaOrgs = cognitaApp?.metrics?.[0]?.value;
+  const storeLinks = eterApp?.links.filter((l) => l.label === "App Store" || l.label === "Google Play") ?? [];
 
   return (
     <section
@@ -79,14 +100,19 @@ async function ProductsSection() {
               backgroundColor: "var(--bg)",
             }}
           >
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <span
                 className="text-xs font-medium uppercase tracking-wider"
                 style={{ color: "var(--text-secondary)" }}
               >
                 {t("cognita.category")}
               </span>
-              <span className="text-xs font-medium text-[#2563EB]">{t("cognita.status")}</span>
+              {cognitaApp && (
+                <StatusBadge
+                  kind={cognitaApp.status.kind}
+                  label={cognitaOrgs ? t("cognita.status", { count: cognitaOrgs }) : cognitaApp.status.label}
+                />
+              )}
             </div>
             <h3 className="text-2xl sm:text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>
               {t("cognita.name")}
@@ -189,11 +215,14 @@ async function ProductsSection() {
 
           {/* Eter — intentionally dark brand card */}
           <RevealItem className="rounded-2xl border border-[#0F0E0D] bg-[#0F0E0D] p-8 flex flex-col text-[#F2EDE6]">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
               <span className="text-xs font-medium text-[#C9A96E] uppercase tracking-wider">
                 {t("eter.category")}
               </span>
-              <span className="text-xs font-medium text-[#C9A96E]">{t("eter.status")}</span>
+              {eterApp && (
+                // Azul claro no card escuro: mesmo sinal de "publicado", contraste legível sobre #0F0E0D.
+                <StatusBadge kind={eterApp.status.kind} label={t("eter.status")} className="text-[#7CB0FF]!" />
+              )}
             </div>
             <h3
               className="text-2xl sm:text-3xl font-semibold text-[#F2EDE6] text-balance"
@@ -280,13 +309,27 @@ async function ProductsSection() {
               </p>
             </div>
 
-            <Link
-              href="/eter"
-              className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-[#C9A96E] hover:underline self-start"
-            >
-              {t("eter.cta")}
-              <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <Link
+                href="/eter"
+                className="inline-flex items-center gap-2 text-sm font-medium text-[#C9A96E] hover:underline"
+              >
+                {t("eter.cta")}
+                <ArrowUpRight className="h-4 w-4" />
+              </Link>
+              {storeLinks.map((l) => (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-sm text-[#F2EDE6]/70 hover:text-[#F2EDE6] hover:underline"
+                >
+                  {l.label}
+                  <ArrowUpRight className="h-3.5 w-3.5" />
+                </a>
+              ))}
+            </div>
           </RevealItem>
         </RevealGroup>
 
@@ -369,107 +412,37 @@ async function CapabilitiesSection() {
   );
 }
 
-async function ProofSection() {
-  const t = await getTranslations("proof");
+/** "11.632" (pt-BR) -> 11632 */
+function parseMetric(value: string | undefined): number | undefined {
+  if (!value) return undefined;
+  const n = Number(value.replace(/\./g, "").replace(",", "."));
+  return Number.isFinite(n) ? n : undefined;
+}
 
-  const cases = [
-    {
-      slug: "qbanho-equatorial",
-      client: t("cases.qbanho.client"),
-      title: t("cases.qbanho.title"),
-      excerpt: t("cases.qbanho.excerpt"),
-      result: "Milhões",
-      resultLabel: t("cases.qbanho.resultLabel"),
-    },
-    {
-      slug: "hubz-equatorial",
-      client: t("cases.hubz.client"),
-      title: t("cases.hubz.title"),
-      excerpt: t("cases.hubz.excerpt"),
-      result: "1º",
-      resultLabel: t("cases.hubz.resultLabel"),
-    },
-    {
-      slug: "epes-casa-brasil",
-      client: t("cases.epes.client"),
-      title: t("cases.epes.title"),
-      excerpt: t("cases.epes.excerpt"),
-      result: "3",
-      resultLabel: t("cases.epes.resultLabel"),
-    },
-  ];
-
-  return (
-    <section
-      className="py-24 lg:py-32"
-      style={{
-        backgroundColor: "var(--surface-elevated)",
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
-      }}
-    >
-      <Container>
-        <Reveal className="max-w-2xl mx-auto text-center mb-16">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
-            {t("title")}
-          </h2>
-        </Reveal>
-        <RevealGroup stagger={0.1} className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {cases.map((c) => (
-            <RevealItem key={c.slug} className="h-full">
-            <Link
-              href="/cases"
-              className="group flex h-full flex-col rounded-2xl p-7 transition-all hover:shadow-lg hover:shadow-black/5"
-              style={{
-                border: "1px solid var(--border)",
-                backgroundColor: "var(--bg)",
-              }}
-            >
-              <div className="flex items-center justify-between mb-6">
-                <span
-                  className="text-xs font-medium uppercase tracking-wider"
-                  style={{ color: "var(--text-secondary)" }}
-                >
-                  {c.client}
-                </span>
-                <ArrowUpRight
-                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  style={{ color: "var(--text-muted)" }}
-                />
-              </div>
-              <h3 className="text-lg font-semibold text-balance" style={{ color: "var(--text)" }}>
-                {c.title}
-              </h3>
-              <p
-                className="mt-3 text-sm leading-relaxed flex-1"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {c.excerpt}
-              </p>
-              <div className="mt-8 pt-6" style={{ borderTop: "1px solid var(--border)" }}>
-                <div className="flex items-baseline gap-2">
-                  <div className="text-3xl font-bold" style={{ color: "var(--text)" }}>
-                    {c.result}
-                  </div>
-                  <div className="text-xs" style={{ color: "var(--text-secondary)" }}>
-                    {c.resultLabel}
-                  </div>
-                </div>
-              </div>
-            </Link>
-            </RevealItem>
-          ))}
-        </RevealGroup>
-      </Container>
-    </section>
-  );
+function yearsSince(isoDate: string): number {
+  const start = new Date(`${isoDate}T00:00:00-03:00`);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  const anniversary = new Date(start);
+  anniversary.setFullYear(now.getFullYear());
+  if (now < anniversary) years -= 1;
+  return years;
 }
 
 async function NumbersSection() {
   const t = await getTranslations("stats");
+
+  // Todo número sai de apps.ts ou da data de abertura (CNPJ); se faltar a fonte, o item não aparece.
+  const storeApps = apps.filter((a) =>
+    a.links.some((l) => l.label === "App Store" || l.label === "Google Play"),
+  ).length;
+  const items: { value: number | undefined; label: string }[] = [
+    { value: yearsSince(TINGLE_FOUNDED), label: t("years") },
+    { value: storeApps || undefined, label: t("storeApps") },
+    { value: parseMetric(findApp("cognita")?.metrics?.[0]?.value), label: t("cognitaOrgs") },
+    { value: parseMetric(findApp("cognita-pesquisa")?.metrics?.[0]?.value), label: t("surveyResponses") },
+  ];
+  const stats = items.filter((s): s is { value: number; label: string } => s.value !== undefined);
 
   return (
     <section
@@ -481,18 +454,13 @@ async function NumbersSection() {
     >
       <Container>
         <RevealGroup stagger={0.08} className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
-          {[
-            { value: 50, suffix: "+", label: t("projects") },
-            { value: 4, suffix: "", label: t("products") },
-            { value: 10000, suffix: "+", label: t("people") },
-            { value: 6, suffix: "", label: t("years") },
-          ].map((s) => (
+          {stats.map((s) => (
             <RevealItem key={s.label} className="text-center">
               <div
                 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight"
                 style={{ color: "var(--text)" }}
               >
-                <AnimatedNumber value={s.value} suffix={s.suffix} />
+                <AnimatedNumber value={s.value} />
               </div>
               <div className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
                 {s.label}

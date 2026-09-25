@@ -38,7 +38,7 @@ export function HomeHero() {
             className="mb-8 inline-flex"
           >
             <Link
-              href="/cognita"
+              href="/cases"
               className="group relative inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm shadow-sm transition-colors overflow-hidden"
               style={{
                 border: "1px solid var(--border)",

@@ -1,19 +1,24 @@
 import type { ProductPageData } from "@/types/product";
+import { apps } from "@/content/data/apps";
+
+// Link da loja vem de content/data/apps.ts (fonte única, conferido em 25/09/2026).
+const appStore = apps.find((a) => a.slug === "eter")?.links.find((l) => l.label === "App Store");
 
 export const eter: ProductPageData = {
   pillar: "eter",
   heroEyebrow: "Eter · Mensageiro privado",
   heroTitle: "Conversas que ninguém mais ouve.",
   heroSubtitle:
-    "Mensageiro com privacidade radical. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados, executivos e qualquer um que entende o valor de comunicação verdadeiramente privada.",
-  heroCtaLabel: "Saber mais",
-  heroCtaHref: "/contato?produto=eter",
-  mockupImageUrl: "/brand/mockup-eter.png",
+    "Mensageiro privado publicado na App Store e no Google Play. Criptografia ponta a ponta com Signal Protocol, cadastro só por username (sem telefone, sem e-mail), mensagens que se dissipam e chamadas cifradas.",
+  heroCtaLabel: appStore ? "Baixar na App Store" : "Saber mais",
+  heroCtaHref: appStore?.href ?? "/contato?produto=eter",
+  // Telas reais registradas em content/data/apps.ts (largura e altura vêm de lá).
+  mockupImageUrl: "/apps/eter/chat.webp",
   problemEyebrow: "O problema",
   problemTitle: "Mensageiros gratuitos vendem você.",
   problemBody:
     "WhatsApp coleta metadados, Telegram não é E2E por padrão, e \"gratuito\" sempre tem um custo invisível. O Eter foi construído para quem não está disposto a pagar com a própria privacidade.",
-  problemStat: { value: "0", label: "metadados retidos · zero logs de conversa" },
+  problemStat: { value: "0", label: "telefones ou e-mails pedidos no cadastro: só um username" },
   solutionEyebrow: "O que muda",
   solutionTitle: "Privacidade absoluta. Sem comprometer a experiência.",
   features: [
@@ -61,23 +66,23 @@ export const eter: ProductPageData = {
       title: "No dispositivo",
       description:
         "Chaves geradas localmente, armazenadas em enclave de hardware. Bloqueio biométrico opcional.",
-      imageUrl: "/brand/eter-device.png",
+      imageUrl: "/apps/eter/seguranca.webp",
     },
     {
       title: "No transporte",
       description:
-        "Mensagens criptografadas antes de saírem do aparelho. Servidor é mero relay — não consegue ler conteúdo.",
-      imageUrl: "/brand/eter-transport.png",
+        "Mensagens e chamadas cifradas antes de saírem do aparelho. O servidor só repassa e não consegue ler o conteúdo.",
+      imageUrl: "/apps/eter/chamada.webp",
     },
     {
       title: "No destino",
       description:
-        "Decifradas apenas no aparelho do destinatário, validadas por par de chaves. Cópia no servidor é descartada em segundos.",
-      imageUrl: "/brand/eter-destination.png",
+        "Decifradas apenas no aparelho de quem você escolheu, validadas por par de chaves. Você decide quem entra no seu círculo.",
+      imageUrl: "/apps/eter/circulo.webp",
     },
   ],
   cases: [],
   finalCtaTitle: "Pronto para conversar em paz?",
   finalCtaBody:
-    "Em construção, com lançamento previsto para 2026. Cadastre-se para acompanhar e participar do beta privado.",
+    "Já disponível na App Store e no Google Play. Baixe, escolha um username e comece a conversar.",
 };

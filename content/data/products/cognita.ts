@@ -9,14 +9,16 @@ export const cognita: ProductPageData = {
     "Educacional + ERP em uma só solução. Integra gestão de alunos, acompanhamento pedagógico, prestação de contas e relatórios. Construída com Casa Brasil para a realidade de educação social no Brasil.",
   heroCtaLabel: "Solicitar demonstração",
   heroCtaHref: "/contato?produto=cognita",
-  mockupImageUrl: "/brand/mockup-cognita.png",
+  // Telas reais registradas em content/data/apps.ts (largura e altura vêm de lá).
+  mockupImageUrl: "/apps/cognita/login.webp",
   problemEyebrow: "O problema",
   problemTitle: "Projeto social não devia se afogar em planilha.",
   problemBody:
     "Coordenação de projeto educacional social no Brasil normalmente se divide entre N sistemas: planilhas pra controle de aluno, WhatsApp pra família, PDF pra relatório, e-mail pra prestação de contas. Resultado: gestores que deviam estar fazendo gestão pedagógica ficam fazendo CTRL+C / CTRL+V.",
+  // apps.ts: EPES, Tropa do Esporte, Educa Brasis, Rede Vida Animal Brasil e Casa Tech
   problemStat: {
-    value: "EPES",
-    label: "case de uso real — Escola de Programação e Empreendedorismo de Saquarema",
+    value: "5",
+    label: "organizações usando o Cognita hoje, a começar pela EPES, em Saquarema",
   },
   solutionEyebrow: "Como ajudamos",
   solutionTitle: "Centraliza tudo. Libera o coordenador pro pedagógico.",
@@ -59,25 +61,25 @@ export const cognita: ProductPageData = {
     },
   ],
   demoEyebrow: "Como funciona na prática",
-  demoTitle: "Da matrícula ao boletim, em três grandes momentos.",
+  demoTitle: "Da inscrição ao relatório, em três grandes momentos.",
   demoSteps: [
     {
       title: "Setup",
       description:
-        "Importamos projeto, turmas, professores e estrutura curricular existentes em um workshop guiado. Você não precisa começar do zero.",
-      imageUrl: "/brand/cognita-setup.png",
+        "Cada organização ganha o seu espaço, com página pública e inscrições abertas. Turmas, professores e estrutura existente entram em um workshop guiado.",
+      imageUrl: "/apps/cognita/epes-publico.webp",
     },
     {
       title: "Dia-a-dia",
       description:
-        "Coordenação, professores e monitores lançam atividade no fluxo natural. Tudo registrado, sem fricção.",
-      imageUrl: "/brand/cognita-daily.png",
+        "Frequência, aulas e gamificação no fluxo natural. Na EPES, o XP dos desafios do Breaking Codes 26 entra direto no Cognita.",
+      imageUrl: "/apps/breaking-codes/desktop.webp",
     },
     {
-      title: "Fechamento",
+      title: "Dados e prestação de contas",
       description:
-        "Relatório de mês ou ano sai automático. Prestação de contas pra patrocinador, registro pra órgão público, comunicação pra família — um clique cada.",
-      imageUrl: "/brand/cognita-close.png",
+        "Relatórios para patrocinador e órgão público saem da própria base. Com o Cognita Pesquisa, a Educa Brasis reuniu 11.632 respostas no Rock in Rio 2026.",
+      imageUrl: "/apps/leitura-delas/telao.webp",
     },
   ],
   cases: [
@@ -86,11 +88,11 @@ export const cognita: ProductPageData = {
       client: "EPES + Casa Brasil",
       title: "Escola de Programação e Empreendedorismo de Saquarema.",
       excerpt:
-        "Cognita rodando na ponta — coordenação, alunos, prestação de contas, 3 programas paralelos.",
+        "Cognita na gestão da escola, com o Breaking Codes 26 e o Studio Tycoon, simulador do EPES Challenge 2026.",
       pillar: "social",
-      heroImageUrl: "",
-      resultLabel: "Programas integrados",
-      resultValue: "3",
+      heroImageUrl: "/apps/cognita/epes-publico.webp",
+      resultLabel: "turmas no Studio Tycoon",
+      resultValue: "39",
     },
   ],
   testimonial: testimonials.fabioCasaBrasil,
