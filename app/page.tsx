@@ -6,6 +6,7 @@ import { HomeHero } from "@/components/sections/home/home-hero";
 import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
 import { DisplayCards } from "@/components/sections/home/display-cards";
 import { AnimatedNumber } from "@/components/motion/animated-number";
+import { Reveal, RevealGroup, RevealItem, PulseOnce } from "@/components/motion/reveal";
 import { ShinyButton } from "@/components/ui/shiny-button";
 import { ArrowRight, ArrowUpRight, Lightbulb, Zap, Network } from "lucide-react";
 
@@ -60,18 +61,18 @@ async function ProductsSection() {
       }}
     >
       <Container>
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <Reveal className="max-w-2xl mx-auto text-center mb-16">
           <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
             {t("eyebrow")}
           </p>
           <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
             {t("title")}
           </h2>
-        </div>
+        </Reveal>
 
-        <div className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        <RevealGroup stagger={0.1} className="grid lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {/* Cognita */}
-          <div
+          <RevealItem
             className="rounded-2xl p-8 flex flex-col"
             style={{
               border: "1px solid var(--border)",
@@ -85,7 +86,7 @@ async function ProductsSection() {
               >
                 {t("cognita.category")}
               </span>
-              <span className="text-xs font-medium text-[#16A34A]">{t("cognita.status")}</span>
+              <span className="text-xs font-medium text-[#2563EB]">{t("cognita.status")}</span>
             </div>
             <h3 className="text-2xl sm:text-3xl font-semibold text-balance" style={{ color: "var(--text)" }}>
               {t("cognita.name")}
@@ -124,12 +125,14 @@ async function ProductsSection() {
                   Diário de Classe
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-3">
-                  {[
-                    ["Alunos", "28"],
-                    ["Presença", "96%"],
-                    ["Aulas", "142"],
-                    ["Média", "8.4"],
-                  ].map(([l, v]) => (
+                  {(
+                    [
+                      ["Alunos", 28, "", 0],
+                      ["Presença", 96, "%", 0],
+                      ["Aulas", 142, "", 0],
+                      ["Média", 8.4, "", 1],
+                    ] as const
+                  ).map(([l, v, suf, dec]) => (
                     <div
                       key={l}
                       className="rounded p-1.5"
@@ -144,19 +147,19 @@ async function ProductsSection() {
                       >
                         {l}
                       </div>
-                      <div className="text-xs font-bold" style={{ color: "var(--text)" }}>
-                        {v}
+                      <div className="text-xs font-bold tabular-nums" style={{ color: "var(--text)" }}>
+                        <AnimatedNumber value={v} suffix={suf} decimals={dec} />
                       </div>
                     </div>
                   ))}
                 </div>
-                <div className="space-y-1">
+                <RevealGroup stagger={0.08} delay={0.3} className="space-y-1">
                   {[
                     ["Ana B.", "P"],
                     ["Bernardo S.", "P"],
                     ["Caio M.", "F"],
                   ].map(([n, s]) => (
-                    <div
+                    <RevealItem
                       key={n}
                       className="flex justify-between rounded px-2 py-1 text-[10px]"
                       style={{
@@ -165,12 +168,12 @@ async function ProductsSection() {
                       }}
                     >
                       <span style={{ color: "var(--text)" }}>{n}</span>
-                      <span style={{ color: s === "F" ? "#DC2626" : "#16A34A" }}>
+                      <span style={{ color: s === "F" ? "#DC2626" : "#2563EB" }}>
                         {s === "F" ? "Falta" : "Presente"}
                       </span>
-                    </div>
+                    </RevealItem>
                   ))}
-                </div>
+                </RevealGroup>
               </div>
             </div>
 
@@ -182,10 +185,10 @@ async function ProductsSection() {
               {t("cognita.cta")}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-          </div>
+          </RevealItem>
 
           {/* Eter — intentionally dark brand card */}
-          <div className="rounded-2xl border border-[#0F0E0D] bg-[#0F0E0D] p-8 flex flex-col text-[#F2EDE6]">
+          <RevealItem className="rounded-2xl border border-[#0F0E0D] bg-[#0F0E0D] p-8 flex flex-col text-[#F2EDE6]">
             <div className="flex items-center justify-between mb-4">
               <span className="text-xs font-medium text-[#C9A96E] uppercase tracking-wider">
                 {t("eter.category")}
@@ -206,6 +209,7 @@ async function ProductsSection() {
             <div className="mt-6 rounded-xl bg-[#1A1817] border border-[#2A2725] overflow-hidden p-4">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
+                  <PulseOnce delay={0.75}>
                   <svg
                     width="14"
                     height="14"
@@ -217,6 +221,7 @@ async function ProductsSection() {
                     <rect x="3" y="11" width="18" height="11" rx="2" />
                     <path d="M7 11V7a5 5 0 0 1 10 0v4" />
                   </svg>
+                  </PulseOnce>
                   <span
                     className="text-sm font-medium"
                     style={{ fontFamily: "Sora, Inter, sans-serif" }}
@@ -226,7 +231,7 @@ async function ProductsSection() {
                 </div>
                 <span className="text-[10px] text-[#C9A96E]">e2e</span>
               </div>
-              <div className="space-y-2">
+              <RevealGroup stagger={0.12} delay={0.3} className="space-y-2">
                 {[
                   {
                     initial: "J",
@@ -250,7 +255,7 @@ async function ProductsSection() {
                     color: "#6B5B45",
                   },
                 ].map((c) => (
-                  <div
+                  <RevealItem
                     key={c.name}
                     className="flex items-center gap-2 rounded-lg bg-[#0F0E0D] border border-[#2A2725] p-2"
                   >
@@ -267,9 +272,9 @@ async function ProductsSection() {
                       </div>
                       <div className="text-[10px] text-[#F2EDE6]/50 truncate">{c.preview}</div>
                     </div>
-                  </div>
+                  </RevealItem>
                 ))}
-              </div>
+              </RevealGroup>
               <p className="text-[9px] text-[#C9A96E]/60 text-center mt-3 tracking-wider">
                 {t("eter.footerText")}
               </p>
@@ -282,8 +287,8 @@ async function ProductsSection() {
               {t("eter.cta")}
               <ArrowUpRight className="h-4 w-4" />
             </Link>
-          </div>
-        </div>
+          </RevealItem>
+        </RevealGroup>
 
         <p className="text-center text-sm mt-12" style={{ color: "var(--text-secondary)" }}>
           {t.rich("alsoOffer", {
@@ -348,17 +353,17 @@ async function CapabilitiesSection() {
       }}
     >
       <Container>
-        <div className="max-w-2xl mx-auto text-center mb-20">
+        <Reveal className="max-w-2xl mx-auto text-center mb-20">
           <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
             {t("eyebrow")}
           </p>
           <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
             {t("title")}
           </h2>
-        </div>
-        <div className="flex justify-center min-h-[300px]">
+        </Reveal>
+        <Reveal delay={0.1} className="flex justify-center min-h-[300px]">
           <DisplayCards cards={cards} />
-        </div>
+        </Reveal>
       </Container>
     </section>
   );
@@ -404,20 +409,20 @@ async function ProofSection() {
       }}
     >
       <Container>
-        <div className="max-w-2xl mx-auto text-center mb-16">
+        <Reveal className="max-w-2xl mx-auto text-center mb-16">
           <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
             {t("eyebrow")}
           </p>
           <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
             {t("title")}
           </h2>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        </Reveal>
+        <RevealGroup stagger={0.1} className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {cases.map((c) => (
+            <RevealItem key={c.slug} className="h-full">
             <Link
-              key={c.slug}
               href="/cases"
-              className="group flex flex-col rounded-2xl p-7 transition-all hover:shadow-lg hover:shadow-black/5"
+              className="group flex h-full flex-col rounded-2xl p-7 transition-all hover:shadow-lg hover:shadow-black/5"
               style={{
                 border: "1px solid var(--border)",
                 backgroundColor: "var(--bg)",
@@ -455,8 +460,9 @@ async function ProofSection() {
                 </div>
               </div>
             </Link>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </Container>
     </section>
   );
@@ -474,14 +480,14 @@ async function NumbersSection() {
       }}
     >
       <Container>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+        <RevealGroup stagger={0.08} className="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
           {[
             { value: 50, suffix: "+", label: t("projects") },
             { value: 4, suffix: "", label: t("products") },
             { value: 10000, suffix: "+", label: t("people") },
             { value: 6, suffix: "", label: t("years") },
           ].map((s) => (
-            <div key={s.label} className="text-center">
+            <RevealItem key={s.label} className="text-center">
               <div
                 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight"
                 style={{ color: "var(--text)" }}
@@ -491,9 +497,9 @@ async function NumbersSection() {
               <div className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
                 {s.label}
               </div>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </Container>
     </section>
   );
@@ -506,7 +512,7 @@ async function FinalCtaSection() {
     <section className="py-24 lg:py-32" style={{ backgroundColor: "var(--bg)" }}>
       <Container>
         {/* intentionally dark block — visual punctuation */}
-        <div className="rounded-3xl bg-[#0A0A0A] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-28 text-center">
+        <Reveal className="rounded-3xl bg-[#0A0A0A] px-6 py-16 sm:px-8 sm:py-20 lg:px-16 lg:py-28 text-center">
           <h2 className="text-display-2 text-balance text-white">{t("title")}</h2>
           <p className="mt-6 mx-auto max-w-2xl text-lg text-white/70 text-pretty">{t("body")}</p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -521,7 +527,7 @@ async function FinalCtaSection() {
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

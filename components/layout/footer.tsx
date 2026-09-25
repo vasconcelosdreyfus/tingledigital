@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { TingleMark } from "@/components/brand/tingle-mark";
 import { Container } from "@/components/primitives/container";
 
 export function Footer() {
@@ -45,9 +46,10 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
           <div className="space-y-4">
             <p
-              className="text-2xl font-bold tracking-tight"
+              className="inline-flex items-center gap-2 text-2xl font-bold tracking-tight"
               style={{ color: "var(--text)" }}
             >
+              <TingleMark className="h-9 w-auto" />
               tingle.
             </p>
             <p

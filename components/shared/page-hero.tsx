@@ -2,6 +2,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/motion/reveal";
 
 interface PageHeroProps {
   eyebrow: string;
@@ -24,19 +25,23 @@ export function PageHero({
     <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
-          <p className="text-eyebrow mb-6" style={{ color: "var(--text-secondary)" }}>
-            {eyebrow}
-          </p>
-          <h1 className="text-display-1 text-balance" style={{ color: "var(--text)" }}>
-            {title}
-          </h1>
+          <Reveal>
+            <p className="text-eyebrow mb-6" style={{ color: "var(--text-secondary)" }}>
+              {eyebrow}
+            </p>
+            <h1 className="text-display-1 text-balance" style={{ color: "var(--text)" }}>
+              {title}
+            </h1>
+          </Reveal>
           {subtitle && (
+            <Reveal delay={0.15}>
             <p className="mt-8 mx-auto max-w-2xl text-lg sm:text-xl text-pretty leading-relaxed" style={{ color: "var(--text-secondary)" }}>
               {subtitle}
             </p>
+            </Reveal>
           )}
           {(primaryCta || secondaryCta) && (
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            <Reveal delay={0.25} className="mt-10 flex flex-wrap items-center justify-center gap-3">
               {primaryCta && (
                 <Button size="lg" asChild>
                   <Link href={primaryCta.href}>{primaryCta.label}</Link>
@@ -47,7 +52,7 @@ export function PageHero({
                   <Link href={secondaryCta.href}>{secondaryCta.label}</Link>
                 </Button>
               )}
-            </div>
+            </Reveal>
           )}
           {children}
         </div>

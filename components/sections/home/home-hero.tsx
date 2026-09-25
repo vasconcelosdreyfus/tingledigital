@@ -3,23 +3,26 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { BackgroundPaths } from "@/components/motion/background-paths";
+import { AnimatedTingleMark } from "@/components/brand/tingle-mark";
 
 export function HomeHero() {
   const t = useTranslations("hero");
   const words = t.raw("rotatingWords") as string[];
   const [wordIdx, setWordIdx] = React.useState(0);
+  const reduce = useReducedMotion();
 
   React.useEffect(() => {
+    if (reduce) return; // sem troca automática para quem pede menos movimento
     const id = setInterval(() => {
       setWordIdx((i) => (i + 1) % words.length);
     }, 2400);
     return () => clearInterval(id);
-  }, [words.length]);
+  }, [words.length, reduce]);
 
   return (
     <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40">
@@ -27,6 +30,7 @@ export function HomeHero() {
 
       <Container className="relative z-10">
         <div className="mx-auto max-w-4xl text-center">
+          <AnimatedTingleMark className="mx-auto mb-8 h-20 w-auto sm:h-24" />
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}

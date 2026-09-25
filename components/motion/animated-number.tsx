@@ -7,23 +7,24 @@ interface AnimatedNumberProps {
   value: number;
   suffix?: string;
   prefix?: string;
+  decimals?: number;
   className?: string;
 }
 
-export function AnimatedNumber({ value, suffix = "", prefix = "", className }: AnimatedNumberProps) {
+export function AnimatedNumber({ value, suffix = "", prefix = "", decimals = 0, className }: AnimatedNumberProps) {
   const ref = React.useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "0px 0px -50px 0px" });
   const motionValue = useMotionValue(0);
   const spring = useSpring(motionValue, { duration: 1800, bounce: 0 });
   const display = useTransform(spring, (latest) =>
-    Math.round(latest).toLocaleString("pt-BR")
+    latest.toLocaleString("pt-BR", { minimumFractionDigits: decimals, maximumFractionDigits: decimals })
   );
 
   React.useEffect(() => {
     if (isInView) motionValue.set(value);
   }, [isInView, motionValue, value]);
 
-  const [text, setText] = React.useState("0");
+  const [text, setText] = React.useState(() => (0).toFixed(decimals).replace(".", ","));
   React.useEffect(() => {
     return display.on("change", setText);
   }, [display]);

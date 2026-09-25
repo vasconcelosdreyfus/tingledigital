@@ -8,6 +8,7 @@ import { Container } from "@/components/primitives/container";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { LocaleToggle } from "@/components/layout/locale-toggle";
+import { TingleMark } from "@/components/brand/tingle-mark";
 
 export function Header() {
   const t = useTranslations("header");
@@ -30,7 +31,8 @@ export function Header() {
       }}
     >
       <Container size="xl" className="flex h-16 items-center justify-between gap-4">
-        <Link href="/" aria-label="Tingle Digital — home" className="text-lg font-bold tracking-tight" style={{ color: "var(--text)" }}>
+        <Link href="/" aria-label="Tingle Digital — home" className="inline-flex items-center gap-2 text-lg font-bold tracking-tight" style={{ color: "var(--text)" }}>
+          <TingleMark className="h-7 w-auto" />
           tingle.
         </Link>
 

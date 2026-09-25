@@ -1,5 +1,7 @@
 import * as React from "react";
 import { PageHero } from "@/components/shared/page-hero";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
+import { StepsConnector } from "@/components/motion/steps-connector";
 import { Container } from "@/components/primitives/container";
 import { FeatureGrid, type FeatureIconName } from "@/components/shared/feature-grid";
 import { TestimonialBlock } from "@/components/shared/testimonial-block";
@@ -50,9 +52,12 @@ export function ProductPage({ data }: ProductPageProps) {
             <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{data.demoEyebrow}</p>
             <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>{data.demoTitle}</h2>
           </div>
-          <ol className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto">
+          {data.demoSteps.length === 3 && <StepsConnector />}
+          <RevealGroup as="ol" stagger={0.1} delay={0.15} className="grid gap-6 md:grid-cols-3">
             {data.demoSteps.map((step, i) => (
-              <li
+              <RevealItem
+                as="li"
                 key={i}
                 className="rounded-2xl overflow-hidden"
                 style={{ border: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}
@@ -67,9 +72,10 @@ export function ProductPage({ data }: ProductPageProps) {
                   <h3 className="text-base font-semibold" style={{ color: "var(--text)" }}>{step.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>{step.description}</p>
                 </div>
-              </li>
+              </RevealItem>
             ))}
-          </ol>
+          </RevealGroup>
+          </div>
         </Container>
       </section>
 

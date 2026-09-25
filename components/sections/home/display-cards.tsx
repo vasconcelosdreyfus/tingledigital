@@ -31,7 +31,7 @@ function DisplayCard({
       viewport={{ once: true, margin: "0px 0px -50px 0px" }}
       transition={{ duration: 0.7, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
       className={cn(
-        "relative flex h-36 w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl px-5 py-4 backdrop-blur-sm transition-all duration-500 cursor-default",
+        "relative flex h-36 w-[17rem] sm:w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl px-5 py-4 backdrop-blur-sm transition-all duration-500 cursor-default",
         className
       )}
       style={{
@@ -64,8 +64,8 @@ export function DisplayCards({ cards }: { cards: DisplayCardProps[] }) {
           index === 0
             ? "group-hover:-translate-y-14"
             : index === 1
-            ? "translate-x-12 translate-y-10 group-hover:-translate-y-2 group-hover:translate-x-12"
-            : "translate-x-24 translate-y-20 group-hover:translate-y-6 group-hover:translate-x-24";
+            ? "translate-x-6 sm:translate-x-12 translate-y-10 group-hover:-translate-y-2 group-hover:translate-x-6 sm:group-hover:translate-x-12"
+            : "translate-x-12 sm:translate-x-24 translate-y-20 group-hover:translate-y-6 group-hover:translate-x-12 sm:group-hover:translate-x-24";
         const grayscaleClass =
           index < 2
             ? "grayscale-[100%] group-hover:grayscale-0 before:absolute before:inset-0 before:rounded-xl before:bg-blend-overlay before:transition-opacity before:duration-700 group-hover:before:opacity-0"
