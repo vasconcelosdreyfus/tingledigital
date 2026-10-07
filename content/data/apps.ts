@@ -33,10 +33,10 @@ export const apps: AppEntry[] = [
       "Simulador de campanha presidencial brasileira para celular: escolha o partido, monte o plano de governo e dispute 35 dias de campanha contra 9 adversários até a apuração.",
     owner: "Produto Tingle",
     category: "Jogos",
-    // Google Play com.bevoted.thecandidate (HTTP 200, atualizado 18/09/2026); iOS 1.2.2 WAITING_FOR_REVIEW (ASC API)
-    status: { kind: "publicado", label: "No Google Play · iOS em análise da Apple" },
+    // Google Play com.bevoted.thecandidate (HTTP 200); iOS 1.2.2 REJECTED na ASC API (conferido 07/10/2026): não citar iOS
+    status: { kind: "publicado", label: "No Google Play" },
     icon: { src: "/apps/icons/the-candidate.webp", width: 512, height: 512, alt: "Ícone do The Candidate" },
-    platforms: ["Android", "iOS (em análise)"],
+    platforms: ["Android"],
     links: [
       { label: "Google Play", href: "https://play.google.com/store/apps/details?id=com.bevoted.thecandidate" },
       { label: "thecandidate.app", href: "https://thecandidate.app" },
@@ -76,11 +76,14 @@ export const apps: AppEntry[] = [
       "Jogo de educação ambiental sobre a Baía de Guanabara: missões no mundo real, um boto virtual para cuidar, minijogos e um bestiário de espécies. Em 10 idiomas.",
     owner: "Casa Brasil × Tingle",
     category: "Educação ambiental",
-    // Google Play br.org.sentinelas.sentinelas (HTTP 200, atualizado 03/09/2026); iOS 1.0.0 WAITING_FOR_REVIEW (ASC API)
-    status: { kind: "publicado", label: "No Google Play · iOS em análise da Apple" },
+    // Google Play br.org.sentinelas.sentinelas (HTTP 200); App Store 1.0.0 publicada em 26/09/2026 (iTunes lookup, conferido 07/10/2026)
+    status: { kind: "publicado", label: "Publicado na App Store e no Google Play" },
     icon: { src: "/apps/icons/sentinelas.webp", width: 512, height: 512, alt: "Ícone do Sentinelas da Guanabara" },
-    platforms: ["Android", "iOS (em análise)"],
-    links: [{ label: "Google Play", href: "https://play.google.com/store/apps/details?id=br.org.sentinelas.sentinelas" }],
+    platforms: ["iOS", "Android"],
+    links: [
+      { label: "App Store", href: "https://apps.apple.com/br/app/sentinelas-da-guanabara/id6787792211" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=br.org.sentinelas.sentinelas" },
+    ],
   },
   {
     slug: "votia",
