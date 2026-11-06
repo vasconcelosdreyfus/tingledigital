@@ -17,3 +17,7 @@ Screenshots: after-desktop.png, after-mobile.png, after-dark.png, electoral-card
 
 ## Limites
 A validação visual do proprietário está pendente. Textos históricos de outros produtos permanecem com os status previamente cadastrados. A tradução da nova home e dos controles existe em PT/EN; descrições legadas de produtos e páginas internas continuam em português. DNS não foi alterado nesta revisão.
+
+## Prévia Vercel
+
+https://tingledigital-olhy92opm-tingledigital.vercel.app — READY, commit de código 244f072. Protegida por login Vercel. Conferida em Chromium autenticado: 8 páginas HTTP 200, zero pageerror/console.error, nova home, recomposição do símbolo, filtro de desenvolvimento, aplicativo eleitoral em construção e sem links antigos, ícone Coronel carregado e home móvel sem transbordamento. Screenshots preview-*.png capturadas diretamente nesta URL. Nenhum deploy de produção foi feito.
