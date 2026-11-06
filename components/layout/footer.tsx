@@ -42,7 +42,7 @@ export function Footer() {
         backgroundColor: "var(--surface-elevated)",
       }}
     >
-      <Container size="xl" className="py-12">
+      <Container size="xl" className="py-20">
         <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
           <div className="space-y-4">
             <p
@@ -63,7 +63,7 @@ export function Footer() {
             {columns.map((col) => (
               <div key={col.title}>
                 <h3
-                  className="mb-4 text-xs font-medium tracking-wider uppercase"
+                  className="text-xs font-medium uppercase tracking-wider mb-4"
                   style={{ color: "var(--text-muted)" }}
                 >
                   {col.title}
@@ -86,7 +86,7 @@ export function Footer() {
           </div>
         </div>
         <div
-          className="mt-12 flex flex-col justify-between gap-4 pt-8 text-xs sm:flex-row"
+          className="mt-12 flex flex-col sm:flex-row justify-between gap-4 pt-8 text-xs"
           style={{
             borderTop: "1px solid var(--border)",
             color: "var(--text-muted)",

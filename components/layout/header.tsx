@@ -39,7 +39,7 @@ export function Header() {
 
   return (
     <header
-      className="studio-header fixed inset-x-0 top-0 z-50 backdrop-blur-xl"
+      className="fixed inset-x-0 top-0 z-50 backdrop-blur-xl"
       style={{
         borderBottom: "1px solid var(--border)",
         backgroundColor: "color-mix(in srgb, var(--bg) 80%, transparent)",

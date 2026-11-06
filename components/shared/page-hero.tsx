@@ -22,7 +22,7 @@ export function PageHero({
   children,
 }: PageHeroProps) {
   return (
-    <section className="page-editorial-hero relative pt-20 pb-16 lg:pt-28 lg:pb-20">
+    <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           <Reveal>
@@ -35,19 +35,13 @@ export function PageHero({
           </Reveal>
           {subtitle && (
             <Reveal delay={0.15}>
-              <p
-                className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl"
-                style={{ color: "var(--text-secondary)" }}
-              >
-                {subtitle}
-              </p>
+            <p className="mt-8 mx-auto max-w-2xl text-lg sm:text-xl text-pretty leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+              {subtitle}
+            </p>
             </Reveal>
           )}
           {(primaryCta || secondaryCta) && (
-            <Reveal
-              delay={0.25}
-              className="mt-10 flex flex-wrap items-center justify-center gap-3"
-            >
+            <Reveal delay={0.25} className="mt-10 flex flex-wrap items-center justify-center gap-3">
               {primaryCta && (
                 <Button size="lg" asChild>
                   <Link href={primaryCta.href}>{primaryCta.label}</Link>

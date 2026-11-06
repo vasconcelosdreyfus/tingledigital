@@ -4,15 +4,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium button-feedback transition-[color,background-color,border-color,box-shadow,transform] duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        primary: "[background-color:var(--accent)] [color:var(--bg)] hover:[background-color:var(--accent-hover)]",
-        secondary: "[background-color:var(--bg)] [color:var(--text)] [border:1px_solid_var(--border)] hover:[background-color:var(--surface)] hover:[border-color:var(--border-strong)]",
+        primary:
+          "[background-color:var(--accent)] [color:var(--bg)] hover:[background-color:var(--accent-hover)]",
+        secondary:
+          "[background-color:var(--bg)] [color:var(--text)] [border:1px_solid_var(--border)] hover:[background-color:var(--surface)] hover:[border-color:var(--border-strong)]",
         ghost: "[color:var(--text)] hover:[background-color:var(--surface)]",
         link: "[color:var(--text)] underline-offset-4 hover:underline",
-        outline: "[border:1px_solid_var(--text)] [color:var(--text)] hover:[background-color:var(--text)] hover:[color:var(--bg)]",
+        outline:
+          "[border:1px_solid_var(--text)] [color:var(--text)] hover:[background-color:var(--text)] hover:[color:var(--bg)]",
       },
       size: {
         sm: "h-8 px-3 text-sm rounded-md",
@@ -26,7 +29,8 @@ const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
 }
