@@ -2,7 +2,7 @@ export const team = [
   {
     name: "Dreyfus Vasconcelos",
     role: "Sócio-Fundador · Estratégia, Energia & Tecnologia",
-    photo: "/team/dreyfus.png",
+    photo: "/team/dreyfus-profissional.webp",
     bio: "Engenheiro eletricista pela PUC-MG, com pós-graduação pela FGV. Foi superintendente de Relacionamento com Cliente e Transformação Digital na Light, gerente corporativo na Equatorial Energia e diretor-geral da 55 Soluções. Une experiência de operação, desenvolvimento de negócios e construção de produtos digitais.",
     experience: "Liderança na Light, Equatorial Energia e 55 Soluções, com digitalização de canais de atendimento, gestão de operações e desenvolvimento de negócios.",
     specialties: ["Transformação digital", "Operação e relacionamento", "Produtos e dados"],
