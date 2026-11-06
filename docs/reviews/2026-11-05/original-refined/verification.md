@@ -18,3 +18,11 @@ Mantidos os dados reais, o aplicativo eleitoral em construção, a imagem origin
 Build de produção passou após reconstrução do cache local do Turbopack (falha anterior na resolução interna de next/font). Lint, tipos e diff check verificados. Revisor independente não encontrou referências órfãs e apontou o enquadramento da grade como “no ar”, corrigido.
 
 Navegador Chrome/Playwright: verificar arquivos JSON anexos para matriz e interações. Sem envio real de e-mail: credenciais Resend disponíveis somente em Production. Sem publicação em produção ou alteração de DNS. Dimensões móveis simuladas no navegador; nenhum teste em aparelho físico ou leitor de tela real.
+
+## URL final verificada
+
+https://tingledigital-b7xybgmbw-tingledigital.vercel.app — Vercel READY, código `629692c`. Requer login. A matriz final remota passou em 40 combinações de rota/largura, incluindo animação do título (sem quadro vazio ou mudança de altura), pausa, links de serviços por teclado, depoimentos, menu móvel, tema, PT/EN e reduced motion. Zero pageerrors e console.errors.
+
+Marcadores renderizados: “Transformamos ideias em” presente, grade com oito aplicativos e pilha com três serviços presentes; canvas, hero escuro da v2 e VotIA ausentes; Aplicativo eleitoral / Em construção presente. Capturas `preview-*` vieram desse endereço. O ajuste final alinha palavras curtas à esquerda no espaço reservado do título.
+
+A versão de produção não foi alterada. Aceite visual pendente.

@@ -1,0 +1,216 @@
+{
+  "origin": "https://tingledigital-b7xybgmbw-tingledigital.vercel.app",
+  "checks": [
+    "Original light composition: centered hero, 8 app tiles, 3 service cards, 2 quote columns; no redesign or old brand",
+    "Rotating title never blank and height stays fixed through transition",
+    "Hero pause",
+    "Electoral tile opens correct construction card without old links",
+    "Service links work by keyboard",
+    "Testimonials pause and expand without duplicate visible quotes",
+    "Mobile menu and static readable testimonials",
+    "Reduced motion: stable markup, static title/quotes and instant anchor"
+  ],
+  "routes": [
+    {
+      "width": 320,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/cases",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/cognita",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/eter",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/consultoria",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/utilities",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/sobre",
+      "status": 200
+    },
+    {
+      "width": 320,
+      "path": "/contato",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/cases",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/cognita",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/eter",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/consultoria",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/utilities",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/sobre",
+      "status": 200
+    },
+    {
+      "width": 375,
+      "path": "/contato",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/cases",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/cognita",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/eter",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/consultoria",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/utilities",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/sobre",
+      "status": 200
+    },
+    {
+      "width": 414,
+      "path": "/contato",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/cases",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/cognita",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/eter",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/consultoria",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/utilities",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/sobre",
+      "status": 200
+    },
+    {
+      "width": 768,
+      "path": "/contato",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/cases",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/cognita",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/eter",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/consultoria",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/utilities",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/sobre",
+      "status": 200
+    },
+    {
+      "width": 1440,
+      "path": "/contato",
+      "status": 200
+    }
+  ],
+  "errors": []
+}
