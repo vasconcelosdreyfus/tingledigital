@@ -25,9 +25,8 @@ export const apps: AppEntry[] = [
         label: "Google Play",
         href: "https://play.google.com/store/apps/details?id=com.eter.eter",
       },
-      { label: "eter.social", href: "https://eter.social" },
     ],
-    page: "/eter",
+    page: "https://eter.social",
   },
   {
     slug: "the-candidate",

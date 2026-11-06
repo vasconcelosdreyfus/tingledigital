@@ -70,7 +70,11 @@ export function AppCard({ app }: { app: AppEntry }) {
               <li>
                 <Link href={app.page} className="inline-flex items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]" style={{ color: "var(--text)" }}>
                   Conhecer o {app.name}
-                  <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
+                  {app.page.startsWith("https://") ? (
+                    <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
+                  ) : (
+                    <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
+                  )}
                 </Link>
               </li>
             )}

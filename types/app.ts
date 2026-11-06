@@ -27,7 +27,7 @@ export interface AppEntry {
   links: { label: string; href: string }[];
   /** Ícone oficial, quadrado 512×512. É a única imagem da aplicação no site. */
   icon: AppImage;
-  /** Página interna da aplicação, quando existe (ex.: /cognita). */
+  /** Página de apresentação da aplicação: interna ou site próprio. */
   page?: string;
   metrics?: AppMetric[];
   /** Aviso obrigatório a exibir junto (ex.: legislação eleitoral). */

@@ -51,7 +51,7 @@ export const homeData = {
         title: "Eter",
         description:
           "Mensageiro com privacidade radical. WhatsApp na facilidade, Signal Protocol na profundidade. Para jornalistas, advogados e quem leva privacidade a sério.",
-        href: "/eter",
+        href: "https://eter.social",
         ctaLabel: "Conhecer Eter",
       },
       {
@@ -105,7 +105,7 @@ export const homeData = {
           "Familiar como WhatsApp, profundo como Signal",
           "Luxo silencioso: micro-interações polidas, detalhes que importam",
         ],
-        cta: { label: "Conhecer Eter", href: "/eter" },
+        cta: { label: "Conhecer Eter", href: "https://eter.social" },
       },
     ],
   },
