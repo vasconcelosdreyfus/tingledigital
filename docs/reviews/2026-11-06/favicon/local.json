@@ -1,0 +1,22 @@
+{
+  "base": "http://localhost:3422",
+  "links": [
+    {
+      "rel": "icon",
+      "href": "http://localhost:3422/favicon.ico?favicon.00bt-p3xspigy.ico",
+      "type": "image/x-icon"
+    },
+    {
+      "rel": "icon",
+      "href": "http://localhost:3422/icon.svg?icon.0v_5x9i0xql14.svg",
+      "type": "image/svg+xml"
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "http://localhost:3422/apple-icon.png?apple-icon.0vzdidb27k9ly.png",
+      "type": "image/png"
+    }
+  ],
+  "hash": "48d287e42557c64068bdbf6f6eda6eee3fa6832808a445dedaeeba6c3ed1adde",
+  "errors": []
+}
