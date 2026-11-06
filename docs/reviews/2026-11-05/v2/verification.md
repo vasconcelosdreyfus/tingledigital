@@ -27,3 +27,11 @@ A primeira prévia foi rejeitada pelo usuário por ser conservadora e não expre
 A revisão independente identificou e corrigimos: recursos inválidos após perda do contexto GPU; ordem de foco da galeria; remontagem da região aria-live. O teste com movimento reduzido identificou e corrigimos divergência de hidratação e especificidade CSS do botão de pausa.
 
 Não houve envio real de e-mail: Resend está configurado apenas em Production. Não houve deploy em produção, push remoto ou alteração de DNS. Desempenho físico em celulares de entrada e leitura por leitor de tela real não foram medidos.
+
+## Prévia remota verificada
+
+URL: https://tingledigital-1c4yo5l93-tingledigital.vercel.app — Vercel Preview READY, commit de código `7744615`. Requer login Vercel. Acesso de teste autenticado sem exposição de token.
+
+A matriz de 40 combinações e todas as interações do relatório JSON passaram novamente no navegador contra essa URL. **Zero pageerrors e console.errors**. Marcadores renderizados: título “A sua ideia. Além do imaginável.” presente, título anterior “Ideias que ganham vida.” ausente; “Aplicativo eleitoral / Em construção” presente e VotIA ausente. Capturas `preview-*` vieram da URL remota.
+
+A validação é técnica e visual do agente; avaliação estética do usuário continua pendente.
