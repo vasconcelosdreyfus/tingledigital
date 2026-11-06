@@ -1,0 +1,26 @@
+[
+  {
+    "width": 390,
+    "route": "/utilities",
+    "collective": true,
+    "individualBios": false
+  },
+  {
+    "width": 390,
+    "route": "/consultoria",
+    "collective": true,
+    "individualBios": false
+  },
+  {
+    "width": 1440,
+    "route": "/utilities",
+    "collective": true,
+    "individualBios": false
+  },
+  {
+    "width": 1440,
+    "route": "/consultoria",
+    "collective": true,
+    "individualBios": false
+  }
+]
