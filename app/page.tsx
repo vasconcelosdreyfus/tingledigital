@@ -12,12 +12,12 @@ import { Reveal } from "@/components/motion/reveal";
 import { apps } from "@/content/data/apps";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("immersive");
+  const t = await getTranslations("experience");
   return {
-    description: t("description"),
+    description: t("intro"),
     openGraph: {
       title: "Tingle Digital — Tecnologia com alma criativa",
-      description: t("description"),
+      description: t("intro"),
       type: "website",
     },
   };

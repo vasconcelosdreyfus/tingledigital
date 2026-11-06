@@ -11,7 +11,14 @@ export const metadata: Metadata = {
   openGraph: { title: "Contato · Tingle Digital", description: contato.hero.subtitle },
 };
 
-export default function ContatoPage() {
+export default async function ContatoPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ ideia?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const initialMessage =
+    typeof params.ideia === "string" ? params.ideia.slice(0, 4000) : "";
   return (
     <>
       <PageHero
@@ -22,16 +29,26 @@ export default function ContatoPage() {
 
       <section className="py-16 lg:py-20" style={{ backgroundColor: "var(--bg)" }}>
         <Container size="md">
-          <ContactForm />
+          <ContactForm key={initialMessage} initialMessage={initialMessage} />
         </Container>
       </section>
 
-      <section className="py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}>
+      <section
+        className="py-24 lg:py-32"
+        style={{
+          borderTop: "1px solid var(--border)",
+          backgroundColor: "var(--surface-elevated)",
+        }}
+      >
         <Container>
           <div className="grid gap-12 lg:grid-cols-[2fr_3fr]">
             <div>
-              <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{contato.channels.eyebrow}</p>
-              <h2 className="text-display-3" style={{ color: "var(--text)" }}>{contato.channels.title}</h2>
+              <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
+                {contato.channels.eyebrow}
+              </p>
+              <h2 className="text-display-3" style={{ color: "var(--text)" }}>
+                {contato.channels.title}
+              </h2>
             </div>
             <ul className="space-y-6">
               {contato.channels.items.map((ch) => (
@@ -41,8 +58,16 @@ export default function ContatoPage() {
                     className="group flex items-baseline justify-between gap-6 pb-4 transition-colors"
                     style={{ borderBottom: "1px solid var(--border)" }}
                   >
-                    <span className="text-eyebrow" style={{ color: "var(--text-secondary)" }}>{ch.label}</span>
-                    <span className="text-lg font-semibold transition-colors" style={{ color: "var(--text)" }}>
+                    <span
+                      className="text-eyebrow"
+                      style={{ color: "var(--text-secondary)" }}
+                    >
+                      {ch.label}
+                    </span>
+                    <span
+                      className="text-lg font-semibold transition-colors"
+                      style={{ color: "var(--text)" }}
+                    >
                       {ch.value}
                     </span>
                   </Link>
@@ -53,11 +78,23 @@ export default function ContatoPage() {
         </Container>
       </section>
 
-      <section className="py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--bg)" }}>
+      <section
+        className="py-24 lg:py-32"
+        style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
+      >
         <Container size="md">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{contato.location.eyebrow}</p>
-          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>{contato.location.title}</h2>
-          <p className="mt-6 text-lg leading-relaxed" style={{ color: "var(--text-secondary)" }}>{contato.location.body}</p>
+          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
+            {contato.location.eyebrow}
+          </p>
+          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
+            {contato.location.title}
+          </h2>
+          <p
+            className="mt-6 text-lg leading-relaxed"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            {contato.location.body}
+          </p>
         </Container>
       </section>
     </>

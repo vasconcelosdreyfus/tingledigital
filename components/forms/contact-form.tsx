@@ -20,7 +20,7 @@ type SubmitState =
   | { kind: "success" }
   | { kind: "error"; message: string };
 
-export function ContactForm() {
+export function ContactForm({ initialMessage = "" }: { initialMessage?: string }) {
   const {
     register,
     handleSubmit,
@@ -32,8 +32,8 @@ export function ContactForm() {
       name: "",
       email: "",
       company: "",
-      projectType: undefined,
-      message: "",
+      projectType: initialMessage ? "outro" : undefined,
+      message: initialMessage,
       website: "",
     },
   });
@@ -64,10 +64,17 @@ export function ContactForm() {
     return (
       <div
         className="rounded-2xl p-10 text-center"
-        style={{ border: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}
+        style={{
+          border: "1px solid var(--border)",
+          backgroundColor: "var(--surface-elevated)",
+        }}
       >
-        <p className="text-eyebrow" style={{ color: "var(--text-secondary)" }}>Recebida</p>
-        <h3 className="text-display-3 mt-4" style={{ color: "var(--text)" }}>Sua mensagem chegou.</h3>
+        <p className="text-eyebrow" style={{ color: "var(--text-secondary)" }}>
+          Recebida
+        </p>
+        <h3 className="text-display-3 mt-4" style={{ color: "var(--text)" }}>
+          Sua mensagem chegou.
+        </h3>
         <p className="mt-4 text-lg" style={{ color: "var(--text-secondary)" }}>
           Em até 5 dias úteis você receberá uma resposta direta no email informado.
         </p>
@@ -88,22 +95,50 @@ export function ContactForm() {
 
       <div className="grid gap-6 sm:grid-cols-2">
         <Field label="Nome" error={errors.name?.message} htmlFor="name">
-          <input id="name" type="text" autoComplete="name" {...register("name")} className={inputClass(!!errors.name)} />
+          <input
+            id="name"
+            type="text"
+            autoComplete="name"
+            {...register("name")}
+            className={inputClass(!!errors.name)}
+          />
         </Field>
         <Field label="Email" error={errors.email?.message} htmlFor="email">
-          <input id="email" type="email" autoComplete="email" {...register("email")} className={inputClass(!!errors.email)} />
+          <input
+            id="email"
+            type="email"
+            autoComplete="email"
+            {...register("email")}
+            className={inputClass(!!errors.email)}
+          />
         </Field>
       </div>
 
       <Field label="Empresa (opcional)" error={errors.company?.message} htmlFor="company">
-        <input id="company" type="text" autoComplete="organization" {...register("company")} className={inputClass(!!errors.company)} />
+        <input
+          id="company"
+          type="text"
+          autoComplete="organization"
+          {...register("company")}
+          className={inputClass(!!errors.company)}
+        />
       </Field>
 
-      <Field label="Tipo de projeto" error={errors.projectType?.message} htmlFor="projectType">
-        <select id="projectType" {...register("projectType")} className={inputClass(!!errors.projectType)}>
+      <Field
+        label="Tipo de projeto"
+        error={errors.projectType?.message}
+        htmlFor="projectType"
+      >
+        <select
+          id="projectType"
+          {...register("projectType")}
+          className={inputClass(!!errors.projectType)}
+        >
           <option value="">Selecione…</option>
           {projectTypes.map((t) => (
-            <option key={t.value} value={t.value}>{t.label}</option>
+            <option key={t.value} value={t.value}>
+              {t.label}
+            </option>
           ))}
         </select>
       </Field>
@@ -113,7 +148,7 @@ export function ContactForm() {
           id="message"
           rows={6}
           {...register("message")}
-          className={cn(inputClass(!!errors.message), "resize-y min-h-[120px]")}
+          className={cn(inputClass(!!errors.message), "min-h-[120px] resize-y")}
           placeholder="Conte rapidamente: contexto, problema, prazo se houver."
         />
       </Field>
@@ -121,9 +156,14 @@ export function ContactForm() {
       {state.kind === "error" && (
         <p
           className="rounded-md p-4 text-sm"
-          style={{ border: "1px solid #DC2626", backgroundColor: "color-mix(in srgb, #DC2626 8%, transparent)", color: "#DC2626" }}
+          style={{
+            border: "1px solid #DC2626",
+            backgroundColor: "color-mix(in srgb, #DC2626 8%, transparent)",
+            color: "#DC2626",
+          }}
         >
-          Não foi possível enviar: {state.message}. Você pode escrever direto para dreyfus@tingledigital.com.
+          Não foi possível enviar: {state.message}. Você pode escrever direto para
+          dreyfus@tingledigital.com.
         </p>
       )}
 
@@ -131,7 +171,9 @@ export function ContactForm() {
         <Button type="submit" size="lg" disabled={state.kind === "submitting"}>
           {state.kind === "submitting" ? "Enviando…" : "Enviar mensagem"}
         </Button>
-        <p className="text-xs" style={{ color: "var(--text-muted)" }}>Resposta em até 5 dias úteis.</p>
+        <p className="text-xs" style={{ color: "var(--text-muted)" }}>
+          Resposta em até 5 dias úteis.
+        </p>
       </div>
     </form>
   );
@@ -150,11 +192,19 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={htmlFor} className="block text-eyebrow mb-2" style={{ color: "var(--text-secondary)" }}>
+      <label
+        htmlFor={htmlFor}
+        className="text-eyebrow mb-2 block"
+        style={{ color: "var(--text-secondary)" }}
+      >
         {label}
       </label>
       {children}
-      {error && <p className="mt-2 text-sm" style={{ color: "#DC2626" }}>{error}</p>}
+      {error && (
+        <p className="mt-2 text-sm" style={{ color: "#DC2626" }}>
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -164,6 +214,8 @@ function inputClass(hasError: boolean) {
     "block w-full rounded-md px-4 py-3 text-base transition-colors",
     "focus:outline-none focus:ring-2 focus:ring-offset-2",
     "[background-color:var(--bg)] [color:var(--text)]",
-    hasError ? "[border:1px_solid_#DC2626]" : "[border:1px_solid_var(--border)] hover:[border-color:var(--border-strong)]"
+    hasError
+      ? "[border:1px_solid_#DC2626]"
+      : "[border:1px_solid_var(--border)] hover:[border-color:var(--border-strong)]"
   );
 }
