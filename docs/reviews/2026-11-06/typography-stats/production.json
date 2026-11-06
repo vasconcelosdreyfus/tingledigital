@@ -1,0 +1,44 @@
+[
+  {
+    "route": "/cases",
+    "width": 390,
+    "justifiedParagraphs": 28
+  },
+  {
+    "route": "/utilities",
+    "width": 390,
+    "justifiedParagraphs": 19
+  },
+  {
+    "route": "/sobre",
+    "width": 390,
+    "justifiedParagraphs": 16
+  },
+  {
+    "route": "/",
+    "width": 390,
+    "developedApps": 12,
+    "errors": []
+  },
+  {
+    "route": "/cases",
+    "width": 1440,
+    "justifiedParagraphs": 28
+  },
+  {
+    "route": "/utilities",
+    "width": 1440,
+    "justifiedParagraphs": 19
+  },
+  {
+    "route": "/sobre",
+    "width": 1440,
+    "justifiedParagraphs": 16
+  },
+  {
+    "route": "/",
+    "width": 1440,
+    "developedApps": 12,
+    "errors": []
+  }
+]
