@@ -1,8 +1,6 @@
 {
   "header": {
     "nav": {
-      "cognita": "Cognita",
-      "eter": "Eter",
       "consultoria": "Consultoria",
       "utilities": "Utilities",
       "cases": "Cases",
@@ -13,7 +11,12 @@
   "hero": {
     "pill": "Rock in Rio 2026: veja o Leitura Delas",
     "title": "Transformamos ideias em",
-    "rotatingWords": ["experiências.", "produtos.", "futuros.", "impacto."],
+    "rotatingWords": [
+      "experiências.",
+      "produtos.",
+      "futuros.",
+      "impacto."
+    ],
     "subtitle": "Inovação em energia, educação e soluções que transformam mercados. Do interior do Rio aos centros de decisão do setor elétrico — da concepção à entrega.",
     "primaryCta": "Conheça nossos produtos",
     "secondaryCta": "Fale com a gente",

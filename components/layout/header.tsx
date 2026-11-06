@@ -29,8 +29,6 @@ export function Header() {
     return () => window.removeEventListener("keydown", dismiss);
   }, [open]);
   const navItems = [
-    { href: "/cognita", label: t("nav.cognita") },
-    { href: "/eter", label: t("nav.eter") },
     { href: "/consultoria", label: t("nav.consultoria") },
     { href: "/utilities", label: t("nav.utilities") },
     { href: "/cases", label: t("nav.cases") },
