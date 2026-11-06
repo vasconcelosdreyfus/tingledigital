@@ -1,0 +1,6 @@
+/* Only prose uses these styles; headings, labels and metrics retain their alignment. */
+.page p:where([class~="leading-relaxed"], [class~="text-lg"]),
+.page div[class~="leading-relaxed"] > p {
+  text-align: justify;
+  hyphens: auto;
+}

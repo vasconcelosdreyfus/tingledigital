@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { socialImages } from "@/lib/social-metadata";
 import { ServicePage } from "@/components/composites/service-page";
 import { utilities } from "@/content/data/services/utilities";
+import styles from "../justified-copy.module.css";
 
 export const metadata: Metadata = {
   title: "Utilities",
@@ -10,5 +11,5 @@ export const metadata: Metadata = {
 };
 
 export default function UtilitiesPage() {
-  return <ServicePage data={utilities} />;
+  return <div className={styles.page}><ServicePage data={utilities} /></div>;
 }

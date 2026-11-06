@@ -6,6 +6,7 @@ import { TeamGrid } from "@/components/shared/team-grid";
 import { Milestones } from "@/components/shared/milestones";
 import { CtaSection } from "@/components/shared/cta-section";
 import { sobre } from "@/content/data/sobre";
+import styles from "../justified-copy.module.css";
 
 export const metadata: Metadata = {
   title: "Sobre",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function SobrePage() {
   return (
-    <>
+    <div className={styles.page}>
       <PageHero
         eyebrow={sobre.hero.eyebrow}
         title={sobre.hero.title}
@@ -55,6 +56,6 @@ export default function SobrePage() {
         primaryCta={{ label: "Iniciar conversa", href: "/contato" }}
         secondaryCta={{ label: "Ver portfólio", href: "/cases" }}
       />
-    </>
+    </div>
   );
 }

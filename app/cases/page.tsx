@@ -6,6 +6,7 @@ import { apps } from "@/content/data/apps";
 import Link from "next/link";
 import { ServiceCases } from "@/components/shared/service-cases";
 import { serviceCases } from "@/content/data/service-cases";
+import styles from "../justified-copy.module.css";
 
 export const metadata: Metadata = {
   title: "Aplicações e cases",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function CasesPage() {
   return (
-    <>
+    <div className={styles.page}>
       <PageHero
         eyebrow="Aplicações e cases"
         title="Da estratégia ao resultado. Em campo e no digital."
@@ -36,6 +37,6 @@ export default function CasesPage() {
           <AppsShowcase apps={apps} />
         </Container>
       </section>
-    </>
+    </div>
   );
 }

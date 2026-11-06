@@ -68,12 +68,14 @@ async function NumbersSection() {
   const t = await getTranslations("stats");
 
   // Fontes: abertura (CNPJ), catálogo de apps e agregações verificadas do Cognita.
-  const storeApps = apps.filter((a) =>
-    a.links.some((l) => l.label === "App Store" || l.label === "Google Play")
+  // Inclui aplicações publicadas, usadas em eventos e com versão em testes.
+  // Sites institucionais e protótipos em desenvolvimento não entram nessa contagem.
+  const developedApps = apps.filter((a) =>
+    a.category !== "Sites" && a.status.kind !== "desenvolvimento"
   ).length;
   const items: { value: number | undefined; label: string; suffix?: string }[] = [
     { value: yearsSince(TINGLE_FOUNDED), label: t("years") },
-    { value: storeApps || undefined, label: t("storeApps") },
+    { value: developedApps || undefined, label: t("developedApps") },
     {
       value: cognitaImpactThousands.enrollments,
       label: t("cognitaEnrollments"),
