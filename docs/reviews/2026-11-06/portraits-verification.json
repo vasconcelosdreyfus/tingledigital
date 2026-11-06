@@ -1,0 +1,26 @@
+{
+  "origin": "https://tingledigital-len10jm38-tingledigital.vercel.app",
+  "page": "/sobre#socios",
+  "photos": [
+    {
+      "name": "Dreyfus Vasconcelos",
+      "file": "dreyfus.png",
+      "loaded": true
+    },
+    {
+      "name": "Marcelo Fernandes",
+      "file": "marcelo.jpeg",
+      "loaded": true
+    },
+    {
+      "name": "Alexandre Behrens",
+      "file": "alexandre.png",
+      "loaded": true
+    }
+  ],
+  "initialsAbsent": true,
+  "desktop1440": true,
+  "mobile390": true,
+  "mobile320": true,
+  "errors": []
+}
