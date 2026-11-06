@@ -1,0 +1,30 @@
+{
+  "base": "https://tingledigital.com",
+  "checks": [
+    {
+      "width": 390,
+      "dimensions": {
+        "naturalWidth": 350,
+        "naturalHeight": 350,
+        "width": 340,
+        "height": 340
+      },
+      "newImage": true,
+      "oldImageAbsent": true,
+      "sha256": "5e4c5e4f88902fe1a786254dc2b9cda7c6ccf182fbef7de203bbdd8f132dd603"
+    },
+    {
+      "width": 1440,
+      "dimensions": {
+        "naturalWidth": 475,
+        "naturalHeight": 475,
+        "width": 371.328125,
+        "height": 371.328125
+      },
+      "newImage": true,
+      "oldImageAbsent": true,
+      "sha256": "5e4c5e4f88902fe1a786254dc2b9cda7c6ccf182fbef7de203bbdd8f132dd603"
+    }
+  ],
+  "errors": []
+}
