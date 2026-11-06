@@ -1,0 +1,15 @@
+{
+  "origin": "https://tingledigital-5s7vy58y5-tingledigital.vercel.app",
+  "homeCards": 8,
+  "summitPosition": 5,
+  "summitPresent": true,
+  "electoralAbsent": true,
+  "footerIndividualProductsAbsent": true,
+  "footerCatalogLinkWorks": true,
+  "statusFilter": true,
+  "imageLoaded": true,
+  "desktop1440": true,
+  "mobile320": true,
+  "englishFooter": true,
+  "errors": []
+}

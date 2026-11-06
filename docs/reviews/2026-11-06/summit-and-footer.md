@@ -16,3 +16,11 @@ Substituir o aplicativo eleitoral pelo Summit e remover Cognita/Eter do destaque
 ## Critérios de verificação
 
 Home com oito cards e Summit na quinta posição; card eleitoral ausente da home e Cases; Summit no filtro de testes com status explícito e link de acesso correto. Rodapé sem links individuais de Cognita/Eter em PT/EN, com catálogo acessível. Layout em desktop e celular sem overflow. Capturar erros de console e página.
+
+## Resultado da verificação
+
+- Código `cb66733`; ESLint e TypeScript passaram.
+- Primeira compilação Vercel falhou com `next/font/google queries have exactly one entry` após restaurar cache. O deploy com `--force` sem cache passou, sem alteração de código.
+- [Prévia verificada](https://tingledigital-5s7vy58y5-tingledigital.vercel.app), protegida por login Vercel. Produção não alterada.
+- Navegador remoto: oito cards, Summit quinto, imagem carregada, link correto e filtro de testes funcionando. Aplicativo eleitoral/VotIA ausentes. Rodapé sem Cognita/Eter individualmente; “Todas as aplicações” abre Cases. PT/EN, desktop 1440 e celular 320 sem overflow, zero pageerror/console.error.
+- Evidências: summit-verification.json, footer-grouped-{desktop,mobile}.png, summit-card-{desktop,mobile}.png e summit-source.png. Capturas inspecionadas; aceite visual do usuário pendente.
