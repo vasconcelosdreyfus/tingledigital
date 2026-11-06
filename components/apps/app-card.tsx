@@ -17,14 +17,12 @@ export function AppCard({ app }: { app: AppEntry }) {
     >
       <div className={styles.header} data-card-slot="header">
         <AppIcon app={app} className="w-16 sm:w-[72px]" />
-        <div className="min-w-0">
-          <h3 className="text-xl font-semibold text-balance" style={{ color: "var(--text)" }}>
-            {app.name}
-          </h3>
-          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-            {app.owner} · {app.category}
-          </p>
-        </div>
+        <h3 className="min-w-0 text-xl font-semibold text-balance" data-card-slot="title" style={{ color: "var(--text)" }}>
+          {app.name}
+        </h3>
+        <p className="min-w-0 text-sm" data-card-slot="owner" style={{ color: "var(--text-muted)" }}>
+          {app.owner} · {app.category}
+        </p>
       </div>
 
       <div className={styles.status} data-card-slot="status">
