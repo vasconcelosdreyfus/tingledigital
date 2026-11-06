@@ -1,0 +1,74 @@
+{
+  "base": "https://tingledigital.com",
+  "checks": [
+    {
+      "width": 390,
+      "portraits": [
+        {
+          "name": "Dreyfus Vasconcelos",
+          "naturalWidth": 350,
+          "naturalHeight": 350,
+          "width": 340,
+          "height": 340,
+          "top": 2044.359375,
+          "sha256": "5e4c5e4f88902fe1a786254dc2b9cda7c6ccf182fbef7de203bbdd8f132dd603"
+        },
+        {
+          "name": "Marcelo Fernandes",
+          "naturalWidth": 350,
+          "naturalHeight": 350,
+          "width": 340,
+          "height": 340,
+          "top": 2828.359375,
+          "sha256": "b4eae3d42b2cdb9e28ffae16cca21f568215ecad197b1fbdb865d99751982c7b"
+        },
+        {
+          "name": "Alexandre Behrens",
+          "naturalWidth": 350,
+          "naturalHeight": 350,
+          "width": 340,
+          "height": 340,
+          "top": 3560.359375,
+          "sha256": "75340913a68e8849649479c58349b764094dce3d70554239d0eb9717e27cfc50"
+        }
+      ],
+      "oldImagesAbsent": true,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "portraits": [
+        {
+          "name": "Dreyfus Vasconcelos",
+          "naturalWidth": 475,
+          "naturalHeight": 475,
+          "width": 371.328125,
+          "height": 371.328125,
+          "top": 1933.203125,
+          "sha256": "5e4c5e4f88902fe1a786254dc2b9cda7c6ccf182fbef7de203bbdd8f132dd603"
+        },
+        {
+          "name": "Marcelo Fernandes",
+          "naturalWidth": 475,
+          "naturalHeight": 475,
+          "width": 371.328125,
+          "height": 371.328125,
+          "top": 1933.203125,
+          "sha256": "b4eae3d42b2cdb9e28ffae16cca21f568215ecad197b1fbdb865d99751982c7b"
+        },
+        {
+          "name": "Alexandre Behrens",
+          "naturalWidth": 475,
+          "naturalHeight": 475,
+          "width": 371.34375,
+          "height": 371.34375,
+          "top": 1933.203125,
+          "sha256": "75340913a68e8849649479c58349b764094dce3d70554239d0eb9717e27cfc50"
+        }
+      ],
+      "oldImagesAbsent": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
