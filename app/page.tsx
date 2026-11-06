@@ -9,6 +9,7 @@ import { AnimatedNumber } from "@/components/motion/animated-number";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { ValidationLogos } from "@/components/shared/validation-logos";
 import { HomeAppsLive } from "@/components/sections/home/home-apps-live";
+import { HomePartners } from "@/components/sections/home/home-partners";
 import { apps } from "@/content/data/apps";
 import { cognitaImpactThousands } from "@/content/data/cognita-impact";
 import { TINGLE_FOUNDED } from "@/content/data/home";
@@ -42,6 +43,8 @@ export default async function Home() {
 
       {/* Section 5: Numbers */}
       <NumbersSection />
+
+      <HomePartners />
 
       {/* Section 6: Testimonial marquee */}
       <TestimonialMarquee />

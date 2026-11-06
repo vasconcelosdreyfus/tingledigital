@@ -18,6 +18,11 @@
     "pause": "Pausar animação",
     "resume": "Retomar animação"
   },
+  "partners": {
+    "eyebrow": "Parceiros",
+    "title": "Conexões que ampliam nossa entrega.",
+    "visit": "Visitar {name} (abre em nova aba)"
+  },
   "validation": {
     "eyebrow": "Quem já confiou na Tingle"
   },

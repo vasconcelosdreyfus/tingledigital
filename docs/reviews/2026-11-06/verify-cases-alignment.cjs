@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone CommonJS verification script. */
 const {chromium}=require('/opt/homebrew/lib/node_modules/@playwright/cli/node_modules/playwright');
 const assert=require('node:assert/strict');const fs=require('node:fs');const origin=process.argv[2];const remote=!origin.includes('localhost');
 (async()=>{const b=await chromium.launch({headless:true,channel:'chrome'});const errors=[];const results=[];try{

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- Standalone CommonJS verification script. */
 const {chromium}=require('/opt/homebrew/lib/node_modules/@playwright/cli/node_modules/playwright');
 const fs=require('fs');
 const assert=require('assert/strict');
