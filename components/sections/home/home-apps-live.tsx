@@ -27,18 +27,27 @@ function AppTile({ app }: { app: AppEntry }) {
         {app.tagline}
       </p>
       <StatusBadge kind={app.status.kind} label={app.status.label} className="mt-4" />
-      {metric && (
-        <p className="mt-auto flex items-baseline gap-2 pt-5">
-          <span
-            className="text-2xl font-semibold tabular-nums"
-            style={{ color: "var(--text)" }}
-          >
-            {metric.value}
-          </span>
-          <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
-            {metric.label}
-          </span>
+      {app.highlight ? (
+        <p
+          className="mt-auto pt-5 text-sm leading-relaxed font-medium"
+          style={{ color: "var(--text)" }}
+        >
+          {app.highlight}
         </p>
+      ) : (
+        metric && (
+          <p className="mt-auto flex items-baseline gap-2 pt-5">
+            <span
+              className="text-2xl font-semibold tabular-nums"
+              style={{ color: "var(--text)" }}
+            >
+              {metric.value}
+            </span>
+            <span className="text-xs" style={{ color: "var(--text-secondary)" }}>
+              {metric.label}
+            </span>
+          </p>
+        )
       )}
     </Link>
   );
@@ -49,12 +58,7 @@ export async function HomeAppsLive() {
   const t = await getTranslations("appsLive");
   // 8 = grade 4×2 completa; a vitrine em /cases mostra todas.
   const live = apps
-    .filter(
-      (a) =>
-        a.status.kind === "publicado" ||
-        a.status.kind === "realizado" ||
-        a.slug === "epes-summit"
-    )
+    .filter((a) => a.status.kind === "publicado" || a.status.kind === "realizado")
     .slice(0, 8);
 
   return (

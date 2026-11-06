@@ -30,6 +30,8 @@ export interface AppEntry {
   /** Página de apresentação da aplicação: interna ou site próprio. */
   page?: string;
   metrics?: AppMetric[];
+  /** Proposta de valor para a vitrine, quando uma métrica não representa a entrega. */
+  highlight?: string;
   /** Aviso obrigatório a exibir junto (ex.: legislação eleitoral). */
   notice?: string;
 }

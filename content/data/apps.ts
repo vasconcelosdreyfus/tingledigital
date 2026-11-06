@@ -33,7 +33,8 @@ export const apps: AppEntry[] = [
     name: "The Candidate",
     tagline: "Do zero ao Planalto.",
     description:
-      "Simulador de campanha presidencial brasileira para celular: escolha o partido, monte o plano de governo e dispute 35 dias de campanha contra 9 adversários até a apuração.",
+      "Encontre quem pensa como você e construam juntos um novo Brasil do seu jeito. Um simulador político em que você escolhe seu partido, define propostas e traça o caminho até o Planalto.",
+    highlight: "Encontre quem pensa como você e construam juntos um novo Brasil do seu jeito.",
     owner: "Produto Tingle",
     category: "Jogos",
     // Google Play com.bevoted.thecandidate (HTTP 200); iOS 1.2.2 REJECTED na ASC API (conferido 07/10/2026): não citar iOS
@@ -51,12 +52,6 @@ export const apps: AppEntry[] = [
         href: "https://play.google.com/store/apps/details?id=com.bevoted.thecandidate",
       },
       { label: "thecandidate.app", href: "https://thecandidate.app" },
-    ],
-    // meta description do site e descrição da loja
-    metrics: [
-      { value: "35", label: "dias de campanha" },
-      { value: "30", label: "partidos" },
-      { value: "9", label: "adversários" },
     ],
   },
   {
@@ -125,11 +120,11 @@ export const apps: AppEntry[] = [
     name: "EPES Summit 26",
     tagline: "Da ideia à defesa, uma jornada com IA.",
     description:
-      "Jornada de empreendedorismo da EPES: oito missões para transformar o aprendizado em um projeto coletivo. A IA organiza contribuições e orienta decisões, enquanto cada aluno registra sua participação e a turma prepara a defesa da ideia. Integrado ao Cognita.",
+      "Realizada de 6 a 29 de outubro de 2026, a jornada de empreendedorismo da EPES foi entregue com sucesso: oito missões para transformar o aprendizado em um projeto coletivo. A IA organizou contribuições e orientou decisões, enquanto cada aluno registrou sua participação e a turma preparou a defesa da ideia. Integrado ao Cognita.",
     owner: "Para Casa Brasil · EPES",
     category: "Educação e inteligência artificial",
-    // Código origin/main 39cee41 e documentação de estado; acesso web conferido em 06/11/2026.
-    status: { kind: "teste", label: "Em teste com a EPES" },
+    // Entrega e período confirmados pelo responsável em 06/11/2026.
+    status: { kind: "realizado", label: "Realizado · 6 a 29/out/2026" },
     icon: {
       src: "/apps/icons/epes-summit.svg",
       width: 512,

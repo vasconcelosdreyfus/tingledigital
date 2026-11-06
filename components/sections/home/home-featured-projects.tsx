@@ -9,6 +9,12 @@ import styles from "./home-featured-projects.module.css";
 
 const projects = [
   {
+    key: "qbanho",
+    image: "/cases/qbanho-trocador.webp",
+    href: "/cases#trocadores-de-calor",
+    creditHref: "https://www.qbanho.com.br/product",
+  },
+  {
     key: "rock",
     image: "/cases/rock-in-rio-espaco-plural.webp",
     href: "/cases#leitura-delas",
@@ -23,12 +29,6 @@ const projects = [
     href: "/cases#circuito-musical-das-aguas",
     creditHref:
       "https://pmspa.rj.gov.br/sao-pedro-da-aldeia-celebra-inauguracao-do-centro-esportivo-municipal-rei-pele/",
-  },
-  {
-    key: "qbanho",
-    image: "/cases/qbanho-sistema.webp",
-    href: "/cases#trocadores-de-calor",
-    creditHref: "https://www.qbanho.com.br/product",
   },
 ] as const;
 
@@ -63,7 +63,9 @@ export async function HomeFeaturedProjects() {
                     src={project.image}
                     alt={t(`${project.key}.alt`)}
                     fill
-                    sizes="(min-width: 1280px) 560px, (min-width: 768px) 46vw, 100vw"
+                    sizes={index === 0
+                      ? "(min-width: 1280px) 600px, (min-width: 1024px) 52vw, 100vw"
+                      : "(min-width: 1280px) 560px, (min-width: 768px) 46vw, 100vw"}
                     className={styles.photo}
                   />
                 </div>
