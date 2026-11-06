@@ -7,7 +7,7 @@ import { apps } from "@/content/data/apps";
 export const metadata: Metadata = {
   title: "Aplicações e cases",
   description:
-    "Apps nas lojas, plataformas em produção e experiências em festivais e eventos feitos pela Tingle Digital, com telas reais e o status de cada um.",
+    "Apps nas lojas, plataformas em produção e experiências em festivais e eventos feitos pela Tingle Digital, com ícones oficiais e o status de cada projeto.",
 };
 
 export default function CasesPage() {
