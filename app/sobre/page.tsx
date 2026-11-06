@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialImages } from "@/lib/social-metadata";
 import { PageHero } from "@/components/shared/page-hero";
 import { Container } from "@/components/primitives/container";
 import { TeamGrid } from "@/components/shared/team-grid";
@@ -9,7 +10,7 @@ import { sobre } from "@/content/data/sobre";
 export const metadata: Metadata = {
   title: "Sobre",
   description: sobre.hero.subtitle,
-  openGraph: { title: "Sobre · Tingle Digital", description: sobre.hero.subtitle },
+  openGraph: { images: socialImages, title: "Sobre · Tingle Digital", description: sobre.hero.subtitle },
 };
 
 export default function SobrePage() {

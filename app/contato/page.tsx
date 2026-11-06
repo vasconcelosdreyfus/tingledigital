@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { socialImages } from "@/lib/social-metadata";
 import Link from "next/link";
 import { PageHero } from "@/components/shared/page-hero";
 import { Container } from "@/components/primitives/container";
@@ -8,7 +9,7 @@ import { contato } from "@/content/data/contato";
 export const metadata: Metadata = {
   title: "Contato",
   description: contato.hero.subtitle,
-  openGraph: { title: "Contato · Tingle Digital", description: contato.hero.subtitle },
+  openGraph: { images: socialImages, title: "Contato · Tingle Digital", description: contato.hero.subtitle },
 };
 
 export default async function ContatoPage({

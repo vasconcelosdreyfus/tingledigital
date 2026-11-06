@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import { socialImages } from "@/lib/social-metadata";
 import { ProductPage } from "@/components/composites/product-page";
 import { eter } from "@/content/data/products/eter";
 
 export const metadata: Metadata = {
   title: "Eter — Mensageiro com privacidade radical",
   description: eter.heroSubtitle,
-  openGraph: {
+  openGraph: { images: socialImages,
     title: "Eter · Tingle Digital",
     description: eter.heroSubtitle,
   },
