@@ -1,0 +1,92 @@
+[
+  {
+    "width": 390,
+    "sections": [
+      "projetos",
+      "atuacao",
+      "produtos",
+      "parceiros"
+    ],
+    "boxes": [
+      {
+        "x": 24,
+        "y": -923.921875,
+        "width": 342,
+        "height": 114.5
+      },
+      {
+        "x": 24,
+        "y": -99.171875,
+        "width": 342,
+        "height": 114.5
+      },
+      {
+        "x": 24,
+        "y": 717.578125,
+        "width": 342,
+        "height": 91.75
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "sections": [
+      "projetos",
+      "atuacao",
+      "produtos",
+      "parceiros"
+    ],
+    "boxes": [
+      {
+        "x": 605.328125,
+        "y": -237.09375,
+        "width": 130.65625,
+        "height": 186.75
+      },
+      {
+        "x": 32,
+        "y": 724.15625,
+        "width": 336,
+        "height": 118.5
+      },
+      {
+        "x": 400,
+        "y": 724.15625,
+        "width": 336,
+        "height": 118.5
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "sections": [
+      "projetos",
+      "atuacao",
+      "produtos",
+      "parceiros"
+    ],
+    "boxes": [
+      {
+        "x": 778.78125,
+        "y": -58.875,
+        "width": 517.203125,
+        "height": 95.75
+      },
+      {
+        "x": 144,
+        "y": 840.046875,
+        "width": 560,
+        "height": 95.75
+      },
+      {
+        "x": 736,
+        "y": 840.046875,
+        "width": 560,
+        "height": 95.75
+      }
+    ],
+    "errors": []
+  }
+]
