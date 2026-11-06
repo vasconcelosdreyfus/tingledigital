@@ -1,0 +1,134 @@
+{
+  "base": "https://tingledigital.com",
+  "report": [
+    {
+      "path": "/cases",
+      "width": 390,
+      "theme": "light",
+      "cases": 6,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 390,
+      "theme": "light",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 390,
+      "theme": "light",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 390,
+      "theme": "light",
+      "cases": 0,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 768,
+      "theme": "light",
+      "cases": 6,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 768,
+      "theme": "light",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 768,
+      "theme": "light",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 768,
+      "theme": "light",
+      "cases": 0,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "theme": "light",
+      "cases": 6,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 1440,
+      "theme": "light",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 1440,
+      "theme": "light",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 1440,
+      "theme": "light",
+      "cases": 0,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "theme": "dark",
+      "cases": 6,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 1440,
+      "theme": "dark",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 1440,
+      "theme": "dark",
+      "cases": 3,
+      "alignment": true,
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 1440,
+      "theme": "dark",
+      "cases": 0,
+      "alignment": true,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
