@@ -1,0 +1,110 @@
+[
+  {
+    "width": 390,
+    "links": [
+      "https://haggsolucoes.com/",
+      "https://www.instagram.com/agencianel/",
+      "https://www.hubz.com.br/",
+      "https://www.instagram.com/_agenciasoma/"
+    ],
+    "boxes": [
+      {
+        "x": 24,
+        "y": 173.578125,
+        "width": 342,
+        "height": 194
+      },
+      {
+        "x": 24,
+        "y": 383.578125,
+        "width": 342,
+        "height": 194
+      },
+      {
+        "x": 24,
+        "y": 593.578125,
+        "width": 342,
+        "height": 194
+      },
+      {
+        "x": 24,
+        "y": 803.578125,
+        "width": 342,
+        "height": 194
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "links": [
+      "https://haggsolucoes.com/",
+      "https://www.instagram.com/agencianel/",
+      "https://www.hubz.com.br/",
+      "https://www.instagram.com/_agenciasoma/"
+    ],
+    "boxes": [
+      {
+        "x": 32,
+        "y": 368.15625,
+        "width": 344,
+        "height": 194
+      },
+      {
+        "x": 392,
+        "y": 368.15625,
+        "width": 344,
+        "height": 194
+      },
+      {
+        "x": 32,
+        "y": 578.15625,
+        "width": 344,
+        "height": 194
+      },
+      {
+        "x": 392,
+        "y": 578.15625,
+        "width": 344,
+        "height": 194
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "links": [
+      "https://haggsolucoes.com/",
+      "https://www.instagram.com/agencianel/",
+      "https://www.hubz.com.br/",
+      "https://www.instagram.com/_agenciasoma/"
+    ],
+    "boxes": [
+      {
+        "x": 208,
+        "y": 516.21875,
+        "width": 244,
+        "height": 194
+      },
+      {
+        "x": 468,
+        "y": 516.21875,
+        "width": 244,
+        "height": 194
+      },
+      {
+        "x": 728,
+        "y": 516.21875,
+        "width": 244,
+        "height": 194
+      },
+      {
+        "x": 988,
+        "y": 516.21875,
+        "width": 244,
+        "height": 194
+      }
+    ],
+    "errors": []
+  }
+]
