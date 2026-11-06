@@ -4,7 +4,8 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/primitives/container";
 import { HomeHero } from "@/components/sections/home/home-hero";
 import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
-import { DisplayCards } from "@/components/sections/home/display-cards";
+import { HomeFeaturedProjects } from "@/components/sections/home/home-featured-projects";
+import { HomeServices } from "@/components/sections/home/home-services";
 import { AnimatedNumber } from "@/components/motion/animated-number";
 import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { ValidationLogos } from "@/components/shared/validation-logos";
@@ -13,7 +14,7 @@ import { HomePartners } from "@/components/sections/home/home-partners";
 import { apps } from "@/content/data/apps";
 import { cognitaImpactThousands } from "@/content/data/cognita-impact";
 import { TINGLE_FOUNDED } from "@/content/data/home";
-import { ArrowRight, Lightbulb, Zap, Network } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("hero");
@@ -32,24 +33,17 @@ export default async function Home() {
     <>
       <HomeHero />
 
-      {/* Section 1b: quem já confiou (logos reais) */}
       <ValidationStrip />
-
-      {/* Section 2: aplicações no ar, cada uma uma vez (apps.ts) */}
+      <HomeFeaturedProjects />
+      <HomeServices />
       <HomeAppsLive />
 
-      {/* Section 3: Capabilities stacked cards */}
-      <CapabilitiesSection />
-
-      {/* Section 5: Numbers */}
       <NumbersSection />
 
       <HomePartners />
 
-      {/* Section 6: Testimonial marquee */}
       <TestimonialMarquee />
 
-      {/* Section 7: CTA */}
       <FinalCtaSection />
     </>
   );
@@ -58,61 +52,6 @@ export default async function Home() {
 async function ValidationStrip() {
   const t = await getTranslations("validation");
   return <ValidationLogos eyebrow={t("eyebrow")} />;
-}
-
-async function CapabilitiesSection() {
-  const t = await getTranslations("capabilities");
-
-  const cards = [
-    {
-      icon: <Lightbulb className="size-4" />,
-      title: t("consultoria.title"),
-      description: t("consultoria.description"),
-      date: t("consultoria.date"),
-      iconColor: "var(--text)",
-      href: "/consultoria",
-    },
-    {
-      icon: <Zap className="size-4" />,
-      title: t("utilities.title"),
-      description: t("utilities.description"),
-      date: t("utilities.date"),
-      iconColor: "var(--text)",
-      href: "/utilities",
-    },
-    {
-      icon: <Network className="size-4" />,
-      title: t("ai.title"),
-      description: t("ai.description"),
-      date: t("ai.date"),
-      iconColor: "var(--text)",
-      href: "/utilities",
-    },
-  ];
-
-  return (
-    <section
-      className="relative py-24 lg:py-32"
-      style={{
-        backgroundColor: "var(--bg)",
-        borderTop: "1px solid var(--border)",
-      }}
-    >
-      <Container>
-        <Reveal className="mx-auto mb-20 max-w-2xl text-center">
-          <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>
-            {t("eyebrow")}
-          </p>
-          <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>
-            {t("title")}
-          </h2>
-        </Reveal>
-        <Reveal delay={0.1} className="flex min-h-[300px] justify-center">
-          <DisplayCards cards={cards} />
-        </Reveal>
-      </Container>
-    </section>
-  );
 }
 
 function yearsSince(isoDate: string): number {

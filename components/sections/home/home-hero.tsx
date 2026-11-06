@@ -67,7 +67,7 @@ export function HomeHero() {
           </p>
           <div className="hero-arrive mt-10 flex flex-wrap items-center justify-center gap-3">
             <Button size="lg" asChild>
-              <Link href="#produtos">
+              <Link href="#projetos">
                 {t("primaryCta")}
                 <ArrowRight size={16} aria-hidden />
               </Link>

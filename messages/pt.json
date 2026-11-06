@@ -12,11 +12,71 @@
     "pill": "Rock in Rio 2026: veja o Leitura Delas",
     "title": "Transformamos ideias em",
     "rotatingWords": ["experiências.", "produtos.", "futuros.", "impacto."],
-    "subtitle": "Inovação em energia, educação e soluções que transformam mercados. Do interior do Rio aos centros de decisão do setor elétrico — da concepção à entrega.",
-    "primaryCta": "Conheça nossos produtos",
+    "subtitle": "Desenvolvemos produtos digitais, conectamos negócios no setor de energia e executamos projetos de educação, cultura e impacto social.",
+    "primaryCta": "Conheça nossas entregas",
     "secondaryCta": "Fale com a gente",
     "pause": "Pausar animação",
     "resume": "Retomar animação"
+  },
+  "featuredProjects": {
+    "eyebrow": "Projetos em destaque",
+    "title": "O que entregamos. Onde fez diferença.",
+    "cta": "Conheça a atuação da Tingle",
+    "scale": {
+      "thousands": "Milhares",
+      "millions": "Milhões"
+    },
+    "rock": {
+      "category": "Tecnologia · Experiências · Impacto social",
+      "title": "Rock in Rio 2026.",
+      "lead": "Leitura Delas e O Papo que Protege no Espaço Plural.",
+      "delivery": "Criamos as experiências digitais que conectaram totens, celular e telão ao vivo. Uma entrega para a Rock World, com a Casa Brasil e a Educa Brasis, sobre histórias de mulheres e relações de respeito.",
+      "metric0Label": "leituras nos dias de show",
+      "metric1Label": "conversas no Papo que Protege",
+      "alt": "Espaço Plural no Rock in Rio, com visitantes e a estrutura das ativações",
+      "caption": "Espaço Plural · Rock in Rio 2026 · acervo do projeto"
+    },
+    "circuito": {
+      "category": "Cultura · Produção de eventos",
+      "title": "Circuito Musical das Águas.",
+      "lead": "Música, cultura e execução em campo.",
+      "delivery": "Realizamos um circuito de shows gratuitos em sete cidades do Rio de Janeiro, com patrocínio da Setur-RJ. Da curadoria à produção e operação, conectamos artistas, público e território.",
+      "metric0Value": "7 cidades",
+      "metric0Label": "no circuito fluminense",
+      "metric1Value": "Gratuito",
+      "metric1Label": "acesso à programação cultural",
+      "alt": "Show do Pique Novo no Circuito Musical das Águas em São Pedro da Aldeia",
+      "caption": "Pique Novo · São Pedro da Aldeia · foto: Cleydson Alan/PMSPA"
+    },
+    "qbanho": {
+      "category": "Energia · Desenvolvimento de negócios",
+      "title": "QBANHO + Equatorial.",
+      "lead": "Uma tecnologia que encontrou mercado.",
+      "delivery": "Conectamos a QBANHO à Equatorial e conduzimos a articulação comercial para introduzir os trocadores de calor no portfólio de soluções do grupo. Estratégia e relacionamento convertidos em negócios.",
+      "metric0Label": "de trocadores vendidos",
+      "metric1Label": "em receita gerada",
+      "alt": "Ilustração do chuveiro que integra o sistema QBANHO +30",
+      "caption": "Chuveiro do sistema QBANHO +30 · ilustração do fabricante"
+    }
+  },
+  "homeServices": {
+    "eyebrow": "Áreas de atuação",
+    "title": "Como podemos trabalhar com você.",
+    "technology": {
+      "title": "Produtos e tecnologia",
+      "description": "Desenvolvimento de aplicativos, plataformas e experiências digitais. Da ideia à operação, com tecnologia feita para o seu projeto.",
+      "cta": "Converse sobre seu projeto"
+    },
+    "energy": {
+      "title": "Energia e negócios",
+      "description": "Estratégia comercial, conexões de mercado e estruturação de projetos de P&D e eficiência energética para o setor de utilities.",
+      "cta": "Conheça nossa atuação em energia"
+    },
+    "strategy": {
+      "title": "Estratégia e execução",
+      "description": "Consultoria, gestão e realização de projetos de educação, cultura e impacto social. Planejamento e equipe para tirar do papel.",
+      "cta": "Conheça nossa consultoria"
+    }
   },
   "partners": {
     "eyebrow": "Parceiros",
