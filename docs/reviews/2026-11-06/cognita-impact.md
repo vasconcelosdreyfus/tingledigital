@@ -8,3 +8,5 @@ Fonte: Firestore de produção do Cognita, leitura somente de agregações em 06
 Comunicação: **4 mil+ matrículas gerenciadas no Cognita** e **31 mil+ respostas coletadas pelo motor de pesquisas**. Patamares arredondados para baixo, derivados de uma fonte numérica compartilhada (`content/data/cognita-impact.ts`). Não é contador em tempo real.
 
 Home, card do Cognita, Cases, página de produto e exemplos do design system usam a mesma referência. A apresentação do motor cobre coleta digital e em campo em diferentes projetos. Layout preservado.
+
+Prévia verificada: https://tingledigital-5np2desqs-tingledigital.vercel.app (login Vercel), código `b0a05a6`. Lint, tipos e build remoto passaram. Navegador confirmou 4 mil+ e 31 mil+ na home, Cases e Cognita, ausência dos indicadores antigos, layout desktop/320px, traduções EN e menu preservado. Zero pageerrors/console.errors. Evidências em impact-*. Produção não alterada.

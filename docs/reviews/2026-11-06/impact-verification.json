@@ -1,0 +1,16 @@
+{
+  "origin": "https://tingledigital-5np2desqs-tingledigital.vercel.app",
+  "routes": [
+    "/",
+    "/cases",
+    "/cognita"
+  ],
+  "enrollments": "4 mil+",
+  "responses": "31 mil+",
+  "oldMetricsAbsent": true,
+  "desktop": true,
+  "mobile320": true,
+  "english": true,
+  "menuPreserved": true,
+  "errors": []
+}
