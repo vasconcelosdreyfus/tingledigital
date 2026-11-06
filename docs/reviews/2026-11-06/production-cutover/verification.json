@@ -1,0 +1,79 @@
+{
+  "origin": "https://tingledigital.vercel.app",
+  "results": [
+    {
+      "width": 1440,
+      "filter": "Todos",
+      "cards": 13,
+      "rows": 5,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 1280,
+      "filter": "Todos",
+      "cards": 13,
+      "rows": 5,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 1024,
+      "filter": "Todos",
+      "cards": 13,
+      "rows": 5,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 768,
+      "filter": "Todos",
+      "cards": 13,
+      "rows": 7,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 390,
+      "filter": "Todos",
+      "cards": 13,
+      "rows": 13,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 320,
+      "filter": "Todos",
+      "cards": 13,
+      "rows": 13,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 1440,
+      "filter": "Publicados",
+      "cards": 5,
+      "rows": 2,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 1440,
+      "filter": "Em eventos (realizado)",
+      "cards": 3,
+      "rows": 1,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    },
+    {
+      "width": 1440,
+      "filter": "Em teste e desenvolvimento",
+      "cards": 5,
+      "rows": 2,
+      "aligned": true,
+      "metricValuesSingleLine": true
+    }
+  ],
+  "timeline2026": true,
+  "errors": []
+}
