@@ -3,7 +3,7 @@ import { cognitaImpactThousands } from "./cognita-impact";
 
 /**
  * Fonte única das aplicações exibidas no site.
- * Status e números conferidos em 25/09/2026; a origem de cada número está no comentário ao lado.
+ * A origem e a data de conferência dos números estão nos comentários de cada aplicação.
  * Imagem: só o ícone oficial de cada aplicação (512×512), para a vitrine ficar uniforme e sem telas de teste.
  */
 export const apps: AppEntry[] = [
@@ -85,6 +85,33 @@ export const apps: AppEntry[] = [
         value: `${cognitaImpactThousands.surveyResponses} mil+`,
         label: "respostas coletadas pelo motor de pesquisas",
       },
+    ],
+  },
+  {
+    slug: "soma-studio",
+    name: "SOMA Studio",
+    tagline: "Do briefing à entrega, a agência inteira no mesmo lugar.",
+    description:
+      "Desenvolvido pela Tingle para reunir demandas, agenda e planejamentos mensais em um painel. Prazos em cascata e transições automáticas conectam as etapas; cada ação fica registrada com nome e hora. A gestão controla quem entra e com qual função, com acesso por link no e-mail ou Google. A agência personaliza a marca e o fluxo sem suporte técnico, preservando as datas dos planejamentos em andamento. No celular, instala como aplicativo.",
+    owner: "Para Agência Soma",
+    category: "Gestão de agências",
+    // Entrega e resultados confirmados pelo responsável em 06/11/2026.
+    // Site público e ícone do manifest conferidos em https://somastudio.app/.
+    status: { kind: "publicado", label: "Entregue · em operação" },
+    icon: {
+      src: "/apps/icons/soma-studio.webp",
+      width: 512,
+      height: 512,
+      alt: "Ícone do SOMA Studio",
+    },
+    platforms: ["Web", "App instalável"],
+    links: [{ label: "Acessar o SOMA Studio", href: "https://somastudio.app/" }],
+    // Retrato informado em 06/11/2026, não são contadores em tempo real.
+    metrics: [
+      { value: "22", label: "clientes ativos na agência" },
+      { value: "39", label: "planejamentos" },
+      { value: "207", label: "etapas concluídas" },
+      { value: "1.737", label: "alterações registradas" },
     ],
   },
   {

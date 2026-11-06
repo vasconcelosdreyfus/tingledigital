@@ -40,7 +40,7 @@ export function AppCard({ app }: { app: AppEntry }) {
         <dl
           className={styles.metrics}
           data-card-slot="metrics"
-          style={{ gridTemplateColumns: `repeat(${Math.min(metrics.length, 3)}, minmax(0, 1fr))` }}
+          style={{ gridTemplateColumns: `repeat(${metrics.length === 4 ? 2 : Math.min(metrics.length, 3)}, minmax(0, 1fr))` }}
         >
           {metrics.map((m) => (
             <div key={m.label} className={styles.metric}>
