@@ -1,4 +1,6 @@
 import * as React from "react";
+import Image from "next/image";
+import { ArrowDown } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
 import { Container } from "@/components/primitives/container";
 import { Timeline } from "@/components/shared/timeline";
@@ -6,6 +8,9 @@ import { FeatureGrid, type FeatureIconName } from "@/components/shared/feature-g
 import { TestimonialBlock } from "@/components/shared/testimonial-block";
 import { CtaSection } from "@/components/shared/cta-section";
 import type { ServicePageData } from "@/types/service";
+import { ServiceCases } from "@/components/shared/service-cases";
+import { PartnerExperience } from "@/components/shared/partner-experience";
+import { serviceCases } from "@/content/data/service-cases";
 
 interface ServicePageProps {
   data: ServicePageData;
@@ -45,16 +50,34 @@ export function ServicePage({ data }: ServicePageProps) {
               </dl>
             </div>
             <div
-              className="aspect-[4/3] rounded-2xl flex items-center justify-center"
+              className="min-h-72 rounded-2xl flex items-center justify-center p-8 sm:p-12"
               style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
             >
-              <span className="text-display-1" style={{ color: "var(--text-muted)" }}>
-                {data.pillar === "consultoria" ? "CB" : "⚡"}
-              </span>
+              {data.spotlightImage && (
+                <Image {...data.spotlightImage} alt={data.spotlightImage.alt} sizes="(max-width: 639px) 65vw, 276px" className="h-auto w-full max-w-[276px]" />
+              )}
+              {data.spotlightPartners && (
+                <ol className="w-full text-center" aria-label="A parceria dos trocadores de calor">
+                  {data.spotlightPartners.map((partner, index) => (
+                    <li key={partner.name}>
+                      {index > 0 && <ArrowDown className="mx-auto my-5 size-5" style={{ color: "var(--text-muted)" }} aria-hidden />}
+                      <p className="text-xl sm:text-2xl font-semibold tracking-tight">{partner.name}</p>
+                      <p className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>{partner.role}</p>
+                    </li>
+                  ))}
+                </ol>
+              )}
             </div>
           </div>
         </Container>
       </section>
+
+      <ServiceCases
+        cases={serviceCases.filter((project) => project.pillar === data.pillar)}
+        title={data.pillar === "utilities" ? "Energia, água e infraestrutura. Projetos com contexto real." : "Educação, esporte e cultura. Da concepção à operação."}
+      />
+
+      <PartnerExperience />
 
       <FeatureGrid
         eyebrow={data.topicsEyebrow}

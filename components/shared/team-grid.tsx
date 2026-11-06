@@ -6,6 +6,8 @@ export interface TeamMember {
   name: string;
   role: string;
   photo: string;
+  bio: string;
+  specialties: string[];
 }
 
 interface TeamGridProps {
@@ -20,7 +22,7 @@ export function TeamGrid({ eyebrow, title, members }: TeamGridProps) {
       <Container>
         <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{eyebrow}</p>
         <h2 className="text-display-2 mb-12 max-w-3xl text-balance" style={{ color: "var(--text)" }}>{title}</h2>
-        <div className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid gap-10 md:grid-cols-3 md:gap-8">
           {members.map((m) => (
             <div key={m.name}>
               <div
@@ -31,12 +33,18 @@ export function TeamGrid({ eyebrow, title, members }: TeamGridProps) {
                   src={m.photo}
                   alt={`Foto de ${m.name}`}
                   fill
-                  sizes="(max-width: 639px) 50vw, (max-width: 1023px) 33vw, 25vw"
+                  sizes="(max-width: 767px) 90vw, 33vw"
                   className="object-cover object-top"
                 />
               </div>
               <p className="mt-4 font-semibold" style={{ color: "var(--text)" }}>{m.name}</p>
               <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{m.role}</p>
+              <p className="mt-5 leading-relaxed" style={{ color: "var(--text-secondary)" }}>{m.bio}</p>
+              <ul className="mt-5 flex flex-wrap gap-2" aria-label={`Áreas de experiência de ${m.name}`}>
+                {m.specialties.map((specialty) => (
+                  <li key={specialty} className="rounded-full border px-3 py-1.5 text-xs" style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}>{specialty}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>

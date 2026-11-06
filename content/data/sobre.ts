@@ -1,3 +1,5 @@
+import { team } from "./team";
+
 export const sobre = {
   hero: {
     eyebrow: "Sobre a Tingle",
@@ -34,11 +36,7 @@ export const sobre = {
   team: {
     eyebrow: "Quem está por trás",
     title: "Sócios com experiência em energia, tecnologia e gestão.",
-    members: [
-      { name: "Dreyfus Vasconcelos", role: "Sócio-Fundador · Estratégia, Energia & Tecnologia", photo: "/team/dreyfus.png" },
-      { name: "Marcelo Fernandes", role: "Sócio · Estratégia & Energia", photo: "/team/marcelo.jpeg" },
-      { name: "Alexandre Behrens", role: "Sócio · Estratégia & Energia", photo: "/team/alexandre.png" },
-    ],
+    members: team,
   },
   milestones: {
     eyebrow: "Linha do tempo",

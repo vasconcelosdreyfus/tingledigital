@@ -27,7 +27,8 @@ export interface ServicePageData {
   spotlightEyebrow: string;
   spotlightTitle: string;
   spotlightBody: string;
-  spotlightImageUrl: string;
+  spotlightImage?: { src: string; alt: string; width: number; height: number };
+  spotlightPartners?: { name: string; role: string }[];
   spotlightStats: { value: string; label: string }[];
   topicsEyebrow: string;
   topicsTitle: string;

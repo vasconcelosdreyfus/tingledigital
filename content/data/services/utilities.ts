@@ -6,10 +6,10 @@ export const utilities: ServicePageData = {
   heroEyebrow: "Utilities · AI · IoT · Hyperautomation",
   heroTitle: "Pioneirismo em P&D. Hiperautomação que entrega resultado.",
   heroSubtitle:
-    "Soluções inovadoras para desafios em energia, água e serviços públicos. IA, IoT e Blockchain aplicados onde geram retorno mensurável. Em 2024, aprovamos o 1º P&D com Equatorial Energia.",
+    "Desenvolvimento de negócios, eficiência energética e inovação para energia, água e infraestrutura. Dos trocadores de calor da QBANHO ao P&D com Hubz e Equatorial, conectamos conhecimento do setor à execução.",
   heroCtaLabel: "Falar com utilities",
   heroCtaHref: "/contato?servico=utilities",
-  methodEyebrow: "Três frentes de atuação",
+  methodEyebrow: "Quatro frentes de atuação",
   methodTitle: "Da pesquisa pioneira à operação otimizada.",
   methodSteps: [
     {
@@ -38,12 +38,16 @@ export const utilities: ServicePageData = {
     },
   ],
   spotlightEyebrow: "Em campo",
-  spotlightTitle: "1º P&D aprovado: automação de tratamento de água no Amapá.",
+  spotlightTitle: "Trocadores de calor: tecnologia que ganhou mercado.",
   spotlightBody:
-    "Em 2024, marco histórico — primeiro projeto de Pesquisa & Desenvolvimento aprovado em parceria com a Hubz para a Equatorial Energia. O projeto automatiza o tratamento de água da Companhia de Águas do Amapá, unindo tecnologia de ponta com sustentabilidade e eficiência operacional. Antes disso, fomos ponte estratégica entre QBANHO e Equatorial — milhões em receita com trocadores de calor.",
-  spotlightImageUrl: "/brand/spotlight-hubz.png",
+    "A Tingle foi a ponte estratégica entre QBANHO e Equatorial Energia. Com experiência no setor e articulação comercial, introduzimos os trocadores de calor no portfólio de soluções de eficiência energética do grupo, viabilizando milhares de vendas e milhões em receita.",
+  spotlightPartners: [
+    { name: "QBANHO", role: "Tecnologia de eficiência energética" },
+    { name: "Tingle", role: "Estratégia e desenvolvimento comercial" },
+    { name: "Equatorial Energia", role: "Cliente estratégico no setor elétrico" },
+  ],
   spotlightStats: [
-    { value: "1º P&D", label: "projeto aprovado em 2024 com Equatorial" },
+    { value: "Milhares", label: "de trocadores de calor vendidos" },
     { value: "Milhões", label: "em receita gerada com QBANHO no setor elétrico" },
   ],
   topicsEyebrow: "Tecnologias que aplicamos",

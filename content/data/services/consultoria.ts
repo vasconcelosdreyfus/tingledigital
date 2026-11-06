@@ -37,11 +37,11 @@ export const consultoria: ServicePageData = {
         "Não largamos no go-live. Operação assistida e transferência de conhecimento pra equipe interna continuar.",
     },
   ],
-  spotlightEyebrow: "Parceria flagship",
+  spotlightEyebrow: "Parceria em campo",
   spotlightTitle: "Casa Brasil — tecnologia para inclusão social em escala nacional.",
   spotlightBody:
     "Casa Brasil é nosso principal parceiro desde 2022. Juntos construímos EPES (Escola de Programação e Empreendedorismo de Saquarema), Transforma Nova Iguaçu (esporte como ferramenta de transformação), e a plataforma Cognita. Mais que tecnologia — somos braço técnico de quem entende o terreno.",
-  spotlightImageUrl: "/brand/spotlight-casa-brasil.png",
+  spotlightImage: { src: "/apps/logos/casa-brasil.webp", alt: "Casa Brasil", width: 276, height: 114 },
   spotlightStats: [
     { value: "EPES", label: "Escola de Programação ativa em Saquarema" },
     { value: "Cognita", label: "plataforma desenvolvida junto" },
