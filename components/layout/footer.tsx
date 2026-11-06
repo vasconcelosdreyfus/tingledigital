@@ -14,8 +14,7 @@ export function Footer() {
     {
       title: t("columns.products"),
       items: [
-        { href: "/cognita", label: t("links.cognita") },
-        { href: "/eter", label: t("links.eter") },
+        { href: "/cases", label: t("links.apps") },
       ],
     },
     {

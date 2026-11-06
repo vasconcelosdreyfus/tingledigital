@@ -53,7 +53,7 @@ export async function HomeAppsLive() {
       (a) =>
         a.status.kind === "publicado" ||
         a.status.kind === "realizado" ||
-        a.slug === "aplicativo-eleitoral"
+        a.slug === "epes-summit"
     )
     .slice(0, 8);
 

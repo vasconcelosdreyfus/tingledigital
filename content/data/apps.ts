@@ -122,23 +122,27 @@ export const apps: AppEntry[] = [
     ],
   },
   {
-    slug: "aplicativo-eleitoral",
-    name: "Aplicativo eleitoral",
-    tagline: "Tecnologia a favor do sucesso eleitoral.",
+    slug: "epes-summit",
+    name: "EPES Summit 26",
+    tagline: "Da ideia à defesa, uma jornada com IA.",
     description:
-      "Aplicativo em construção para apoiar campanhas na organização de estratégias e na busca de melhores resultados nas eleições. Mais informações serão apresentadas ao longo do desenvolvimento.",
-    owner: "Produto Tingle",
-    category: "Tecnologia eleitoral",
-    // Reposicionamento solicitado por Dreyfus em 05/11/2026; ainda em construção.
-    status: { kind: "desenvolvimento", label: "Em construção" },
+      "Jornada de empreendedorismo da EPES: oito missões para transformar o aprendizado em um projeto coletivo. A IA organiza contribuições e orienta decisões, enquanto cada aluno registra sua participação e a turma prepara a defesa da ideia. Integrado ao Cognita.",
+    owner: "Para Casa Brasil · EPES",
+    category: "Educação e inteligência artificial",
+    // Código origin/main 39cee41 e documentação de estado; acesso web conferido em 06/11/2026.
+    status: { kind: "teste", label: "Em teste com a EPES" },
     icon: {
-      src: "/brand/tingle-mark.svg",
-      width: 470,
-      height: 374,
-      alt: "Tingle Digital — aplicativo em construção",
+      src: "/apps/icons/epes-summit.svg",
+      width: 512,
+      height: 512,
+      alt: "Símbolo do EPES Summit 26",
     },
-    platforms: [],
-    links: [],
+    platforms: ["Web"],
+    links: [
+      { label: "Acesso da EPES", href: "https://epes-summit26-dev.web.app" },
+    ],
+    // Oito definições de missão em shared/config/missions/mission-0N.v1.json.
+    metrics: [{ value: "8", label: "missões de criação" }],
   },
   {
     slug: "leitura-delas",
