@@ -35,9 +35,9 @@ export const sobre = {
     eyebrow: "Quem está por trás",
     title: "Sócios com experiência em energia, tecnologia e gestão.",
     members: [
-      { name: "Dreyfus Vasconcelos", role: "Sócio-Fundador · Estratégia & Energia" },
-      { name: "Marcelo Fernandes", role: "Sócio · Tecnologia & Software" },
-      { name: "Alexandre Behrens", role: "Sócio · Gestão de Projetos & Setor Elétrico" },
+      { name: "Dreyfus Vasconcelos", role: "Sócio-Fundador · Estratégia & Energia", photo: "/team/dreyfus.png" },
+      { name: "Marcelo Fernandes", role: "Sócio · Tecnologia & Software", photo: "/team/marcelo.jpeg" },
+      { name: "Alexandre Behrens", role: "Sócio · Gestão de Projetos & Setor Elétrico", photo: "/team/alexandre.png" },
     ],
   },
   milestones: {
