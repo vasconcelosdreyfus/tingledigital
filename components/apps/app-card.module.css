@@ -1,0 +1,104 @@
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.item {
+  min-width: 0;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  align-items: start;
+}
+
+.header {
+  display: flex;
+  align-items: start;
+  gap: 16px;
+}
+
+.status,
+.tagline {
+  margin-top: 16px;
+}
+
+.description {
+  margin-top: 8px;
+}
+
+.metrics,
+.platforms,
+.actions {
+  margin-top: 24px;
+}
+
+.metrics {
+  container-type: inline-size;
+  display: grid;
+  align-items: start;
+  gap: 16px 12px;
+}
+
+.metric {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.value {
+  order: -1;
+  white-space: nowrap;
+  font-size: clamp(1.25rem, 8cqi, 1.875rem);
+  line-height: 1.2;
+}
+
+.metrics:empty,
+.platforms:empty,
+.actions:empty {
+  display: none;
+}
+
+/* Every card in a visual row shares seven content tracks, including the
+   animated wrapper. Tracks grow with content; no fixed heights or truncation. */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 0;
+  }
+
+  .item,
+  .card {
+    display: grid;
+    grid-row: span 7;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+
+  .item {
+    padding-bottom: 24px;
+  }
+
+  .header { grid-row: 1; }
+  .status { grid-row: 2; }
+  .tagline { grid-row: 3; }
+  .description { grid-row: 4; }
+  .metrics { grid-row: 5; }
+  .platforms { grid-row: 6; }
+  .actions { grid-row: 7; }
+
+  .metrics:empty,
+  .platforms:empty,
+  .actions:empty {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

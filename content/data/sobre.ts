@@ -74,6 +74,14 @@ export const sobre = {
         description:
           "Transforma Nova Iguaçu, Circuito Musical das Águas (7 cidades, Gov RJ), lançamento do Cognita e do Ebook Maker, parceria com FIXER.",
       },
+      {
+        // Entregas: relato de Dreyfus em 06/11/2026. Votação: Câmara (2022)
+        // e Congresso em Foco (2026); fontes no relatório de revisão.
+        year: 2026,
+        title: "Rock World, novos projetos e expansão do portfólio",
+        description:
+          "Assinamos nosso primeiro contrato com a Rock World e entregamos Leitura Delas e Papo que Protege no Rock in Rio.\n\nTambém entregamos o site do Coronel Chrisóstomo, e o Cognita passou a gerir o Tropa do Esporte, fortalecendo a comunicação institucional e a gestão do projeto social. Na eleição de 2026, o deputado mais que dobrou sua votação em relação a 2022: de 24.406 para 51.487 votos.\n\nO portfólio cresceu com The Candidate, Eter, Sentinelas da Guanabara, Lineup Battle, Vesti, Prime Healthcare e DreamPhi — entre lançamentos nas lojas, protótipos e produtos em teste.",
+      },
     ],
   },
   location: {

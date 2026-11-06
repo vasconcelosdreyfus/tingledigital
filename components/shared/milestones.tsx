@@ -31,7 +31,7 @@ export function Milestones({ eyebrow, title, items }: MilestonesProps) {
                 <span className="h-px flex-1" style={{ backgroundColor: "var(--border)" }} />
               </div>
               <h3 className="mt-2 text-xl font-semibold" style={{ color: "var(--text)" }}>{m.title}</h3>
-              <p className="mt-2 max-w-2xl text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>{m.description}</p>
+              <p className="mt-2 max-w-2xl whitespace-pre-line text-base leading-relaxed" style={{ color: "var(--text-secondary)" }}>{m.description}</p>
             </li>
           ))}
         </ol>

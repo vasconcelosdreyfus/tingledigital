@@ -5,6 +5,7 @@ import type { AppEntry, AppStatusKind } from "@/types/app";
 import { AppCard } from "@/components/apps/app-card";
 import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { cn } from "@/lib/utils";
+import styles from "./app-card.module.css";
 
 type FilterId = "todos" | "publicados" | "eventos" | "teste";
 
@@ -53,9 +54,9 @@ export function AppsShowcase({ apps }: { apps: AppEntry[] }) {
         {visible.length === 1 ? "1 aplicação exibida" : `${visible.length} aplicações exibidas`}
       </p>
 
-      <RevealGroup key={active} stagger={0.06} className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <RevealGroup key={active} stagger={0.06} className={`${styles.grid} mt-12`}>
         {visible.map((app) => (
-          <RevealItem key={app.slug} className="min-w-0" data-app={app.slug}>
+          <RevealItem key={app.slug} className={styles.item} data-app={app.slug}>
             <AppCard app={app} />
           </RevealItem>
         ))}

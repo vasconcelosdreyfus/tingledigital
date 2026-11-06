@@ -3,99 +3,92 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { AppEntry } from "@/types/app";
 import { StatusBadge } from "@/components/apps/status-badge";
 import { AppIcon } from "@/components/apps/app-icon";
+import styles from "./app-card.module.css";
 
 export function AppCard({ app }: { app: AppEntry }) {
+  const metrics = app.metrics ?? [];
+  const hasLinks = Boolean(app.page || app.links.length);
+
   return (
     <article
       id={app.slug}
-      className="flex h-full scroll-mt-28 flex-col rounded-2xl p-6 sm:p-8"
+      className={`${styles.card} scroll-mt-28 rounded-2xl p-6 sm:p-8`}
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
-      <div className="flex flex-1 flex-col">
-        <div className="flex items-center gap-4">
-          <AppIcon app={app} className="w-16 sm:w-[72px]" />
-          <div className="min-w-0">
-            <h3 className="text-xl font-semibold text-balance" style={{ color: "var(--text)" }}>
-              {app.name}
-            </h3>
-            <p className="text-sm" style={{ color: "var(--text-muted)" }}>
-              {app.owner} · {app.category}
-            </p>
-          </div>
+      <div className={styles.header} data-card-slot="header">
+        <AppIcon app={app} className="w-16 sm:w-[72px]" />
+        <div className="min-w-0">
+          <h3 className="text-xl font-semibold text-balance" style={{ color: "var(--text)" }}>
+            {app.name}
+          </h3>
+          <p className="text-sm" style={{ color: "var(--text-muted)" }}>
+            {app.owner} · {app.category}
+          </p>
         </div>
+      </div>
 
-        <StatusBadge kind={app.status.kind} label={app.status.label} className="mt-4" />
+      <div className={styles.status} data-card-slot="status">
+        <StatusBadge kind={app.status.kind} label={app.status.label} className="items-start" />
+      </div>
 
-        <p className="mt-4 text-base font-medium text-pretty" style={{ color: "var(--text)" }}>
-          {app.tagline}
-        </p>
-        <p className="mt-2 text-sm leading-relaxed text-pretty" style={{ color: "var(--text-secondary)" }}>
-          {app.description}
-        </p>
+      <p className={`${styles.tagline} text-base font-medium text-pretty`} data-card-slot="tagline" style={{ color: "var(--text)" }}>
+        {app.tagline}
+      </p>
+      <p className={`${styles.description} text-sm leading-relaxed text-pretty`} data-card-slot="description" style={{ color: "var(--text-secondary)" }}>
+        {app.description}
+      </p>
 
-        {app.metrics && app.metrics.length > 0 && (
-          <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
-            {app.metrics.map((m) => (
-              <div key={m.label} className="flex min-w-0 flex-col-reverse">
-                <dt className="mt-1 text-xs leading-snug" style={{ color: "var(--text-secondary)" }}>
-                  {m.label}
-                </dt>
-                <dd className="text-2xl font-semibold tabular-nums sm:text-3xl" style={{ color: "var(--text)" }}>
-                  {m.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        )}
-
-        <ul className="mt-6 flex flex-wrap gap-2" aria-label="Plataformas">
-          {app.platforms.map((p) => (
-            <li
-              key={p}
-              className="rounded-full px-3 py-1 text-xs"
-              style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}
-            >
-              {p}
-            </li>
+      {metrics.length > 0 ? (
+        <dl
+          className={styles.metrics}
+          data-card-slot="metrics"
+          style={{ gridTemplateColumns: `repeat(${Math.min(metrics.length, 3)}, minmax(0, 1fr))` }}
+        >
+          {metrics.map((m) => (
+            <div key={m.label} className={styles.metric}>
+              <dt className="mt-1 text-xs leading-snug" style={{ color: "var(--text-secondary)" }}>
+                {m.label}
+              </dt>
+              <dd className={`${styles.value} font-semibold tabular-nums`} style={{ color: "var(--text)" }}>
+                {m.value}
+              </dd>
+            </div>
           ))}
-        </ul>
+        </dl>
+      ) : <div className={styles.metrics} data-card-slot="metrics" aria-hidden="true" />}
 
-        {(app.page || app.links.length > 0) && (
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+      <ul className={`${styles.platforms} flex flex-wrap items-start gap-2`} data-card-slot="platforms" aria-label="Plataformas">
+        {app.platforms.map((p) => (
+          <li key={p} className="rounded-full px-3 py-1 text-xs" style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}>
+            {p}
+          </li>
+        ))}
+      </ul>
+
+      <div className={styles.actions} data-card-slot="actions">
+        {hasLinks && (
+          <ul className="flex flex-wrap items-start gap-x-5 gap-y-2">
             {app.page && (
               <li>
-                <Link
-                  href={app.page}
-                  className="inline-flex items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
-                  style={{ color: "var(--text)" }}
-                >
+                <Link href={app.page} className="inline-flex items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]" style={{ color: "var(--text)" }}>
                   Conhecer o {app.name}
-                  <ArrowRight className="h-4 w-4" aria-hidden />
+                  <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
                 </Link>
               </li>
             )}
             {app.links.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
-                  style={{ color: "var(--text)" }}
-                >
-                  {link.label}
-                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+              <li key={link.href} className="min-w-0">
+                <a href={link.href} target="_blank" rel="noopener noreferrer" className="inline-flex max-w-full items-center gap-1 rounded-sm text-sm font-medium underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]" style={{ color: "var(--text)" }}>
+                  <span className="min-w-0 [overflow-wrap:anywhere]">{link.label}</span>
+                  <ArrowUpRight className="h-4 w-4 shrink-0" aria-hidden />
                   <span className="sr-only">(abre em nova aba)</span>
                 </a>
               </li>
             ))}
           </ul>
         )}
-
         {app.notice && (
-          <p className="mt-6 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
-            {app.notice}
-          </p>
+          <p className="mt-6 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>{app.notice}</p>
         )}
       </div>
     </article>
