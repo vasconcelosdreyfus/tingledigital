@@ -1,4 +1,5 @@
 import type { ProductPageData } from "@/types/product";
+import { cognitaImpactThousands } from "../cognita-impact";
 import { testimonials } from "@/content/data/testimonials";
 
 export const cognita: ProductPageData = {
@@ -14,10 +15,11 @@ export const cognita: ProductPageData = {
   problemTitle: "Projeto social não devia se afogar em planilha.",
   problemBody:
     "Coordenação de projeto educacional social no Brasil normalmente se divide entre N sistemas: planilhas pra controle de aluno, WhatsApp pra família, PDF pra relatório, e-mail pra prestação de contas. Resultado: gestores que deviam estar fazendo gestão pedagógica ficam fazendo CTRL+C / CTRL+V.",
-  // apps.ts: EPES, Tropa do Esporte, Educa Brasis, Rede Vida Animal Brasil e Casa Tech
+  // Matrículas agregadas entre os projetos, verificadas em cognita-impact.ts.
   problemStat: {
-    value: "5",
-    label: "organizações usando o Cognita hoje, a começar pela EPES, em Saquarema",
+    value: `${cognitaImpactThousands.enrollments} mil+`,
+    label:
+      "matrículas gerenciadas no Cognita, conectando alunos, turmas e equipes pedagógicas",
   },
   solutionEyebrow: "Como ajudamos",
   solutionTitle: "Centraliza tudo. Libera o coordenador pro pedagógico.",
@@ -74,8 +76,7 @@ export const cognita: ProductPageData = {
     },
     {
       title: "Dados e prestação de contas",
-      description:
-        "Relatórios para patrocinador e órgão público saem da própria base. Com o Cognita Pesquisa, a Educa Brasis reuniu 11.632 respostas no Rock in Rio 2026.",
+      description: `Relatórios para patrocinadores e órgãos públicos saem da própria base. O motor de pesquisas do Cognita já reuniu mais de ${cognitaImpactThousands.surveyResponses} mil respostas em diferentes projetos, com coleta digital e em campo.`,
     },
   ],
   cases: [

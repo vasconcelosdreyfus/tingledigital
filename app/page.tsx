@@ -10,6 +10,7 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { ValidationLogos } from "@/components/shared/validation-logos";
 import { HomeAppsLive } from "@/components/sections/home/home-apps-live";
 import { apps } from "@/content/data/apps";
+import { cognitaImpactThousands } from "@/content/data/cognita-impact";
 import { TINGLE_FOUNDED } from "@/content/data/home";
 import { ArrowRight, Lightbulb, Zap, Network } from "lucide-react";
 
@@ -54,10 +55,6 @@ export default async function Home() {
 async function ValidationStrip() {
   const t = await getTranslations("validation");
   return <ValidationLogos eyebrow={t("eyebrow")} />;
-}
-
-function findApp(slug: string) {
-  return apps.find((a) => a.slug === slug);
 }
 
 async function CapabilitiesSection() {
@@ -115,13 +112,6 @@ async function CapabilitiesSection() {
   );
 }
 
-/** "11.632" (pt-BR) -> 11632 */
-function parseMetric(value: string | undefined): number | undefined {
-  if (!value) return undefined;
-  const n = Number(value.replace(/\./g, "").replace(",", "."));
-  return Number.isFinite(n) ? n : undefined;
-}
-
 function yearsSince(isoDate: string): number {
   const start = new Date(`${isoDate}T00:00:00-03:00`);
   const now = new Date();
@@ -135,24 +125,26 @@ function yearsSince(isoDate: string): number {
 async function NumbersSection() {
   const t = await getTranslations("stats");
 
-  // Todo número sai de apps.ts ou da data de abertura (CNPJ); se faltar a fonte, o item não aparece.
+  // Fontes: abertura (CNPJ), catálogo de apps e agregações verificadas do Cognita.
   const storeApps = apps.filter((a) =>
     a.links.some((l) => l.label === "App Store" || l.label === "Google Play")
   ).length;
-  const items: { value: number | undefined; label: string }[] = [
+  const items: { value: number | undefined; label: string; suffix?: string }[] = [
     { value: yearsSince(TINGLE_FOUNDED), label: t("years") },
     { value: storeApps || undefined, label: t("storeApps") },
     {
-      value: parseMetric(findApp("cognita")?.metrics?.[0]?.value),
-      label: t("cognitaOrgs"),
+      value: cognitaImpactThousands.enrollments,
+      label: t("cognitaEnrollments"),
+      suffix: t("thousandPlus"),
     },
     {
-      value: parseMetric(findApp("cognita")?.metrics?.[1]?.value),
+      value: cognitaImpactThousands.surveyResponses,
       label: t("surveyResponses"),
+      suffix: t("thousandPlus"),
     },
   ];
   const stats = items.filter(
-    (s): s is { value: number; label: string } => s.value !== undefined
+    (s): s is { value: number; label: string; suffix?: string } => s.value !== undefined
   );
 
   return (
@@ -174,7 +166,7 @@ async function NumbersSection() {
                 className="text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
                 style={{ color: "var(--text)" }}
               >
-                <AnimatedNumber value={s.value} />
+                <AnimatedNumber value={s.value} suffix={s.suffix} />
               </div>
               <div className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
                 {s.label}

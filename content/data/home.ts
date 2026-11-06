@@ -1,4 +1,5 @@
 import { clients } from "./clients";
+import { cognitaImpactThousands } from "./cognita-impact";
 import type { CasePillar } from "@/types/case";
 
 /** Abertura da Tingle Digital: CNPJ 33.486.049/0001-55, data de início de atividade (BrasilAPI, consultado em 25/09/2026). */
@@ -20,8 +21,14 @@ export const homeData = {
       // Números com fonte: data de abertura (CNPJ) e content/data/apps.ts.
       { label: "7 ANOS NO MERCADO", accent: "yellow" as const },
       { label: "3 APPS PUBLICADOS NAS LOJAS", accent: "cyan" as const },
-      { label: "5 ORGANIZAÇÕES USANDO O COGNITA", accent: "pink" as const },
-      { label: "11.632 RESPOSTAS NO ROCK IN RIO 2026", accent: "lime" as const },
+      {
+        label: `${cognitaImpactThousands.enrollments} MIL+ MATRÍCULAS NO COGNITA`,
+        accent: "pink" as const,
+      },
+      {
+        label: `${cognitaImpactThousands.surveyResponses} MIL+ RESPOSTAS PELO MOTOR DE PESQUISAS`,
+        accent: "lime" as const,
+      },
     ],
   },
   pillars: {

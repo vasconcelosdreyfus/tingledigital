@@ -1,4 +1,5 @@
 import type { AppEntry, AppImage } from "@/types/app";
+import { cognitaImpactThousands } from "./cognita-impact";
 
 /**
  * Fonte única das aplicações exibidas no site.
@@ -64,7 +65,7 @@ export const apps: AppEntry[] = [
     name: "Cognita",
     tagline: "Gestão educacional e de projetos sociais.",
     description:
-      "Plataforma multi-cliente para alunos, turmas, frequência, aulas, gamificação, eventos e prestação de contas, com um app de campo para pesquisas presenciais em grandes festivais. Construída com a Casa Brasil para a EPES.",
+      "Plataforma multi-cliente para alunos, turmas, frequência, aulas, gamificação, eventos e prestação de contas, com um motor de pesquisas para coleta digital e em campo, usado em diferentes projetos. Construída com a Casa Brasil para a EPES.",
     owner: "Produto Tingle",
     category: "Educação e gestão social",
     // cognita.tingledigital.com HTTP 200; coleção projetos em produção: EPES, Tropa do Esporte, Educa Brasis, Rede Vida Animal Brasil, Casa Tech
@@ -80,10 +81,16 @@ export const apps: AppEntry[] = [
       { label: "cognita.tingledigital.com", href: "https://cognita.tingledigital.com" },
     ],
     page: "/cognita",
-    // 5 organizações: coleção projetos em produção. Respostas: runAggregationQuery em projetos/kMkuKf3QYPx5He4gL0hA/respostasPesquisas (25/09/2026)
+    // Agregações de produção em 06/11/2026: ver cognita-impact.ts.
     metrics: [
-      { value: "5", label: "organizações usando" },
-      { value: "11.632", label: "respostas de pesquisa no Rock in Rio 2026" },
+      {
+        value: `${cognitaImpactThousands.enrollments} mil+`,
+        label: "matrículas gerenciadas",
+      },
+      {
+        value: `${cognitaImpactThousands.surveyResponses} mil+`,
+        label: "respostas coletadas pelo motor de pesquisas",
+      },
     ],
   },
   {

@@ -11,12 +11,7 @@
   "hero": {
     "pill": "Rock in Rio 2026: see Leitura Delas",
     "title": "We turn ideas into",
-    "rotatingWords": [
-      "experiences.",
-      "products.",
-      "futures.",
-      "impact."
-    ],
+    "rotatingWords": ["experiences.", "products.", "futures.", "impact."],
     "subtitle": "Innovation in energy, education and solutions that transform markets. From the interior of Rio to the decision centers of the electrical sector — from conception to delivery.",
     "primaryCta": "See our products",
     "secondaryCta": "Talk to us",
@@ -31,7 +26,7 @@
     "title": "Our own products, live and in use.",
     "cognita": {
       "category": "Education · Social Management",
-      "status": "Live · {count} organizations using it",
+      "status": "Live · student management and surveys",
       "name": "Cognita",
       "description": "Multi-tenant educational + ERP platform for social projects. Built with Casa Brasil for EPES — Saquarema Programming and Entrepreneurship School.",
       "cta": "Discover Cognita"
@@ -73,8 +68,9 @@
   "stats": {
     "years": "Years in business",
     "storeApps": "Apps live on the app stores",
-    "cognitaOrgs": "Organizations using Cognita",
-    "surveyResponses": "Survey responses at Rock in Rio 2026"
+    "surveyResponses": "Responses collected by our survey engine",
+    "cognitaEnrollments": "Enrollments managed in Cognita",
+    "thousandPlus": "k+"
   },
   "testimonials": {
     "eyebrow": "Who trusts us",

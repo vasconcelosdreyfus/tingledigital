@@ -1,3 +1,4 @@
+import { cognitaImpactThousands } from "@/content/data/cognita-impact";
 import type { Metadata } from "next";
 import { Container } from "@/components/primitives/container";
 import { Section } from "@/components/primitives/section";
@@ -127,7 +128,12 @@ export default function DesignSystemPage() {
           <h2 className="text-display-3 mt-2 mb-8">Texto rolando lateral</h2>
         </Container>
         <Marquee className="border-y border-[--color-border] py-6">
-          {["7 ANOS", "3 APPS NAS LOJAS", "11.632 RESPOSTAS NO ROCK IN RIO", "★"].map((t) => (
+          {[
+            "7 ANOS",
+            "3 APPS NAS LOJAS",
+            `${cognitaImpactThousands.surveyResponses} MIL+ RESPOSTAS EM PESQUISAS`,
+            "★",
+          ].map((t) => (
             <span
               key={t}
               className="text-display-3 flex items-center gap-12 text-[--color-text-muted]"
