@@ -1,0 +1,62 @@
+[
+  {
+    "url": "https://tingledigital.com/",
+    "userAgent": "WhatsApp/2.24.1",
+    "image": "https://tingledigital.com/opengraph-image.png?opengraph-image.0z1pqokxt5hbh.png",
+    "imageStatus": 200,
+    "bytes": 24212,
+    "width": "1200",
+    "height": "630",
+    "sha256": "6926e8dcf9e0a8c63d4057aa3ae2452fa8ae33306c480362cf2a78b290715207"
+  },
+  {
+    "url": "https://tingledigital.com/cases",
+    "userAgent": "WhatsApp/2.24.1",
+    "image": "https://tingledigital.com/opengraph-image.png?opengraph-image.0z1pqokxt5hbh.png",
+    "imageStatus": 200,
+    "bytes": 24212,
+    "width": "1200",
+    "height": "630",
+    "sha256": "6926e8dcf9e0a8c63d4057aa3ae2452fa8ae33306c480362cf2a78b290715207"
+  },
+  {
+    "url": "https://tingledigital.com/sobre",
+    "userAgent": "WhatsApp/2.24.1",
+    "image": "https://tingledigital.com/opengraph-image.png?v=20261106",
+    "imageStatus": 200,
+    "bytes": 24212,
+    "width": "1200",
+    "height": "630",
+    "sha256": "6926e8dcf9e0a8c63d4057aa3ae2452fa8ae33306c480362cf2a78b290715207"
+  },
+  {
+    "url": "https://tingledigital.com/",
+    "userAgent": "facebookexternalhit/1.1",
+    "image": "https://tingledigital.com/opengraph-image.png?opengraph-image.0z1pqokxt5hbh.png",
+    "imageStatus": 200,
+    "bytes": 24212,
+    "width": "1200",
+    "height": "630",
+    "sha256": "6926e8dcf9e0a8c63d4057aa3ae2452fa8ae33306c480362cf2a78b290715207"
+  },
+  {
+    "url": "https://tingledigital.com/cases",
+    "userAgent": "facebookexternalhit/1.1",
+    "image": "https://tingledigital.com/opengraph-image.png?opengraph-image.0z1pqokxt5hbh.png",
+    "imageStatus": 200,
+    "bytes": 24212,
+    "width": "1200",
+    "height": "630",
+    "sha256": "6926e8dcf9e0a8c63d4057aa3ae2452fa8ae33306c480362cf2a78b290715207"
+  },
+  {
+    "url": "https://tingledigital.com/sobre",
+    "userAgent": "facebookexternalhit/1.1",
+    "image": "https://tingledigital.com/opengraph-image.png?v=20261106",
+    "imageStatus": 200,
+    "bytes": 24212,
+    "width": "1200",
+    "height": "630",
+    "sha256": "6926e8dcf9e0a8c63d4057aa3ae2452fa8ae33306c480362cf2a78b290715207"
+  }
+]
