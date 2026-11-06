@@ -1,0 +1,14 @@
+{
+  "origin": "https://tingledigital-p01lsudh1-tingledigital.vercel.app",
+  "desktop": [
+    "Consultoria",
+    "Utilities",
+    "Cases",
+    "Sobre"
+  ],
+  "mobile": true,
+  "english": true,
+  "productsInCases": true,
+  "noProductLinksInHeader": true,
+  "errors": []
+}
