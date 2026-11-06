@@ -45,7 +45,9 @@ function CognitaWidget({ color }: { color: string }) {
     <div className="flex items-center gap-3">
       <BookOpen className="h-5 w-5" style={{ color }} />
       <div className="flex-1">
-        <div className="text-[9px] uppercase tracking-wider text-[#888899]">Média 5º A</div>
+        <div className="text-[9px] tracking-wider text-[#888899] uppercase">
+          Média 5º A
+        </div>
         <AnimatePresence mode="wait">
           <motion.div
             key={grade}
@@ -60,14 +62,19 @@ function CognitaWidget({ color }: { color: string }) {
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="flex items-end gap-0.5 h-6">
+      <div className="flex h-6 items-end gap-0.5">
         {[40, 65, 80, 70, 90].map((h, i) => (
           <motion.div
             key={i}
             className="w-1 rounded-sm"
             style={{ backgroundColor: color, opacity: 0.6 }}
-            animate={{ height: `${h + Math.sin(Date.now() / 1000 + i) * 10}%` }}
-            transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse", delay: i * 0.1 }}
+            animate={{ height: `${h + Math.sin(i) * 10}%` }}
+            transition={{
+              duration: 0.8,
+              repeat: Infinity,
+              repeatType: "reverse",
+              delay: i * 0.1,
+            }}
           />
         ))}
       </div>
@@ -77,14 +84,18 @@ function CognitaWidget({ color }: { color: string }) {
 
 // Live widget: chat ripple with new message
 function EterWidget({ color }: { color: string }) {
-  const messages = ["Júlia: Vamos juntos? ✨", "Pedro: Sim, lá pelas 18h", "Ana: Conta comigo!"];
+  const messages = [
+    "Júlia: Vamos juntos? ✨",
+    "Pedro: Sim, lá pelas 18h",
+    "Ana: Conta comigo!",
+  ];
   const [idx, setIdx] = React.useState(0);
   React.useEffect(() => {
     const interval = setInterval(() => {
       setIdx((p) => (p + 1) % messages.length);
     }, 2200);
     return () => clearInterval(interval);
-  }, []);
+  }, [messages.length]);
   return (
     <div className="flex items-start gap-3">
       <div className="relative">
@@ -96,8 +107,10 @@ function EterWidget({ color }: { color: string }) {
           transition={{ duration: 1.5, repeat: Infinity }}
         />
       </div>
-      <div className="flex-1 min-w-0 h-14">
-        <div className="text-[9px] uppercase tracking-wider text-[#888899] mb-1">Conversa ativa</div>
+      <div className="h-14 min-w-0 flex-1">
+        <div className="mb-1 text-[9px] tracking-wider text-[#888899] uppercase">
+          Conversa ativa
+        </div>
         <AnimatePresence mode="wait">
           <motion.div
             key={idx}
@@ -105,8 +118,12 @@ function EterWidget({ color }: { color: string }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.4 }}
-            className="rounded-lg border px-2.5 py-1.5 text-[11px] truncate"
-            style={{ borderColor: `${color}40`, backgroundColor: `${color}0d`, color: "#F5F5FA" }}
+            className="truncate rounded-lg border px-2.5 py-1.5 text-[11px]"
+            style={{
+              borderColor: `${color}40`,
+              backgroundColor: `${color}0d`,
+              color: "#F5F5FA",
+            }}
           >
             {messages[idx]}
           </motion.div>
@@ -125,7 +142,7 @@ function ConsultoriaWidget({ color }: { color: string }) {
       setPhase((p) => (p + 1) % phases.length);
     }, 1500);
     return () => clearInterval(interval);
-  }, []);
+  }, [phases.length]);
   return (
     <div className="flex items-center gap-3">
       <motion.div
@@ -135,7 +152,7 @@ function ConsultoriaWidget({ color }: { color: string }) {
         <Lightbulb className="h-5 w-5" style={{ color }} />
       </motion.div>
       <div className="flex-1">
-        <div className="text-[9px] uppercase tracking-wider text-[#888899]">Em curso</div>
+        <div className="text-[9px] tracking-wider text-[#888899] uppercase">Em curso</div>
         <AnimatePresence mode="wait">
           <motion.div
             key={phase}
@@ -184,9 +201,9 @@ function UtilitiesWidget({ color }: { color: string }) {
           transition={{ duration: 1.5, repeat: Infinity }}
         />
       </div>
-      <div className="flex-1 flex gap-3">
+      <div className="flex flex-1 gap-3">
         <div>
-          <div className="text-[9px] uppercase tracking-wider text-[#888899]">Tensão</div>
+          <div className="text-[9px] tracking-wider text-[#888899] uppercase">Tensão</div>
           <AnimatePresence mode="wait">
             <motion.div
               key={voltage}
@@ -201,7 +218,9 @@ function UtilitiesWidget({ color }: { color: string }) {
           </AnimatePresence>
         </div>
         <div>
-          <div className="text-[9px] uppercase tracking-wider text-[#888899]">Corrente</div>
+          <div className="text-[9px] tracking-wider text-[#888899] uppercase">
+            Corrente
+          </div>
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
@@ -222,10 +241,14 @@ function UtilitiesWidget({ color }: { color: string }) {
 
 function PillarWidget({ pillar, color }: { pillar: BentoPillar; color: string }) {
   switch (pillar) {
-    case "cognita": return <CognitaWidget color={color} />;
-    case "eter": return <EterWidget color={color} />;
-    case "consultoria": return <ConsultoriaWidget color={color} />;
-    case "utilities": return <UtilitiesWidget color={color} />;
+    case "cognita":
+      return <CognitaWidget color={color} />;
+    case "eter":
+      return <EterWidget color={color} />;
+    case "consultoria":
+      return <ConsultoriaWidget color={color} />;
+    case "utilities":
+      return <UtilitiesWidget color={color} />;
   }
 }
 
@@ -253,15 +276,19 @@ export function BentoCard({
       {/* Animated gradient orb that follows hover */}
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-12 -right-12 w-56 h-56 rounded-full blur-3xl opacity-25 transition-opacity group-hover:opacity-50"
-        style={{ background: `radial-gradient(circle, ${accent.hex} 0%, transparent 70%)` }}
+        className="pointer-events-none absolute -top-12 -right-12 h-56 w-56 rounded-full opacity-25 blur-3xl transition-opacity group-hover:opacity-50"
+        style={{
+          background: `radial-gradient(circle, ${accent.hex} 0%, transparent 70%)`,
+        }}
         animate={{ scale: [1, 1.15, 1] }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
 
       <div className="relative z-10">
         <div className="flex items-start justify-between">
-          <p className="text-eyebrow" style={{ color: accent.hex }}>{eyebrow}</p>
+          <p className="text-eyebrow" style={{ color: accent.hex }}>
+            {eyebrow}
+          </p>
           <ArrowUpRight
             className="h-5 w-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
             style={{ color: accent.hex }}
@@ -269,7 +296,7 @@ export function BentoCard({
           />
         </div>
         <h3 className="mt-4 text-3xl font-bold text-balance text-[#F5F5FA]">{title}</h3>
-        <p className="mt-4 max-w-md text-base text-[#888899] leading-relaxed">
+        <p className="mt-4 max-w-md text-base leading-relaxed text-[#888899]">
           {description}
         </p>
       </div>

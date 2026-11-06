@@ -5,6 +5,8 @@ export interface AppImage {
   width: number;
   height: number;
   alt: string;
+  /** Asset already optimized, served directly when runtime conversion is unsuitable. */
+  unoptimized?: boolean;
 }
 
 export interface AppMetric {

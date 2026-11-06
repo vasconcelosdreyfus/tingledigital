@@ -8,14 +8,17 @@ export function AppCard({ app }: { app: AppEntry }) {
   return (
     <article
       id={app.slug}
-      className="flex h-full scroll-mt-28 flex-col rounded-2xl p-6 sm:p-8"
+      className="app-portfolio-card flex h-full scroll-mt-28 flex-col rounded-2xl p-6 sm:p-8"
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
       <div className="flex flex-1 flex-col">
         <div className="flex items-center gap-4">
           <AppIcon app={app} className="w-16 sm:w-[72px]" />
           <div className="min-w-0">
-            <h3 className="text-xl font-semibold text-balance" style={{ color: "var(--text)" }}>
+            <h3
+              className="text-xl font-semibold text-balance"
+              style={{ color: "var(--text)" }}
+            >
               {app.name}
             </h3>
             <p className="text-sm" style={{ color: "var(--text-muted)" }}>
@@ -26,10 +29,16 @@ export function AppCard({ app }: { app: AppEntry }) {
 
         <StatusBadge kind={app.status.kind} label={app.status.label} className="mt-4" />
 
-        <p className="mt-4 text-base font-medium text-pretty" style={{ color: "var(--text)" }}>
+        <p
+          className="mt-4 text-base font-medium text-pretty"
+          style={{ color: "var(--text)" }}
+        >
           {app.tagline}
         </p>
-        <p className="mt-2 text-sm leading-relaxed text-pretty" style={{ color: "var(--text-secondary)" }}>
+        <p
+          className="mt-2 text-sm leading-relaxed text-pretty"
+          style={{ color: "var(--text-secondary)" }}
+        >
           {app.description}
         </p>
 
@@ -37,10 +46,16 @@ export function AppCard({ app }: { app: AppEntry }) {
           <dl className="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
             {app.metrics.map((m) => (
               <div key={m.label} className="flex min-w-0 flex-col-reverse">
-                <dt className="mt-1 text-xs leading-snug" style={{ color: "var(--text-secondary)" }}>
+                <dt
+                  className="mt-1 text-xs leading-snug"
+                  style={{ color: "var(--text-secondary)" }}
+                >
                   {m.label}
                 </dt>
-                <dd className="text-2xl font-semibold tabular-nums sm:text-3xl" style={{ color: "var(--text)" }}>
+                <dd
+                  className="text-2xl font-semibold tabular-nums sm:text-3xl"
+                  style={{ color: "var(--text)" }}
+                >
                   {m.value}
                 </dd>
               </div>
@@ -53,7 +68,10 @@ export function AppCard({ app }: { app: AppEntry }) {
             <li
               key={p}
               className="rounded-full px-3 py-1 text-xs"
-              style={{ border: "1px solid var(--border)", color: "var(--text-secondary)" }}
+              style={{
+                border: "1px solid var(--border)",
+                color: "var(--text-secondary)",
+              }}
             >
               {p}
             </li>
@@ -93,7 +111,10 @@ export function AppCard({ app }: { app: AppEntry }) {
         )}
 
         {app.notice && (
-          <p className="mt-6 text-xs leading-relaxed" style={{ color: "var(--text-muted)" }}>
+          <p
+            className="mt-6 text-xs leading-relaxed"
+            style={{ color: "var(--text-muted)" }}
+          >
             {app.notice}
           </p>
         )}

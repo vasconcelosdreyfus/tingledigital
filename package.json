@@ -48,5 +48,6 @@
       "@parcel/watcher",
       "@swc/core"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.17.1"
 }

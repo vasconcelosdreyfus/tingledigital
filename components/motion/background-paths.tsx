@@ -10,9 +10,9 @@ function FloatingPaths({ position }: { position: number }) {
   }));
 
   return (
-    <div className="absolute inset-0 pointer-events-none">
+    <div className="pointer-events-none absolute inset-0">
       <svg
-        className="w-full h-full block"
+        className="block h-full w-full"
         viewBox="0 0 696 316"
         fill="none"
         preserveAspectRatio="xMidYMid slice"
@@ -32,7 +32,7 @@ function FloatingPaths({ position }: { position: number }) {
               pathOffset: [0, 1, 0],
             }}
             transition={{
-              duration: 20 + Math.random() * 10,
+              duration: 20 + (path.id % 10),
               repeat: Infinity,
               ease: "linear",
             }}

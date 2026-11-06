@@ -1,105 +1,50 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Container } from "@/components/primitives/container";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { BackgroundPaths } from "@/components/motion/background-paths";
-import { AnimatedTingleMark } from "@/components/brand/tingle-mark";
+import { BrandPlayground } from "@/components/brand/brand-playground";
 
 export function HomeHero() {
-  const t = useTranslations("hero");
-  const words = t.raw("rotatingWords") as string[];
-  const [wordIdx, setWordIdx] = React.useState(0);
-  const reduce = useReducedMotion();
-
-  React.useEffect(() => {
-    if (reduce) return; // sem troca automática para quem pede menos movimento
-    const id = setInterval(() => {
-      setWordIdx((i) => (i + 1) % words.length);
-    }, 2400);
-    return () => clearInterval(id);
-  }, [words.length, reduce]);
-
+  const t = useTranslations("immersive");
   return (
-    <section className="relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40">
-      <BackgroundPaths />
-
-      <Container className="relative z-10">
-        <div className="mx-auto max-w-4xl text-center">
-          <AnimatedTingleMark className="mx-auto mb-8 h-20 w-auto sm:h-24" />
-          <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex"
-          >
-            <Link
-              href="/cases"
-              className="group relative inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm shadow-sm transition-colors overflow-hidden"
-              style={{
-                border: "1px solid var(--border)",
-                backgroundColor: "var(--bg)",
-                color: "var(--text-secondary)",
-              }}
-            >
-              <span aria-hidden className="absolute inset-y-0 -left-1/2 w-1/3 -skew-x-12 pointer-events-none animate-[shine_3.5s_ease-in-out_infinite]" style={{ background: "linear-gradient(90deg, transparent, color-mix(in srgb, var(--text) 8%, transparent), transparent)" }} />
-              <span className="relative inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: "var(--text)" }} />
-              <span className="relative">{t("pill")}</span>
-              <ArrowRight className="relative h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="text-display-1 text-balance"
-            style={{ color: "var(--text)" }}
-          >
-            <span>{t("title")}</span>{" "}
-            <span className="relative inline-block min-w-[4ch] sm:min-w-[5ch] align-baseline">
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={wordIdx}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -40 }}
-                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                  className="inline-block"
-                >
-                  {words[wordIdx]}
-                </motion.span>
-              </AnimatePresence>
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="mt-6 mx-auto max-w-2xl text-lg text-pretty leading-relaxed sm:text-xl"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            {t("subtitle")}
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-10 flex flex-wrap items-center justify-center gap-3"
-          >
-            <Button size="lg" asChild>
-              <Link href="#produtos">{t("primaryCta")}</Link>
-            </Button>
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/contato">{t("secondaryCta")}</Link>
-            </Button>
-          </motion.div>
+    <section className="studio-hero" aria-labelledby="hero-title">
+      <Container size="xl">
+        <div className="hero-kicker">
+          <span className="brand-dot" />
+          {t("eyebrow")}
+          <span className="hero-location">{t("location")}</span>
+        </div>
+        <div className="hero-composition">
+          <div className="hero-copy">
+            <h1 id="hero-title" className="studio-title">
+              {t("titleLine1")}
+              <br />
+              {t("titleLine2")}
+              <br />
+              <span>{t("titleAccent")}</span>
+            </h1>
+            <p className="hero-description">{t("description")}</p>
+            <div className="hero-actions">
+              <Link className="studio-button" href="#produtos">
+                {t("explore")}
+                <ArrowDown size={17} aria-hidden />
+              </Link>
+              <Link className="text-link" href="/contato">
+                {t("talk")}
+                <ArrowUpRight size={17} aria-hidden />
+              </Link>
+            </div>
+          </div>
+          <BrandPlayground />
+        </div>
+        <div className="hero-footnote">
+          <span>{t("signature")}</span>
+          <a href="#produtos">
+            {t("scroll")}
+            <ArrowDown size={14} aria-hidden />
+          </a>
         </div>
       </Container>
     </section>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { inter } from "@/lib/fonts";
+import { inter, manrope } from "@/lib/fonts";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { LenisProvider } from "@/components/providers/lenis-provider";
@@ -27,7 +27,11 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={inter.variable} suppressHydrationWarning>
+    <html
+      lang={locale}
+      className={`${inter.variable} ${manrope.variable}`}
+      suppressHydrationWarning
+    >
       <body
         className="min-h-screen antialiased"
         style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}

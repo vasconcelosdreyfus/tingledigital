@@ -1,42 +1,37 @@
 "use client";
 
-import * as React from "react";
+import { useTransition } from "react";
+import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 
-type Locale = "pt" | "en";
-
 export function LocaleToggle() {
-  const [locale, setLocale] = React.useState<Locale>("pt");
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-    const saved = (Cookies.get("locale") as Locale) ?? "pt";
-    setLocale(saved);
-  }, []);
-
-  function toggle() {
-    const next: Locale = locale === "pt" ? "en" : "pt";
-    Cookies.set("locale", next, { expires: 365 });
-    setLocale(next);
-    // Reload so server can pick up new locale (placeholder; full next-intl wiring later)
-    window.location.reload();
-  }
-
-  if (!mounted) return <div className="w-14 h-7" />;
-
+  const locale = useLocale();
+  const router = useRouter();
+  const [pending, startTransition] = useTransition();
   return (
     <button
-      onClick={toggle}
-      className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-medium transition-colors"
-      style={{
-        border: "1px solid var(--border)",
-        color: "var(--text-secondary)",
+      type="button"
+      disabled={pending}
+      aria-label={locale === "pt" ? "Switch to English" : "Mudar para português"}
+      aria-busy={pending}
+      onClick={() => {
+        Cookies.set("locale", locale === "pt" ? "en" : "pt", {
+          expires: 365,
+          sameSite: "lax",
+        });
+        startTransition(() => router.refresh());
       }}
+      className="inline-flex min-h-10 items-center gap-1 rounded-full px-2 text-xs font-medium disabled:opacity-50"
+      style={{ color: "var(--text-secondary)" }}
     >
-      <span style={{ color: locale === "pt" ? "var(--text)" : "var(--text-muted)" }}>PT</span>
-      <span style={{ color: "var(--text-muted)" }}>·</span>
-      <span style={{ color: locale === "en" ? "var(--text)" : "var(--text-muted)" }}>EN</span>
+      <span style={{ color: locale === "pt" ? "var(--text)" : "var(--text-muted)" }}>
+        PT
+      </span>
+      <span aria-hidden>·</span>
+      <span style={{ color: locale === "en" ? "var(--text)" : "var(--text-muted)" }}>
+        EN
+      </span>
     </button>
   );
 }

@@ -1,4 +1,3 @@
-import type { CasePreview } from "./case";
 import type { Testimonial } from "./testimonial";
 
 export type ServicePillar = "consultoria" | "utilities";

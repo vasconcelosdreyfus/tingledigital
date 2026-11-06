@@ -6,15 +6,18 @@ import { cn } from "@/lib/utils";
 export function AppIcon({ app, className }: { app: AppEntry; className?: string }) {
   return (
     <div
-      className={cn("relative aspect-square shrink-0 overflow-hidden rounded-[22%] shadow-sm", className)}
+      className={cn(
+        "relative aspect-square shrink-0 overflow-hidden rounded-[22%] shadow-sm",
+        className
+      )}
       style={{ border: "1px solid var(--border)" }}
     >
       <Image
         src={app.icon.src}
         alt={app.icon.alt}
         fill
-        sizes="96px"
-        unoptimized={app.icon.src.endsWith(".svg")}
+        sizes="120px"
+        unoptimized={app.icon.unoptimized || app.icon.src.endsWith(".svg")}
         className="object-cover"
       />
     </div>
