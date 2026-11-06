@@ -1,0 +1,32 @@
+{
+  "origin": "https://tingledigital-lv6u14tgn-tingledigital.vercel.app",
+  "page": "/sobre#socios",
+  "roles": {
+    "Dreyfus Vasconcelos": "Sócio-Fundador · Estratégia, Energia & Tecnologia",
+    "Marcelo Fernandes": "Sócio · Estratégia & Energia",
+    "Alexandre Behrens": "Sócio · Estratégia & Energia"
+  },
+  "oldRolesAbsent": true,
+  "photos": [
+    {
+      "name": "Dreyfus Vasconcelos",
+      "file": "dreyfus.png",
+      "loaded": true
+    },
+    {
+      "name": "Marcelo Fernandes",
+      "file": "marcelo.jpeg",
+      "loaded": true
+    },
+    {
+      "name": "Alexandre Behrens",
+      "file": "alexandre.png",
+      "loaded": true
+    }
+  ],
+  "initialsAbsent": true,
+  "desktop1440": true,
+  "mobile390": true,
+  "mobile320": true,
+  "errors": []
+}
