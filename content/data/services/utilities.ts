@@ -6,7 +6,7 @@ export const utilities: ServicePageData = {
   heroEyebrow: "Utilities · AI · IoT · Hyperautomation",
   heroTitle: "Pioneirismo em P&D. Hiperautomação que entrega resultado.",
   heroSubtitle:
-    "Desenvolvimento de negócios, eficiência energética e inovação para energia, água e infraestrutura. Dos trocadores de calor da QBANHO ao P&D com Hubz e Equatorial, conectamos conhecimento do setor à execução.",
+    "Desenvolvimento de negócios, eficiência energética e inovação para energia, água e infraestrutura. Da articulação comercial dos trocadores de calor da QBANHO à estruturação do desenho e da abordagem de projetos de P&D, conectamos conhecimento do setor e estratégia.",
   heroCtaLabel: "Falar com utilities",
   heroCtaHref: "/contato?servico=utilities",
   methodEyebrow: "Quatro frentes de atuação",

@@ -6,7 +6,7 @@ export interface Client {
 
 export const clients: Client[] = [
   { name: "Casa Brasil", category: "Principal Parceiro" },
-  { name: "Equatorial Energia", category: "P&D" },
+  { name: "Equatorial Energia", category: "Eficiência energética · QBANHO" },
   { name: "QBANHO", category: "Energia & Tech" },
   { name: "5EC", category: "Energia & Tech" },
   { name: "Hubz", category: "Inovação & P&D" },

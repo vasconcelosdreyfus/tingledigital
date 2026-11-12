@@ -68,7 +68,7 @@ export const homeData = {
         eyebrow: "Utilities",
         title: "Energia + AI + IoT",
         description:
-          "P&D pioneiro com IA, IoT e Blockchain. Hiperautomação e melhorias operacionais para o setor de utilities. 1º P&D aprovado com Equatorial em 2024.",
+          "P&D pioneiro com IA, IoT e Blockchain. Hiperautomação e melhorias operacionais para o setor de utilities. Desenho e abordagem do primeiro P&D estruturado pela Tingle, aprovado em 2024.",
         href: "/utilities",
         ctaLabel: "Ver utilities",
         size: "wide" as const,

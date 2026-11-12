@@ -1,27 +1,40 @@
 import type { Metadata } from "next";
+import { getLocale } from "next-intl/server";
+import { sobreEn } from "@/content/data/sobre-en";
 import { socialImages } from "@/lib/social-metadata";
 import { PageHero } from "@/components/shared/page-hero";
 import { Container } from "@/components/primitives/container";
 import { TeamGrid } from "@/components/shared/team-grid";
 import { Milestones } from "@/components/shared/milestones";
 import { CtaSection } from "@/components/shared/cta-section";
-import { sobre } from "@/content/data/sobre";
+import { sobre as sobrePt } from "@/content/data/sobre";
 import styles from "../justified-copy.module.css";
 
-export const metadata: Metadata = {
-  title: "Sobre",
-  description: sobre.hero.subtitle,
-  openGraph: { images: socialImages, title: "Sobre · Tingle Digital", description: sobre.hero.subtitle },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const english = (await getLocale()) === "en";
+  const content = english ? sobreEn : sobrePt;
+  const title = english ? "About" : "Sobre";
+  return {
+    title,
+    description: content.hero.subtitle,
+    openGraph: { images: socialImages, title: `${title} · Tingle Digital`, description: content.hero.subtitle },
+  };
+}
 
-export default function SobrePage() {
+export default async function SobrePage() {
+  const english = (await getLocale()) === "en";
+  const sobre = english ? sobreEn : sobrePt;
   return (
     <div className={styles.page}>
       <PageHero
         eyebrow={sobre.hero.eyebrow}
         title={sobre.hero.title}
         subtitle={sobre.hero.subtitle}
-      />
+      >
+        <p className="mt-8 mx-auto max-w-2xl text-lg sm:text-xl text-pretty leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+          {sobre.hero.productStatement}
+        </p>
+      </PageHero>
 
       <section className="py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}>
         <Container>
@@ -53,8 +66,8 @@ export default function SobrePage() {
       <CtaSection
         title={sobre.finalCta.title}
         body={sobre.finalCta.body}
-        primaryCta={{ label: "Iniciar conversa", href: "/contato" }}
-        secondaryCta={{ label: "Ver portfólio", href: "/cases" }}
+        primaryCta={{ label: english ? "Start a conversation" : "Iniciar conversa", href: "/contato" }}
+        secondaryCta={{ label: english ? "View portfolio" : "Ver portfólio", href: "/cases" }}
       />
     </div>
   );

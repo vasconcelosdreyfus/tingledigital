@@ -6,6 +6,8 @@ export const sobre = {
     title: "Do Maranhão ao Rio. Tecnologia com alma criativa.",
     subtitle:
       "Nascemos em 2019 em São Luís, Maranhão, com a missão de digitalizar pequenos negócios. Em 2022 mudamos pro Rio — e descobrimos o que queremos ser quando crescer.",
+    productStatement:
+      "Somos uma startup de produto. Desenvolvemos e publicamos software próprio: o Eter, mensageiro com criptografia de ponta a ponta, e o Sentinelas da Guanabara, jogo de educação ambiental, estão na App Store e no Google Play; o The Candidate, simulador de campanha eleitoral, está no Google Play. O Cognita, nossa plataforma de gestão educacional, opera desde 2023 na Escola de Programação e Empreendedorismo de Saquarema e atende cinco organizações.",
   },
   values: {
     eyebrow: "O que nos move",
@@ -35,7 +37,7 @@ export const sobre = {
   },
   team: {
     eyebrow: "Quem está por trás",
-    title: "Sócios com experiência em energia, tecnologia e gestão.",
+    title: "Sócios e parceiros com experiência em energia, tecnologia e gestão.",
     members: team,
   },
   milestones: {
@@ -52,7 +54,7 @@ export const sobre = {
         year: 2022,
         title: "Novo Propósito — Rio de Janeiro",
         description:
-          "No Rio, unimos talentos e demos um propósito maior à Tingle. Conhecemos Casa Brasil, iniciamos EPES, e fechamos parcerias com QBANHO, 5EC e Equatorial.",
+          "No Rio, unimos talentos e demos um propósito maior à Tingle. Conhecemos Casa Brasil, iniciamos EPES, e fechamos parcerias com QBANHO e 5EC.",
       },
       {
         year: 2023,
@@ -62,9 +64,9 @@ export const sobre = {
       },
       {
         year: 2024,
-        title: "Primeiro P&D Aprovado",
+        title: "Primeiro P&D Estruturado",
         description:
-          "Marco histórico: 1º projeto de P&D aprovado com Hubz para a Equatorial Energia. Automatizar tratamento de água da Companhia de Águas do Amapá.",
+          "Estruturamos o desenho e a abordagem do primeiro projeto de P&D aprovado no setor elétrico, para automatizar o tratamento de água da Companhia de Águas do Amapá.",
       },
       {
         year: 2025,

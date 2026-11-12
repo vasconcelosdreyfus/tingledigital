@@ -17,7 +17,7 @@ export const team = [
   },
   {
     name: "Alexandre Behrens",
-    role: "Sócio · Estratégia & Energia",
+    role: "Parceiro · Estratégia & Energia",
     photo: "/team/alexandre-profissional.webp",
     bio: "Experiência em eficiência energética e desenvolvimento de negócios no setor de energia. Atuou no relacionamento com o mercado da APS Soluções em Energia e na assessoria empresarial da 3B. Aproxima empresas, concessionárias e oportunidades para viabilizar projetos.",
     experience: "Trajetória na APS Soluções em Energia e na 3B Assessoria Empresarial, com relacionamento de mercado, eficiência energética e articulação de negócios.",
