@@ -1,0 +1,202 @@
+{
+  "base": "https://tingledigital.com",
+  "results": [
+    {
+      "path": "/",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 768,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 768,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 768,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 768,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 768,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 768,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 768,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "path": "/utilities",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "path": "/consultoria",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
