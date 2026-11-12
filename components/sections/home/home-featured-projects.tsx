@@ -23,7 +23,7 @@ const projects = [
 const festivals = [
   { name: "The Town", src: "/apps/logos/the-town.png", width: 588, height: 124 },
   { name: "Lollapalooza", src: "/apps/logos/lollapalooza.png", width: 545, height: 129 },
-  { name: "Rock in Rio", src: "/apps/logos/rock-in-rio.webp", width: 600, height: 232 },
+  { name: "Rock in Rio", src: "/apps/logos/rock-in-rio-wordmark.png", width: 596, height: 154 },
 ];
 
 export async function HomeFeaturedProjects() {
