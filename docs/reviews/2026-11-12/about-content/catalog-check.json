@@ -1,0 +1,12 @@
+{
+  "source": "content/data/apps.ts",
+  "organizations": [
+    "EPES",
+    "Tropa do Esporte",
+    "Educa Brasis",
+    "Rede Vida Animal Brasil",
+    "Casa Tech"
+  ],
+  "count": 5,
+  "verificationScope": "Catalog record; not a new live database query."
+}

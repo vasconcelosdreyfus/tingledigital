@@ -1,0 +1,171 @@
+{
+  "base": "https://tingledigital.com",
+  "mode": "baseline",
+  "report": [
+    {
+      "width": 390,
+      "locale": "pt",
+      "newParagraph": false,
+      "oldTitleAbsent": false,
+      "visuals": {
+        "h1": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "36px",
+          "fontWeight": "600",
+          "color": "rgb(10, 10, 10)",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.44px"
+        },
+        "body": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(10, 10, 10)"
+        },
+        "hero": {
+          "paddingTop": "128px",
+          "paddingBottom": "64px"
+        },
+        "team": {
+          "gridTemplateColumns": "342px",
+          "gap": "40px"
+        },
+        "photo": {
+          "aspectRatio": "1 / 1",
+          "borderRadius": "24px"
+        },
+        "subtitle": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "18px",
+          "lineHeight": "29.25px",
+          "color": "rgb(107, 107, 107)",
+          "textAlign": "justify",
+          "maxWidth": "672px"
+        }
+      },
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "newParagraph": false,
+      "oldTitleAbsent": false,
+      "visuals": {
+        "h1": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "36px",
+          "fontWeight": "600",
+          "color": "rgb(10, 10, 10)",
+          "lineHeight": "35.28px",
+          "letterSpacing": "-1.44px"
+        },
+        "body": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(10, 10, 10)"
+        },
+        "hero": {
+          "paddingTop": "128px",
+          "paddingBottom": "64px"
+        },
+        "team": {
+          "gridTemplateColumns": "342px",
+          "gap": "40px"
+        },
+        "photo": {
+          "aspectRatio": "1 / 1",
+          "borderRadius": "24px"
+        },
+        "subtitle": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "18px",
+          "lineHeight": "29.25px",
+          "color": "rgb(107, 107, 107)",
+          "textAlign": "justify",
+          "maxWidth": "672px"
+        }
+      },
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "locale": "pt",
+      "newParagraph": false,
+      "oldTitleAbsent": false,
+      "visuals": {
+        "h1": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "88px",
+          "fontWeight": "600",
+          "color": "rgb(10, 10, 10)",
+          "lineHeight": "86.24px",
+          "letterSpacing": "-3.52px"
+        },
+        "body": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(10, 10, 10)"
+        },
+        "hero": {
+          "paddingTop": "160px",
+          "paddingBottom": "80px"
+        },
+        "team": {
+          "gridTemplateColumns": "373.328px 373.328px 373.344px",
+          "gap": "32px"
+        },
+        "photo": {
+          "aspectRatio": "1 / 1",
+          "borderRadius": "24px"
+        },
+        "subtitle": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "20px",
+          "lineHeight": "32.5px",
+          "color": "rgb(107, 107, 107)",
+          "textAlign": "justify",
+          "maxWidth": "672px"
+        }
+      },
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "locale": "en",
+      "newParagraph": false,
+      "oldTitleAbsent": false,
+      "visuals": {
+        "h1": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "88px",
+          "fontWeight": "600",
+          "color": "rgb(10, 10, 10)",
+          "lineHeight": "86.24px",
+          "letterSpacing": "-3.52px"
+        },
+        "body": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(10, 10, 10)"
+        },
+        "hero": {
+          "paddingTop": "160px",
+          "paddingBottom": "80px"
+        },
+        "team": {
+          "gridTemplateColumns": "373.328px 373.328px 373.344px",
+          "gap": "32px"
+        },
+        "photo": {
+          "aspectRatio": "1 / 1",
+          "borderRadius": "24px"
+        },
+        "subtitle": {
+          "fontFamily": "Inter, \"Inter Fallback\", system-ui, -apple-system, sans-serif",
+          "fontSize": "20px",
+          "lineHeight": "32.5px",
+          "color": "rgb(107, 107, 107)",
+          "textAlign": "justify",
+          "maxWidth": "672px"
+        }
+      },
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
