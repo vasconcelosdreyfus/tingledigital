@@ -1,0 +1,28 @@
+{
+  "base": "https://tingledigital.com",
+  "mode": "old",
+  "report": [
+    {
+      "path": "/",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

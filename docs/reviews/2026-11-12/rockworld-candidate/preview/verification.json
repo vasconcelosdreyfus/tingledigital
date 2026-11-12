@@ -1,0 +1,133 @@
+{
+  "base": "https://tingledigital-iyygxtkrk-tingledigital.vercel.app",
+  "mode": "new",
+  "report": [
+    {
+      "path": "/",
+      "width": 320,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 320,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 320,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 390,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 390,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 1440,
+      "locale": "en",
+      "theme": "light",
+      "overflow": false
+    },
+    {
+      "path": "/",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "path": "/cases",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    },
+    {
+      "path": "/sobre",
+      "width": 1440,
+      "locale": "pt",
+      "theme": "dark",
+      "overflow": false
+    }
+  ],
+  "errors": []
+}
