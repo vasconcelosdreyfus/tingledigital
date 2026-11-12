@@ -7,7 +7,7 @@ export const sobre = {
     subtitle:
       "Nascemos em 2019 em São Luís, Maranhão, com a missão de digitalizar pequenos negócios. Em 2022 mudamos pro Rio — e descobrimos o que queremos ser quando crescer.",
     productStatement:
-      "Somos uma startup de produto. Desenvolvemos e publicamos software próprio: o Eter, mensageiro com criptografia de ponta a ponta, e o Sentinelas da Guanabara, jogo de educação ambiental, estão na App Store e no Google Play; o The Candidate, simulador de campanha eleitoral, está no Google Play. O Cognita, nossa plataforma de gestão educacional, opera desde 2023 na Escola de Programação e Empreendedorismo de Saquarema e atende cinco organizações.",
+      "Somos uma startup de produto. Desenvolvemos e publicamos software próprio: o Eter, mensageiro com criptografia de ponta a ponta, e o Sentinelas da Guanabara, jogo de educação ambiental, estão na App Store e no Google Play; o The Candidate, simulador de campanha eleitoral, também está nas duas lojas. O Cognita, nossa plataforma de gestão educacional, opera desde 2023 na Escola de Programação e Empreendedorismo de Saquarema e atende cinco organizações.",
   },
   values: {
     eyebrow: "O que nos move",
@@ -80,7 +80,7 @@ export const sobre = {
         year: 2026,
         title: "Rock World, novos projetos e expansão do portfólio",
         description:
-          "Assinamos nosso primeiro contrato com a Rock World e entregamos Leitura Delas e Papo que Protege no Rock in Rio.\n\nTambém entregamos o site do Coronel Chrisóstomo, e o Cognita passou a gerir o Tropa do Esporte, fortalecendo a comunicação institucional e a gestão do projeto social. Na eleição de 2026, o deputado mais que dobrou sua votação em relação a 2022: de 24.406 para 51.487 votos.\n\nO portfólio cresceu com The Candidate, Eter, Sentinelas da Guanabara, Lineup Battle, Vesti, Prime Healthcare e DreamPhi — entre lançamentos nas lojas, protótipos e produtos em teste.",
+          "Assinamos nosso primeiro contrato com a Rock World e entregamos Leitura Delas e Papo que Protege no Rock in Rio. Também realizamos pesquisas por meio do Cognita e desenvolvemos relatórios finais personalizados para a Rock World.\n\nTambém entregamos o site do Coronel Chrisóstomo, e o Cognita passou a gerir o Tropa do Esporte, fortalecendo a comunicação institucional e a gestão do projeto social. Na eleição de 2026, o deputado mais que dobrou sua votação em relação a 2022: de 24.406 para 51.487 votos.\n\nO portfólio cresceu com The Candidate, Eter, Sentinelas da Guanabara, Lineup Battle, Vesti, Prime Healthcare e DreamPhi — entre lançamentos nas lojas, protótipos e produtos em teste.",
       },
     ],
   },

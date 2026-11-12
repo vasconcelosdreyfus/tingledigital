@@ -37,16 +37,17 @@ export const apps: AppEntry[] = [
     highlight: "Encontre quem pensa como você e construam juntos um novo Brasil do seu jeito.",
     owner: "Produto Tingle",
     category: "Jogos",
-    // Google Play com.bevoted.thecandidate (HTTP 200); iOS 1.2.2 REJECTED na ASC API (conferido 07/10/2026): não citar iOS
-    status: { kind: "publicado", label: "No Google Play" },
+    // App Store id6797874252: página pública e iTunes Lookup confirmados em 12/11/2026 (1.3.21). Google Play com.bevoted.thecandidate.
+    status: { kind: "publicado", label: "Publicado na App Store e no Google Play", labelEn: "Available on the App Store and Google Play" },
     icon: {
       src: "/apps/icons/the-candidate.webp",
       width: 512,
       height: 512,
       alt: "Ícone do The Candidate",
     },
-    platforms: ["Android"],
+    platforms: ["iOS", "Android"],
     links: [
+      { label: "App Store", href: "https://apps.apple.com/br/app/the-candidate/id6797874252" },
       {
         label: "Google Play",
         href: "https://play.google.com/store/apps/details?id=com.bevoted.thecandidate",
@@ -170,7 +171,8 @@ export const apps: AppEntry[] = [
     name: "Leitura Delas e Papo que Protege",
     tagline: "Rock in Rio 2026, Espaço Plural.",
     description:
-      "Dois totens e um telão ao vivo: um quiz que entrega uma leitura pessoal no celular e uma conversa sobre relações que termina no canal 180. Feito para a Rock World com a Casa Brasil e a Educa Brasis.",
+      "Dois totens e um telão ao vivo: um quiz que entrega uma leitura pessoal no celular e uma conversa sobre relações que termina no canal 180. Feito para a Rock World com a Casa Brasil e a Educa Brasis. Além de Leitura Delas e Papo que Protege, realizamos pesquisas por meio do Cognita e desenvolvemos relatórios finais personalizados pela Tingle.",
+    descriptionEn: "Two kiosks and a live screen: a quiz that delivers a personal reading to visitors’ phones and a conversation about relationships that points to Brazil’s 180 helpline. Built for Rock World with Casa Brasil and Educa Brasis. Beyond Leitura Delas and Papo que Protege, we conducted surveys through Cognita and developed customized final reports at Tingle.",
     owner: "Para Rock World · Casa Brasil",
     category: "Experiências em eventos",
     // relatório RELATORIO.md (Rock World 2026): festival de 4 a 13/09/2026

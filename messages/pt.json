@@ -33,14 +33,15 @@
     },
     "rock": {
       "category": "Tecnologia · Experiências · Impacto social",
-      "title": "Rock in Rio 2026.",
-      "lead": "Leitura Delas e O Papo que Protege no Espaço Plural.",
-      "delivery": "Criamos as experiências digitais que conectaram totens, celular e telão ao vivo. Uma entrega para a Rock World, com a Casa Brasil e a Educa Brasis, sobre histórias de mulheres e relações de respeito.",
-      "metric0Label": "leituras nos dias de show",
+      "title": "Rock World.",
+      "lead": "Experiências digitais, pesquisas e inteligência para grandes eventos.",
+      "delivery": "Criamos Leitura Delas e Papo que Protege no Rock in Rio, com a Casa Brasil e a Educa Brasis. Nossa entrega para a Rock World inclui também pesquisas realizadas pelo Cognita e relatórios finais personalizados, desenvolvidos pela Tingle.",
+      "metric0Label": "leituras no Rock in Rio 2026",
       "metric1Label": "conversas no Papo que Protege",
       "alt": "Espaço Plural no Rock in Rio, com visitantes e a estrutura das ativações",
       "caption": "Espaço Plural · Rock in Rio 2026 · acervo do projeto",
-      "cta": "Conhecer a experiência"
+      "cta": "Conhecer as entregas",
+      "festivalsLabel": "Festivais da Rock World"
     },
     "circuito": {
       "category": "Cultura · Produção de eventos",

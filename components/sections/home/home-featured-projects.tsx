@@ -19,6 +19,13 @@ const projects = [
   },
 ] as const;
 
+// Official festival marks from Rock World's website; source URLs in review notes.
+const festivals = [
+  { name: "The Town", src: "/apps/logos/the-town.png", width: 588, height: 124 },
+  { name: "Lollapalooza", src: "/apps/logos/lollapalooza.png", width: 545, height: 129 },
+  { name: "Rock in Rio", src: "/apps/logos/rock-in-rio.webp", width: 600, height: 232 },
+];
+
 export async function HomeFeaturedProjects() {
   const t = await getTranslations("featuredProjects");
   const format = await getFormatter();
@@ -72,6 +79,18 @@ export async function HomeFeaturedProjects() {
                   <p className="leading-relaxed text-[var(--text-secondary)]">
                     {t(`${project.key}.delivery`)}
                   </p>
+                  {project.key === "rock" && (
+                    <div className="pt-3" data-rock-festivals>
+                      <p className="mb-4 text-xs text-[var(--text-secondary)]">{t("rock.festivalsLabel")}</p>
+                      <ul className="grid grid-cols-3 items-center gap-5">
+                        {festivals.map(({ name, ...logo }) => (
+                          <li key={name} className="min-w-0">
+                            <Image {...logo} alt={name} sizes="160px" className="h-9 w-full object-contain brightness-0 opacity-70 dark:invert dark:opacity-80" />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
                 <dl className={styles.results}>
                   {[0, 1].map((metric) => (

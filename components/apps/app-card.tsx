@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import type { AppEntry } from "@/types/app";
 import { StatusBadge } from "@/components/apps/status-badge";
@@ -6,6 +7,7 @@ import { AppIcon } from "@/components/apps/app-icon";
 import styles from "./app-card.module.css";
 
 export function AppCard({ app }: { app: AppEntry }) {
+  const locale = useLocale();
   const metrics = app.metrics ?? [];
   const hasLinks = Boolean(app.page || app.links.length);
 
@@ -26,14 +28,14 @@ export function AppCard({ app }: { app: AppEntry }) {
       </div>
 
       <div className={styles.status} data-card-slot="status">
-        <StatusBadge kind={app.status.kind} label={app.status.label} className="items-start" />
+        <StatusBadge kind={app.status.kind} label={app.status.label} labelEn={app.status.labelEn} className="items-start" />
       </div>
 
       <p className={`${styles.tagline} text-base font-medium text-pretty`} data-card-slot="tagline" style={{ color: "var(--text)" }}>
         {app.tagline}
       </p>
       <p className={`${styles.description} text-sm leading-relaxed text-pretty`} data-card-slot="description" style={{ color: "var(--text-secondary)" }}>
-        {app.description}
+        {locale === "en" ? app.descriptionEn ?? app.description : app.description}
       </p>
 
       {metrics.length > 0 ? (

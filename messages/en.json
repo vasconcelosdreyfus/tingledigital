@@ -33,14 +33,15 @@
     },
     "rock": {
       "category": "Technology · Experiences · Social impact",
-      "title": "Rock in Rio 2026.",
-      "lead": "Leitura Delas and O Papo que Protege at Espaço Plural.",
-      "delivery": "We built digital experiences connecting kiosks, mobile phones and a live screen. Delivered for Rock World with Casa Brasil and Educa Brasis, exploring women’s stories and respectful relationships.",
-      "metric0Label": "readings on show days",
+      "title": "Rock World.",
+      "lead": "Digital experiences, surveys and insights for major events.",
+      "delivery": "We created Leitura Delas and Papo que Protege at Rock in Rio, with Casa Brasil and Educa Brasis. Our work for Rock World also includes surveys conducted through Cognita and customized final reports developed by Tingle.",
+      "metric0Label": "readings at Rock in Rio 2026",
       "metric1Label": "conversations in Papo que Protege",
       "alt": "Visitors and the activation space at Espaço Plural, Rock in Rio",
       "caption": "Espaço Plural · Rock in Rio 2026 · project archive",
-      "cta": "Explore the experience"
+      "cta": "Explore our work",
+      "festivalsLabel": "Rock World festivals"
     },
     "circuito": {
       "category": "Culture · Event production",

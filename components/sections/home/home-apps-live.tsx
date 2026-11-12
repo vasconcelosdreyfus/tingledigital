@@ -26,7 +26,7 @@ function AppTile({ app }: { app: AppEntry }) {
       >
         {app.tagline}
       </p>
-      <StatusBadge kind={app.status.kind} label={app.status.label} className="mt-4" />
+      <StatusBadge kind={app.status.kind} label={app.status.label} labelEn={app.status.labelEn} className="mt-4" />
       {app.highlight ? (
         <p
           className="mt-auto pt-5 text-sm leading-relaxed font-medium"

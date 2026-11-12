@@ -5,7 +5,7 @@ export const sobreEn: typeof sobre = {
     eyebrow: "About Tingle",
     title: "From Maranhão to Rio. Technology with a creative soul.",
     subtitle: "We started in 2019 in São Luís, Maranhão, with a mission to digitize small businesses. In 2022, we moved to Rio — and discovered what we want to become.",
-    productStatement: "We are a product startup. We build and publish our own software: Eter, an end-to-end encrypted messenger, and Sentinelas da Guanabara, an environmental education game, are on the App Store and Google Play; The Candidate, an election campaign simulator, is on Google Play. Cognita, our education management platform, has been running since 2023 at the Saquarema School of Programming and Entrepreneurship and serves five organizations.",
+    productStatement: "We are a product startup. We build and publish our own software: Eter, an end-to-end encrypted messenger, and Sentinelas da Guanabara, an environmental education game, are on the App Store and Google Play; The Candidate, an election campaign simulator, is also available in both stores. Cognita, our education management platform, has been running since 2023 at the Saquarema School of Programming and Entrepreneurship and serves five organizations.",
   },
   values: {
     eyebrow: "What drives us",
@@ -53,7 +53,7 @@ export const sobreEn: typeof sobre = {
       { year: 2023, title: "EPES in Action", description: "We developed Inova Talks (talks), Breaking Code (programming), Startup Challenge (entrepreneurship) and accountability reports for Casa Brasil." },
       { year: 2024, title: "First R&D Project Structured", description: "We structured the design and approach of the first R&D project approved in the electricity sector, aimed at automating water treatment at Companhia de Águas do Amapá." },
       { year: 2025, title: "Expansion and New Horizons", description: "Transforma Nova Iguaçu, Circuito Musical das Águas (7 cities, Rio de Janeiro state government), the launch of Cognita and Ebook Maker, and a partnership with FIXER." },
-      { year: 2026, title: "Rock World, new projects and a growing portfolio", description: "We signed our first contract with Rock World and delivered Leitura Delas and Papo que Protege at Rock in Rio.\n\nWe also delivered Coronel Chrisóstomo’s website, and Cognita began managing Tropa do Esporte, strengthening institutional communication and social project management. In the 2026 election, the congressman more than doubled his 2022 vote total: from 24,406 to 51,487 votes.\n\nThe portfolio grew with The Candidate, Eter, Sentinelas da Guanabara, Lineup Battle, Vesti, Prime Healthcare and DreamPhi — spanning store releases, prototypes and products in testing." },
+      { year: 2026, title: "Rock World, new projects and a growing portfolio", description: "We signed our first contract with Rock World and delivered Leitura Delas and Papo que Protege at Rock in Rio. We also conducted surveys through Cognita and developed customized final reports for Rock World.\n\nWe also delivered Coronel Chrisóstomo’s website, and Cognita began managing Tropa do Esporte, strengthening institutional communication and social project management. In the 2026 election, the congressman more than doubled his 2022 vote total: from 24,406 to 51,487 votes.\n\nThe portfolio grew with The Candidate, Eter, Sentinelas da Guanabara, Lineup Battle, Vesti, Prime Healthcare and DreamPhi — spanning store releases, prototypes and products in testing." },
     ],
   },
   location: {
