@@ -4,15 +4,16 @@ import { Container } from "@/components/primitives/container";
 import type { ServiceCase } from "@/content/data/service-cases";
 import styles from "./service-cases.module.css";
 
-export function ServiceCases({ cases, title, id = "projetos" }: {
+export function ServiceCases({ cases, title, id = "projetos", eyebrow = "Projetos e resultados" }: {
   cases: ServiceCase[];
   title: string;
   id?: string;
+  eyebrow?: string;
 }) {
   return (
     <section id={id} className="scroll-mt-24 py-20 lg:py-28" style={{ borderTop: "1px solid var(--border)" }}>
       <Container>
-        <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>Projetos e resultados</p>
+        <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{eyebrow}</p>
         <h2 className="text-display-2 mb-12 max-w-3xl text-balance">{title}</h2>
         <div className={styles.grid}>
           {cases.map((project) => {

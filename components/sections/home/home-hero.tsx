@@ -38,7 +38,7 @@ export function HomeHero() {
           <AnimatedTingleMark className="mx-auto mb-8 h-20 w-auto sm:h-24" />
           <div className="hero-arrive mb-8 inline-flex">
             <Link
-              href="/cases#trocadores-de-calor"
+              href="#projetos"
               className="hero-news group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm"
             >
               <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-current" />

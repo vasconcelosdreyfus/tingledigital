@@ -41,6 +41,7 @@ export const utilities: ServicePageData = {
   spotlightTitle: "Trocadores de calor: tecnologia que ganhou mercado.",
   spotlightBody:
     "A Tingle foi a ponte estratégica entre QBANHO e Equatorial Energia. Com experiência no setor e articulação comercial, introduzimos os trocadores de calor no portfólio de soluções de eficiência energética do grupo, viabilizando milhares de vendas e milhões em receita.",
+  spotlightPhoto: { src: "/cases/qbanho-trocador.webp", creditHref: "https://www.qbanho.com.br/product", kind: "qbanho" },
   spotlightPartners: [
     { name: "QBANHO", role: "Tecnologia de eficiência energética" },
     { name: "Tingle", role: "Estratégia e desenvolvimento comercial" },

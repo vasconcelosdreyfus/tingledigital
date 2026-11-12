@@ -9,18 +9,23 @@
     "cta": "Começar projeto"
   },
   "hero": {
-    "pill": "QBANHO + Equatorial: tecnologia que virou negócio",
+    "pill": "Produtos próprios e experiências digitais: conheça",
     "title": "Transformamos ideias em",
-    "rotatingWords": ["experiências.", "produtos.", "futuros.", "impacto."],
-    "subtitle": "Desenvolvemos produtos digitais, conectamos negócios no setor de energia e executamos projetos de educação, cultura e impacto social.",
+    "rotatingWords": [
+      "experiências.",
+      "produtos.",
+      "futuros.",
+      "impacto."
+    ],
+    "subtitle": "Somos uma startup de produto. Desenvolvemos software próprio e criamos plataformas e experiências digitais para transformar ideias em soluções em uso.",
     "primaryCta": "Conheça nossas entregas",
     "secondaryCta": "Fale com a gente",
     "pause": "Pausar animação",
     "resume": "Retomar animação"
   },
   "featuredProjects": {
-    "eyebrow": "Projetos em destaque",
-    "title": "O que entregamos. Onde fez diferença.",
+    "eyebrow": "Tecnologia em uso",
+    "title": "Produtos próprios. Experiências que conectam.",
     "cta": "Conheça a atuação da Tingle",
     "scale": {
       "thousands": "Milhares",
@@ -34,7 +39,8 @@
       "metric0Label": "leituras nos dias de show",
       "metric1Label": "conversas no Papo que Protege",
       "alt": "Espaço Plural no Rock in Rio, com visitantes e a estrutura das ativações",
-      "caption": "Espaço Plural · Rock in Rio 2026 · acervo do projeto"
+      "caption": "Espaço Plural · Rock in Rio 2026 · acervo do projeto",
+      "cta": "Conhecer a experiência"
     },
     "circuito": {
       "category": "Cultura · Produção de eventos",
@@ -57,6 +63,31 @@
       "metric1Label": "em receita gerada",
       "alt": "Plataforma do trocador de calor QBANHO +30, com acabamento em tons neutros",
       "caption": "Trocador de calor QBANHO +30 · imagem estilizada"
+    },
+    "thousandPlus": " mil+",
+    "cognita": {
+      "category": "Produto próprio · Educação e gestão",
+      "title": "Cognita.",
+      "lead": "Tecnologia para quem transforma pela educação.",
+      "delivery": "Nossa plataforma reúne alunos, turmas, frequência e prestação de contas. Em operação na EPES desde 2023, conecta a gestão educacional a um motor de pesquisas usado em diferentes projetos.",
+      "metric0Label": "matrículas gerenciadas",
+      "metric1Label": "respostas pelo motor de pesquisas",
+      "alt": "Ícone oficial do Cognita",
+      "caption": "Cognita · plataforma de gestão educacional da Tingle",
+      "cta": "Conhecer o Cognita"
+    },
+    "eter": {
+      "category": "Produto próprio · Comunicação e privacidade",
+      "title": "Eter.",
+      "lead": "Conversas privadas. Tecnologia própria.",
+      "delivery": "Mensageiro com criptografia de ponta a ponta baseada no Signal Protocol. Cadastro por nome de usuário, mensagens que se dissipam e chamadas cifradas. Publicado na App Store e no Google Play.",
+      "metric0Value": "iOS",
+      "metric0Label": "App Store",
+      "metric1Value": "Android",
+      "metric1Label": "Google Play",
+      "alt": "Ícone oficial do Eter",
+      "caption": "Eter · mensageiro privado desenvolvido pela Tingle",
+      "cta": "Conhecer o Eter"
     }
   },
   "homeServices": {
@@ -69,12 +100,12 @@
     },
     "energy": {
       "title": "Energia e negócios",
-      "description": "Estratégia comercial, conexões de mercado e estruturação de projetos de P&D e eficiência energética para o setor de utilities.",
+      "description": "Estratégia comercial, conexões de mercado e estruturação de projetos no setor de energia. Conheça a atuação da Tingle com os trocadores de calor da QBANHO.",
       "cta": "Conheça nossa atuação em energia"
     },
     "strategy": {
       "title": "Estratégia e execução",
-      "description": "Consultoria, gestão e realização de projetos de educação, cultura e impacto social. Planejamento e equipe para tirar do papel.",
+      "description": "Gestão e execução de projetos de educação, cultura e impacto social. Do planejamento à operação, como no Circuito Musical das Águas.",
       "cta": "Conheça nossa consultoria"
     }
   },
@@ -166,5 +197,37 @@
       "contato": "Contato"
     },
     "copyright": "Tingle Digital. Todos os direitos reservados."
+  },
+  "portfolio": {
+    "eyebrow": "Aplicações e cases",
+    "title": "Tecnologia que criamos. Experiência que amplia nossa entrega.",
+    "subtitle": "Conheça nossos produtos e experiências digitais e, em cada área, os projetos de energia, cultura e impacto social.",
+    "navLabel": "Áreas do portfólio",
+    "products": {
+      "label": "Produtos e plataformas",
+      "title": "Software que desenvolvemos para estar em uso.",
+      "description": "Produtos próprios e plataformas para clientes, com o estágio de cada aplicação."
+    },
+    "experiences": {
+      "label": "Experiências digitais",
+      "title": "Tecnologia para eventos, aprendizagem e comunicação.",
+      "description": "Jogos educacionais, ativações e projetos digitais construídos para contextos reais."
+    },
+    "energy": {
+      "label": "Energia e negócios",
+      "title": "Conhecimento do setor que conecta oportunidades."
+    },
+    "culture": {
+      "label": "Cultura e impacto social",
+      "title": "Projetos que aproximam pessoas e transformam comunidades."
+    }
+  },
+  "appFilters": {
+    "label": "Filtrar aplicações por status",
+    "todos": "Todos",
+    "publicados": "Publicados",
+    "eventos": "Em eventos (realizado)",
+    "teste": "Em teste e desenvolvimento",
+    "count": "{count, plural, one {# aplicação exibida} other {# aplicações exibidas}}"
   }
 }

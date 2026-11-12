@@ -9,18 +9,23 @@
     "cta": "Start project"
   },
   "hero": {
-    "pill": "QBANHO + Equatorial: technology meets opportunity",
+    "pill": "Our products and digital experiences: explore",
     "title": "We turn ideas into",
-    "rotatingWords": ["experiences.", "products.", "futures.", "impact."],
-    "subtitle": "We develop digital products, connect businesses in the energy sector, and deliver education, culture and social impact projects.",
+    "rotatingWords": [
+      "experiences.",
+      "products.",
+      "futures.",
+      "impact."
+    ],
+    "subtitle": "We are a product startup. We build our own software and create platforms and digital experiences that turn ideas into solutions people use.",
     "primaryCta": "Explore our work",
     "secondaryCta": "Talk to us",
     "pause": "Pause animation",
     "resume": "Resume animation"
   },
   "featuredProjects": {
-    "eyebrow": "Featured projects",
-    "title": "What we delivered. Where it mattered.",
+    "eyebrow": "Technology in use",
+    "title": "Our own products. Experiences that connect.",
     "cta": "Explore Tingle’s role",
     "scale": {
       "thousands": "Thousands",
@@ -34,7 +39,8 @@
       "metric0Label": "readings on show days",
       "metric1Label": "conversations in Papo que Protege",
       "alt": "Visitors and the activation space at Espaço Plural, Rock in Rio",
-      "caption": "Espaço Plural · Rock in Rio 2026 · project archive"
+      "caption": "Espaço Plural · Rock in Rio 2026 · project archive",
+      "cta": "Explore the experience"
     },
     "circuito": {
       "category": "Culture · Event production",
@@ -57,6 +63,31 @@
       "metric1Label": "in revenue generated (BRL)",
       "alt": "QBANHO +30 floor-mounted heat exchanger platform in neutral tones",
       "caption": "QBANHO +30 heat exchanger · stylized image"
+    },
+    "thousandPlus": "k+",
+    "cognita": {
+      "category": "Our product · Education and management",
+      "title": "Cognita.",
+      "lead": "Technology for people making a difference through education.",
+      "delivery": "Our platform brings together students, classes, attendance and accountability. Running at EPES since 2023, it connects education management with a survey engine used across different projects.",
+      "metric0Label": "enrollments managed",
+      "metric1Label": "responses collected by the survey engine",
+      "alt": "Official Cognita icon",
+      "caption": "Cognita · Tingle’s education management platform",
+      "cta": "Discover Cognita"
+    },
+    "eter": {
+      "category": "Our product · Communication and privacy",
+      "title": "Eter.",
+      "lead": "Private conversations. Software we build.",
+      "delivery": "A messenger with end-to-end encryption based on the Signal Protocol. Username-based sign-up, disappearing messages and encrypted calls. Published on the App Store and Google Play.",
+      "metric0Value": "iOS",
+      "metric0Label": "App Store",
+      "metric1Value": "Android",
+      "metric1Label": "Google Play",
+      "alt": "Official Eter icon",
+      "caption": "Eter · private messenger built by Tingle",
+      "cta": "Discover Eter"
     }
   },
   "homeServices": {
@@ -69,12 +100,12 @@
     },
     "energy": {
       "title": "Energy and business",
-      "description": "Commercial strategy, market connections and the development of R&D and energy efficiency projects for the utilities sector.",
+      "description": "Commercial strategy, market connections and project design in the energy sector. Explore Tingle’s work with QBANHO heat exchangers.",
       "cta": "Explore our energy expertise"
     },
     "strategy": {
       "title": "Strategy and delivery",
-      "description": "Consulting, management and delivery of education, culture and social impact projects. Planning and people to make things happen.",
+      "description": "Management and delivery of education, culture and social impact projects. From planning to on-site operations, as in Circuito Musical das Águas.",
       "cta": "Explore our consulting services"
     }
   },
@@ -166,5 +197,37 @@
       "contato": "Contact"
     },
     "copyright": "Tingle Digital. All rights reserved."
+  },
+  "portfolio": {
+    "eyebrow": "Applications and case studies",
+    "title": "Technology we build. Experience that broadens what we deliver.",
+    "subtitle": "Explore our products and digital experiences, alongside projects in energy, culture and social impact.",
+    "navLabel": "Portfolio areas",
+    "products": {
+      "label": "Products and platforms",
+      "title": "Software we build to be used.",
+      "description": "Our own products and platforms for clients, with the current stage of each application."
+    },
+    "experiences": {
+      "label": "Digital experiences",
+      "title": "Technology for events, learning and communication.",
+      "description": "Educational games, activations and digital projects built for real-world settings."
+    },
+    "energy": {
+      "label": "Energy and business",
+      "title": "Sector expertise that connects opportunities."
+    },
+    "culture": {
+      "label": "Culture and social impact",
+      "title": "Projects that bring people together and transform communities."
+    }
+  },
+  "appFilters": {
+    "label": "Filter applications by status",
+    "todos": "All",
+    "publicados": "Published",
+    "eventos": "Delivered at events",
+    "teste": "In testing and development",
+    "count": "{count, plural, one {# application shown} other {# applications shown}}"
   }
 }

@@ -6,8 +6,8 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 
 const areas = [
   { key: "technology", icon: Code2, href: "/contato" },
-  { key: "energy", icon: Zap, href: "/utilities" },
-  { key: "strategy", icon: Lightbulb, href: "/consultoria" },
+  { key: "energy", icon: Zap, href: "/utilities#qbanho" },
+  { key: "strategy", icon: Lightbulb, href: "/consultoria#circuito-musical" },
 ] as const;
 
 export async function HomeServices() {

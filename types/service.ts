@@ -28,6 +28,7 @@ export interface ServicePageData {
   spotlightTitle: string;
   spotlightBody: string;
   spotlightImage?: { src: string; alt: string; width: number; height: number };
+  spotlightPhoto?: { src: string; creditHref: string; kind: "qbanho" | "circuito" };
   spotlightPartners?: { name: string; role: string }[];
   spotlightStats: { value: string; label: string }[];
   topicsEyebrow: string;

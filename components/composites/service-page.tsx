@@ -1,4 +1,6 @@
 import * as React from "react";
+import { getTranslations } from "next-intl/server";
+import featuredStyles from "@/components/sections/home/home-featured-projects.module.css";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { PageHero } from "@/components/shared/page-hero";
@@ -16,7 +18,13 @@ interface ServicePageProps {
   data: ServicePageData;
 }
 
-export function ServicePage({ data }: ServicePageProps) {
+export async function ServicePage({ data }: ServicePageProps) {
+  const t = await getTranslations("featuredProjects");
+  const photo = data.spotlightPhoto;
+  const spotlightStats = photo ? [0, 1].map((index) => ({
+    value: photo.kind === "qbanho" ? t(`scale.${index === 0 ? "thousands" : "millions"}`) : t(`circuito.metric${index}Value`),
+    label: t(`${photo.kind}.metric${index}Label`),
+  })) : data.spotlightStats;
   return (
     <>
       <PageHero
@@ -33,15 +41,15 @@ export function ServicePage({ data }: ServicePageProps) {
         steps={data.methodSteps}
       />
 
-      <section className="py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}>
+      <section id={photo?.kind === "qbanho" ? "qbanho" : photo?.kind === "circuito" ? "circuito-musical" : undefined} className="scroll-mt-24 py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}>
         <Container>
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div>
-              <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{data.spotlightEyebrow}</p>
-              <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>{data.spotlightTitle}</h2>
-              <p className="mt-6 text-lg leading-relaxed text-pretty" style={{ color: "var(--text-secondary)" }}>{data.spotlightBody}</p>
+              <p className="text-eyebrow mb-4" style={{ color: "var(--text-secondary)" }}>{photo ? t(`${photo.kind}.category`) : data.spotlightEyebrow}</p>
+              <h2 className="text-display-2 text-balance" style={{ color: "var(--text)" }}>{photo ? t(`${photo.kind}.title`) : data.spotlightTitle}</h2>
+              <p className="mt-6 text-lg leading-relaxed text-pretty" style={{ color: "var(--text-secondary)" }}>{photo ? t(`${photo.kind}.delivery`) : data.spotlightBody}</p>
               <dl className="mt-10 grid grid-cols-2 gap-6">
-                {data.spotlightStats.map((stat) => (
+                {spotlightStats.map((stat) => (
                   <div key={stat.label}>
                     <dt className="text-3xl font-semibold" style={{ color: "var(--text)" }}>{stat.value}</dt>
                     <dd className="text-sm mt-1" style={{ color: "var(--text-secondary)" }}>{stat.label}</dd>
@@ -49,6 +57,16 @@ export function ServicePage({ data }: ServicePageProps) {
                 ))}
               </dl>
             </div>
+            {photo ? (
+              <figure>
+                <div className={`${featuredStyles.media} ${photo.kind === "qbanho" ? featuredStyles.product : ""}`}>
+                  <Image src={photo.src} alt={t(`${photo.kind}.alt`)} fill sizes="(min-width: 1024px) 45vw, 100vw" className={featuredStyles.photo} />
+                </div>
+                <figcaption className="mt-3 text-xs leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+                  <a href={photo.creditHref} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">{t(`${photo.kind}.caption`)}</a>
+                </figcaption>
+              </figure>
+            ) : (
             <div
               className="min-h-72 rounded-2xl flex items-center justify-center p-8 sm:p-12"
               style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
@@ -68,6 +86,7 @@ export function ServicePage({ data }: ServicePageProps) {
                 </ol>
               )}
             </div>
+            )}
           </div>
         </Container>
       </section>

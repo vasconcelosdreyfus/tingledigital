@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import type { AppEntry, AppStatusKind } from "@/types/app";
 import { AppCard } from "@/components/apps/app-card";
 import { RevealGroup, RevealItem } from "@/components/motion/reveal";
@@ -17,15 +18,17 @@ const FILTERS: { id: FilterId; label: string; kinds: AppStatusKind[] | null }[] 
 ];
 
 export function AppsShowcase({ apps }: { apps: AppEntry[] }) {
+  const t = useTranslations("appFilters");
   const [active, setActive] = React.useState<FilterId>("todos");
   const kinds = FILTERS.find((f) => f.id === active)?.kinds ?? null;
   const visible = kinds ? apps.filter((a) => kinds.includes(a.status.kind)) : apps;
 
   return (
     <div>
-      <div role="group" aria-label="Filtrar aplicações por status" className="flex flex-wrap justify-center gap-2">
+      <div role="group" aria-label={t("label")} className="flex flex-wrap justify-center gap-2">
         {FILTERS.map((f) => {
           const count = f.kinds ? apps.filter((a) => f.kinds?.includes(a.status.kind)).length : apps.length;
+          if (count === 0) return null;
           const pressed = f.id === active;
           return (
             <button
@@ -43,7 +46,7 @@ export function AppsShowcase({ apps }: { apps: AppEntry[] }) {
                   : { color: "var(--text-secondary)", border: "1px solid var(--border)" }
               }
             >
-              {f.label}
+              {t(f.id)}
               <span className="ml-1.5 tabular-nums opacity-70">{count}</span>
             </button>
           );
@@ -51,7 +54,7 @@ export function AppsShowcase({ apps }: { apps: AppEntry[] }) {
       </div>
 
       <p className="sr-only" aria-live="polite">
-        {visible.length === 1 ? "1 aplicação exibida" : `${visible.length} aplicações exibidas`}
+        {t("count", { count: visible.length })}
       </p>
 
       <RevealGroup key={active} stagger={0.06} className={`${styles.grid} mt-12`}>
