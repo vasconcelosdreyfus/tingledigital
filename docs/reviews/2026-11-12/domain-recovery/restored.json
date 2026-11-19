@@ -1,0 +1,19 @@
+{
+  "results": [
+    {
+      "url": "https://tingledigital.com",
+      "finalUrl": "https://tingledigital.com/",
+      "status": 200,
+      "newSoma": true,
+      "oldWordPressAbsent": true
+    },
+    {
+      "url": "https://www.tingledigital.com",
+      "finalUrl": "https://tingledigital.com/",
+      "status": 200,
+      "newSoma": true,
+      "oldWordPressAbsent": true
+    }
+  ],
+  "errors": []
+}
