@@ -30,13 +30,13 @@ export function HomeHero() {
   return (
     <section
       ref={section}
-      className="original-hero relative overflow-hidden pt-24 pb-16 sm:pt-32 sm:pb-24 lg:pt-40"
+      className="original-hero relative overflow-hidden pt-5 pb-10 sm:pt-32 sm:pb-24 lg:pt-40"
     >
       <BackgroundPaths />
       <Container className="relative z-10">
         <div className="mx-auto max-w-4xl text-center">
-          <AnimatedTingleMark className="mx-auto mb-8 h-20 w-auto sm:h-24" />
-          <div className="hero-arrive mb-8 inline-flex">
+          <AnimatedTingleMark className="mx-auto mb-3 h-12 w-auto sm:mb-8 sm:h-24" />
+          <div className="hero-arrive mb-3 inline-flex sm:mb-8">
             <Link
               href="#projetos"
               className="hero-news group inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm"
@@ -60,12 +60,12 @@ export function HomeHero() {
             </span>
           </h1>
           <p
-            className="hero-arrive mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-pretty sm:text-xl"
+            className="hero-arrive mx-auto mt-3 max-w-2xl text-base leading-relaxed text-pretty sm:mt-6 sm:text-xl"
             style={{ color: "var(--text-secondary)" }}
           >
             {t("subtitle")}
           </p>
-          <div className="hero-arrive mt-10 flex flex-wrap items-center justify-center gap-3">
+          <div className="hero-arrive mt-5 flex flex-wrap items-center justify-center gap-3 sm:mt-10">
             <Button size="lg" asChild>
               <Link href="#projetos">
                 {t("primaryCta")}

@@ -69,7 +69,8 @@ export async function HomePartners() {
                         src={partner.logo}
                         width={partner.width}
                         height={partner.height}
-                        alt={partner.name}
+                        alt=""
+                        aria-hidden="true"
                         sizes="200px"
                         className="h-auto max-h-20 w-auto max-w-full object-contain"
                       />

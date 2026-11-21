@@ -4,18 +4,40 @@ import { getLocale, getMessages } from "next-intl/server";
 import { inter } from "@/lib/fonts";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { MobileWhatsAppCta } from "@/components/layout/mobile-whatsapp-cta";
 import { LenisProvider } from "@/components/providers/lenis-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { GoogleAnalytics } from "@/components/seo/google-analytics";
+import { OrganizationJsonLd } from "@/components/seo/organization-jsonld";
+import { SITE_NAME, SITE_URL, socialImages } from "@/lib/social-metadata";
 import "./globals.css";
+
+const defaultTitle = "Tingle Digital: tecnologia com alma criativa";
+const defaultDescription =
+  "Desenvolvemos produtos digitais próprios, consultoria estratégica e soluções em utilities. Conheça nossas entregas e fale conosco.";
 
 export const metadata: Metadata = {
   title: {
-    default: "Tingle Digital — Tecnologia com alma criativa",
+    default: defaultTitle,
     template: "%s · Tingle Digital",
   },
-  description:
-    "Construímos produtos, consultamos com impacto e modernizamos utilities com AI + IoT. Tecnologia com alma criativa.",
-  metadataBase: new URL("https://tingledigital.com"),
+  description: defaultDescription,
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    title: defaultTitle,
+    description: defaultDescription,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: "pt_BR",
+    type: "website",
+    images: socialImages,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: socialImages.map((img) => img.url),
+  },
 };
 
 export default async function RootLayout({
@@ -32,6 +54,8 @@ export default async function RootLayout({
         className="min-h-screen antialiased"
         style={{ backgroundColor: "var(--bg)", color: "var(--text)" }}
       >
+        <OrganizationJsonLd />
+        <GoogleAnalytics />
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider
             attribute="class"
@@ -51,6 +75,7 @@ export default async function RootLayout({
                 {children}
               </main>
               <Footer />
+              <MobileWhatsAppCta locale={locale} />
             </LenisProvider>
           </ThemeProvider>
         </NextIntlClientProvider>

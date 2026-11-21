@@ -16,7 +16,7 @@ function AppTile({ app }: { app: AppEntry }) {
       className="app-tile group flex h-full flex-col rounded-2xl p-6 transition-colors hover:bg-[var(--surface-elevated)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
-      <AppIcon app={app} className="w-14" />
+      <AppIcon app={app} className="w-14" decorative />
       <h3 className="mt-5 text-lg font-semibold" style={{ color: "var(--text)" }}>
         {app.name}
       </h3>
@@ -97,7 +97,10 @@ export async function HomeAppsLive() {
             style={{ color: "var(--text)" }}
           >
             {t("cta")}
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+              aria-hidden="true"
+            />
           </Link>
         </Reveal>
       </Container>

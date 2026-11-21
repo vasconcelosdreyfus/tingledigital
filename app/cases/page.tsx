@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/primitives/container";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { PageHero } from "@/components/shared/page-hero";
 import { AppsShowcase } from "@/components/apps/apps-showcase";
 import Link from "next/link";
 import { ServiceCases } from "@/components/shared/service-cases";
 import { portfolio } from "@/content/data/portfolio";
+import { SITE_URL, buildPageMetadata } from "@/lib/social-metadata";
 import styles from "../justified-copy.module.css";
 
 const groups = [
@@ -16,14 +18,29 @@ const groups = [
 ] as const;
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("portfolio");
-  return { title: t("eyebrow"), description: t("subtitle") };
+  const locale = (await getLocale()) === "en" ? "en" : "pt";
+  return buildPageMetadata({
+    title: locale === "en" ? "Cases and applications" : "Cases e aplicações",
+    description:
+      locale === "en"
+        ? "Explore our own products, digital experiences and projects in energy, culture and social impact. See every solution in production."
+        : "Conheça nossos produtos próprios, experiências digitais e projetos em energia, cultura e impacto social. Veja cada entrega em uso.",
+    canonical: `${SITE_URL}/cases`,
+    locale,
+  });
 }
 
 export default async function CasesPage() {
+  const english = (await getLocale()) === "en";
   const t = await getTranslations("portfolio");
   return (
     <div className={styles.page}>
+      <Breadcrumbs
+        items={[
+          { label: english ? "Home" : "Início", href: "/" },
+          { label: "Cases", href: "/cases" },
+        ]}
+      />
       <PageHero eyebrow={t("eyebrow")} title={t("title")} subtitle={t("subtitle")} />
       <Container>
         <nav aria-label={t("navLabel")} className="mb-12 flex flex-wrap gap-3">

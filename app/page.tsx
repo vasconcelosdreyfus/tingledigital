@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Container } from "@/components/primitives/container";
 import { HomeHero } from "@/components/sections/home/home-hero";
 import { TestimonialMarquee } from "@/components/sections/home/testimonial-marquee";
@@ -11,21 +11,28 @@ import { Reveal, RevealGroup, RevealItem } from "@/components/motion/reveal";
 import { ValidationLogos } from "@/components/shared/validation-logos";
 import { HomeAppsLive } from "@/components/sections/home/home-apps-live";
 import { HomePartners } from "@/components/sections/home/home-partners";
+import { HomeFaq } from "@/components/sections/home/home-faq";
+import { SITE_URL, buildPageMetadata } from "@/lib/social-metadata";
 import { apps } from "@/content/data/apps";
 import { cognitaImpactThousands } from "@/content/data/cognita-impact";
 import { TINGLE_FOUNDED } from "@/content/data/home";
 import { ArrowRight } from "lucide-react";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("hero");
-  return {
-    description: t("subtitle"),
-    openGraph: {
-      title: "Tingle Digital — Tecnologia com alma criativa",
-      description: t("subtitle"),
-      type: "website",
-    },
-  };
+  const locale = (await getLocale()) === "en" ? "en" : "pt";
+  return buildPageMetadata({
+    title:
+      locale === "en"
+        ? "Tingle Digital: technology with creative soul"
+        : "Tingle Digital: tecnologia com alma criativa",
+    description:
+      locale === "en"
+        ? "We build our own software products, strategic consulting and utility solutions. Explore our work and talk to our team."
+        : "Desenvolvemos produtos digitais próprios, consultoria estratégica e soluções em utilities. Conheça nossas entregas e fale conosco.",
+    canonical: `${SITE_URL}/`,
+    locale,
+    absoluteTitle: true,
+  });
 }
 
 export default async function Home() {
@@ -43,6 +50,8 @@ export default async function Home() {
       <HomePartners />
 
       <TestimonialMarquee />
+
+      <HomeFaq />
 
       <FinalCtaSection />
     </>
@@ -145,9 +154,10 @@ async function FinalCtaSection() {
               className="inline-flex items-center gap-2 text-sm font-medium text-white hover:underline"
             >
               dreyfus@tingledigital.com
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
+          <p className="mt-6 text-xs text-white/65">{t("responseTime")}</p>
         </Reveal>
       </Container>
     </section>

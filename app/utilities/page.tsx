@@ -1,15 +1,29 @@
 import type { Metadata } from "next";
-import { socialImages } from "@/lib/social-metadata";
+import { getLocale } from "next-intl/server";
+import { SITE_URL, buildPageMetadata } from "@/lib/social-metadata";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { ServicePage } from "@/components/composites/service-page";
 import { utilities } from "@/content/data/services/utilities";
 import styles from "../justified-copy.module.css";
 
-export const metadata: Metadata = {
-  title: "Utilities",
-  description: utilities.heroSubtitle,
-  openGraph: { images: socialImages, title: "Utilities · Tingle Digital", description: utilities.heroSubtitle },
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Utilities, energia, AI e IoT",
+  description:
+    "P&D regulatório, eficiência energética, AI, IoT e hiperautomação para energia e água. Agende uma conversa técnica com nossa equipe.",
+  canonical: `${SITE_URL}/utilities`,
+});
 
-export default function UtilitiesPage() {
-  return <div className={styles.page}><ServicePage data={utilities} /></div>;
+export default async function UtilitiesPage() {
+  const english = (await getLocale()) === "en";
+  return (
+    <div className={styles.page}>
+      <Breadcrumbs
+        items={[
+          { label: english ? "Home" : "Início", href: "/" },
+          { label: "Utilities", href: "/utilities" },
+        ]}
+      />
+      <ServicePage data={utilities} />
+    </div>
+  );
 }

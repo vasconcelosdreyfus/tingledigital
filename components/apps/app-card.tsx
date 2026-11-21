@@ -18,7 +18,7 @@ export function AppCard({ app }: { app: AppEntry }) {
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
       <div className={styles.header} data-card-slot="header">
-        <AppIcon app={app} className="w-16 sm:w-[72px]" />
+        <AppIcon app={app} className="w-16 sm:w-[72px]" decorative />
         <h3 className="min-w-0 text-xl font-semibold text-balance" data-card-slot="title" style={{ color: "var(--text)" }}>
           {app.name}
         </h3>
