@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { Button } from "@/components/ui/button";
@@ -20,7 +21,14 @@ type SubmitState =
   | { kind: "success" }
   | { kind: "error"; message: string };
 
-export function ContactForm({ initialMessage = "" }: { initialMessage?: string }) {
+export function ContactForm({
+  initialMessage = "",
+  initialProjectType,
+}: {
+  initialMessage?: string;
+  initialProjectType?: ContactInput["projectType"];
+}) {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -32,7 +40,7 @@ export function ContactForm({ initialMessage = "" }: { initialMessage?: string }
       name: "",
       email: "",
       company: "",
-      projectType: initialMessage ? "outro" : undefined,
+      projectType: initialProjectType ?? (initialMessage ? "outro" : undefined),
       message: initialMessage,
       website: "",
     },
@@ -54,6 +62,7 @@ export function ContactForm({ initialMessage = "" }: { initialMessage?: string }
       }
       setState({ kind: "success" });
       reset();
+      router.push("/obrigado");
     } catch (e) {
       const message = e instanceof Error ? e.message : "Erro desconhecido";
       setState({ kind: "error", message });

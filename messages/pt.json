@@ -180,7 +180,34 @@
   "finalCta": {
     "title": "Pronto para construir algo que importe?",
     "body": "De projetos de P&D em energia a plataformas educacionais — vamos transformar sua ideia em algo que ninguém esquece.",
-    "primaryCta": "Começar conversa"
+    "primaryCta": "Começar conversa",
+    "responseTime": "Resposta em até 5 dias úteis."
+  },
+  "faq": {
+    "eyebrow": "Dúvidas frequentes",
+    "title": "Perguntas diretas sobre como trabalhamos.",
+    "items": [
+      {
+        "question": "O que a Tingle Digital desenvolve?",
+        "answer": "Desenvolvemos software próprio, como o Cognita (gestão educacional e pesquisas) e o Eter (mensageiro com criptografia ponta a ponta), além de plataformas, jogos e experiências digitais para clientes e eventos."
+      },
+      {
+        "question": "Como solicitar uma proposta e qual o prazo de resposta?",
+        "answer": "Você pode enviar o contexto do seu projeto pelo formulário da página de contato, por e-mail (dreyfus@tingledigital.com) ou pelo WhatsApp (+55 21 99695-3940). Respondemos em até 5 dias úteis com proposta de escopo, prazo e valor."
+      },
+      {
+        "question": "Como a Tingle atua em Consultoria e Utilities?",
+        "answer": "Em Consultoria, apoiamos empresas e organizações em gestão, tecnologia, educação, cultura e impacto social, da estratégia à operação. Em Utilities, atuamos com desenvolvimento de negócios, eficiência energética, AI, IoT, hiperautomação e estruturação de projetos de P&D regulatório."
+      },
+      {
+        "question": "Quais produtos próprios da Tingle estão em uso ou publicados?",
+        "answer": "O Cognita opera desde 2023 na gestão educacional e no motor de pesquisas, atendendo cinco organizações. O Eter e o Sentinelas da Guanabara estão publicados na App Store e no Google Play, e o The Candidate também está disponível nas duas lojas."
+      },
+      {
+        "question": "Onde a Tingle fica localizada e como funciona o atendimento?",
+        "answer": "Nossa sede fica em Ipanema, no Rio de Janeiro (Rua Visconde de Pirajá, 414, Sala 718). Atuamos de forma remota para todo o Brasil e realizamos reuniões presenciais ou visitas de campo mediante agendamento, conforme a necessidade de cada projeto."
+      }
+    ]
   },
   "footer": {
     "tagline": "Tecnologia com alma criativa. Construímos produtos, consultamos com impacto e modernizamos utilities.",
@@ -195,7 +222,8 @@
       "utilities": "Utilities",
       "cases": "Cases",
       "sobre": "Sobre",
-      "contato": "Contato"
+      "contato": "Contato",
+      "privacidade": "Política de Privacidade"
     },
     "copyright": "Tingle Digital. Todos os direitos reservados."
   },

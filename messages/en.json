@@ -180,7 +180,34 @@
   "finalCta": {
     "title": "Ready to build something that matters?",
     "body": "From R&D energy projects to educational platforms — let's turn your idea into something nobody forgets.",
-    "primaryCta": "Start conversation"
+    "primaryCta": "Start conversation",
+    "responseTime": "Reply within 5 business days."
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "title": "Direct answers about how we work.",
+    "items": [
+      {
+        "question": "What does Tingle Digital build?",
+        "answer": "We build our own software, including Cognita (education management and surveys) and Eter (end-to-end encrypted messenger), as well as platforms, games and digital experiences for clients and events."
+      },
+      {
+        "question": "How do I request a proposal and what is the response time?",
+        "answer": "You can share your project details through our contact page form, by e-mail (dreyfus@tingledigital.com) or via WhatsApp (+55 21 99695-3940). We reply within 5 business days with scope, timeline and pricing."
+      },
+      {
+        "question": "How does Tingle work in Consulting and Utilities?",
+        "answer": "In Consulting, we support companies and organizations in management, technology, education, culture and social impact, from strategy to operations. In Utilities, we work on business development, energy efficiency, AI, IoT, hyperautomation and structuring regulated R&D projects."
+      },
+      {
+        "question": "Which Tingle products are live or published?",
+        "answer": "Cognita has been operating since 2023 for education management and surveys, serving five organizations. Eter and Sentinelas da Guanabara are published on the App Store and Google Play, and The Candidate is also available in both stores."
+      },
+      {
+        "question": "Where is Tingle located and how do you work with clients?",
+        "answer": "Our headquarters are in Ipanema, Rio de Janeiro (Rua Visconde de Pirajá, 414, Suite 718). We work remotely across Brazil and hold in-person meetings or on-site visits by appointment, according to each project's needs."
+      }
+    ]
   },
   "footer": {
     "tagline": "Technology with creative soul. We build products, consult with impact and modernize utilities.",
@@ -195,7 +222,8 @@
       "utilities": "Utilities",
       "cases": "Cases",
       "sobre": "About",
-      "contato": "Contact"
+      "contato": "Contact",
+      "privacidade": "Privacy Policy"
     },
     "copyright": "Tingle Digital. All rights reserved."
   },

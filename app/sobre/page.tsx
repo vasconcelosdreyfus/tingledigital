@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import { sobreEn } from "@/content/data/sobre-en";
-import { socialImages } from "@/lib/social-metadata";
+import { SITE_URL, buildPageMetadata } from "@/lib/social-metadata";
+import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { PageHero } from "@/components/shared/page-hero";
 import { Container } from "@/components/primitives/container";
 import { TeamGrid } from "@/components/shared/team-grid";
@@ -11,14 +12,16 @@ import { sobre as sobrePt } from "@/content/data/sobre";
 import styles from "../justified-copy.module.css";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const english = (await getLocale()) === "en";
-  const content = english ? sobreEn : sobrePt;
-  const title = english ? "About" : "Sobre";
-  return {
-    title,
-    description: content.hero.subtitle,
-    openGraph: { images: socialImages, title: `${title} · Tingle Digital`, description: content.hero.subtitle },
-  };
+  const locale = (await getLocale()) === "en" ? "en" : "pt";
+  return buildPageMetadata({
+    title: locale === "en" ? "About: story and partners" : "Sobre: história e sócios",
+    description:
+      locale === "en"
+        ? "Discover Tingle Digital's journey from São Luís to Rio de Janeiro, our partners and what we build. Talk to our team."
+        : "Conheça a trajetória da Tingle Digital, de São Luís ao Rio de Janeiro, nossos sócios e nossa atuação. Fale com a equipe.",
+    canonical: `${SITE_URL}/sobre`,
+    locale,
+  });
 }
 
 export default async function SobrePage() {
@@ -26,6 +29,12 @@ export default async function SobrePage() {
   const sobre = english ? sobreEn : sobrePt;
   return (
     <div className={styles.page}>
+      <Breadcrumbs
+        items={[
+          { label: english ? "Home" : "Início", href: "/" },
+          { label: english ? "About" : "Sobre", href: "/sobre" },
+        ]}
+      />
       <PageHero
         eyebrow={sobre.hero.eyebrow}
         title={sobre.hero.title}

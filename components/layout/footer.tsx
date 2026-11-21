@@ -30,12 +30,14 @@ export function Footer() {
         { href: "/cases", label: t("links.cases") },
         { href: "/sobre", label: t("links.sobre") },
         { href: "/contato", label: t("links.contato") },
+        { href: "/privacidade", label: t("links.privacidade") },
       ],
     },
   ];
 
   return (
     <footer
+      className="pb-20 md:pb-0"
       style={{
         borderTop: "1px solid var(--border)",
         backgroundColor: "var(--surface-elevated)",

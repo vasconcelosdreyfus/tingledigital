@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 import { Container } from "@/components/primitives/container";
 
 export interface TeamMember {
@@ -16,7 +17,9 @@ interface TeamGridProps {
   members: TeamMember[];
 }
 
-export function TeamGrid({ eyebrow, title, members }: TeamGridProps) {
+export async function TeamGrid({ eyebrow, title, members }: TeamGridProps) {
+  const english = (await getLocale()) === "en";
+
   return (
     <section id="socios" className="scroll-mt-24 py-24 lg:py-32" style={{ borderTop: "1px solid var(--border)", backgroundColor: "var(--surface-elevated)" }}>
       <Container>
@@ -31,7 +34,7 @@ export function TeamGrid({ eyebrow, title, members }: TeamGridProps) {
               >
                 <Image
                   src={m.photo}
-                  alt={`Foto de ${m.name}`}
+                  alt={english ? m.name : `Foto de ${m.name}`}
                   fill
                   sizes="(max-width: 767px) 90vw, 33vw"
                   className="object-cover object-top"
@@ -40,7 +43,12 @@ export function TeamGrid({ eyebrow, title, members }: TeamGridProps) {
               <p className="mt-4 font-semibold" style={{ color: "var(--text)" }}>{m.name}</p>
               <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{m.role}</p>
               <p className="mt-5 leading-relaxed" style={{ color: "var(--text-secondary)" }}>{m.bio}</p>
-              <ul className="mt-5 flex flex-wrap gap-2" aria-label={`Áreas de experiência de ${m.name}`}>
+              <ul
+                className="mt-5 flex flex-wrap gap-2"
+                aria-label={
+                  english ? `${m.name} areas of expertise` : `Áreas de experiência de ${m.name}`
+                }
+              >
                 {m.specialties.map((specialty) => (
                   <li key={specialty} className="rounded-full border px-3 py-1.5 text-xs" style={{ borderColor: "var(--border)", color: "var(--text-secondary)" }}>{specialty}</li>
                 ))}
