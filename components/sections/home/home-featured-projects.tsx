@@ -9,11 +9,13 @@ import { apps } from "@/content/data/apps";
 import styles from "./home-featured-projects.module.css";
 
 const projects = [
-  { key: "cognita", image: "/apps/icons/cognita.webp", href: "/cognita" },
-  { key: "eter", image: "/apps/icons/eter.webp", href: "https://eter.social" },
+  { key: "cognita", image: "/apps/icons/cognita.webp", width: 512, height: 512, href: "/cognita" },
+  { key: "eter", image: "/apps/icons/eter.webp", width: 512, height: 512, href: "https://eter.social" },
   {
     key: "rock",
     image: "/cases/rock-in-rio-espaco-plural.webp",
+    width: 1440,
+    height: 961,
     href: "/cases#leitura-delas",
     values: apps.find((app) => app.slug === "leitura-delas")!.metrics!.slice(0, 2).map((metric) => metric.value),
   },
@@ -55,10 +57,24 @@ export async function HomeFeaturedProjects() {
                 >
                   {project.key !== "rock" ? (
                     <div className="absolute inset-1/4">
-                      <Image src={project.image} alt={t(`${project.key}.alt`)} fill sizes="200px" className="object-contain" />
+                      <Image
+                        src={project.image}
+                        width={project.width}
+                        height={project.height}
+                        alt={t(`${project.key}.alt`)}
+                        sizes="200px"
+                        className="h-full w-full object-contain"
+                      />
                     </div>
                   ) : (
-                    <Image src={project.image} alt={t(`${project.key}.alt`)} fill sizes="(min-width: 1280px) 560px, (min-width: 768px) 46vw, 100vw" className={styles.photo} />
+                    <Image
+                      src={project.image}
+                      width={project.width}
+                      height={project.height}
+                      alt={t(`${project.key}.alt`)}
+                      sizes="(min-width: 1280px) 560px, (min-width: 768px) 46vw, 100vw"
+                      className={`${styles.photo} absolute inset-0 h-full w-full`}
+                    />
                   )}
                 </div>
                 <figcaption className="mt-3 text-xs leading-relaxed text-[var(--text-secondary)]">

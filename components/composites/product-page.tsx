@@ -42,7 +42,7 @@ export function ProductPage({ data }: ProductPageProps) {
       >
         {app && (
           <Reveal delay={0.3} className="mt-8 flex flex-col items-center gap-3">
-            <AppIcon app={app} className="mb-2 w-20" />
+            <AppIcon app={app} size={80} className="mb-2 w-20" />
             <StatusBadge kind={app.status.kind} label={app.status.label} className="text-sm" />
             {appLinks.length > 0 && (
               <ul className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
