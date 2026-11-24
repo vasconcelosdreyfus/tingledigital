@@ -16,7 +16,7 @@ function AppTile({ app }: { app: AppEntry }) {
       className="app-tile group flex h-full flex-col rounded-2xl p-6 transition-colors hover:bg-[var(--surface-elevated)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2563EB]"
       style={{ border: "1px solid var(--border)", backgroundColor: "var(--bg)" }}
     >
-      <AppIcon app={app} className="w-14" decorative />
+      <AppIcon app={app} size={56} className="w-14" decorative />
       <h3 className="mt-5 text-lg font-semibold" style={{ color: "var(--text)" }}>
         {app.name}
       </h3>

@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils";
 /** Ícone oficial no formato de app (cantos 22%), mesmo tamanho e borda para todas as aplicações. */
 export function AppIcon({
   app,
+  size = 56,
   className,
   decorative = false,
 }: {
   app: AppEntry;
+  size?: number;
   className?: string;
   decorative?: boolean;
 }) {
@@ -24,10 +26,11 @@ export function AppIcon({
       <Image
         src={app.icon.src}
         alt={decorative ? "" : app.icon.alt}
-        fill
+        width={size}
+        height={size}
         sizes="120px"
         unoptimized={app.icon.unoptimized || app.icon.src.endsWith(".svg")}
-        className="object-cover"
+        className="h-full w-full object-cover"
       />
     </div>
   );
